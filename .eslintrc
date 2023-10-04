@@ -1,0 +1,26 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "ignorePatterns": [
+        ".eslintrc.js"
+    ],
+    "parserOptions": {
+        "createDefaultProgram": true,
+        "project": "tsconfig.json",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint/eslint-plugin",
+        "prefer-arrow",
+        "no-loops",
+        "nested-if"
+    ],
+    "extends": [
+        "@propertyguru/propertyguru"
+    ],
+    "root": true,
+    "env": {
+        "node": true,
+        "jest": true
+    },
+    "rules": {}
+}
