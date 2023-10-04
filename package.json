@@ -1,5 +1,5 @@
 {
-    "name": "@codemask/nestjs-elasticsearch",
+    "name": "@propertyguru/pgds-nestjs-elasticsearch",
     "version": "1.0.0",
     "description": "Nestjs Elasticsearch Module",
     "main": "dist/index.js",
