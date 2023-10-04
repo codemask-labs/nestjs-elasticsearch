@@ -1,5 +1,7 @@
 {
     "name": "@propertyguru/pgds-nestjs-elasticsearch",
+    "author": "Grzegorz Wadas",
+    "license": "MIT",
     "version": "1.0.0",
     "description": "Nestjs Elasticsearch Module",
     "main": "dist/index.js",
@@ -15,8 +17,6 @@
         "nestjs",
         "pgds-common"
     ],
-    "author": "Grzegorz Wadas",
-    "license": "MIT",
     "dependencies": {
         "@elastic/elasticsearch": "7.13.0",
         "@nestjs/common": "10.2.6",
