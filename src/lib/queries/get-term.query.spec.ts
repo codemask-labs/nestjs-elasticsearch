@@ -20,7 +20,7 @@ describe('getTermQuery', () => {
 
         expect(query).toEqual({
             term: {
-                field: {
+                'field.keyword': {
                     value: 'test'
                 }
             }

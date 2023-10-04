@@ -7,10 +7,8 @@ describe('getAvgAggregation', () => {
         const query = getAvgAggregation<ExampleDocument>('field')
 
         expect(query).toEqual({
-            term: {
-                field: {
-                    value: 'test'
-                }
+            avg: {
+                field: 'field'
             }
         })
     })
@@ -19,10 +17,8 @@ describe('getAvgAggregation', () => {
         const query = getAvgAggregation<ExampleDocument>('field.keyword')
 
         expect(query).toEqual({
-            term: {
-                field: {
-                    value: 'test'
-                }
+            avg: {
+                field: 'field.keyword'
             }
         })
     })

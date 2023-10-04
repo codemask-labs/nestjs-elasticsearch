@@ -7,10 +7,8 @@ describe('getSumAggregation', () => {
         const query = getSumAggregation<ExampleDocument>('field')
 
         expect(query).toEqual({
-            term: {
-                field: {
-                    value: 'test'
-                }
+            sum: {
+                field: 'field'
             }
         })
     })
@@ -19,10 +17,8 @@ describe('getSumAggregation', () => {
         const query = getSumAggregation<ExampleDocument>('field.keyword')
 
         expect(query).toEqual({
-            term: {
-                field: {
-                    value: 'test'
-                }
+            sum: {
+                field: 'field.keyword'
             }
         })
     })
