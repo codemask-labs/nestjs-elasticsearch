@@ -1,9 +1,10 @@
 import { ClientOptions } from '@elastic/elasticsearch'
-import { ElasticsearchModule as BaseElasticsearchModule, ElasticsearchService } from '@nestjs/elasticsearch'
+import { ElasticsearchModule as BaseElasticsearchModule, ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { Module, DynamicModule, Provider } from '@nestjs/common'
 import { ClassConstructor } from 'lib/types'
 import { ELASTICSEARCH_CATALOG_NAME, ELASTICSEARCH_CATALOG_PREFIX } from 'lib/constants'
 import { Catalog } from './injectables'
+import { ElasticsearchService } from './elasticsearch.service'
 
 @Module({})
 export class ElasticsearchModule {
@@ -12,6 +13,7 @@ export class ElasticsearchModule {
             global: true,
             module: ElasticsearchModule,
             imports: [BaseElasticsearchModule.register(options)],
+            providers: [ElasticsearchService],
             exports: [ElasticsearchService]
         }
     }
@@ -26,9 +28,9 @@ export class ElasticsearchModule {
             }
 
             return {
-                inject: [ElasticsearchService],
+                inject: [ElasticsearchBaseService],
                 provide: `${ELASTICSEARCH_CATALOG_PREFIX}:${name}`,
-                useFactory: (es: ElasticsearchService) => new Catalog(document, es)
+                useFactory: (base: ElasticsearchBaseService) => new Catalog(base, document)
             }
         })
 

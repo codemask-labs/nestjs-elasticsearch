@@ -1,10 +1,19 @@
 export type ElasticsearchCatalog = {
+    /**
+     *
+     * @returns void
+     */
     search: () => void
-    msearch: () => void
 
     /**
      *
      * @returns void
      */
     createQueryBuilder: () => void
+
+    /**
+     *
+     * @returns void
+     */
+    checkDocumentIntegrity: () => void
 }

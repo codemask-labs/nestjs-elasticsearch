@@ -1,5 +1,7 @@
+
+```typescript
 import { Module } from '@nestjs/common'
-import { ElasticsearchModule } from '..'
+import { ElasticsearchModule } from '../src/nestjs'
 import { ExampleDocument } from './document'
 
 @Module({
@@ -20,3 +22,4 @@ import { ExampleDocument } from './document'
     ]
 })
 export class AppModule {}
+```

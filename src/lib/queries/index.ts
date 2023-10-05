@@ -1,1 +1,1 @@
-export * from './get-term.query'
+export * from './get-term'

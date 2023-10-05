@@ -1,23 +1,23 @@
 import { describe } from 'node:test'
-import { ExampleDocument } from 'nestjs/examples'
-import { getSumAggregation } from './get-sum.aggregation'
+import { ExampleCatalogDocument } from 'test/module'
+import { getAvgAggregation } from './get-avg'
 
-describe('getSumAggregation', () => {
+describe('getAvgAggregation', () => {
     it('accepts only schema fields', () => {
-        const query = getSumAggregation<ExampleDocument>('field')
+        const query = getAvgAggregation<ExampleCatalogDocument>('field')
 
         expect(query).toEqual({
-            sum: {
+            avg: {
                 field: 'field'
             }
         })
     })
 
     it('accepts only schema fields with keyword', () => {
-        const query = getSumAggregation<ExampleDocument>('field.keyword')
+        const query = getAvgAggregation<ExampleCatalogDocument>('field.keyword')
 
         expect(query).toEqual({
-            sum: {
+            avg: {
                 field: 'field.keyword'
             }
         })

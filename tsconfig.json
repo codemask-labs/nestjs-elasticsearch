@@ -14,12 +14,9 @@
         "outDir": "./dist",
         "baseUrl": ".",
         "paths": {
-            "lib/*": [
-                "./src/lib/*"
-            ],
-            "nestjs/*": [
-                "./src/nestjs/*"
-            ]
+            "lib/*": ["./src/lib/*"],
+            "nestjs/*": ["./src/nestjs/*"],
+            "test/*": ["./src/test/*"]
         }
     },
     "watchOptions": {

@@ -1,10 +1,10 @@
 import { describe } from 'node:test'
-import { ExampleDocument } from 'nestjs/examples'
-import { getTermQuery } from './get-term.query'
+import { getTermQuery } from './get-term'
+import { ExampleCatalogDocument } from 'test/module'
 
 describe('getTermQuery', () => {
     it('accepts only schema fields', () => {
-        const query = getTermQuery<ExampleDocument>('field', 'test')
+        const query = getTermQuery<ExampleCatalogDocument>('field', 'test')
 
         expect(query).toEqual({
             term: {
@@ -16,7 +16,7 @@ describe('getTermQuery', () => {
     })
 
     it('accepts only schema fields with keyword', () => {
-        const query = getTermQuery<ExampleDocument>('field.keyword', 'test')
+        const query = getTermQuery<ExampleCatalogDocument>('field.keyword', 'test')
 
         expect(query).toEqual({
             term: {
