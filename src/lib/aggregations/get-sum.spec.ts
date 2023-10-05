@@ -1,24 +1,23 @@
-import { describe } from 'node:test'
-import { ExampleCatalogDocument } from 'test/module'
+import { HomeDocument } from 'test/module'
 import { getSumAggregation } from './get-sum'
 
 describe('getSumAggregation', () => {
-    it('accepts only schema fields', () => {
-        const query = getSumAggregation<ExampleCatalogDocument>('field')
+    it('accepts only schema field', () => {
+        const query = getSumAggregation<HomeDocument>('address')
 
         expect(query).toEqual({
             sum: {
-                field: 'field'
+                field: 'address'
             }
         })
     })
 
-    it('accepts only schema fields with keyword', () => {
-        const query = getSumAggregation<ExampleCatalogDocument>('field.keyword')
+    it('accepts only schema field with keyword', () => {
+        const query = getSumAggregation<HomeDocument>('address.keyword')
 
         expect(query).toEqual({
             sum: {
-                field: 'field.keyword'
+                field: 'address.keyword'
             }
         })
     })

@@ -11,7 +11,8 @@
         "build:package": "yarn tsc --declaration --project tsconfig.build.json",
         "build:replace-tspaths": "yarn tscpaths -p tsconfig.build.json -s ./src -o ./dist",
         "build": "rimraf dist && yarn build:package && yarn build:replace-tspaths",
-        "test": "jest --config=./jest.config.json"
+        "test": "jest --config=./jest.config.json",
+        "generate:random-data": "yarn ts-node ./src/test/scripts/generate-random-data.ts"
     },
     "keywords": [
         "nestjs",
@@ -19,6 +20,7 @@
     ],
     "dependencies": {
         "@elastic/elasticsearch": "7.13.0",
+        "@faker-js/faker": "^8.1.0",
         "@nestjs/common": "10.2.6",
         "@nestjs/elasticsearch": "9.0.0",
         "class-validator": "0.14.0",
@@ -51,6 +53,7 @@
         "prettier": "3.0.3",
         "rimraf": "5.0.1",
         "ts-jest": "29.1.1",
+        "ts-node": "10.9.1",
         "tscpaths": "0.0.9",
         "typescript": "5.2.2"
     },

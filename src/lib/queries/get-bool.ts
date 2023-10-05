@@ -1,10 +1,10 @@
 import { Document } from 'lib/types'
-import { getBoolMustQuery } from './get-bool-must'
-import { getBoolShouldQuery } from './get-bool-should'
+import { getMustQuery } from './get-must'
+import { getShouldQuery } from './get-should'
 
 export type BoolQuery<TDocument extends Document> = {
-    must?: ReturnType<typeof getBoolMustQuery<TDocument>>
-    should?: ReturnType<typeof getBoolShouldQuery<TDocument>>
+    must?: ReturnType<typeof getMustQuery<TDocument>>
+    should?: ReturnType<typeof getShouldQuery<TDocument>>
 }
 
 export const getBoolQuery = <TDocument extends Document>(bool: BoolQuery<TDocument>) => ({

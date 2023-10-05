@@ -1,13 +1,11 @@
 {
-    "moduleFileExtensions": [
-        "js",
-        "json",
-        "ts"
-    ],
-    "modulePaths": [
-        "<rootDir>",
-        "src"
-    ],
+    "moduleFileExtensions": ["js", "json", "ts"],
+    "modulePaths": ["<rootDir>", "src"],
+    "moduleNameMapper": {
+        "^lib/(.*)$": ["<rootDir>/src/lib/$1"],
+        "^nestjs/(.*)$": ["<rootDir>/src/nestjs/$1"],
+        "^test/(.*)$": ["<rootDir>/src/test/$1"]
+    },
     "rootDir": "./src",
     "testRegex": ".spec.ts$",
     "transform": {

@@ -1,24 +1,23 @@
-import { describe } from 'node:test'
-import { ExampleCatalogDocument } from 'test/module'
+import { HomeDocument } from 'test/module'
 import { getAvgAggregation } from './get-avg'
 
 describe('getAvgAggregation', () => {
-    it('accepts only schema fields', () => {
-        const query = getAvgAggregation<ExampleCatalogDocument>('field')
+    it('accepts only schema field', () => {
+        const query = getAvgAggregation<HomeDocument>('address')
 
         expect(query).toEqual({
             avg: {
-                field: 'field'
+                field: 'address'
             }
         })
     })
 
-    it('accepts only schema fields with keyword', () => {
-        const query = getAvgAggregation<ExampleCatalogDocument>('field.keyword')
+    it('accepts only schema field with keyword', () => {
+        const query = getAvgAggregation<HomeDocument>('address.keyword')
 
         expect(query).toEqual({
             avg: {
-                field: 'field.keyword'
+                field: 'address.keyword'
             }
         })
     })

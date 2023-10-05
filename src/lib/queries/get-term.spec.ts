@@ -1,14 +1,13 @@
-import { describe } from 'node:test'
 import { getTermQuery } from './get-term'
-import { ExampleCatalogDocument } from 'test/module'
+import { HomeDocument } from 'test/module'
 
 describe('getTermQuery', () => {
     it('accepts only schema fields', () => {
-        const query = getTermQuery<ExampleCatalogDocument>('field', 'test')
+        const query = getTermQuery<HomeDocument>('address', 'test')
 
         expect(query).toEqual({
             term: {
-                field: {
+                address: {
                     value: 'test'
                 }
             }
@@ -16,11 +15,11 @@ describe('getTermQuery', () => {
     })
 
     it('accepts only schema fields with keyword', () => {
-        const query = getTermQuery<ExampleCatalogDocument>('field.keyword', 'test')
+        const query = getTermQuery<HomeDocument>('address.keyword', 'test')
 
         expect(query).toEqual({
             term: {
-                'field.keyword': {
+                'address.keyword': {
                     value: 'test'
                 }
             }
