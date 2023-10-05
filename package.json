@@ -16,7 +16,8 @@
     },
     "keywords": [
         "nestjs",
-        "pgds-common"
+        "pgds-nestjs",
+        "pgds-nestjs-elasticsearch"
     ],
     "dependencies": {
         "@elastic/elasticsearch": "7.13.0",
