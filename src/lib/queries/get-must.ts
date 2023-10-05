@@ -7,4 +7,6 @@ export type MustQuery<TDocument extends Document> = {
     terms?: ReturnType<typeof getTermsQuery<TDocument>>
 }
 
-export const getMustQuery = <TDocument extends Document>(query: MustQuery<TDocument> | Array<MustQuery<TDocument>>) => query
+export const getMustQuery = <TDocument extends Document>(must: MustQuery<TDocument> | Array<MustQuery<TDocument>>) => ({
+    must
+})
