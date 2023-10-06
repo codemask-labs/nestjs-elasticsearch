@@ -1,6 +1,12 @@
 import { Document } from 'lib/types'
-import { BoolQuery } from './types'
+import { MustQuery, ShouldQuery } from './types'
 
-export const getBoolQuery = <TDocument extends Document>(bool: BoolQuery<TDocument>) => ({
+type BoolQueryBody<TDocument extends Document> = MustQuery<TDocument> & ShouldQuery<TDocument>
+
+export type MustQueryReturnType<TDocument extends Document> = {
+    bool: BoolQueryBody<TDocument> | Array<BoolQueryBody<TDocument>>
+}
+
+export const getBoolQuery = <TDocument extends Document>(bool: BoolQueryBody<TDocument> | Array<BoolQueryBody<TDocument>>): MustQueryReturnType<TDocument> => ({
     bool
 })

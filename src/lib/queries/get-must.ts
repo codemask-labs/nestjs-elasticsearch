@@ -1,6 +1,12 @@
 import { Document } from 'lib/types'
-import { MustQuery } from './types'
+import { TermQuery, TermsQuery } from './types'
 
-export const getMustQuery = <TDocument extends Document>(must: MustQuery<TDocument> | Array<MustQuery<TDocument>>) => ({
+type MustQueryBody<TDocument extends Document> = TermQuery<TDocument> | TermsQuery<TDocument>
+
+export type MustQueryReturnType<TDocument extends Document> = {
+    must?: MustQueryBody<TDocument> | Array<MustQueryBody<TDocument>>
+}
+
+export const getMustQuery = <TDocument extends Document>(must?: MustQueryBody<TDocument> | Array<MustQueryBody<TDocument>>): MustQueryReturnType<TDocument> => ({
     must
 })
