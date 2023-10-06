@@ -1,14 +1,17 @@
 import { HomeDocument } from 'test/module'
 import { getMustQuery } from './get-must'
+import { getTermQuery } from './get-term'
 
 describe('getMustQuery', () => {
     it('accepts optional term query', () => {
         const query = getMustQuery<HomeDocument>({
-            term: {}
+            ...getTermQuery('hasProperty', true)
         })
 
-        console.log(query)
+        expect(query).toEqual({
+            must: {
+                term: { hasProperty: { value: true } }
+            }
+        })
     })
-
-    test.todo('accepts optional terms query')
 })

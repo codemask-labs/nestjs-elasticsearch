@@ -11,8 +11,12 @@ describe('getBoolQuery', () => {
             should: [
                 getTermQuery('id', id),
                 getTermsQuery('propertyType', [PropertyType.Apartment]),
-                getBoolQuery({
-                    must: getTermQuery('id', id)
+                getBoolQuery<HomeDocument>({
+                //          ^
+                // note: weird bug when Generic Type is not being passed
+                    must: {
+                        term: { address: { value: 'test' } }
+                    }
                 })
             ]
         })
@@ -21,7 +25,12 @@ describe('getBoolQuery', () => {
             bool: {
                 should: [
                     { term: { id: { value: id } } },
-                    { terms: { propertyType: [PropertyType.Apartment] } }
+                    { terms: { propertyType: [PropertyType.Apartment] } },
+                    {
+                        bool: {
+                            must: { term: { address: { value: 'test' } } }
+                        }
+                    }
                 ]
             }
         })

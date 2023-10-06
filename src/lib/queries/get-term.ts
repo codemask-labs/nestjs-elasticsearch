@@ -1,15 +1,15 @@
 import { Document, Field, FieldType } from 'lib/types'
 
 type TermQueryBody<TDocument extends Document, TField extends Field<TDocument>> = {
-    [x: string]: { value: FieldType<TDocument, TField> }
+    [Key in keyof TDocument]?: { value: FieldType<TDocument, TField> }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type TermQuery<TDocument extends Document, TField extends Field<TDocument> = any> = {
+export type TermQuery<TDocument extends Document, TField extends Field<TDocument> = keyof TDocument> = {
     term: TermQueryBody<TDocument, TField>
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getTermQuery = <TDocument extends Document, TField extends Field<TDocument> = any>(field: TField, value: FieldType<TDocument, TField>): TermQuery<TDocument, TField> => ({
+export const getTermQuery = <TDocument extends Document, TField extends Field<TDocument> = keyof TDocument>(field: TField, value: FieldType<TDocument, TField>): TermQuery<TDocument, TField> => ({
     term: { [field]: { value } } as TermQueryBody<TDocument, TField>
 })

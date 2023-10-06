@@ -9,6 +9,6 @@ export type ShouldQuery<TDocument extends Document> = {
     should?: ShouldQueryBody<TDocument> | Array<ShouldQueryBody<TDocument>>
 }
 
-export const getShouldQuery = <TDocument extends Document>(should?: ShouldQueryBody<TDocument> | Array<ShouldQueryBody<TDocument>>): ShouldQuery<TDocument> => ({
+export const getShouldQuery = <TDocument extends Document>(should: ShouldQueryBody<TDocument> | Array<ShouldQueryBody<TDocument>>): ShouldQuery<TDocument> => ({
     should
 })
