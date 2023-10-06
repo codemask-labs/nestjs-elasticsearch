@@ -3,7 +3,7 @@ import { getMustQuery } from './get-must'
 import { getTermQuery } from './get-term'
 
 describe('getMustQuery', () => {
-    it('accepts optional term query', () => {
+    it('accepts optional term queries', () => {
         const query = getMustQuery<HomeDocument>({
             ...getTermQuery('hasProperty', true)
         })

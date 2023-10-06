@@ -1,5 +1,5 @@
 import { IsString, IsEnum, IsNumber, IsBoolean, IsOptional } from 'class-validator'
-import { Catalog } from 'nestjs/decorators'
+import { Catalog } from 'lib/decorators'
 import { PropertyType } from './enums'
 
 @Catalog('homes')

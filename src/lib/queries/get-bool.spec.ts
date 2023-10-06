@@ -35,6 +35,4 @@ describe('getBoolQuery', () => {
             }
         })
     })
-
-    test.todo('accepts optional should query')
 })

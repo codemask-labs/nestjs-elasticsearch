@@ -1,6 +1,6 @@
 import { Document, Field, FieldType } from 'lib/types'
 
-type TermQueryBody<TDocument extends Document, TField extends Field<TDocument>> = {
+export type TermQueryBody<TDocument extends Document, TField extends Field<TDocument>> = {
     [Key in keyof TDocument]?: { value: FieldType<TDocument, TField> }
 }
 
