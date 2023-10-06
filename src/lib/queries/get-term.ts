@@ -1,14 +1,15 @@
-import { Document, FieldKeyword, FieldType } from 'lib/types'
+import { Document, Field, FieldType } from 'lib/types'
 
-/**
- *
- * @param field
- * @param value
- * @returns
- */
+type TermQueryBody<TDocument extends Document, TField extends Field<TDocument>> = {
+    [x: string]: { value: FieldType<TDocument, TField> }
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getTermQuery = <TDocument extends Document>(field: FieldKeyword<TDocument>, value: FieldType<TDocument, typeof field>) => ({
-    term: {
-        [field]: { value }
-    }
+export type TermQueryReturnType<TDocument extends Document, TField extends Field<TDocument> = any> = {
+    term: TermQueryBody<TDocument, TField>
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getTermQuery = <TDocument extends Document, TField extends Field<TDocument> = any>(field: TField, value: FieldType<TDocument, TField>): TermQueryReturnType<TDocument, TField> => ({
+    term: { [field]: { value } } as TermQueryBody<TDocument, TField>
 })

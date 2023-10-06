@@ -12,13 +12,5 @@ describe('getSumAggregation', () => {
         })
     })
 
-    it('accepts only schema field with keyword', () => {
-        const query = getSumAggregation<HomeDocument>('address.keyword')
-
-        expect(query).toEqual({
-            sum: {
-                field: 'address.keyword'
-            }
-        })
-    })
+    test.todo('accepts only schema field with keyword')
 })

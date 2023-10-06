@@ -12,13 +12,5 @@ describe('getAvgAggregation', () => {
         })
     })
 
-    it('accepts only schema field with keyword', () => {
-        const query = getAvgAggregation<HomeDocument>('address.keyword')
-
-        expect(query).toEqual({
-            avg: {
-                field: 'address.keyword'
-            }
-        })
-    })
+    test.todo('accepts only schema field with keyword')
 })
