@@ -10,7 +10,10 @@ describe('getBoolQuery', () => {
         const query = getBoolQuery<HomeDocument>({
             should: [
                 getTermQuery('id', id),
-                getTermsQuery('propertyType', [PropertyType.Apartment])
+                getTermsQuery('propertyType', [PropertyType.Apartment]),
+                getBoolQuery({
+                    must: getTermQuery('id', id)
+                })
             ]
         })
 
