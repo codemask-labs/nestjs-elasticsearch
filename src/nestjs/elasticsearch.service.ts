@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common'
 import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document } from 'lib/types'
+import { SearchOptions, getSearchRequest, getSearchResponse } from 'lib/elasticsearch'
 import { Catalog } from './injectables'
+import { ELASTICSEARCH_CATALOG_NAME } from 'lib/constants'
 
 @Injectable()
 export class ElasticsearchService {
@@ -21,7 +23,21 @@ export class ElasticsearchService {
         return new Catalog(this.elasticsearchBaseService, catalogDocument)
     }
 
-    search() {
-        // todo: search spec
+    search<TDocument extends Document>(catalogDocument: ClassConstructor<TDocument>, options: SearchOptions<TDocument>) {
+        const index = Reflect.getMetadata(ELASTICSEARCH_CATALOG_NAME, catalogDocument)
+
+        if (!index) {
+            throw new Error(`Failed to find Catalog Index`)
+        }
+
+        const request = getSearchRequest<TDocument>(index, options)
+
+        return this.elasticsearchBaseService.search(request)
+            .then(getSearchResponse(request))
+            .catch(error => {
+                console.error(error)
+
+                throw new Error('Elasticsearch request has failed')
+            })
     }
 }
