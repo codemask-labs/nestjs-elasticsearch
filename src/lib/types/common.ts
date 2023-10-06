@@ -6,6 +6,12 @@ export type Document = {
     [Key: string]: any
 }
 
+export type FieldKeywords<TDocument extends Document> = {
+    [K in keyof TDocument as K | `${K & string}.keyword`]: TDocument[K]
+}
+
+// export type KeywordFields<Schema extends Class> = { [K in keyof InstanceType<Schema> as K | `${K & string}.keyword`]: InstanceType<Schema>[K] }
+
 export type FieldKeyword<TDocument extends Document> = (keyof TDocument & string) | `${keyof TDocument & string}.keyword`
 
-export type FieldType<TDocument extends Document, Key extends keyof TDocument> = TDocument[Key]
+export type FieldType<TDocument extends Document, Key extends string | number | symbol> = Key extends keyof FieldKeywords<TDocument> ? FieldKeywords<TDocument>[Key] : never
