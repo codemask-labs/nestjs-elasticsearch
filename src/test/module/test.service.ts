@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { InjectCatalog } from 'lib/decorators'
-import { getBoolQuery, getTermQuery } from 'lib/queries'
+import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
 import { Catalog } from 'nestjs/injectables'
 import { PropertyType } from './enums'
 import { HomeDocument } from './homes.catalog'
@@ -16,7 +16,11 @@ export class TestService {
             body: {
                 query: getBoolQuery({
                     must: [
-                        getTermQuery('propertyType.keyword', PropertyType.Flat)
+                        getTermQuery('propertyType.keyword', PropertyType.Flat),
+                        getTermsQuery('propertyType.keyword', [
+                            PropertyType.Apartment,
+                            PropertyType.Flat
+                        ])
                     ]
                 })
             }
