@@ -19,8 +19,8 @@ export class ElasticsearchService {
         return Promise.allSettled(this.catalogs.map(catalog => catalog.checkDocumentIntegrity()))
     }
 
-    withCatalog<TDocument extends Document>(catalogDocument: ClassConstructor<TDocument>) {
-        return new Catalog(this, catalogDocument)
+    withCatalog<TDocument extends Document>(document: ClassConstructor<TDocument>) {
+        return new Catalog(this, document)
     }
 
     search<TDocument extends Document>(document: ClassConstructor<TDocument>, options: SearchOptions<TDocument>) {

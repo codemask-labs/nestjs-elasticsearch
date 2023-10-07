@@ -10,14 +10,14 @@ export class Catalog<TDocument extends Document> implements ElasticsearchCatalog
     private readonly index: string
 
     constructor(
-        private readonly es: ElasticsearchService,
+        private readonly service: ElasticsearchService,
         private readonly document: ClassConstructor<TDocument>
     ) {
         this.index = Reflect.getMetadata(ELASTICSEARCH_CATALOG_NAME, document)
     }
 
     search(options: SearchOptions<TDocument>) {
-        return this.es.search(this.document, options)
+        return this.service.search(this.document, options)
             .catch(error => {
                 console.error(error)
 
