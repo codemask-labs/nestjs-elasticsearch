@@ -11,7 +11,7 @@ import { getCatalogInjectionToken } from './utils'
 export class ElasticsearchModule {
     static register(options: ClientOptions): DynamicModule {
         return {
-            global: true,
+            global: true, // todo: make it optional
             module: ElasticsearchModule,
             imports: [BaseElasticsearchModule.register(options)],
             providers: [ElasticsearchService],
