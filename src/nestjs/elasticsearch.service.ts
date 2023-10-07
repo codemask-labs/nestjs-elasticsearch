@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common'
 import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document } from 'lib/types'
+import { ELASTICSEARCH_CATALOG_NAME } from 'lib/constants'
 import { ElasticsearchResult, SearchOptions, getSearchRequest, getSearchResponse } from 'lib/elasticsearch'
 import { Catalog } from './injectables'
-import { ELASTICSEARCH_CATALOG_NAME } from 'lib/constants'
 
 @Injectable()
 export class ElasticsearchService {
