@@ -9,11 +9,10 @@ describe('getBoolQuery', () => {
         const id = faker.string.uuid()
         const query = getBoolQuery<HomeDocument>({
             should: [
+                getTermQuery('id.keyword', id),
                 getTermQuery('id', id),
                 getTermsQuery('propertyType', [PropertyType.Apartment]),
-                getBoolQuery<HomeDocument>({
-                //          ^
-                // note: weird bug when Generic Type is not being passed
+                getBoolQuery({
                     must: {
                         term: { address: { value: 'test' } }
                     }
@@ -24,6 +23,7 @@ describe('getBoolQuery', () => {
         expect(query).toEqual({
             bool: {
                 should: [
+                    { term: { 'id.keyword': { value: id } } },
                     { term: { id: { value: id } } },
                     { terms: { propertyType: [PropertyType.Apartment] } },
                     {

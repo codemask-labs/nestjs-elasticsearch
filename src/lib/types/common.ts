@@ -5,5 +5,7 @@ export type ClassConstructor<T> = new (...args: Array<any>) => T
 export type Document = Record<string, any>
 
 export type Field<TDocument extends Document> = keyof TDocument
-export type FieldType<TDocument extends Document, TKey extends Field<TDocument>> = TKey extends Field<TDocument> ? TDocument[TKey] : never
-export type Keyword<TDocument extends Document, TField extends Field<TDocument>> = TField | `${TField & string}.keyword`
+export type FieldType<TDocument extends Document, TField extends Field<TDocument>> = TDocument[TField]
+export type Keyword<TDocument extends Document> = (Field<TDocument> & string) | `${Field<TDocument> & string}.keyword`
+export type KeywordFields<TDocument extends Document> = { [K in keyof TDocument as K | `${K & string}.keyword`]: TDocument[K] }
+export type KeywordType<TDocument extends Document, TKeyword extends Keyword<TDocument>> = KeywordFields<TDocument>[TKeyword]
