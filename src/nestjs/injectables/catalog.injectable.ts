@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common'
 import { ClassConstructor, Document, ElasticsearchCatalog } from 'lib/types'
-import { QueryBuilder } from 'lib/builders'
 import { SearchOptions } from 'lib/elasticsearch'
 import { ElasticsearchService } from '..'
 
@@ -13,9 +12,5 @@ export class Catalog<TDocument extends Document> implements ElasticsearchCatalog
 
     search(options: SearchOptions<TDocument>) {
         return this.service.search(this.document, options)
-    }
-
-    createQueryBuilder() {
-        return new QueryBuilder<TDocument>(this)
     }
 }

@@ -9,10 +9,6 @@ import { Catalog } from './injectables'
 export class ElasticsearchService {
     constructor(private readonly elasticsearchBaseService: ElasticsearchBaseService) {}
 
-    withCatalog<TDocument extends Document>(document: ClassConstructor<TDocument>) {
-        return new Catalog(this, document)
-    }
-
     search<TDocument extends Document>(document: ClassConstructor<TDocument>, options: SearchOptions<TDocument>) {
         const index = Reflect.getMetadata(ELASTICSEARCH_CATALOG_NAME, document)
 
@@ -24,5 +20,9 @@ export class ElasticsearchService {
 
         return this.elasticsearchBaseService.search<ElasticsearchResult<TDocument>>(request)
             .then(response => getSearchResponse(document, response))
+    }
+
+    getCatalog<TDocument extends Document>(document: ClassConstructor<TDocument>) {
+        return new Catalog(this, document)
     }
 }
