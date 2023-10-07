@@ -6,3 +6,4 @@ export type Document = Record<string, any>
 
 export type Field<TDocument extends Document> = keyof TDocument
 export type FieldType<TDocument extends Document, TKey extends Field<TDocument>> = TKey extends Field<TDocument> ? TDocument[TKey] : never
+export type Keyword<TDocument extends Document, TField extends Field<TDocument>> = TField | `${TField & string}.keyword`

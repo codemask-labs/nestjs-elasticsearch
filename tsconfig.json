@@ -22,5 +22,9 @@
     },
     "watchOptions": {
         "watchFile": "fixedpollinginterval"
+    },
+    "ts-node": {
+        "transpileOnly": true,
+        "require": ["reflect-metadata", "tsconfig-paths/register"]
     }
 }

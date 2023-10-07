@@ -1,11 +1,14 @@
 import { faker } from '@faker-js/faker'
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { HomeDocument, PropertyType } from 'test/module'
 
-const ELASTICSEARCH_SEED_CATALOG_FILENAME = join(process.cwd(), 'src/test/seeds/homes.seed.json')
+const ELASTICSEARCH_SEED_CATALOG_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
 const DOCUMENTS_COUNT = 100
 
-const data = new Array(DOCUMENTS_COUNT).fill(null).map(() => {
+console.log('random data')
+
+const data = new Array(DOCUMENTS_COUNT).fill(null).map((): HomeDocument => {
     const id = faker.string.uuid()
     const name = faker.person.fullName()
     const builtInYear = faker.number.int({ min: 1995, max: 2015 })
@@ -24,9 +27,14 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map(() => {
         address,
         city,
         hasProperty: hasProperty ? true : false,
-        builtInYear: hasProperty ? builtInYear : null,
-        propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : null,
-        propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : null
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        propertyType: hasProperty ? faker.helpers.arrayElement(Object.values(PropertyType)) : null as unknown as undefined,
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        builtInYear: hasProperty ? builtInYear : null as unknown as undefined,
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : null as unknown as undefined,
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : null as unknown as undefined
     }
 })
 

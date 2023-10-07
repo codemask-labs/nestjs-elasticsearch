@@ -23,7 +23,8 @@ export class HomeDocument {
     readonly hasProperty: boolean
 
     @IsEnum(PropertyType)
-    readonly propertyType: PropertyType
+    @IsOptional()
+    readonly propertyType?: PropertyType
 
     @IsNumber()
     @IsOptional()
@@ -35,5 +36,5 @@ export class HomeDocument {
 
     @IsString()
     @IsOptional()
-    readonly propertyAreaSquaredAsString?: number
+    readonly propertyAreaSquaredAsString?: string
 }

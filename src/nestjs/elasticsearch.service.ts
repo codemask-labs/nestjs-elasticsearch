@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document } from 'lib/types'
-import { SearchOptions, getSearchRequest, getSearchResponse } from 'lib/elasticsearch'
+import { ElasticsearchResult, SearchOptions, getSearchRequest, getSearchResponse } from 'lib/elasticsearch'
 import { Catalog } from './injectables'
 import { ELASTICSEARCH_CATALOG_NAME } from 'lib/constants'
 
@@ -32,8 +32,8 @@ export class ElasticsearchService {
 
         const request = getSearchRequest<TDocument>(index, options)
 
-        return this.elasticsearchBaseService.search(request)
-            .then(getSearchResponse(request))
+        return this.elasticsearchBaseService.search<ElasticsearchResult<TDocument>>(request)
+            .then(getSearchResponse<TDocument>(request))
             .catch(error => {
                 console.error(error)
 

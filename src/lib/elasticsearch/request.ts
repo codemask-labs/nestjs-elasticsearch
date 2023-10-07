@@ -6,7 +6,8 @@ export type SearchOptions<TDocument extends Document> = {
     body?: SearchRequestBody<TDocument>
 }
 
-export type SearchRequest = {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export type SearchRequest<TDocument extends Document> = {
     index: string
 }
 
@@ -16,7 +17,7 @@ export type SearchRequestBody<TDocument extends Document> = {
     aggregations?: Record<string, any>
 }
 
-export const getSearchRequest = <TDocument extends Document>(index: string, options: SearchOptions<TDocument>): SearchRequest & SearchOptions<TDocument> => ({
+export const getSearchRequest = <TDocument extends Document>(index: string, options: SearchOptions<TDocument>): SearchRequest<TDocument> & SearchOptions<TDocument> => ({
     index,
     ...options
 })
