@@ -20,7 +20,7 @@ export class ElasticsearchService {
     }
 
     withCatalog<TDocument extends Document>(catalogDocument: ClassConstructor<TDocument>) {
-        return new Catalog(this.elasticsearchBaseService, catalogDocument)
+        return new Catalog(this, catalogDocument)
     }
 
     search<TDocument extends Document>(document: ClassConstructor<TDocument>, options: SearchOptions<TDocument>) {

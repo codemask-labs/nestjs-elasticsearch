@@ -1,5 +1,5 @@
 import { ClientOptions } from '@elastic/elasticsearch'
-import { ElasticsearchModule as BaseElasticsearchModule, ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
+import { ElasticsearchModule as BaseElasticsearchModule } from '@nestjs/elasticsearch'
 import { Module, DynamicModule, Provider } from '@nestjs/common'
 import { ClassConstructor } from 'lib/types'
 import { ELASTICSEARCH_CATALOG_NAME, ELASTICSEARCH_CATALOG_PREFIX } from 'lib/constants'
@@ -28,9 +28,9 @@ export class ElasticsearchModule {
             }
 
             return {
-                inject: [ElasticsearchBaseService],
+                inject: [ElasticsearchService],
                 provide: `${ELASTICSEARCH_CATALOG_PREFIX}:${name}`,
-                useFactory: (base: ElasticsearchBaseService) => new Catalog(base, document)
+                useFactory: (base: ElasticsearchService) => new Catalog(base, document)
             }
         })
 

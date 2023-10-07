@@ -1,26 +1,23 @@
 import { Injectable } from '@nestjs/common'
-import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document, ElasticsearchCatalog } from 'lib/types'
 import { QueryBuilder } from 'lib/builders'
 import { ELASTICSEARCH_CATALOG_NAME } from 'lib/constants'
-import { ElasticsearchResult, getSearchRequest, getSearchResponse, SearchOptions } from 'lib/elasticsearch'
+import { SearchOptions } from 'lib/elasticsearch'
+import { ElasticsearchService } from '..'
 
 @Injectable()
 export class Catalog<TDocument extends Document> implements ElasticsearchCatalog<TDocument> {
     private readonly index: string
 
     constructor(
-        private readonly elasticsearchBaseService: ElasticsearchBaseService,
+        private readonly es: ElasticsearchService,
         private readonly document: ClassConstructor<TDocument>
     ) {
         this.index = Reflect.getMetadata(ELASTICSEARCH_CATALOG_NAME, document)
     }
 
     search(options: SearchOptions<TDocument>) {
-        const request = getSearchRequest<TDocument>(this.index, options)
-
-        return this.elasticsearchBaseService.search<ElasticsearchResult<TDocument>>(request)
-            .then(response => getSearchResponse(this.document, response))
+        return this.es.search(this.document, options)
             .catch(error => {
                 console.error(error)
 
