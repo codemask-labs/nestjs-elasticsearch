@@ -23,8 +23,8 @@ export class ElasticsearchService {
         return new Catalog(this.elasticsearchBaseService, catalogDocument)
     }
 
-    search<TDocument extends Document>(catalogDocument: ClassConstructor<TDocument>, options: SearchOptions<TDocument>) {
-        const index = Reflect.getMetadata(ELASTICSEARCH_CATALOG_NAME, catalogDocument)
+    search<TDocument extends Document>(document: ClassConstructor<TDocument>, options: SearchOptions<TDocument>) {
+        const index = Reflect.getMetadata(ELASTICSEARCH_CATALOG_NAME, document)
 
         if (!index) {
             throw new Error(`Failed to find Catalog Index`)
@@ -33,7 +33,7 @@ export class ElasticsearchService {
         const request = getSearchRequest<TDocument>(index, options)
 
         return this.elasticsearchBaseService.search<ElasticsearchResult<TDocument>>(request)
-            .then(getSearchResponse<TDocument>(request))
+            .then(response => getSearchResponse(document, response))
             .catch(error => {
                 console.error(error)
 

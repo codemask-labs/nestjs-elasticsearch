@@ -3,6 +3,7 @@ import { ElasticsearchModule } from 'nestjs/elasticsearch.module'
 import { ElasticsearchService } from 'nestjs/elasticsearch.service'
 import { HomeDocument, PropertyType } from 'test/module'
 import { getBoolQuery, getTermQuery } from 'lib/queries'
+import { validateSync } from 'class-validator'
 
 describe('Making a search', () => {
     const { app } = setupNestApplication({
@@ -32,6 +33,12 @@ describe('Making a search', () => {
             }
         })
 
-        console.log(result.documents)
+        const allDocumentsAreValid = result.documents.every(document => {
+            const errors = validateSync(document)
+
+            return !errors.length
+        })
+
+        expect(allDocumentsAreValid).toBe(true)
     })
 })

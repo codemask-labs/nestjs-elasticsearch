@@ -30,7 +30,7 @@ export class HomeDocument {
     @IsOptional()
     readonly builtInYear?: number
 
-    @IsString()
+    @IsNumber()
     @IsOptional()
     readonly propertyAreaSquared?: number
 
