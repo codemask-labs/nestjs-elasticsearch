@@ -1,13 +1,11 @@
 import { setupNestApplication } from 'test/toolkit'
 import { ElasticsearchModule } from 'nestjs/elasticsearch.module'
-import { HomeDocument, PropertyType } from 'test/module'
-import { getBoolQuery, getTermQuery } from 'lib/queries'
+import { HomeDocument, TestService } from 'test/module'
 import { validateSync } from 'class-validator'
-import { getCatalogInjectionToken } from 'nestjs/utils'
-import { Catalog } from 'nestjs/injectables'
 
 describe('Making a search', () => {
     const { app } = setupNestApplication({
+        providers: [TestService],
         imports: [
             ElasticsearchModule.register({
                 node: 'http://localhost:9200'
@@ -19,24 +17,14 @@ describe('Making a search', () => {
     })
 
     it('has catalog available', () => {
-        const catalog = app.get<Catalog<HomeDocument>>(getCatalogInjectionToken('homes'))
+        const catalog = app.get(TestService)
 
         expect(catalog).toBeDefined()
     })
 
     it('makes a test search query', async () => {
-        const catalog = app.get<Catalog<HomeDocument>>(getCatalogInjectionToken('homes'))
-        const result = await catalog.search({
-            size: 10,
-            body: {
-                query: getBoolQuery({
-                    must: [
-                        getTermQuery('propertyType.keyword', PropertyType.Flat)
-                    ]
-                })
-            }
-        })
-
+        const service = app.get(TestService)
+        const result = await service.getHomeDocuments()
         const allDocumentsAreValid = result.documents.every(document => {
             const errors = validateSync(document)
 
