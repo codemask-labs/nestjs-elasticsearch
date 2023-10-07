@@ -24,10 +24,5 @@ export class ElasticsearchService {
 
         return this.elasticsearchBaseService.search<ElasticsearchResult<TDocument>>(request)
             .then(response => getSearchResponse(document, response))
-            .catch(error => {
-                console.error(error)
-
-                throw new Error('Elasticsearch request has failed')
-            })
     }
 }

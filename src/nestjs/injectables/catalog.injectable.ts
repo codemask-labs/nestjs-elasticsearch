@@ -18,11 +18,6 @@ export class Catalog<TDocument extends Document> implements ElasticsearchCatalog
 
     search(options: SearchOptions<TDocument>) {
         return this.service.search(this.document, options)
-            .catch(error => {
-                console.error(error)
-
-                throw new Error('Elasticsearch request has failed')
-            })
     }
 
     createQueryBuilder() {
