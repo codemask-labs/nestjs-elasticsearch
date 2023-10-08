@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker'
 import { HomeDocument, PropertyType } from 'test/module'
 import { getBoolQuery } from './get-bool'
+import { getRangeQuery } from './get-range'
 import { getTermQuery } from './get-term'
 import { getTermsQuery } from './get-terms'
 
@@ -16,6 +17,10 @@ describe('getBoolQuery', () => {
                     must: {
                         term: { address: { value: 'test' } }
                     }
+                }),
+                getRangeQuery('propertyAreaSquared', {
+                    gte: 500,
+                    lte: 1000
                 })
             ]
         })
@@ -29,6 +34,11 @@ describe('getBoolQuery', () => {
                     {
                         bool: {
                             must: { term: { address: { value: 'test' } } }
+                        }
+                    },
+                    {
+                        range: {
+                            propertyAreaSquared: { gte: 500, lte: 1000 }
                         }
                     }
                 ]

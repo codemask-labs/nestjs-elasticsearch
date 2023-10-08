@@ -2,8 +2,9 @@ import { Document } from 'lib/types'
 import { TermQuery } from './get-term'
 import { TermsQuery } from './get-terms'
 import { BoolQuery } from './get-bool'
+import { RangeQuery } from './get-range'
 
-export type ShouldQueryBody<TDocument extends Document> = TermQuery<TDocument> | TermsQuery<TDocument> | BoolQuery<TDocument>
+export type ShouldQueryBody<TDocument extends Document> = BoolQuery<TDocument> | TermQuery<TDocument> | TermsQuery<TDocument> | RangeQuery<TDocument>
 
 export type ShouldQuery<TDocument extends Document> = {
     should?: ShouldQueryBody<TDocument> | Array<ShouldQueryBody<TDocument>>
