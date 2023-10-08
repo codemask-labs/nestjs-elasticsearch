@@ -8,10 +8,7 @@ export type MatchPhrasePrefixQueryBody<TDocument extends Document, TKeyword exte
     [x in TKeyword]?: { query: KeywordType<TDocument, TKeyword> } & MatchPhrasePrefixQueryOptions
 }
 
-export type MatchPhrasePrefixQuery<
-    TDocument extends Document,
-    TKeyword extends Keyword<TDocument> = Keyword<TDocument>
-> = {
+export type MatchPhrasePrefixQuery<TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>> = {
     match_phrase_prefix: MatchPhrasePrefixQueryBody<TDocument, TKeyword>
 }
 
