@@ -30,6 +30,8 @@ describe('getBoolQuery', () => {
 
         expect(query).toEqual({
             bool: {
+                // eslint-disable-next-line camelcase
+                minimum_should_match: 1,
                 should: [
                     { term: { 'id.keyword': { value: id } } },
                     { term: { id: { value: id } } },
@@ -44,9 +46,7 @@ describe('getBoolQuery', () => {
                             propertyAreaSquared: { gte: 500, lte: 1000 }
                         }
                     }
-                ],
-                // eslint-disable-next-line camelcase
-                minimum_should_match: 1
+                ]
             }
         })
     })
