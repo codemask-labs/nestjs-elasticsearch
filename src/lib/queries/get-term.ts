@@ -4,12 +4,10 @@ export type TermQueryBody<TDocument extends Document, TKeyword extends Keyword<T
     [x in TKeyword]?: { value: KeywordType<TDocument, TKeyword> }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type TermQuery<TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>> = {
     term: TermQueryBody<TDocument, TKeyword>
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getTermQuery = <TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>>(
     field: TKeyword,
     value: KeywordType<TDocument, TKeyword>
