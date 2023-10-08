@@ -2,7 +2,7 @@
     "name": "@codemaskjs/nestjs-elasticsearch",
     "author": "Grzegorz Wadas",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "0.9.0",
     "description": "Nestjs Elasticsearch Module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
