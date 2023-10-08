@@ -14,21 +14,16 @@ export type SearchResponse<TDocument extends Document> = {
     aggregations?: Record<string, any>
 }
 
-export const getSearchResponse = <
-    TDocument extends Document
->(document: ClassConstructor<TDocument>, { body }: ApiResponse<ElasticsearchResult<TDocument>>): SearchResponse<TDocument> => ({
-    documents: body.hits.hits.reduce(
-        (result, { _source: source }) => {
-            if (!source) {
-                return result
-            }
+export const getSearchResponse = <TDocument extends Document>(
+    document: ClassConstructor<TDocument>,
+    { body }: ApiResponse<ElasticsearchResult<TDocument>>
+): SearchResponse<TDocument> => ({
+    documents: body.hits.hits.reduce((result, { _source: source }) => {
+        if (!source) {
+            return result
+        }
 
-            return [
-                ...result,
-                Object.assign(new document(), source)
-            ]
-        },
-        [] as Array<TDocument>
-    ),
+        return [...result, Object.assign(new document(), source)]
+    }, [] as Array<TDocument>),
     aggregations: body.aggregations
 })

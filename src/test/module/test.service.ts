@@ -17,10 +17,7 @@ export class TestService {
                 query: getBoolQuery({
                     must: [
                         getTermQuery('propertyType.keyword', PropertyType.Flat),
-                        getTermsQuery('propertyType.keyword', [
-                            PropertyType.Apartment,
-                            PropertyType.Flat
-                        ])
+                        getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat])
                     ]
                 })
             }

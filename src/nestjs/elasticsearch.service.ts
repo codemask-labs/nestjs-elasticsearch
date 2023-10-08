@@ -18,8 +18,7 @@ export class ElasticsearchService {
 
         const request = getSearchRequest<TDocument>(index, options)
 
-        return this.elasticsearchBaseService.search<ElasticsearchResult<TDocument>>(request)
-            .then(response => getSearchResponse(document, response))
+        return this.elasticsearchBaseService.search<ElasticsearchResult<TDocument>>(request).then(response => getSearchResponse(document, response))
     }
 
     getIndex<TDocument extends Document>(document: ClassConstructor<TDocument>) {

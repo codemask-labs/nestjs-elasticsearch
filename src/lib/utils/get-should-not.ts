@@ -4,5 +4,6 @@ import { getBoolQuery, getMustNotQuery, getShouldQuery, MustNotQueryBody, Should
 export type ShouldNotQuery<TDocument extends Document> = ShouldQuery<TDocument>
 
 // eslint-disable-next-line camelcase
-export const getShouldNotQuery = <TDocument extends Document>(must_not: MustNotQueryBody<TDocument> | Array<MustNotQueryBody<TDocument>>): ShouldNotQuery<TDocument> =>
-    getShouldQuery(getBoolQuery(getMustNotQuery(must_not)))
+export const getShouldNotQuery = <TDocument extends Document>(
+    must_not: MustNotQueryBody<TDocument> | Array<MustNotQueryBody<TDocument>>
+): ShouldNotQuery<TDocument> => getShouldQuery(getBoolQuery(getMustNotQuery(must_not)))

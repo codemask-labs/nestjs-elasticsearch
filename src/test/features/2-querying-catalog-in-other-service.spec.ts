@@ -10,9 +10,7 @@ describe('Making a search', () => {
             ElasticsearchModule.register({
                 node: 'http://localhost:9200'
             }),
-            ElasticsearchModule.forFeature([
-                HomeDocument
-            ])
+            ElasticsearchModule.forFeature([HomeDocument])
         ]
     })
 

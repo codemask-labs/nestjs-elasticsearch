@@ -28,13 +28,13 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((): HomeDocument => {
         city,
         hasProperty: hasProperty ? true : false,
         // eslint-disable-next-line @typescript-eslint/ban-types
-        propertyType: hasProperty ? faker.helpers.arrayElement(Object.values(PropertyType)) : null as unknown as undefined,
+        propertyType: hasProperty ? faker.helpers.arrayElement(Object.values(PropertyType)) : (null as unknown as undefined),
         // eslint-disable-next-line @typescript-eslint/ban-types
-        builtInYear: hasProperty ? builtInYear : null as unknown as undefined,
+        builtInYear: hasProperty ? builtInYear : (null as unknown as undefined),
         // eslint-disable-next-line @typescript-eslint/ban-types
-        propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : null as unknown as undefined,
+        propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : (null as unknown as undefined),
         // eslint-disable-next-line @typescript-eslint/ban-types
-        propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : null as unknown as undefined
+        propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : (null as unknown as undefined)
     }
 })
 

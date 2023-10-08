@@ -26,9 +26,7 @@ describe('Making a search', () => {
             size: 10,
             body: {
                 query: getBoolQuery({
-                    must: [
-                        getTermQuery('propertyType.keyword', PropertyType.Flat)
-                    ]
+                    must: [getTermQuery('propertyType.keyword', PropertyType.Flat)]
                 })
             }
         })
