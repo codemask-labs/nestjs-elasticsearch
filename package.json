@@ -28,7 +28,7 @@
         "reflect-metadata": "0.1.13"
     },
     "devDependencies": {
-        "@faker-js/faker": "^8.1.0",
+        "@faker-js/faker": "8.1.0",
         "@nestjs/core": "10.2.7",
         "@nestjs/platform-express": "10.2.7",
         "@nestjs/testing": "10.2.7",
