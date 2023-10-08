@@ -5,5 +5,6 @@ export type ShouldNotQuery<TDocument extends Document> = ShouldQuery<TDocument>
 
 // eslint-disable-next-line camelcase
 export const getShouldNotQuery = <TDocument extends Document>(
+    // eslint-disable-next-line camelcase
     must_not: MustNotQueryBody<TDocument> | Array<MustNotQueryBody<TDocument>>
 ): ShouldNotQuery<TDocument> => getShouldQuery(getBoolQuery(getMustNotQuery(must_not)))

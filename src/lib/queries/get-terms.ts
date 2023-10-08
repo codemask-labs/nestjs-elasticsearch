@@ -1,4 +1,4 @@
-import { Document, Field, FieldType, Keyword, KeywordType } from 'lib/types'
+import { Document, Keyword, KeywordType } from 'lib/types'
 
 type TermsQueryBody<TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>> = {
     [x in TKeyword]?: Array<KeywordType<TDocument, TKeyword>>
