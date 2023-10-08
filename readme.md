@@ -47,7 +47,6 @@ export class ExampleDocument {
 }
 ```
 
-
 ```typescript
 import { Injectable } from '@nestjs/common'
 import { Index } from '@codemaskjs/nestjs-elasticsearch'
