@@ -1,7 +1,9 @@
 import { faker } from '@faker-js/faker'
+import { getMinimumShouldMatchParameter } from 'lib/parameters'
 import { HomeDocument, PropertyType } from 'test/module'
 import { getBoolQuery } from './get-bool'
 import { getRangeQuery } from './get-range'
+import { getShouldQuery } from './get-should'
 import { getTermQuery } from './get-term'
 import { getTermsQuery } from './get-terms'
 
@@ -9,7 +11,8 @@ describe('getBoolQuery', () => {
     it('accepts optional must query', () => {
         const id = faker.string.uuid()
         const query = getBoolQuery<HomeDocument>({
-            should: [
+            ...getMinimumShouldMatchParameter(1),
+            ...getShouldQuery([
                 getTermQuery('id.keyword', id),
                 getTermQuery('id', id),
                 getTermsQuery('propertyType', [PropertyType.Apartment]),
@@ -22,7 +25,7 @@ describe('getBoolQuery', () => {
                     gte: 500,
                     lte: 1000
                 })
-            ]
+            ])
         })
 
         expect(query).toEqual({
@@ -41,7 +44,9 @@ describe('getBoolQuery', () => {
                             propertyAreaSquared: { gte: 500, lte: 1000 }
                         }
                     }
-                ]
+                ],
+                // eslint-disable-next-line camelcase
+                minimum_should_match: 1
             }
         })
     })
