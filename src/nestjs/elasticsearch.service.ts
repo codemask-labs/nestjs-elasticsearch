@@ -9,7 +9,7 @@ import { Index } from './injectables'
 export class ElasticsearchService {
     constructor(private readonly elasticsearchBaseService: ElasticsearchBaseService) {}
 
-    search<TDocument extends Document>(document: ClassConstructor<TDocument>, options: SearchOptions<TDocument>) {
+    search<TDocument extends Document>(document: ClassConstructor<TDocument>, options?: SearchOptions<TDocument>) {
         const index = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, document)
 
         if (!index) {

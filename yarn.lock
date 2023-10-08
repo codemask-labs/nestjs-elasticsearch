@@ -748,11 +748,6 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@propertyguru/eslint-config-propertyguru@1.9.0":
-  version "1.9.0"
-  resolved "https://npm.pkg.github.com/download/@propertyguru/eslint-config-propertyguru/1.9.0/03bf4955420d648901fe9c6b0a19c220321772de#03bf4955420d648901fe9c6b0a19c220321772de"
-  integrity sha512-vo7dTX1A2U64tEm6kJrmZrzXp5YBckZ55wLQvuX6DGGdgMMP3dUJzLaaZ+BCD8LmrMis1W2ecOjwSPrYSqaS7w==
-
 "@sinclair/typebox@^0.27.8":
   version "0.27.8"
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"

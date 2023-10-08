@@ -17,7 +17,7 @@ export type SearchRequestBody<TDocument extends Document> = {
     aggregations?: Record<string, any>
 }
 
-export const getSearchRequest = <TDocument extends Document>(index: string, options: SearchOptions<TDocument>): SearchRequest<TDocument> & SearchOptions<TDocument> => ({
+export const getSearchRequest = <TDocument extends Document>(index: string, options?: SearchOptions<TDocument>): SearchRequest<TDocument> & SearchOptions<TDocument> => ({
     index,
     ...options
 })

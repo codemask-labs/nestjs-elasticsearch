@@ -47,12 +47,30 @@ export class ExampleDocument {
 }
 ```
 
+
+```typescript
+import { Injectable } from '@nestjs/common'
+import { Index } from '@codemaskjs/nestjs-elasticsearch'
+import { ExampleDocument } from './example.document'
+
+@Injectable()
+export class ExampleService {
+    @InjectIndex(ExampleDocument)
+    private readonly exampleIndex: Index<ExampleDocument>
+
+    getExampleDocuments() {
+        return this.exampleIndex.search()
+    }
+}
+```
+
 ```typescript
 import { ElasticsearchModule } from '@codemaskjs/nestjs-elasticsearch'
 import { ExampleDocument } from './example.document'
 
 @Module({
     imports: [
+        providers: [ExampleService],
         ElasticsearchModule.register({
             node: 'http://localhost:9200'
         }),

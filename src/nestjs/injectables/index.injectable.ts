@@ -10,7 +10,7 @@ export class Index<TDocument extends Document> implements ElasticsearchIndex<TDo
         private readonly document: ClassConstructor<TDocument>
     ) {}
 
-    search(options: SearchOptions<TDocument>) {
+    search(options?: SearchOptions<TDocument>) {
         return this.service.search(this.document, options)
     }
 }
