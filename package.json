@@ -1,6 +1,6 @@
 {
     "name": "@codemaskjs/nestjs-elasticsearch",
-    "author": "Grzegorz Wadas",
+    "author": "Przemyslaw Walczak",
     "license": "MIT",
     "version": "0.9.0",
     "description": "Nestjs Elasticsearch Module",
