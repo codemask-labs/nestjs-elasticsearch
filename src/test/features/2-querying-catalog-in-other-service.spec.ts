@@ -16,10 +16,8 @@ describe('Making a search', () => {
         ]
     })
 
-    it('has catalog available', () => {
-        const catalog = app.get(TestService)
-
-        expect(catalog).toBeDefined()
+    it('has index available', () => {
+        expect(app.get(TestService)).toBeDefined()
     })
 
     it('makes a test search query', async () => {

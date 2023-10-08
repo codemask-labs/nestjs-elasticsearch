@@ -3,7 +3,7 @@ import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { HomeDocument, PropertyType } from 'test/module'
 
-const ELASTICSEARCH_SEED_CATALOG_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
+const ELASTICSEARCH_SEED_INDEX_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
 const DOCUMENTS_COUNT = 100
 
 console.log('random data')
@@ -38,4 +38,4 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((): HomeDocument => {
     }
 })
 
-writeFileSync(ELASTICSEARCH_SEED_CATALOG_FILENAME, JSON.stringify(data, null, 4))
+writeFileSync(ELASTICSEARCH_SEED_INDEX_FILENAME, JSON.stringify(data, null, 4))

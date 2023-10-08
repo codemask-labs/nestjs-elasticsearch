@@ -1,1 +1,1 @@
-export * from './catalog.injectable'
+export * from './index.injectable'

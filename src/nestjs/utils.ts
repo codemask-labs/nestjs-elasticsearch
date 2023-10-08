@@ -1,3 +1,3 @@
-import { ELASTICSEARCH_CATALOG_PREFIX } from 'lib/constants'
+import { ELASTICSEARCH_INDEX_PREFIX } from 'lib/constants'
 
-export const getCatalogInjectionToken = (index: string) => `${ELASTICSEARCH_CATALOG_PREFIX}:${index}`
+export const getIndexInjectionToken = (index: string) => `${ELASTICSEARCH_INDEX_PREFIX}:${index}`

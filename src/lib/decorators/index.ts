@@ -1,2 +1,2 @@
-export * from './catalog.decorator'
-export * from './inject-catalog.decorator'
+export * from './register-index.decorator'
+export * from './inject-index.decorator'

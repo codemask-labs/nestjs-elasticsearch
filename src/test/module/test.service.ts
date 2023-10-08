@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common'
-import { InjectCatalog } from 'lib/decorators'
+import { InjectIndex } from 'lib/decorators'
 import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
-import { Catalog } from 'nestjs/injectables'
+import { Index } from 'nestjs/injectables'
 import { PropertyType } from './enums'
-import { HomeDocument } from './homes.catalog'
+import { HomeDocument } from './home.document'
 
 @Injectable()
 export class TestService {
-    @InjectCatalog(HomeDocument)
-    private readonly homes: Catalog<HomeDocument>
+    @InjectIndex(HomeDocument)
+    private readonly homes: Index<HomeDocument>
 
     getHomeDocuments() {
         return this.homes.search({

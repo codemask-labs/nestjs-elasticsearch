@@ -1,2 +1,2 @@
-export const ELASTICSEARCH_CATALOG_PREFIX = 'es:catalog'
-export const ELASTICSEARCH_CATALOG_NAME = 'es:catalog:name'
+export const ELASTICSEARCH_INDEX_PREFIX = 'es:index'
+export const ELASTICSEARCH_INDEX_NAME_METADATA = 'es:index:name'

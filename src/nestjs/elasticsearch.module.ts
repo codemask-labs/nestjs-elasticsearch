@@ -2,10 +2,10 @@ import { ClientOptions } from '@elastic/elasticsearch'
 import { ElasticsearchModule as BaseElasticsearchModule } from '@nestjs/elasticsearch'
 import { Module, DynamicModule, Provider } from '@nestjs/common'
 import { ClassConstructor } from 'lib/types'
-import { ELASTICSEARCH_CATALOG_NAME } from 'lib/constants'
-import { Catalog } from './injectables'
+import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
+import { Index } from './injectables'
 import { ElasticsearchService } from './elasticsearch.service'
-import { getCatalogInjectionToken } from './utils'
+import { getIndexInjectionToken } from './utils'
 
 @Module({})
 export class ElasticsearchModule {
@@ -22,16 +22,16 @@ export class ElasticsearchModule {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     static forFeature(documents: Array<ClassConstructor<any>>): DynamicModule {
         const providers: Array<Provider> = documents.map(document => {
-            const index = Reflect.getMetadata(ELASTICSEARCH_CATALOG_NAME, document)
+            const index = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, document)
 
             if (!index) {
-                throw new Error(`Class (${document.toString()}) is not registered with @Catalog(name: string) decorator!`)
+                throw new Error(`Class (${document.toString()}) is not registered with @RegisterIndex(name: string) decorator!`)
             }
 
             return {
                 inject: [ElasticsearchService],
-                provide: getCatalogInjectionToken(index),
-                useFactory: (service: ElasticsearchService) => new Catalog(service, document)
+                provide: getIndexInjectionToken(index),
+                useFactory: (service: ElasticsearchService) => new Index(service, document)
             }
         })
 

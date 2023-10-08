@@ -1,5 +1,6 @@
 export * from './get-term'
 export * from './get-terms'
 export * from './get-must'
+export * from './get-must-not'
 export * from './get-should'
 export * from './get-bool'

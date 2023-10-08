@@ -1,8 +1,8 @@
 ```typescript
 import { IsString } from 'class-validator'
-import { Catalog } from 'nestjs/decorators'
+import { RegisterIndex } from '@codemaskjs/nestjs-elasticsearch'
 
-@Catalog('example-catalog-name')
+@RegisterIndex('examples')
 export class ExampleDocument {
     @IsString()
     readonly field: string

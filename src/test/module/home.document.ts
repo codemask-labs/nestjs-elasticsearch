@@ -1,8 +1,8 @@
 import { IsString, IsEnum, IsNumber, IsBoolean, IsOptional } from 'class-validator'
-import { Catalog } from 'lib/decorators'
+import { RegisterIndex } from 'lib/decorators'
 import { PropertyType } from './enums'
 
-@Catalog('homes')
+@RegisterIndex('homes')
 export class HomeDocument {
     @IsString()
     readonly id: string

@@ -1,2 +1,5 @@
+export * from './types'
+export * from './decorators'
+export * from './elasticsearch'
 export * from './queries'
 export * from './aggregations'
