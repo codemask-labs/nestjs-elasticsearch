@@ -8,4 +8,5 @@ export type Field<TDocument extends Document> = keyof TDocument
 export type FieldType<TDocument extends Document, TField extends Field<TDocument>> = TDocument[TField]
 export type Keyword<TDocument extends Document> = (Field<TDocument> & string) | `${Field<TDocument> & string}.keyword`
 export type KeywordFields<TDocument extends Document> = { [K in keyof TDocument as K | `${K & string}.keyword`]: TDocument[K] }
-export type KeywordType<TDocument extends Document, TKeyword extends Keyword<TDocument>> = KeywordFields<TDocument>[TKeyword]
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type KeywordType<TDocument extends Document, TKeyword extends Keyword<TDocument>> = TKeyword extends keyof KeywordFields<TDocument> ? KeywordFields<TDocument>[TKeyword] : any
