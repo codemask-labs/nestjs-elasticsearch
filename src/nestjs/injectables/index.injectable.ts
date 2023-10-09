@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { ClassConstructor, Document, ElasticsearchIndex } from 'lib/types'
-import { SearchOptions } from 'lib/elasticsearch'
+import { SearchRequest } from 'lib/elasticsearch'
 import { ElasticsearchService } from '..'
 
 @Injectable()
@@ -10,7 +10,7 @@ export class Index<TDocument extends Document> implements ElasticsearchIndex<TDo
         private readonly document: ClassConstructor<TDocument>
     ) {}
 
-    search(options?: SearchOptions<TDocument>) {
+    search(options?: SearchRequest<TDocument>) {
         return this.service.search(this.document, options)
     }
 }

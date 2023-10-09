@@ -13,14 +13,12 @@ export class TestService {
     getHomeDocuments() {
         return this.homes.search({
             size: 10,
-            body: {
-                query: getBoolQuery({
-                    must: [
-                        getTermQuery('propertyType.keyword', PropertyType.Flat),
-                        getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat])
-                    ]
-                })
-            }
+            query: getBoolQuery({
+                must: [
+                    getTermQuery('propertyType.keyword', PropertyType.Flat),
+                    getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat])
+                ]
+            })
         })
     }
 }

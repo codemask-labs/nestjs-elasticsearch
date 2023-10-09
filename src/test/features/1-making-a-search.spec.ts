@@ -24,11 +24,9 @@ describe('Making a search', () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
-            body: {
-                query: getBoolQuery({
-                    must: [getTermQuery('propertyType.keyword', PropertyType.Flat)]
-                })
-            }
+            query: getBoolQuery({
+                must: [getTermQuery('propertyType.keyword', PropertyType.Flat)]
+            })
         })
 
         const allDocumentsAreValid = result.documents.every(document => {

@@ -1,17 +1,9 @@
+import { Search } from '@elastic/elasticsearch/api/requestParams'
 import { Document } from 'lib/types'
 import { BoolQuery } from '..'
 
-export type SearchOptions<TDocument extends Document> = {
-    size?: number
-    body?: SearchRequestBody<TDocument>
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type SearchRequest<TDocument extends Document> = {
-    index: string
-}
-
-export type SearchRequestBody<TDocument extends Document> = {
+    size?: number
     query?: BoolQuery<TDocument>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     aggregations?: Record<string, any>
@@ -19,8 +11,17 @@ export type SearchRequestBody<TDocument extends Document> = {
 
 export const getSearchRequest = <TDocument extends Document>(
     index: string,
-    options?: SearchOptions<TDocument>
-): SearchRequest<TDocument> & SearchOptions<TDocument> => ({
-    index,
-    ...options
-})
+    options?: SearchRequest<TDocument>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Search<Record<string, any>> => {
+    const { size, query, aggregations } = options || {}
+
+    return {
+        index,
+        size,
+        body: {
+            query,
+            aggregations
+        }
+    }
+}
