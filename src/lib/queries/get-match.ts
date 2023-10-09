@@ -15,7 +15,7 @@ export type MatchQuery<TDocument extends Document, TKeyword extends Keyword<TDoc
 
 export const getMatchQuery = <TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>>(
     field: TKeyword,
-    query: KeywordType<TDocument, TKeyword>,
+    query?: KeywordType<TDocument, TKeyword>,
     options?: MatchQueryOptions
 ): MatchQuery<TDocument, TKeyword> => ({
     match: { [field]: { query, ...options } } as MatchQueryBody<TDocument, TKeyword>

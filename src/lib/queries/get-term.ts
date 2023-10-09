@@ -10,7 +10,7 @@ export type TermQuery<TDocument extends Document, TKeyword extends Keyword<TDocu
 
 export const getTermQuery = <TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>>(
     field: TKeyword,
-    value: KeywordType<TDocument, TKeyword>
+    value?: KeywordType<TDocument, TKeyword>
 ): TermQuery<TDocument, TKeyword> => ({
     term: { [field]: { value } } as TermQueryBody<TDocument, TKeyword>
 })

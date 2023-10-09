@@ -14,7 +14,7 @@ export type MatchPhrasePrefixQuery<TDocument extends Document, TKeyword extends 
 
 export const getMatchPhrasePrefixQuery = <TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>>(
     field: TKeyword,
-    query: KeywordType<TDocument, TKeyword>,
+    query?: KeywordType<TDocument, TKeyword>,
     options?: MatchPhrasePrefixQueryOptions
 ): MatchPhrasePrefixQuery<TDocument, TKeyword> => ({
     // eslint-disable-next-line camelcase
