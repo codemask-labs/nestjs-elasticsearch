@@ -1,6 +1,7 @@
 import { Document, Keyword, KeywordType } from 'lib/types'
 
 export type RangeQueryOptions<TDocument extends Document, TKeyword extends Keyword<TDocument> = Keyword<TDocument>> = {
+    format?: string
     gt?: KeywordType<TDocument, TKeyword>
     gte?: KeywordType<TDocument, TKeyword>
     lt?: KeywordType<TDocument, TKeyword>
