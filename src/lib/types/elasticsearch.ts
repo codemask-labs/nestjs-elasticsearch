@@ -1,4 +1,4 @@
-import { SearchOptions, SearchResponse } from 'lib/elasticsearch'
+import { SearchRequest, SearchResponse } from 'lib/elasticsearch'
 import { Document } from './common'
 
 export type ElasticsearchIndex<TDocument extends Document> = {
@@ -6,5 +6,5 @@ export type ElasticsearchIndex<TDocument extends Document> = {
      *
      * @returns Promise<SearchResponse<TDocument>>
      */
-    search: (options: SearchOptions<TDocument>) => Promise<SearchResponse<TDocument>>
+    search: (options: SearchRequest<TDocument>) => Promise<SearchResponse<TDocument>>
 }
