@@ -7,7 +7,7 @@
     "repository": "https://github.com/przemyslawwalczak/nestjs-elasticsearch",
     "private": true,
     "publishConfig": {
-        "registry": "https://registry.npmjs.org/"
+        "@codemaskjs:registry": "https://registry.npmjs.org/"
     },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
