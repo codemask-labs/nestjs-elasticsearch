@@ -5,10 +5,6 @@
     "version": "0.1.0",
     "description": "Nestjs Elasticsearch Module",
     "repository": "https://github.com/przemyslawwalczak/nestjs-elasticsearch",
-    "private": true,
-    "publishConfig": {
-        "@codemaskjs:registry": "https://registry.npmjs.org/"
-    },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "commitlint": {
