@@ -18,8 +18,9 @@
     },
     "keywords": [
         "nestjs",
-        "pgds-nestjs",
-        "pgds-nestjs-elasticsearch"
+        "typescript",
+        "typesafe",
+        "nestjs-elasticsearch"
     ],
     "dependencies": {
         "@elastic/elasticsearch": "7.13.0",
