@@ -89,48 +89,5 @@
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/"
-    },
-    "release": {
-        "branches": [
-            "main"
-        ],
-        "plugins": [
-            "@semantic-release/release-notes-generator",
-            [
-                "@semantic-release/npm",
-                {
-                    "npmPublish": true
-                }
-            ],
-            "@semantic-release/changelog",
-            [
-                "@semantic-release/git",
-                {
-                    "assets": [
-                        "CHANGELOG.md",
-                        "package.json"
-                    ]
-                }
-            ],
-            [
-                "@semantic-release/github",
-                {
-                    "successComment": false,
-                    "failComment": false
-                }
-            ],
-            [
-                "@semantic-release/commit-analyzer",
-                {
-                    "preset": "conventionalcommits"
-                }
-            ],
-            [
-                "@semantic-release/exec",
-                {
-                    "publishCmd": "echo ::set-output name=nextVer::${nextRelease.version}"
-                }
-            ]
-        ]
     }
 }
