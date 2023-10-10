@@ -1,0 +1,44 @@
+name: Release
+on:
+    workflow_dispatch:
+        inputs:
+            desc:
+                description: 'Description'
+                required: false
+                default: 'Manual release'
+jobs:
+    release:
+        name: Release
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        env:
+            GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+            HUSKY: 0
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3.1.0
+              with:
+                  ref: ${{ github.ref }}
+                  fetch-depth: 0
+                  persist-credentials: false
+            - name: Set Environment Variables
+              uses: ./.github/actions/setvars
+              with:
+                  varFilePath: ./.github/variables/node.env
+            - name: Setup Node.js
+              uses: actions/setup-node@v3.5.1
+              with:
+                  node-version: ${{ env.NODE_VERSION }}
+                  cache: 'yarn'
+            - name: Install dependencies
+              run: yarn install
+            - name: Build package
+              run: yarn build
+            - name: Run semantic release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: yarn semantic-release --branches ${{ github.ref_name }}
+              id: ver
+        outputs:
+            version: ${{ steps.ver.outputs.nextVer }}
