@@ -29,13 +29,13 @@ jobs:
                   fetch-depth: 0
                   persist-credentials: false
             - name: Set Environment Variables
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               uses: ./.github/actions/setvars
               with:
                   varFilePath: ./.github/variables/node.env
             - name: Setup Node.js
               uses: actions/setup-node@v3.5.1
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               with:
                   node-version: ${{ env.NODE_VERSION }}
                   cache: 'yarn'
