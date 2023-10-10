@@ -1,5 +1,5 @@
 {
-    "name": "@codemaskjs/nestjs-elasticsearch",
+    "name": "@przemyslawwalczak/nestjs-elasticsearch",
     "author": "Przemysław Walczak <p.d.walczak@gmail.com> (https://github.com/przemyslawwalczak)",
     "license": "MIT",
     "version": "0.1.0",
