@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 30
         env:
-            GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             HUSKY: 0
         steps:
             - name: Checkout
