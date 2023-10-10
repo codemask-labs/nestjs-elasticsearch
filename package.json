@@ -1,11 +1,23 @@
 {
     "name": "@codemaskjs/nestjs-elasticsearch",
-    "author": "Przemyslaw Walczak",
+    "author": "Przemysław Walczak <p.d.walczak@gmail.com> (https://github.com/przemyslawwalczak)",
     "license": "MIT",
     "version": "0.1.0",
     "description": "Nestjs Elasticsearch Module",
+    "repository": "https://github.com/przemyslawwalczak/nestjs-elasticsearch",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "eslintIgnore": [
+        "node_modules/"
+    ],
     "scripts": {
         "test": "jest --config=./jest.config.json --pathPattern=src/*",
         "build:package": "yarn tsc --declaration --project tsconfig.build.json",
