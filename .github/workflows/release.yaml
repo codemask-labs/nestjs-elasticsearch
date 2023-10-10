@@ -6,6 +6,8 @@ on:
                 description: 'Description'
                 required: false
                 default: 'Manual release'
+permissions:
+    contents: read # for checkout
 jobs:
     release:
         name: Release
@@ -38,6 +40,8 @@ jobs:
               run: yarn install
             - name: Build package
               run: yarn build
+            - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+              run: npm audit signatures
             - name: Run semantic release
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
