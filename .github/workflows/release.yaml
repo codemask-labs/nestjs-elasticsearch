@@ -19,6 +19,7 @@ jobs:
             pull-requests: write # to be able to comment on released pull requests
             id-token: write # to enable use of OIDC for npm provenance
         env:
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             HUSKY: 0
         steps:
             - name: Checkout
