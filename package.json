@@ -4,7 +4,6 @@
     "license": "MIT",
     "version": "0.1.0",
     "description": "Nestjs Elasticsearch Module",
-    "repository": "https://github.com/przemyslawwalczak/nestjs-elasticsearch",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "commitlint": {
@@ -82,6 +81,9 @@
         "tsconfig-paths": "4.2.0",
         "tscpaths": "0.0.9",
         "typescript": "5.2.2"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
     },
     "release": {
         "branches": [
