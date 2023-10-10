@@ -80,3 +80,9 @@ import { ExampleDocument } from './example.document'
 })
 class AppModule {}
 ```
+
+## Future actions
+1. Add case_insensitive option to term search
+2. Filter undefined/null values from request body
+3. Add <size> field to aggregations body so that it can return more than default 10 results
+4. Add <sort> and <search_after> fields to request type and <sort> field to response type to enable pagination
