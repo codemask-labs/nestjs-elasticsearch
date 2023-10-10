@@ -1,0 +1,18 @@
+node_modules
+src
+docs
+.github
+.git
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+docker-compose.yaml
+jest.config.json
+jest.setup.ts
