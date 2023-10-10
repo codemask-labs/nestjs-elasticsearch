@@ -29,6 +29,8 @@ jobs:
                   fetch-depth: 0
                   persist-credentials: false
             - name: Set Environment Variables
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               uses: ./.github/actions/setvars
               with:
                   varFilePath: ./.github/variables/node.env
