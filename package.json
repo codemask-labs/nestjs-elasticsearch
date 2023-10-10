@@ -84,6 +84,7 @@
         "typescript": "5.2.2"
     },
     "publishConfig": {
-        "@codemaskjs:registry": "https://registry.npmjs.org/"
+        "@codemaskjs:registry": "https://registry.npmjs.org/",
+        "access": "public"
     }
 }
