@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { ClassConstructor, Document, ElasticsearchIndex } from 'lib/types'
 import { SearchRequest } from 'lib/elasticsearch'
 import { ElasticsearchService } from '..'
+import { AggregationsBody } from 'lib/aggregations'
 
 @Injectable()
 export class Index<TDocument extends Document> implements ElasticsearchIndex<TDocument> {
@@ -10,7 +11,7 @@ export class Index<TDocument extends Document> implements ElasticsearchIndex<TDo
         private readonly document: ClassConstructor<TDocument>
     ) {}
 
-    search<TAggregationKeys extends string>(options?: SearchRequest<TDocument, TAggregationKeys>) {
+    search<TAggregationsBody extends AggregationsBody<TDocument>>(options?: SearchRequest<TDocument, TAggregationsBody>) {
         return this.service.search(this.document, options)
     }
 }
