@@ -6,6 +6,7 @@ describe('getValueCountAggregation', () => {
         const query = getValueCountAggregation<HomeDocument>('address')
 
         expect(query).toEqual({
+            // eslint-disable-next-line camelcase
             value_count: {
                 field: 'address'
             }

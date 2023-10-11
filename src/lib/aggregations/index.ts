@@ -1,3 +1,4 @@
+export * from './types'
 export * from './get-sum'
 export * from './get-avg'
 export * from './get-missing-value'
