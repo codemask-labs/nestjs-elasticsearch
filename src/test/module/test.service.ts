@@ -4,6 +4,7 @@ import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
 import { Index } from 'nestjs/injectables'
 import { PropertyType } from './enums'
 import { HomeDocument } from './home.document'
+import { getAggregations, getTermsAggregation, getValueCountAggregation } from 'lib/aggregations'
 
 @Injectable()
 export class TestService {
@@ -19,11 +20,15 @@ export class TestService {
                     getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat])
                 ]
             }),
-            aggregations: {
+            aggregations: getAggregations({
                 test: {
-                    terms: { field: 'address.keyword', size: 10 }
-                }
-            }
+                    ...getTermsAggregation('address.keyword', 10),
+                    aggs: getAggregations({
+                        nested: getValueCountAggregation('id')
+                    })
+                },
+                count: getValueCountAggregation('id')
+            })
         })
     }
 }
