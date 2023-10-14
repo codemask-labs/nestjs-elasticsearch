@@ -9,9 +9,9 @@ import { TermsAggregation } from './get-terms'
 import { ValueCountAggregation } from './get-value-count'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type AggregationsBody<TDocument extends Document, TAggregations extends Aggregations<TDocument> = Record<string, any>> = {
+export type AggregationsBody<TDocument extends Document> = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [x: string]: TAggregations & (
+    [x: string]: Aggregations<TDocument> & (
         AvgAggregation<TDocument> |
         DateHistogramAggregation<TDocument> |
         MissingValueAggregation<TDocument> |
@@ -24,13 +24,13 @@ export type AggregationsBody<TDocument extends Document, TAggregations extends A
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type Aggregations<TDocument extends Document, TAggregationsBody extends AggregationsBody<TDocument> = Record<string, any>> = {
+export type Aggregations<TDocument extends Document, TAggregationsBody extends AggregationsBody<TDocument> = AggregationsBody<TDocument>> = {
     aggregations?: TAggregationsBody
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getAggregations = <TDocument extends Document, TAggregationsBody extends AggregationsBody<TDocument> = Record<string, any>>(
+export const getAggregations = <TDocument extends Document, TAggregationsBody extends AggregationsBody<TDocument> = AggregationsBody<TDocument>>(
     aggregations: TAggregationsBody
 ): Aggregations<TDocument, TAggregationsBody> => ({
-    aggregations: aggregations as TAggregationsBody
+    aggregations
 })

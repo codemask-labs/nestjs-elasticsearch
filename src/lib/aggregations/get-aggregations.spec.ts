@@ -4,8 +4,8 @@ import { getTermsAggregation } from './get-terms'
 
 describe('getAvgAggregation', () => {
     it('accepts only schema field', () => {
-        const query = getAggregations({
-            test: getTermsAggregation<HomeDocument>('address.keyword')
+        const query = getAggregations<HomeDocument>({
+            test: getTermsAggregation('address.keyword')
         })
 
         expect(query).toEqual({
