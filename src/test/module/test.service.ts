@@ -23,11 +23,11 @@ export class TestService {
             aggregations: {
                 addresses: {
                     ...getTermsAggregation('address.keyword'),
-                    aggregations: {
+                    aggs: {
                         test: {
-                            ...getSumAggregation('propertyAreaSquared'),
-                            aggregations: {
-                                hello: getAvgAggregation('propertyAreaSquared')
+                            ...getSumAggregation('propertyAreaSquared.keyword'),
+                            aggs: {
+                                hello: getAvgAggregation('propertyAreaSquared.keyword')
                             }
                         }
                     }

@@ -1,13 +1,13 @@
-import { Document, Key } from 'lib/types'
+import { Document, Field } from 'lib/types'
 
 export type AvgAggregationBody<TDocument extends Document> = {
-    field: Key<TDocument>
+    field: Field<TDocument>
 }
 
 export type AvgAggregation<TDocument extends Document> = {
     avg: AvgAggregationBody<TDocument>
 }
 
-export const getAvgAggregation = <TDocument extends Document>(field: Key<TDocument>): AvgAggregation<TDocument> => ({
+export const getAvgAggregation = <TDocument extends Document, TField extends Field<TDocument>>(field: TField): AvgAggregation<TDocument> => ({
     avg: { field }
 })
