@@ -86,3 +86,7 @@ class AppModule {}
 2. Filter undefined/null values from request body
 3. Add <size> field to aggregations body so that it can return more than default 10 results
 4. Add <sort> and <search_after> fields to request type and <sort> field to response type to enable pagination
+5. Add `e2e` tests setup for features scenario tests
+6. Add `extraction` of aggregations on `response`
+7. Add `healthcheck` from `ElasticsearchService`
+8. Add `checkDocumentIntegrity` with the connection on the source on runtime
