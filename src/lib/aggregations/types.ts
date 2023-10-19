@@ -19,11 +19,11 @@ export type AggregationList<TDocument extends Document> = (
     ValueCountAggregation<TDocument>
 )
 
+export type AggregationsBody<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
+    [Key in keyof TAggregationsBody]: TAggregationsBody[Key]
+}
+
 export type Aggregations<TDocument extends Document> = AggregationList<TDocument> & {
     aggs?: AggregationsBody<TDocument, Record<string, Aggregations<TDocument>>>
     aggregations?: AggregationsBody<TDocument, Record<string, Aggregations<TDocument>>>
-}
-
-export type AggregationsBody<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
-    [Key in keyof TAggregationsBody]: TAggregationsBody[Key]
 }
