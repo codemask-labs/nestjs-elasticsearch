@@ -34,14 +34,5 @@ export class TestService {
                 }
             }
         })
-            .then(result => {
-                console.log('result:', result.aggregations)
-
-                result.aggregations.addresses.aggregations.test.sum.field
-                result.aggregations.addresses.aggregations.test.aggregations.hello
-                result.aggregations.addresses.terms.field
-
-                return result
-            })
     }
 }

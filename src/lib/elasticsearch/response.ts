@@ -25,5 +25,5 @@ export const getSearchResponse = <TDocument extends Document, TAggregationsBody 
 
         return [...result, Object.assign(new document(), source)]
     }, [] as Array<TDocument>),
-    aggregations: body.aggregations as AggregationsBody<TDocument, TAggregationsBody>
+    aggregations: (body.aggregations || {}) as AggregationsBody<TDocument, TAggregationsBody>
 })
