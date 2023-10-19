@@ -16,7 +16,7 @@
         "node_modules/"
     ],
     "scripts": {
-        "test": "yarn jest --config=./jest.config.json --pathPattern=src/*",
+        "test": "jest --config=jest.config.json --pathPattern=src/*",
         "build:package": "yarn tsc --declaration --project tsconfig.build.json",
         "build:replace-tspaths": "yarn tscpaths -p tsconfig.build.json -s ./src -o ./dist",
         "build": "yarn rimraf dist && yarn build:package && yarn build:replace-tspaths",
