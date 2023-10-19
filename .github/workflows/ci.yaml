@@ -23,5 +23,8 @@ jobs:
       - name: Type check files
         run: yarn tsc
 
+      - name: Hello
+        run: node -e console.log(process.cwd())
+
       - name: Run tests
-        run: yarn test
+        run: yarn jest
