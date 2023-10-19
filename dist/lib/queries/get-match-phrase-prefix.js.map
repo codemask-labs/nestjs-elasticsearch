@@ -1,0 +1,1 @@
+{"version":3,"file":"get-match-phrase-prefix.js","sourceRoot":"","sources":["../../../src/lib/queries/get-match-phrase-prefix.ts"],"names":[],"mappings":";;;;;;;;;;;;;;AAcO,IAAM,yBAAyB,GAAG,UACrC,KAAe,EACf,KAAsC,EACtC,OAAuC;;IACO,OAAA,CAAC;QAE/C,mBAAmB,EAAE,CAAA,SAAE,GAAC,KAAK,eAAK,KAAK,OAAA,IAAK,OAAO,CAAE,IAAqD,CAAA;KAC7G,CAAC;AAHgD,CAGhD,CAAA;AAPW,QAAA,yBAAyB,6BAOpC"}

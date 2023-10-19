@@ -1,0 +1,1 @@
+{"version":3,"file":"register-index.decorator.js","sourceRoot":"","sources":["../../../src/lib/decorators/register-index.decorator.ts"],"names":[],"mappings":";;;AAAA,2CAAiE;AAE1D,IAAM,aAAa,GAAE,UAAC,IAAY,IAAK,OAAA,UAAI,WAAwB;IACtE,OAAO,CAAC,cAAc,CAAC,6CAAiC,EAAE,IAAI,EAAE,WAAW,CAAC,CAAA;IAE5E,OAAO,WAAW,CAAA;AACtB,CAAC,EAJ6C,CAI7C,CAAA;AAJY,QAAA,aAAa,iBAIzB"}

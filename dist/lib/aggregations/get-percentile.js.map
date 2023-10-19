@@ -1,0 +1,1 @@
+{"version":3,"file":"get-percentile.js","sourceRoot":"","sources":["../../../src/lib/aggregations/get-percentile.ts"],"names":[],"mappings":";;;AAWO,IAAM,wBAAwB,GAAG,UAA6B,KAAqB,EAAE,QAAuB,IAAuC,OAAA,CAAC;IACvJ,WAAW,EAAE;QACT,KAAK,OAAA;QACL,QAAQ,UAAA;KACX;CACJ,CAAC,EALwJ,CAKxJ,CAAA;AALW,QAAA,wBAAwB,4BAKnC"}
