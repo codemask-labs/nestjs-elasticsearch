@@ -1,6 +1,6 @@
 {
     "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
-    "moduleFileExtensions": ["cjs", "js", "json", "ts"],
+    "moduleFileExtensions": ["cjs", "js", "ts"],
     "modulePaths": ["<rootDir>", "src"],
     "moduleNameMapper": {
         "^lib/(.*)$": ["<rootDir>/src/lib/$1"],
