@@ -1,1 +1,0 @@
-{"version":3,"file":"get-date-histogram.js","sourceRoot":"","sources":["../../../src/lib/aggregations/get-date-histogram.ts"],"names":[],"mappings":";;;AAYO,IAAM,2BAA2B,GAAG,UAA6B,KAAqB,EAAE,QAAyD,IAA0C,OAAA,CAAC;IAE/L,cAAc,EAAE;QACZ,KAAK,OAAA;QAGL,iBAAiB,EAAE,QAAQ;KAC9B;CACJ,CAAC,EARgM,CAQhM,CAAA;AARW,QAAA,2BAA2B,+BAQtC"}
