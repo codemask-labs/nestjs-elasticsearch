@@ -1,5 +1,6 @@
 {
     "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+    "testPathIgnorePatterns": ["<rootDir>/src/test"],
     "moduleFileExtensions": ["cjs", "js", "ts"],
     "modulePaths": ["<rootDir>", "src"],
     "moduleNameMapper": {
