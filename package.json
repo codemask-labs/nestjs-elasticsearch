@@ -81,7 +81,8 @@
         "ts-node": "10.9.1",
         "tsconfig-paths": "4.2.0",
         "tscpaths": "0.0.9",
-        "typescript": "5.2.2"
+        "typescript": "5.2.2",
+        "wrap-ansi": "7"
     },
     "publishConfig": {
         "@codemaskjs:registry": "https://registry.npmjs.org/",
