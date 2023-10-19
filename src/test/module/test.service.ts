@@ -19,15 +19,7 @@ export class TestService {
                     getTermQuery('propertyType.keyword', PropertyType.Flat),
                     getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat])
                 ]
-            }),
-            aggregations: {
-                addresses: {
-                    ...getTermsAggregation('address.keyword'),
-                    aggs: {
-                        test: getSumAggregation('propertyAreaSquared.keyword')
-                    }
-                }
-            }
+            })
         })
     }
 }
