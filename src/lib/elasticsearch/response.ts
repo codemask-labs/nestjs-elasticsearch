@@ -1,5 +1,4 @@
-import { ApiResponse } from '@elastic/elasticsearch'
-import type { estypes } from '@elastic/elasticsearch'
+import type { estypes, ApiResponse } from '@elastic/elasticsearch'
 import { ClassConstructor, Document } from 'lib/types'
 import { Aggregations, AggregationsBody } from '..'
 

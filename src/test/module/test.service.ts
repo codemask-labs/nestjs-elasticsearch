@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common'
 import { InjectIndex } from 'lib/decorators'
-import { getAvgAggregation, getSumAggregation, getTermsAggregation } from 'lib/aggregations'
 import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
 import { Index } from 'nestjs/injectables'
 import { PropertyType } from './enums'
