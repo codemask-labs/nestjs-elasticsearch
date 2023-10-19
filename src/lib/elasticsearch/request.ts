@@ -12,7 +12,7 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
 export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>>(
     index: string,
     options?: SearchRequest<TDocument, TAggregationsBody>
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): RequestParams.Search<Record<string, any>> => {
     const { size, from, query, aggregations } = options || {}
 

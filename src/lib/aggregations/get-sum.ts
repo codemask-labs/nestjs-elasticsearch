@@ -8,6 +8,8 @@ export type SumAggregation<TDocument extends Document> = {
     sum: SumAggregationBody<TDocument>
 }
 
-export const getSumAggregation = <TDocument extends Document, Tkey extends Key<TDocument> = Key<TDocument>>(field: Tkey): SumAggregation<TDocument> => ({
+export const getSumAggregation = <TDocument extends Document, Tkey extends Key<TDocument> = Key<TDocument>>(
+    field: Tkey
+): SumAggregation<TDocument> => ({
     sum: { field } as SumAggregationBody<TDocument>
 })

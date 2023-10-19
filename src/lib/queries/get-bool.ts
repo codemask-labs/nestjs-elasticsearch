@@ -4,8 +4,7 @@ import { MustQuery } from './get-must'
 import { MustNotQuery } from './get-must-not'
 import { MinimumShouldMatchParameter } from 'lib/parameters'
 
-export type BoolQueryBody<TDocument extends Document> =
-    MustQuery<TDocument> &
+export type BoolQueryBody<TDocument extends Document> = MustQuery<TDocument> &
     ShouldQuery<TDocument> &
     MustNotQuery<TDocument> &
     MinimumShouldMatchParameter

@@ -20,7 +20,7 @@
         "build:package": "yarn tsc --declaration --project tsconfig.build.json",
         "build:replace-tspaths": "yarn tscpaths -p tsconfig.build.json -s ./src -o ./dist",
         "build": "yarn rimraf dist && yarn build:package && yarn build:replace-tspaths",
-        "lint": "yarn eslint . --project tsconfig.json --ext .ts",
+        "lint": "yarn eslint--ext .ts .",
         "format": "yarn prettier -w ./src",
         "generate:random-data": "yarn ts-node ./src/test/scripts/generate-random-data.ts",
         "es:seed": "yarn ts-node --project tsconfig.json ./src/test/scripts/es-seed.ts"
