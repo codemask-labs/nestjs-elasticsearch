@@ -28,7 +28,7 @@ jobs:
 
       - name: Hello
         run: |
-          node -e "const fs = require('fs');console.log(fs.readFileSync('./jest.config.json'))"
+          node -e "const fs = require('fs');console.log(fs.readFileSync('./jest.config.js'))"
 
       - name: Run tests
         run: yarn jest
