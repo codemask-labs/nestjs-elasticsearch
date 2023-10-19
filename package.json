@@ -7,7 +7,6 @@
     "description": "Nestjs Elasticsearch Module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "type": "commonjs",
     "commitlint": {
         "extends": [
             "@commitlint/config-conventional"
@@ -17,10 +16,10 @@
         "node_modules/"
     ],
     "scripts": {
-        "test": "yarn jest --config=./jest.config.json --pathPattern=src/*",
+        "test": "jest --config=./jest.config.json --pathPattern=src/*",
         "build:package": "yarn tsc --declaration --project tsconfig.build.json",
         "build:replace-tspaths": "yarn tscpaths -p tsconfig.build.json -s ./src -o ./dist",
-        "build": "rimraf dist && yarn build:package && yarn build:replace-tspaths",
+        "build": "yarn rimraf dist && yarn build:package && yarn build:replace-tspaths",
         "lint": "yarn eslint . --project tsconfig.json --ext .ts,.tsx",
         "format": "yarn prettier -w ./src",
         "generate:random-data": "yarn ts-node ./src/test/scripts/generate-random-data.ts",

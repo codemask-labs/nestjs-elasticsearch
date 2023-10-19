@@ -1,6 +1,6 @@
 {
     "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
-    "moduleFileExtensions": ["js", "json", "ts"],
+    "moduleFileExtensions": ["cjs", "js", "json", "ts"],
     "modulePaths": ["<rootDir>", "src"],
     "moduleNameMapper": {
         "^lib/(.*)$": ["<rootDir>/src/lib/$1"],
@@ -10,7 +10,7 @@
     "rootDir": ".",
     "testRegex": ".spec.ts$",
     "transform": {
-        "^.+\\.(t|j)s$": "ts-jest"
+        "^.+\\.ts$": "ts-jest"
     },
     "restoreMocks": true,
     "resetMocks": true

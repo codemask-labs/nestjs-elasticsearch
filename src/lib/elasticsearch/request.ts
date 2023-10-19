@@ -1,4 +1,4 @@
-import { Search } from '@elastic/elasticsearch/api/requestParams'
+import type { RequestParams } from '@elastic/elasticsearch'
 import { Document } from 'lib/types'
 import { Aggregations, BoolQuery } from '..'
 
@@ -13,7 +13,7 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
     index: string,
     options?: SearchRequest<TDocument, TAggregationsBody>
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): Search<Record<string, any>> => {
+): RequestParams.Search<Record<string, any>> => {
     const { size, from, query, aggregations } = options || {}
 
     return {

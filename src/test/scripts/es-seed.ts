@@ -1,13 +1,17 @@
 import { Client } from '@elastic/elasticsearch'
+import { readFile } from 'fs/promises'
+import { join } from 'path'
 
 const index = 'homes'
 const client = new Client({
     node: 'http://localhost:9200'
 })
 
-import(`./seeds/homes.seed.json`)
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .then((data: any) => data.default)
+const path = join(__dirname, './seeds/homes.seed.json')
+
+readFile(path)
+    .then(buffer => buffer.toString())
+    .then(data => JSON.parse(data))
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .then((data: any) => data.flatMap((record: any) => [{ index: { _index: index } }, record]))
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

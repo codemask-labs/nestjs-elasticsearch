@@ -9,7 +9,7 @@ export type TermsAggregation<TDocument extends Document> = {
     terms: TermsAggregationBody<TDocument>
 }
 
-export const getTermsAggregation = <TDocument extends Document, TField extends Field<TDocument>>(field: TField, size: number = 10): TermsAggregation<TDocument> => ({
+export const getTermsAggregation = <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(field: TField, size: number = 10): TermsAggregation<TDocument> => ({
     terms: {
         field,
         size

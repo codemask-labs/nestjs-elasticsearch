@@ -24,12 +24,7 @@ export class TestService {
                 addresses: {
                     ...getTermsAggregation('address.keyword'),
                     aggs: {
-                        test: {
-                            ...getSumAggregation('propertyAreaSquared.keyword'),
-                            aggs: {
-                                hello: getAvgAggregation('propertyAreaSquared.keyword')
-                            }
-                        }
+                        test: getSumAggregation('propertyAreaSquared.keyword')
                     }
                 }
             }
