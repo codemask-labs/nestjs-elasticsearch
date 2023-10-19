@@ -25,10 +25,9 @@
         "watchFile": "fixedpollinginterval"
     },
     "ts-node": {
-        "esm": true,
         "transpileOnly": true,
         "require": ["reflect-metadata", "tsconfig-paths/register"]
     },
-    "include": ["src", "jest.setup.ts", "jest.config.js"],
+    "include": ["src", "jest.setup.ts"],
     "exclude": ["dist", "node_modules"]
 }
