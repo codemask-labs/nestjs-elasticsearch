@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectIndex } from 'lib/decorators'
+import { getAvgAggregation, getSumAggregation, getTermsAggregation } from 'lib/aggregations'
 import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
-import { getAggregations, getTermsAggregation } from 'lib/aggregations'
 import { Index } from 'nestjs/injectables'
 import { PropertyType } from './enums'
 import { HomeDocument } from './home.document'
@@ -21,22 +21,25 @@ export class TestService {
                 ]
             }),
             aggregations: {
-                test: {
-                    terms: { field: 'address.keyword', size: 10 },
-                    ...getAggregations({
-                        homeTypes: getTermsAggregation('propertyType.keyword')
-                    })
+                addresses: {
+                    ...getTermsAggregation('address.keyword'),
+                    aggregations: {
+                        test: {
+                            ...getSumAggregation('propertyAreaSquared'),
+                            aggregations: {
+                                hello: getAvgAggregation('propertyAreaSquared')
+                            }
+                        }
+                    }
                 }
             }
         })
             .then(result => {
                 console.log('result:', result.aggregations)
 
-                result.aggregations.test
-
-                // result.aggregations?.test.hello.hasProperty
-
-                // result.aggregations?.count
+                result.aggregations.addresses.aggregations.test.sum.field
+                result.aggregations.addresses.aggregations.test.aggregations.hello
+                result.aggregations.addresses.terms.field
 
                 return result
             })

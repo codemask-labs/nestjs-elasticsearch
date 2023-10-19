@@ -1,23 +1,23 @@
 import { ApiResponse } from '@elastic/elasticsearch'
 import { HitsMetadata } from '@elastic/elasticsearch/api/types'
 import { ClassConstructor, Document } from 'lib/types'
+import { Aggregations, AggregationsBody } from '..'
 
-export type ElasticsearchResult<TDocument extends Document> = {
+export type ElasticsearchResult<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     hits: HitsMetadata<TDocument>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    aggregations?: Record<string, any>
+    aggregations?: AggregationsBody<TDocument, TAggregationsBody>
 }
 
-export type SearchResponse<TDocument extends Document> = {
+export type SearchResponse<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     documents: Array<TDocument>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    aggregations: Record<string, any>
+    aggregations: AggregationsBody<TDocument, TAggregationsBody>
 }
 
-export const getSearchResponse = <TDocument extends Document>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getSearchResponse = <TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>>(
     document: ClassConstructor<TDocument>,
-    { body }: ApiResponse<ElasticsearchResult<TDocument>>
-): SearchResponse<TDocument> => ({
+    { body }: ApiResponse<ElasticsearchResult<TDocument, TAggregationsBody>>
+): SearchResponse<TDocument, TAggregationsBody> => ({
     documents: body.hits.hits.reduce((result, { _source: source }) => {
         if (!source) {
             return result
@@ -25,6 +25,5 @@ export const getSearchResponse = <TDocument extends Document>(
 
         return [...result, Object.assign(new document(), source)]
     }, [] as Array<TDocument>),
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    aggregations: body.aggregations || {} as Record<string, any>
+    aggregations: body.aggregations as AggregationsBody<TDocument, TAggregationsBody>
 })

@@ -1,18 +1,18 @@
 import { Search } from '@elastic/elasticsearch/api/requestParams'
 import { Document } from 'lib/types'
-import { BoolQuery, AggregationsBody } from '..'
+import { Aggregations, BoolQuery } from '..'
 
-export type SearchRequest<TDocument extends Document, TAggregationsBody extends AggregationsBody<TDocument>> = {
+export type SearchRequest<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     size?: number
     from?: number
     query?: BoolQuery<TDocument>
     aggregations?: TAggregationsBody
 }
 
-export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsBody<TDocument>>(
+export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>>(
     index: string,
     options?: SearchRequest<TDocument, TAggregationsBody>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Search<Record<string, any>> => {
     const { size, from, query, aggregations } = options || {}
 
