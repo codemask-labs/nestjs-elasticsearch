@@ -3,6 +3,10 @@
         "strict": true,
         "target": "ESNext",
         "module": "Node16",
+        "lib": [
+            "esnext",
+            "dom"
+        ],
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
