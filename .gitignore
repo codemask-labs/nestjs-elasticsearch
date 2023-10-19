@@ -37,7 +37,6 @@ yarn-debug.log
 yarn-error.log
 
 # Yarn
-.yarn
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -45,4 +44,5 @@ yarn-error.log
 !.yarn/sdks
 !.yarn/versions
 
+# Project development
 dist
