@@ -21,8 +21,8 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
         size,
         from,
         body: {
-            query: query || {},
-            aggregations: aggregations || {}
+            query,
+            aggregations
         }
     }
 }
