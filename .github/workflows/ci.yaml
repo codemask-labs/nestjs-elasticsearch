@@ -24,7 +24,7 @@ jobs:
         run: yarn tsc
 
       - name: Hello
-        run: node -e console.log(process.cwd())
+        run: node -e "console.log(process.cwd())"
 
       - name: Run tests
         run: yarn jest
