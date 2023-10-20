@@ -19,9 +19,7 @@ export type CompositeAggregationOptions<TDocument extends Document> = {
     after?: AfterKey<TDocument>
 }
 
-export type CompositeAggregationBody<TDocument extends Document> = {
-    size?: number
-    after?: AfterKey<TDocument>
+export type CompositeAggregationBody<TDocument extends Document> = CompositeAggregationOptions<TDocument> & {
     sources: Array<CompositeAggregationList<TDocument>>
 }
 
