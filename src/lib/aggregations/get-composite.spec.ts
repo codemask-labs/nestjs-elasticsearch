@@ -17,7 +17,6 @@ describe('getCompositeAggregation', () => {
         })
 
         expect(query).toEqual({
-            // eslint-disable-next-line camelcase
             composite: {
                 sources,
                 after: {

@@ -6,7 +6,6 @@ describe('getHistogramAggregation', () => {
         const query = getHistogramAggregation<HomeDocument>('city', 5)
 
         expect(query).toEqual({
-            // eslint-disable-next-line camelcase
             histogram: {
                 field: 'city',
                 interval: 5
