@@ -442,6 +442,8 @@ __metadata:
     "@semantic-release/git": 10.0.1
     "@semantic-release/npm": 11.0.0
     "@semantic-release/release-notes-generator": 12.0.0
+    "@swc/core": 1.3.93
+    "@swc/jest": 0.2.29
     "@types/jest": 29.5.6
     "@types/node": 20.8.7
     "@types/ramda": 0.29.7
@@ -471,7 +473,6 @@ __metadata:
     rxjs: 7.8.1
     semantic-release: 22.0.5
     supertest: 6.3.3
-    ts-jest: 29.1.1
     ts-node: 10.9.1
     tsconfig-paths: 4.2.0
     tscpaths: 0.0.9
@@ -715,6 +716,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jest/create-cache-key-function@npm:^27.4.2":
+  version: 27.5.1
+  resolution: "@jest/create-cache-key-function@npm:27.5.1"
+  dependencies:
+    "@jest/types": ^27.5.1
+  checksum: a6c3a8c769aca6f66f5dc80f1c77e66980b4f213a6b2a15a92ba3595f032848a1261c06c9c798dcf2b672b1ffbefad5085af89d130548741c85ddbe0cf4284e7
+  languageName: node
+  linkType: hard
+
 "@jest/environment@npm:^29.7.0":
   version: 29.7.0
   resolution: "@jest/environment@npm:29.7.0"
@@ -873,6 +883,19 @@ __metadata:
     slash: ^3.0.0
     write-file-atomic: ^4.0.2
   checksum: 0f8ac9f413903b3cb6d240102db848f2a354f63971ab885833799a9964999dd51c388162106a807f810071f864302cdd8e3f0c241c29ce02d85a36f18f3f40ab
+  languageName: node
+  linkType: hard
+
+"@jest/types@npm:^27.5.1":
+  version: 27.5.1
+  resolution: "@jest/types@npm:27.5.1"
+  dependencies:
+    "@types/istanbul-lib-coverage": ^2.0.0
+    "@types/istanbul-reports": ^3.0.0
+    "@types/node": "*"
+    "@types/yargs": ^16.0.0
+    chalk: ^4.0.0
+  checksum: d1f43cc946d87543ddd79d49547aab2399481d34025d5c5f2025d3d99c573e1d9832fa83cef25e9d9b07a8583500229d15bbb07b8e233d127d911d133e2f14b1
   languageName: node
   linkType: hard
 
@@ -1697,6 +1720,148 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/core-darwin-arm64@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-darwin-arm64@npm:1.3.93"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@swc/core-darwin-x64@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-darwin-x64@npm:1.3.93"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm-gnueabihf@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.3.93"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-gnu@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.3.93"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-musl@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-linux-arm64-musl@npm:1.3.93"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-gnu@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-linux-x64-gnu@npm:1.3.93"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-musl@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-linux-x64-musl@npm:1.3.93"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-arm64-msvc@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.3.93"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-ia32-msvc@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.3.93"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-x64-msvc@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core-win32-x64-msvc@npm:1.3.93"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@swc/core@npm:1.3.93":
+  version: 1.3.93
+  resolution: "@swc/core@npm:1.3.93"
+  dependencies:
+    "@swc/core-darwin-arm64": 1.3.93
+    "@swc/core-darwin-x64": 1.3.93
+    "@swc/core-linux-arm-gnueabihf": 1.3.93
+    "@swc/core-linux-arm64-gnu": 1.3.93
+    "@swc/core-linux-arm64-musl": 1.3.93
+    "@swc/core-linux-x64-gnu": 1.3.93
+    "@swc/core-linux-x64-musl": 1.3.93
+    "@swc/core-win32-arm64-msvc": 1.3.93
+    "@swc/core-win32-ia32-msvc": 1.3.93
+    "@swc/core-win32-x64-msvc": 1.3.93
+    "@swc/counter": ^0.1.1
+    "@swc/types": ^0.1.5
+  peerDependencies:
+    "@swc/helpers": ^0.5.0
+  dependenciesMeta:
+    "@swc/core-darwin-arm64":
+      optional: true
+    "@swc/core-darwin-x64":
+      optional: true
+    "@swc/core-linux-arm-gnueabihf":
+      optional: true
+    "@swc/core-linux-arm64-gnu":
+      optional: true
+    "@swc/core-linux-arm64-musl":
+      optional: true
+    "@swc/core-linux-x64-gnu":
+      optional: true
+    "@swc/core-linux-x64-musl":
+      optional: true
+    "@swc/core-win32-arm64-msvc":
+      optional: true
+    "@swc/core-win32-ia32-msvc":
+      optional: true
+    "@swc/core-win32-x64-msvc":
+      optional: true
+  peerDependenciesMeta:
+    "@swc/helpers":
+      optional: true
+  checksum: cf8cf2b01d84f057525f45728fd8d2400fc6c2ae31a11571bdd5513fd3a2cae096b4a8ea5273a5d69d1e1279a52322940ff0f56e918ceead2ef176a7af6fa7a8
+  languageName: node
+  linkType: hard
+
+"@swc/counter@npm:^0.1.1":
+  version: 0.1.2
+  resolution: "@swc/counter@npm:0.1.2"
+  checksum: 8427c594f1f0cf44b83885e9c8fe1e370c9db44ae96e07a37c117a6260ee97797d0709483efbcc244e77bac578690215f45b23254c4cd8a70fb25ddbb50bf33e
+  languageName: node
+  linkType: hard
+
+"@swc/jest@npm:0.2.29":
+  version: 0.2.29
+  resolution: "@swc/jest@npm:0.2.29"
+  dependencies:
+    "@jest/create-cache-key-function": ^27.4.2
+    jsonc-parser: ^3.2.0
+  peerDependencies:
+    "@swc/core": "*"
+  checksum: 9eaad322310f34e81f67d41411a7d60663341af1bd9fb65456faa914c936d849d6f643fa3b942a187d52e71e62c33097098c639d25c2047fa874f49bf51cec76
+  languageName: node
+  linkType: hard
+
+"@swc/types@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "@swc/types@npm:0.1.5"
+  checksum: 6aee11f62d3d805a64848e0bd5f0e0e615f958e327a9e1260056c368d7d28764d89e38bd8005a536c9bf18afbcd303edd84099d60df34a2975d62540f61df13b
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -1941,6 +2106,15 @@ __metadata:
   version: 21.0.2
   resolution: "@types/yargs-parser@npm:21.0.2"
   checksum: e979051aac91d778fdb3953aced8cf039d954c3936b910b57735b7b52a413d065e6b2aea1cb2c583f6c23296a6f8543d2541879d798f0afedd7409a562b7bdeb
+  languageName: node
+  linkType: hard
+
+"@types/yargs@npm:^16.0.0":
+  version: 16.0.7
+  resolution: "@types/yargs@npm:16.0.7"
+  dependencies:
+    "@types/yargs-parser": "*"
+  checksum: b116b9a3f3fc0ed608f2413fc3c48ba90344761d0c160ca6a31edf669959325172594f706cb85f9c1c46c5cf33130ff6b5772143c37567a24689489976a5d248
   languageName: node
   linkType: hard
 
@@ -2862,15 +3036,6 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: 7e6b10c53f7dd5d83fd2b95b00518889096382539fed6403829d447e05df4744088de46a571071afb447046abc3c66ad06fbc790e70234ec2517452e32ffd862
-  languageName: node
-  linkType: hard
-
-"bs-logger@npm:0.x":
-  version: 0.2.6
-  resolution: "bs-logger@npm:0.2.6"
-  dependencies:
-    fast-json-stable-stringify: 2.x
-  checksum: d34bdaf68c64bd099ab97c3ea608c9ae7d3f5faa1178b3f3f345acd94e852e608b2d4f9103fb2e503f5e69780e98293df41691b84be909b41cf5045374d54606
   languageName: node
   linkType: hard
 
@@ -4617,7 +4782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-json-stable-stringify@npm:2.x, fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
+"fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
   checksum: b191531e36c607977e5b1c47811158733c34ccb3bfde92c44798929e9b4154884378536d26ad90dfecd32e1ffc09c545d23535ad91b3161a27ddbb8ebe0cbecb
@@ -6643,7 +6808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^29.0.0, jest-util@npm:^29.7.0":
+"jest-util@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-util@npm:29.7.0"
   dependencies:
@@ -6850,6 +7015,13 @@ __metadata:
   bin:
     json5: lib/cli.js
   checksum: 2a7436a93393830bce797d4626275152e37e877b265e94ca69c99e3d20c2b9dab021279146a39cdb700e71b2dd32a4cebd1514cd57cee102b1af906ce5040349
+  languageName: node
+  linkType: hard
+
+"jsonc-parser@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "jsonc-parser@npm:3.2.0"
+  checksum: 946dd9a5f326b745aa326d48a7257e3f4a4b62c5e98ec8e49fa2bdd8d96cef7e6febf1399f5c7016114fd1f68a1c62c6138826d5d90bc650448e3cf0951c53c7
   languageName: node
   linkType: hard
 
@@ -7220,13 +7392,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.memoize@npm:4.x":
-  version: 4.1.2
-  resolution: "lodash.memoize@npm:4.1.2"
-  checksum: 9ff3942feeccffa4f1fafa88d32f0d24fdc62fd15ded5a74a5f950ff5f0c6f61916157246744c620173dddf38d37095a92327d5fd3861e2063e736a5c207d089
-  languageName: node
-  linkType: hard
-
 "lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
@@ -7300,7 +7465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"make-error@npm:1.x, make-error@npm:^1.1.1":
+"make-error@npm:^1.1.1":
   version: 1.3.6
   resolution: "make-error@npm:1.3.6"
   checksum: b86e5e0e25f7f777b77fabd8e2cbf15737972869d852a22b7e73c17623928fccb826d8e46b9951501d3f20e51ad74ba8c59ed584f610526a48f8ccf88aaec402
@@ -10225,39 +10390,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:29.1.1":
-  version: 29.1.1
-  resolution: "ts-jest@npm:29.1.1"
-  dependencies:
-    bs-logger: 0.x
-    fast-json-stable-stringify: 2.x
-    jest-util: ^29.0.0
-    json5: ^2.2.3
-    lodash.memoize: 4.x
-    make-error: 1.x
-    semver: ^7.5.3
-    yargs-parser: ^21.0.1
-  peerDependencies:
-    "@babel/core": ">=7.0.0-beta.0 <8"
-    "@jest/types": ^29.0.0
-    babel-jest: ^29.0.0
-    jest: ^29.0.0
-    typescript: ">=4.3 <6"
-  peerDependenciesMeta:
-    "@babel/core":
-      optional: true
-    "@jest/types":
-      optional: true
-    babel-jest:
-      optional: true
-    esbuild:
-      optional: true
-  bin:
-    ts-jest: cli.js
-  checksum: a8c9e284ed4f819526749f6e4dc6421ec666f20ab44d31b0f02b4ed979975f7580b18aea4813172d43e39b29464a71899f8893dd29b06b4a351a3af8ba47b402
-  languageName: node
-  linkType: hard
-
 "ts-node@npm:10.9.1":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
@@ -11003,7 +11135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:^21.0.1, yargs-parser@npm:^21.1.1":
+"yargs-parser@npm:^21.1.1":
   version: 21.1.1
   resolution: "yargs-parser@npm:21.1.1"
   checksum: ed2d96a616a9e3e1cc7d204c62ecc61f7aaab633dcbfab2c6df50f7f87b393993fe6640d017759fe112d0cb1e0119f2b4150a87305cc873fd90831c6a58ccf1c
