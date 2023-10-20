@@ -24,17 +24,14 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Setup Elasticsearch
-        id: setup-elasticsearch
         run: docker-compose up -d elasticsearch
 
       - name: Inspect Elasticsearch container
-        run: |
-          CONTAINER_IP=$(echo docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")
-          echo "container-ip=$CONTAINER_IP" >> $GITHUB_OUTPUT
-          echo "$CONTAINER_IP: $CONTAINER_IP"
+        id: inspect-elasticsearch
+        run: echo "container-ip=$(echo docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")" >> $GITHUB_OUTPUT
 
       - name: Test
-        run: echo ${{ steps.setup-elasticsearch.outputs.container-ip }}
+        run: echo ${{ steps.inspect-elasticsearch.outputs.container-ip }}
 
       - name: Wait on Elasticsearch container
         run: yarn wait-on tcp:es-container:9200
