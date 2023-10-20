@@ -29,8 +29,7 @@ jobs:
 
       - name: Docker Inspect
         id: docker
-        run: |
-          echo "es-container-ip=$(docker inspect --format "{{ .NetworkSettings.IPAddress }}" es-container)" >> $GITHUB_OUTPUT
+        run: echo "es-container-ip=$(docker inspect -f "{{range.networksettings.networks}}{{.ipaddress}}{{end}}" es-container)" >> $GITHUB_OUTPUT
 
       - name: Wait on Elasticsearch container
         run: yarn wait-on -v -i 1000 tcp:${{ steps.docker.outputs.es-container-ip }}:9200
