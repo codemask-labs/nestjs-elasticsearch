@@ -90,8 +90,5 @@ class AppModule {}
 6. Add `extraction` of aggregations on `response`
 7. Add `healthcheck` from `ElasticsearchService`
 8. Add `checkDocumentIntegrity` with the connection on the source on runtime
-9. Add `cardinality` aggregation
-10. Add `top_hits` aggregation
-11. Add optional `script` to `sum`, `avg`, `max` aggregation
-12. Add order field to `terms` aggregation
-13. Add `composite` aggregation
+9. Add optional `script` to `sum`, `avg`, `max` aggregation
+10. Add order field to `terms` aggregation
