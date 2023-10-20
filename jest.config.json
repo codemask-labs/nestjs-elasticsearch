@@ -1,8 +1,5 @@
 {
   "moduleFileExtensions": ["js", "ts"],
-  "testPathIgnorePatterns": [
-    "src/test"
-  ],
   "modulePaths": [
     "<rootDir>",
     "src"
