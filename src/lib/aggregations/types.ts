@@ -7,6 +7,7 @@ import { RangeAggregation } from './get-range'
 import { SumAggregation } from './get-sum'
 import { TermsAggregation } from './get-terms'
 import { ValueCountAggregation } from './get-value-count'
+import { CompositeAggregation } from './get-composite'
 
 export type AggregationList<TDocument extends Document> =
     | AvgAggregation<TDocument>
@@ -17,6 +18,7 @@ export type AggregationList<TDocument extends Document> =
     | SumAggregation<TDocument>
     | TermsAggregation<TDocument>
     | ValueCountAggregation<TDocument>
+    | CompositeAggregation<TDocument>
 
 export type AggregationsBody<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     [Key in keyof TAggregationsBody]: TAggregationsBody[Key]

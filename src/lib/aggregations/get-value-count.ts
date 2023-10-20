@@ -1,14 +1,14 @@
-import { Document, Key } from 'lib/types'
+import { Document, Field } from 'lib/types'
 
 export type ValueCountAggregationBody<TDocument extends Document> = {
-    field: Key<TDocument>
+    field: Field<TDocument>
 }
 
 export type ValueCountAggregation<TDocument extends Document> = {
     value_count: ValueCountAggregationBody<TDocument>
 }
 
-export const getValueCountAggregation = <TDocument extends Document>(field: Key<TDocument>): ValueCountAggregation<TDocument> => ({
+export const getValueCountAggregation = <TDocument extends Document>(field: Field<TDocument>): ValueCountAggregation<TDocument> => ({
     // eslint-disable-next-line camelcase
     value_count: { field }
 })
