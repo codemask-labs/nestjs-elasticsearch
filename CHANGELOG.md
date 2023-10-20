@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.4.0...v1.5.0) (2023-10-20)
+
+
+### Features
+
+* added additional aggregations ([517d597](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/517d597da9a7aa7a9b3756282f396e406cc64fa4))
+
 # [1.4.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.3.0...v1.4.0) (2023-10-20)
 
 
