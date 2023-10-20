@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 import { ClassConstructor, Document, ElasticsearchIndex } from 'lib/types'
-import { SearchRequest } from 'lib/elasticsearch'
-import { ElasticsearchService } from '..'
 import { Aggregations } from 'lib/aggregations'
+import { SearchRequest } from 'lib/requests'
+import { ElasticsearchService } from '..'
 
 @Injectable()
 export class Index<TDocument extends Document> implements ElasticsearchIndex<TDocument> {

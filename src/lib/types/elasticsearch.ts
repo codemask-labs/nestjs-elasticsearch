@@ -1,4 +1,5 @@
-import { SearchRequest, SearchResponse } from 'lib/elasticsearch'
+import { SearchRequest } from 'lib/requests'
+import { SearchResponse } from 'lib/responses'
 import { Document } from './common'
 import { Aggregations } from '..'
 

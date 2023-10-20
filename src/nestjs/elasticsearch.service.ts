@@ -2,8 +2,9 @@ import { Injectable } from '@nestjs/common'
 import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document } from 'lib/types'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
-import { ElasticsearchResult, getSearchRequest, getSearchResponse, SearchRequest } from 'lib/elasticsearch'
 import { AggregationList } from 'lib/aggregations'
+import { getSearchRequest, SearchRequest } from 'lib/requests'
+import { ElasticsearchResult, getSearchResponse } from 'lib/responses'
 import { Index } from './injectables'
 
 @Injectable()
