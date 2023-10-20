@@ -1,4 +1,4 @@
-name: CI
+name: Test
 on:
   push:
     branches:
@@ -12,8 +12,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
+  build:
+    name: With Elasticsearch container
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,12 +25,19 @@ jobs:
 
       - name: Setup Elasticsearch
         run: docker-compose up -d elasticsearch
-      
-      - name: Wait on ElasticsSearch
-        run: yarn wait-on tcp:localhost:9200
+
+      - name: Inspect Elasticsearch container
+        id: inspect-elasticsearch
+        run: echo "container-ip=$(docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")" >> $GITHUB_OUTPUT
+
+      - name: Wait on Elasticsearch container
+        run: yarn wait-on tcp:${{ steps.inspect-elasticsearch.outputs.container-ip }}:9200
+
+      - name: Check Elasticsearch cluster health
+        run: curl -X GET "http://${{ steps.inspect-elasticsearch.outputs.container-ip }}:9200/_cluster/health?pretty"
 
       - name: Seed Elasticsearch
         run: yarn es:seed
 
       - name: Run tests
-        run: yarn jest
+        run: yarn jest --runInBand

@@ -1,38 +1,40 @@
 name: Release
 on:
-    workflow_dispatch:
-        inputs:
-            desc:
-                description: 'Description'
-                required: false
-                default: 'Manual release'
+  workflow_dispatch:
+    inputs:
+      desc:
+        description: "Description"
+        required: false
+        default: "Manual release"
+
 permissions:
-    contents: read # for checkout
+  contents: read # for checkout
+
 jobs:
-    release:
-        name: Release
-        runs-on: ubuntu-latest
-        timeout-minutes: 30
-        permissions:
-            contents: write # to be able to publish a GitHub release
-            issues: write # to be able to comment on released issues
-            pull-requests: write # to be able to comment on released pull requests
-            id-token: write # to enable use of OIDC for npm provenance
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      HUSKY: 0
+    steps:
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Build package
+        run: yarn build
+      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+        run: npm audit signatures
+      - name: Run semantic release
         env:
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            HUSKY: 0
-        steps:
-            - name: Setup
-              uses: ./.github/actions/setup
-            - name: Build package
-              run: yarn build
-            - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
-              run: npm audit signatures
-            - name: Run semantic release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-              run: yarn semantic-release --branches ${{ github.ref_name }}
-              id: ver
-        outputs:
-            version: ${{ steps.ver.outputs.nextVer }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn semantic-release --branches ${{ github.ref_name }}
+        id: ver
+    outputs:
+      version: ${{ steps.ver.outputs.nextVer }}

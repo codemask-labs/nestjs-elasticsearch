@@ -12,7 +12,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
+  linters:
+    name: Linters
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
