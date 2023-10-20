@@ -22,10 +22,10 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Setup Elasticsearch
-        run: docker-compose up --wait -d elasticsearch
+        run: docker-compose up -d elasticsearch
 
-      - name: Wait on ElasticsSearch
-        run: yarn wait-on tcp:localhost:9200
+      - name: Wait on Elasticsearch
+        run: curl curl -X GET "http://localhost:9200/_cluster/health?pretty"
 
       - name: Seed Elasticsearch
         run: yarn es:seed
