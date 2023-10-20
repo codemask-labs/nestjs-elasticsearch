@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    name: With Elasticsearch Container
+    name: With Elasticsearch container
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -28,9 +28,10 @@ jobs:
         run: docker-compose up -d elasticsearch
 
       - name: Inspect Elasticsearch container
-        run: |
-          docker inspect --format '{{ .NetworkSettings.IPAddress }}' es-container >> $GITHUB_OUTPUT \
-          echo ${{ steps.setup-elasticsearch.outputs }}
+        run: docker inspect --format '{{ .NetworkSettings.IPAddress }}' es-container >> $GITHUB_OUTPUT
+
+      - name: Test
+        run: echo ${{ steps.setup-elasticsearch.outputs }}
 
       - name: Wait on Elasticsearch container
         run: yarn wait-on tcp:es-container:9200
