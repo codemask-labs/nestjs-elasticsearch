@@ -28,7 +28,7 @@ jobs:
 
       - name: Inspect Elasticsearch container
         id: inspect-elasticsearch
-        run: echo "container-ip=$(echo docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")" >> $GITHUB_OUTPUT
+        run: echo "container-ip=$(docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")" >> $GITHUB_OUTPUT
 
       - name: Test
         run: echo ${{ steps.inspect-elasticsearch.outputs.container-ip }}
