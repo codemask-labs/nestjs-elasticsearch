@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.5.0...v1.6.0) (2023-10-20)
+
+
+### Bug Fixes
+
+* node_modules setup cache key ([9b03692](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/9b03692b45567dbc3b92903b4214ebc0579accda))
+
+
+### Features
+
+* swc jest ([be11a56](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/be11a56e0c9685421937e25bcd8701bf72c775ef))
+
 # [1.5.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.4.0...v1.5.0) (2023-10-20)
 
 
