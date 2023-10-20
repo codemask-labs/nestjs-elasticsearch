@@ -1,11 +1,7 @@
 name: Test
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
-      - main
       - synchronize
       - reopened
 
@@ -17,7 +13,7 @@ jobs:
   build:
     name: With Elasticsearch container
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged == 'false' && !github.event.pull_request.draft && github.actor != 'dependabot[bot]' }}
+    if: ${{ !github.event.pull_request.draft && github.actor != 'dependabot[bot]' }}
     timeout-minutes: 5
     steps:
       - name: Checkout
