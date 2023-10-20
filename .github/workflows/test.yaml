@@ -30,14 +30,11 @@ jobs:
         id: inspect-elasticsearch
         run: echo "container-ip=$(docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")" >> $GITHUB_OUTPUT
 
-      - name: Test
-        run: echo ${{ steps.inspect-elasticsearch.outputs.container-ip }}
-
       - name: Wait on Elasticsearch container
-        run: yarn wait-on tcp:es-container:9200
+        run: yarn wait-on tcp:${{ steps.inspect-elasticsearch.outputs.container-ip }}:9200
 
       - name: Check Elasticsearch cluster health
-        run: curl -X GET "http://es-container:9200/_cluster/health?pretty"
+        run: curl -X GET "http://${{ steps.inspect-elasticsearch.outputs.container-ip }}:9200/_cluster/health?pretty"
 
       - name: Seed Elasticsearch
         run: yarn es:seed
