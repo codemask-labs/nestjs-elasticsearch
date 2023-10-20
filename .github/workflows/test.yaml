@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Setup Elasticsearch
-        run: docker-compose up -d elasticsearch --quiet-pull --detach
+        run: docker-compose up --quiet-pull --detach
 
       - name: Docker PS
         run: docker ps
