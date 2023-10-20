@@ -28,7 +28,7 @@ jobs:
         run: docker-compose up -d elasticsearch
 
       - name: Inspect Elasticsearch container
-        run: docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")
+        run: docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
 
       - name: Test
         run: echo ${{ steps.setup-elasticsearch.outputs.container-ip }}
