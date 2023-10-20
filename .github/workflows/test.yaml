@@ -24,8 +24,11 @@ jobs:
       - name: Setup Elasticsearch
         run: docker compose -p elasticsearch up --detach
 
+      - name: Docker PS
+        run: docker ps
+
       - name: Wait on Elasticsearch container
-        run: yarn wait-on tcp:es-container:9200
+        run: yarn wait-on -v tcp:es-container:9200
 
       - name: Check Elasticsearch cluster health
         run: curl -X GET "http://es-container:9200/_cluster/health?pretty"
