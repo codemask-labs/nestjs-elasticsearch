@@ -1,6 +1,5 @@
 import { Document, Key, Sort } from 'lib/types'
 
-
 export type TopHitsAggregationOptions<TDocument extends Document> = {
     sort?: Array<Sort<TDocument>>
     includes?: Array<Key<TDocument>>
