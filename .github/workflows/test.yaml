@@ -22,20 +22,20 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Setup Elasticsearch
-        run: docker compose -p elasticsearch up --quiet-pull --detach
+        run: docker-compose up -d elasticsearch --quiet-pull --detach
 
       - name: Docker PS
         run: docker ps
 
       - name: Docker Inspect
-        id: docker
-        run: echo "es-container-ip=$(docker inspect -f '{{range.networksettings.networks}}{{.ipaddress}}{{end}}' es-container)" >> $GITHUB_OUTPUT
+        id: es-container
+        run: echo "ip=$(docker inspect es-container --format "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}")" >> $GITHUB_OUTPUT
 
       - name: Wait on Elasticsearch container
-        run: yarn wait-on -v -i 1000 tcp:${{ steps.docker.outputs.es-container-ip }}:9200
+        run: yarn wait-on -v -i 1000 tcp:${{ steps.es-container.outputs.ip }}:9200
 
       - name: Check Elasticsearch cluster health
-        run: curl -X GET "http://${{ steps.docker.outputs.es-container-ip }}:9200/_cluster/health?pretty"
+        run: curl -X GET "http://${{ steps.es-container.outputs.ip }}:9200/_cluster/health?pretty"
 
       - name: Seed Elasticsearch
         run: yarn es:seed
