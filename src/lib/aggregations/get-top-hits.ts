@@ -1,13 +1,5 @@
-import { Document, Key } from 'lib/types'
+import { Document, Key, Sort } from 'lib/types'
 
-export enum Order {
-    ASC = 'asc',
-    DESC = 'desc'
-}
-
-export type Sort<TDocument extends Document> = {
-    [X in Key<TDocument>]?: { order: Order }
-}
 
 export type TopHitsAggregationOptions<TDocument extends Document> = {
     sort?: Array<Sort<TDocument>>
@@ -24,7 +16,7 @@ export type TopHitsAggregation<TDocument extends Document> = {
 }
 
 export const getTopHitsAggregation = <TDocument extends Document>(
-    size: number = 1,
+    size: number = 3,
     options?: TopHitsAggregationOptions<TDocument>
 ): TopHitsAggregation<TDocument> => {
     if (!options) {
