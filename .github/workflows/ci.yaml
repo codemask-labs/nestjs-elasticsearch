@@ -13,6 +13,7 @@ concurrency:
 
 jobs:
   linters:
+    name: Linters
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
