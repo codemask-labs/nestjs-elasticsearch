@@ -4,10 +4,7 @@ import { getTermsAggregation } from '.'
 
 describe('getCompositeAggregation', () => {
     it('accepts only schema field', () => {
-        const sources = [
-            getTermsAggregation<HomeDocument>('address.keyword'),
-            getTermsAggregation<HomeDocument>('city.keyword')
-        ]
+        const sources = [getTermsAggregation<HomeDocument>('address.keyword'), getTermsAggregation<HomeDocument>('city.keyword')]
 
         const query = getCompositeAggregation<HomeDocument>(sources, {
             after: {

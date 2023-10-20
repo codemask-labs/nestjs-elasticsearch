@@ -7,12 +7,11 @@ export type AfterKey<TDocument extends Document> = {
     [TKey in Key<TDocument>]?: Keys<TDocument>[TKey]
 }
 
-export type CompositeAggregationList<TDocument extends Document> = (
-    TermsAggregation<TDocument> |
-    HistogramAggregation<TDocument> |
-    DateHistogramAggregation<TDocument>
-    // todo: add geotile_grid aggregation
-)
+export type CompositeAggregationList<TDocument extends Document> =
+    | TermsAggregation<TDocument>
+    | HistogramAggregation<TDocument>
+    | DateHistogramAggregation<TDocument>
+// todo: add geotile_grid aggregation
 
 export type CompositeAggregationOptions<TDocument extends Document> = {
     size?: number
@@ -27,6 +26,9 @@ export type CompositeAggregation<TDocument extends Document> = {
     composite: CompositeAggregationBody<TDocument>
 }
 
-export const getCompositeAggregation = <TDocument extends Document>(sources: Array<CompositeAggregationList<TDocument>>, options?: CompositeAggregationOptions<TDocument>): CompositeAggregation<TDocument> => ({
+export const getCompositeAggregation = <TDocument extends Document>(
+    sources: Array<CompositeAggregationList<TDocument>>,
+    options?: CompositeAggregationOptions<TDocument>
+): CompositeAggregation<TDocument> => ({
     composite: { sources, ...options }
 })

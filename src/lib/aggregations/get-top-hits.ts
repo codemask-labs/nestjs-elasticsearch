@@ -23,7 +23,10 @@ export type TopHitsAggregation<TDocument extends Document> = {
     top_hits: TopHitsAggregationBody<TDocument>
 }
 
-export const getTopHitsAggregation = <TDocument extends Document>(size: number = 1, options?: TopHitsAggregationOptions<TDocument>): TopHitsAggregation<TDocument> => {
+export const getTopHitsAggregation = <TDocument extends Document>(
+    size: number = 1,
+    options?: TopHitsAggregationOptions<TDocument>
+): TopHitsAggregation<TDocument> => {
     if (!options) {
         return {
             // eslint-disable-next-line camelcase
