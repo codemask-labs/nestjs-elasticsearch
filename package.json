@@ -3,7 +3,7 @@
     "author": "Przemysław Walczak <p.d.walczak@gmail.com> (https://github.com/przemyslawwalczak)",
     "repository": "https://github.com/przemyslawwalczak/nestjs-elasticsearch",
     "license": "MIT",
-    "version": "0.1.0",
+    "version": "1.4.0",
     "description": "Nestjs Elasticsearch Module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
