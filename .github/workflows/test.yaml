@@ -28,10 +28,10 @@ jobs:
         run: docker ps
 
       - name: Wait on Elasticsearch container
-        run: yarn wait-on -v tcp:127.0.0.1:9200
+        run: yarn wait-on -v tcp:elasticsearch:9200
 
       - name: Check Elasticsearch cluster health
-        run: curl -X GET "http://127.0.0.1:9200/_cluster/health?pretty"
+        run: curl -X GET "http://elasticsearch:9200/_cluster/health?pretty"
 
       - name: Seed Elasticsearch
         run: yarn es:seed
