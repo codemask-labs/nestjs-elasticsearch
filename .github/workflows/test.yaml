@@ -22,7 +22,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Setup Elasticsearch
-        run: docker-compose up -d elasticsearch
+        run: docker-compose up --wait -d elasticsearch
 
       - name: Wait on ElasticsSearch
         run: yarn wait-on tcp:localhost:9200
