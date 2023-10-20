@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
       - main
+      - synchronize
+      - reopened
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -15,6 +17,7 @@ jobs:
   linters:
     name: Linters
     runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == 'false' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
