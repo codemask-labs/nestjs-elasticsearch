@@ -24,9 +24,6 @@ jobs:
       - name: Setup Elasticsearch
         run: docker-compose up -d elasticsearch
 
-      - name: Setup WaitOn Package
-        run: yarn global wait-on@7.0.1
-      
       - name: Wait on ElasticsSearch
         run: yarn wait-on tcp:localhost:9200
 
