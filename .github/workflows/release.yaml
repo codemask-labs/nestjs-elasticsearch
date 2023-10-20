@@ -39,4 +39,5 @@ jobs:
         run: yarn semantic-release --branches ${{ github.ref_name }}
         id: ver
       - name: Package next version
-        run: echo "Package next version: ${{ steps.ver.outputs.nextVer }}"
+        run: |
+          echo "Package next version: ${{ steps.ver.outputs.nextVer }}"
