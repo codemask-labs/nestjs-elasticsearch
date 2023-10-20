@@ -1,0 +1,34 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Setup Elasticsearch
+        run: docker-compose up -d elasticsearch
+      
+      - name: Wait on ElasticsSearch
+        run: yarn wait-on tcp:localhost:9200
+
+      - name: Seed Elasticsearch
+        run: yarn es:seed
+
+      - name: Run tests
+        run: yarn jest

@@ -7,6 +7,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -22,6 +26,3 @@ jobs:
 
       - name: Type check files
         run: yarn tsc
-
-      - name: Run tests
-        run: yarn jest
