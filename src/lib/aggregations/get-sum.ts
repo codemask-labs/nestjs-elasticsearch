@@ -1,13 +1,15 @@
-import { Document, Field } from 'lib/types'
+import { Document, Key } from 'lib/types'
 
 export type SumAggregationBody<TDocument extends Document> = {
-    field: Field<TDocument>
+    field: Key<TDocument>
 }
 
 export type SumAggregation<TDocument extends Document> = {
     sum: SumAggregationBody<TDocument>
 }
 
-export const getSumAggregation = <TDocument extends Document>(field: Field<TDocument>): SumAggregation<TDocument> => ({
-    sum: { field }
+export const getSumAggregation = <TDocument extends Document, Tkey extends Key<TDocument> = Key<TDocument>>(
+    field: Tkey
+): SumAggregation<TDocument> => ({
+    sum: { field } as SumAggregationBody<TDocument>
 })

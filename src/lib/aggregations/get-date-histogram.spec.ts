@@ -7,8 +7,10 @@ describe('getDateHistogramAggregation', () => {
         const query = getDateHistogramAggregation<HomeDocument>('address', CalendarIntervalName.DAY)
 
         expect(query).toEqual({
+            // eslint-disable-next-line camelcase
             date_histogram: {
                 field: 'address',
+                // eslint-disable-next-line camelcase
                 calendar_interval: 'day'
             }
         })
@@ -18,8 +20,10 @@ describe('getDateHistogramAggregation', () => {
         const query = getDateHistogramAggregation<HomeDocument>('address', CalendarIntervalQuantity.DAY)
 
         expect(query).toEqual({
+            // eslint-disable-next-line camelcase
             date_histogram: {
                 field: 'address',
+                // eslint-disable-next-line camelcase
                 calendar_interval: '1d'
             }
         })

@@ -22,25 +22,8 @@ jobs:
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             HUSKY: 0
         steps:
-            - name: Checkout
-              uses: actions/checkout@v3.1.0
-              with:
-                  ref: ${{ github.ref }}
-                  fetch-depth: 0
-                  persist-credentials: false
-            - name: Set Environment Variables
-              uses: ./.github/actions/setvars
-              with:
-                  varFilePath: ./.github/variables/node.env
-            - name: Setup Node.js
-              uses: actions/setup-node@v3.5.1
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-              with:
-                  node-version: ${{ env.NODE_VERSION }}
-                  cache: 'yarn'
-            - name: Install dependencies
-              run: yarn install
+            - name: Setup
+              uses: ./.github/actions/setup
             - name: Build package
               run: yarn build
             - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies

@@ -22,11 +22,7 @@ describe('getRangeAggregation', () => {
         expect(query).toEqual({
             range: {
                 field: 'address',
-                ranges: [
-                    { from: 10 },
-                    { from: 15, to: 20 },
-                    { to: 25 }
-                ]
+                ranges: [{ from: 10 }, { from: 15, to: 20 }, { to: 25 }]
             }
         })
     })

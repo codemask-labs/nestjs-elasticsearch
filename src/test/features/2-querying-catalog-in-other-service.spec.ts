@@ -28,5 +28,6 @@ describe('Making a search', () => {
         })
 
         expect(allDocumentsAreValid).toBe(true)
+        expect(result.aggregations).toEqual({})
     })
 })
