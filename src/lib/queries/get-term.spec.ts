@@ -13,4 +13,21 @@ describe('getTermQuery', () => {
             }
         })
     })
+
+    it('accepts only schema fields and case sensitive option', () => {
+        const query = getTermQuery<HomeDocument>('address', 'test', {
+            // eslint-disable-next-line camelcase
+            case_insensitive: true
+        })
+
+        expect(query).toEqual({
+            term: {
+                address: {
+                    value: 'test',
+                    // eslint-disable-next-line camelcase
+                    case_insensitive: true
+                }
+            }
+        })
+    })
 })
