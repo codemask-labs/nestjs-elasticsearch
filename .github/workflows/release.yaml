@@ -38,5 +38,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn semantic-release --branches ${{ github.ref_name }}
         id: ver
-    outputs:
-      version: ${{ steps.ver.outputs.nextVer }}
+      - name: Package next version
+        run: |
+          echo "Package next version: ${{ steps.ver.outputs.nextVer }}"
