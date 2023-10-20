@@ -15,6 +15,7 @@ jobs:
   build:
     name: With Elasticsearch container
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft && github.actor != 'dependabot[bot]' }}
     timeout-minutes: 5
     steps:
       - name: Checkout
