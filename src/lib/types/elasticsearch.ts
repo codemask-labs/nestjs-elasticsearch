@@ -1,7 +1,7 @@
 import { SearchRequest } from 'lib/requests'
 import { SearchResponse } from 'lib/responses'
+import { Aggregations } from 'lib/aggregations'
 import { Document } from './common'
-import { Aggregations } from '..'
 
 export type ElasticsearchIndex<TDocument extends Document> = {
     /**

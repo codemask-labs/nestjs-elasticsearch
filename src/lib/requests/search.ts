@@ -1,6 +1,7 @@
 import type { RequestParams } from '@elastic/elasticsearch'
 import { Document } from 'lib/types'
-import { Aggregations, BoolQuery } from '..'
+import { BoolQuery } from 'lib/queries'
+import { Aggregations } from 'lib/aggregations'
 
 export type SearchRequest<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     size?: number

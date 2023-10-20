@@ -1,4 +1,4 @@
-import { Document, Field, FieldType } from '..'
+import { Document, Field, FieldType } from 'lib/types'
 
 export type MatchQueryOptions = {
     boost?: number

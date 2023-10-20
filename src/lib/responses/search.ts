@@ -1,6 +1,6 @@
 import type { estypes, ApiResponse } from '@elastic/elasticsearch'
 import { ClassConstructor, Document } from 'lib/types'
-import { Aggregations, AggregationsBody } from '..'
+import { Aggregations, AggregationsBody } from 'lib/aggregations'
 
 export type ElasticsearchResult<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     hits: estypes.HitsMetadata<TDocument>
