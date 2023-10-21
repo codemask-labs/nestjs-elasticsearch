@@ -1,8 +1,8 @@
-import { AggregationRange, Document, Key } from 'lib/types'
+import { Range, Document, Key } from 'lib/types'
 
 export type RangeAggregationBody<TDocument extends Document> = {
     field: Key<TDocument>
-    ranges: Array<AggregationRange>
+    ranges: Array<Range>
 }
 
 export type RangeAggregation<TDocument extends Document> = {
@@ -11,7 +11,7 @@ export type RangeAggregation<TDocument extends Document> = {
 
 export const getRangeAggregation = <TDocument extends Document>(
     field: Key<TDocument>,
-    ranges: Array<AggregationRange>
+    ranges: Array<Range>
 ): RangeAggregation<TDocument> => ({
     range: {
         field,

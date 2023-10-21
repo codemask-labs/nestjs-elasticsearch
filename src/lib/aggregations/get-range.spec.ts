@@ -1,9 +1,9 @@
 import { HomeDocument } from 'test/module'
-import { AggregationRange } from 'lib/types'
+import { Range } from 'lib/types'
 import { getRangeAggregation } from './get-range'
 
 describe('getRangeAggregation', () => {
-    const ranges: Array<AggregationRange> = [
+    const ranges: Array<Range> = [
         {
             from: 10
         },
