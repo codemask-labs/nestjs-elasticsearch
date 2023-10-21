@@ -1,6 +1,6 @@
 import { setupNestApplication } from 'test/toolkit'
-import { ElasticsearchModule } from 'nestjs/elasticsearch.module'
-import { ElasticsearchService } from 'nestjs/elasticsearch.service'
+import { ElasticsearchModule } from 'module/elasticsearch.module'
+import { ElasticsearchService } from 'module/elasticsearch.service'
 import { HealthStatus } from 'lib/enums'
 
 describe('Making a search', () => {

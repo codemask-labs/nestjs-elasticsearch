@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectIndex } from 'lib/decorators'
 import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
-import { Index } from 'nestjs/injectables'
+import { Index } from 'module/injectables'
 import { PropertyType } from './enums'
 import { HomeDocument } from './home.document'
 
