@@ -37,7 +37,7 @@
         "nestjs-elasticsearch"
     ],
     "dependencies": {
-        "@elastic/elasticsearch": "7.13.0",
+        "@elastic/elasticsearch": "8.10.0",
         "@nestjs/common": "10.2.7",
         "@nestjs/elasticsearch": "9.0.0",
         "class-validator": "0.14.0",

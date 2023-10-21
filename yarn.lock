@@ -429,7 +429,7 @@ __metadata:
   resolution: "@codemaskjs/nestjs-elasticsearch@workspace:."
   dependencies:
     "@commitlint/config-conventional": 17.8.0
-    "@elastic/elasticsearch": 7.13.0
+    "@elastic/elasticsearch": 8.10.0
     "@faker-js/faker": 8.2.0
     "@nestjs/common": 10.2.7
     "@nestjs/core": 10.2.7
@@ -507,15 +507,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@elastic/elasticsearch@npm:7.13.0":
-  version: 7.13.0
-  resolution: "@elastic/elasticsearch@npm:7.13.0"
+"@elastic/elasticsearch@npm:8.10.0":
+  version: 8.10.0
+  resolution: "@elastic/elasticsearch@npm:8.10.0"
   dependencies:
-    debug: ^4.3.1
-    hpagent: ^0.1.1
+    "@elastic/transport": ^8.3.4
+    tslib: ^2.4.0
+  checksum: b980c2634beb74f7c9113f8248640729e73511c8862d0795f827125ea6c49e85840e0b370f7a4e436f05ce80d67103c406be8ea54e777c32bafe4d650c9b4ef2
+  languageName: node
+  linkType: hard
+
+"@elastic/transport@npm:^8.3.4":
+  version: 8.3.4
+  resolution: "@elastic/transport@npm:8.3.4"
+  dependencies:
+    debug: ^4.3.4
+    hpagent: ^1.0.0
     ms: ^2.1.3
     secure-json-parse: ^2.4.0
-  checksum: a33fe16bc9c46bc9232ed1efc97c512c1e2aa21eb3c26385b383d3a2dfd3b00af92521849aa032a080a55262bccd34183881d8404c91e9df8741f155dc156524
+    tslib: ^2.4.0
+    undici: ^5.22.1
+  checksum: a5df199a46d8e9a33cee96c3442fe8261860deb59a9ec518858dde9ed35fb92e70ba4aed4dfaaf512e1b411cea3d05cab2b85a062ad60d377704f4e95e6ebc0e
   languageName: node
   linkType: hard
 
@@ -576,6 +588,13 @@ __metadata:
   version: 8.2.0
   resolution: "@faker-js/faker@npm:8.2.0"
   checksum: febc17018acfb841a348591bfe415e815ea981bf7fa0a12670ac2b449479ad7e9e7b130c42878ec30210da964c13a620a3303dc00d63cb13ded00c6fc701e2be
+  languageName: node
+  linkType: hard
+
+"@fastify/busboy@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@fastify/busboy@npm:2.0.0"
+  checksum: 41879937ce1dee6421ef9cd4da53239830617e1f0bb7a0e843940772cd72827205d05e518af6adabe6e1ea19301285fff432b9d11bad01a531e698bea95c781b
   languageName: node
   linkType: hard
 
@@ -3753,7 +3772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
+"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -5557,10 +5576,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hpagent@npm:^0.1.1":
-  version: 0.1.2
-  resolution: "hpagent@npm:0.1.2"
-  checksum: 1918518ab937d9fa615a47b94489e23662547bc1edf27069ee9bf40bfefb94da65eb142b6f42336b4b0752fce87f66c284d92b97340fd2a90b24aa3616b5450d
+"hpagent@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "hpagent@npm:1.2.0"
+  checksum: b029da695edae438cee4da2a437386f9db4ac27b3ceb7306d02e1b586c9c194741ed2e943c8a222e0cfefaf27ee3f863aca7ba1721b0950a2a19bf25bc0d85e2
   languageName: node
   linkType: hard
 
@@ -10470,7 +10489,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.6.2, tslib@npm:^2.1.0":
+"tslib@npm:2.6.2, tslib@npm:^2.1.0, tslib@npm:^2.4.0":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
@@ -10716,6 +10735,15 @@ __metadata:
   version: 5.25.3
   resolution: "undici-types@npm:5.25.3"
   checksum: ec9d2cc36520cbd9fbe3b3b6c682a87fe5be214699e1f57d1e3d9a2cb5be422e62735f06e0067dc325fd3dd7404c697e4d479f9147dc8a804e049e29f357f2ff
+  languageName: node
+  linkType: hard
+
+"undici@npm:^5.22.1":
+  version: 5.26.4
+  resolution: "undici@npm:5.26.4"
+  dependencies:
+    "@fastify/busboy": ^2.0.0
+  checksum: 4d37f14ce56837d332ab1623be751f2a5b439069705671cc60b441133300b05bcb8803668132e7b3f98800db19cd6cb76b48831facbdbc2d73271b12383ab3cd
   languageName: node
   linkType: hard
 
