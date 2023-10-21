@@ -15,7 +15,7 @@ export const getSearchResponse = <TDocument extends Document, TAggregationsBody 
     document: ClassConstructor<TDocument>,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     { body }: ApiResponse<Result<TDocument, TAggregationsBody>>
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): SearchResponse<TDocument, TAggregationsBody> => ({
     documents: body.hits.hits.reduce((result, { _source: source }) => {
         if (!source) {
