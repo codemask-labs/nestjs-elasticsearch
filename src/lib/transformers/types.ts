@@ -1,21 +1,7 @@
-import { Document } from 'lib/common'
+import { Bucket, Document } from 'lib/common'
 import { Aggregations, AggregationsBody, AvgAggregation, TermsAggregation } from 'lib/aggregations'
-
-export type Bucket = {
-    key: string
-    doc_count: number
-}
-
-export type Buckets<TBucket> = {
-    buckets: Array<TBucket>
-}
-
-export type Value<TValue> = {
-    value?: TValue
-}
-
-export type TermsAggregate<TBucket> = Buckets<TBucket>
-export type AvgAggregate<TValue> = Value<TValue>
+import { TermsAggregate } from './get-terms-aggregate'
+import { AvgAggregate } from './get-avg-aggregate'
 
 export type TransformAggregation<
     TDocument extends Document,
