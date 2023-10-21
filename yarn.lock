@@ -433,7 +433,7 @@ __metadata:
     "@faker-js/faker": 8.2.0
     "@nestjs/common": 10.2.7
     "@nestjs/core": 10.2.7
-    "@nestjs/elasticsearch": 9.0.0
+    "@nestjs/elasticsearch": 10.0.1
     "@nestjs/platform-express": 10.2.7
     "@nestjs/testing": 10.2.7
     "@semantic-release/changelog": 6.0.3
@@ -1031,14 +1031,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/elasticsearch@npm:9.0.0":
-  version: 9.0.0
-  resolution: "@nestjs/elasticsearch@npm:9.0.0"
+"@nestjs/elasticsearch@npm:10.0.1":
+  version: 10.0.1
+  resolution: "@nestjs/elasticsearch@npm:10.0.1"
   peerDependencies:
     "@elastic/elasticsearch": ^7.4.0 || ^8.0.0
-    "@nestjs/common": ^8.0.0 || ^9.0.0
+    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
     rxjs: ^7.2.0
-  checksum: 64393b295397e803f465970f4c559f640b2bd698941eee664fdd4b3ca976139a260c08825e0671087b2ceda5b2a6e3d5fb96dca911adf11443dae1b73c2deac8
+  checksum: 714d128e6b2ef33ac63b3c714beb1cafd87aa5dfd81f65c77d92ece7df50633a3787c9936ab4ae661eb3bbe118db430d202d9b7f9bc31cd551f530393d302459
   languageName: node
   linkType: hard
 
