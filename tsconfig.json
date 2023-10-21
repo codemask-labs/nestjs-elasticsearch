@@ -4,6 +4,7 @@
         "target": "ESNext",
         "module": "Node16",
         "lib": ["esnext"],
+        "types": ["expect-more-jest"],
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,

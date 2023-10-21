@@ -1,4 +1,3 @@
-import 'expect-more-jest'
 import { setupNestApplication } from 'test/toolkit'
 import { HomeDocument, TestService } from 'test/module'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
