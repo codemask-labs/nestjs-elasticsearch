@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
-import { ClassConstructor, Document } from 'lib/common'
+import { ClassConstructor, Document, Result } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { AggregationList } from 'lib/aggregations'
 import { getSearchRequest, SearchRequest } from 'lib/requests'
-import { ElasticsearchResult, getSearchResponse } from 'lib/responses'
+import { getSearchResponse } from 'lib/responses'
 import { Index } from './injectables'
 
 @Injectable()
@@ -24,7 +24,7 @@ export class ElasticsearchService {
         const request = getSearchRequest<TDocument, TAggregationsBody>(index, options)
 
         return this.elasticsearchBaseService
-            .search<ElasticsearchResult<TDocument, TAggregationsBody>>(request)
+            .search<Result<TDocument, TAggregationsBody>>(request)
             .then(response => getSearchResponse(document, response))
     }
 

@@ -9,10 +9,7 @@ export type RangeAggregation<TDocument extends Document> = {
     range: RangeAggregationBody<TDocument>
 }
 
-export const getRangeAggregation = <TDocument extends Document>(
-    field: Key<TDocument>,
-    ranges: Array<Range>
-): RangeAggregation<TDocument> => ({
+export const getRangeAggregation = <TDocument extends Document>(field: Key<TDocument>, ranges: Array<Range>): RangeAggregation<TDocument> => ({
     range: {
         field,
         ranges
