@@ -1,4 +1,4 @@
-import { Document } from 'lib/types'
+import { Document } from 'lib/common'
 import { ShouldQuery } from './get-should'
 import { MustQuery } from './get-must'
 import { MustNotQuery } from './get-must-not'

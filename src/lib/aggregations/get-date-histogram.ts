@@ -1,4 +1,4 @@
-import { Document, Key } from 'lib/types'
+import { Document, Key } from 'lib/common'
 import { CalendarIntervalName, CalendarIntervalQuantity } from 'lib/enums'
 
 export type DateHistogramAggregationBody<TDocument extends Document> = {

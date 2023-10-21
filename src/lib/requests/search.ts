@@ -1,5 +1,5 @@
 import type { RequestParams } from '@elastic/elasticsearch'
-import { Document } from 'lib/types'
+import { Document } from 'lib/common'
 import { BoolQuery } from 'lib/queries'
 import { Aggregations } from 'lib/aggregations'
 

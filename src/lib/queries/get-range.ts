@@ -1,4 +1,4 @@
-import { Document, Field, FieldType } from 'lib/types'
+import { Document, Field, FieldType } from 'lib/common'
 
 export type RangeQueryOptions<TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>> = {
     format?: string

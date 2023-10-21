@@ -1,4 +1,4 @@
-import { Range, Document, Key } from 'lib/types'
+import { Range, Document, Key } from 'lib/common'
 
 export type RangeAggregationBody<TDocument extends Document> = {
     field: Key<TDocument>

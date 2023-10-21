@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { ClassConstructor, Document } from 'lib/types'
+import { ClassConstructor, Document } from 'lib/common'
 import { Aggregations } from 'lib/aggregations'
 import { SearchRequest } from 'lib/requests'
 import { ElasticsearchService } from '../elasticsearch.service'

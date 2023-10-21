@@ -1,6 +1,6 @@
 import { Inject } from '@nestjs/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
-import { ClassConstructor, Document } from 'lib/types'
+import { ClassConstructor, Document } from 'lib/common'
 import { getIndexInjectionToken } from 'nestjs/utils'
 
 export const InjectIndex = <TDocument extends Document>(document: ClassConstructor<TDocument>) => {

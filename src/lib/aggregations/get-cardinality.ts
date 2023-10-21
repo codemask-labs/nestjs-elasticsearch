@@ -1,4 +1,4 @@
-import { Document, Field } from 'lib/types'
+import { Document, Field } from 'lib/common'
 
 export type CardinalityAggregationBody<TDocument extends Document> = {
     field: Field<TDocument>

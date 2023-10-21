@@ -1,4 +1,4 @@
-import { Document } from 'lib/types'
+import { Document } from 'lib/common'
 import { TermQuery } from './get-term'
 import { TermsQuery } from './get-terms'
 import { BoolQuery } from './get-bool'

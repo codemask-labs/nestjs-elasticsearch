@@ -1,5 +1,5 @@
 import { HomeDocument } from 'test/module'
-import { Range } from 'lib/types'
+import { Range } from 'lib/common'
 import { getRangeAggregation } from './get-range'
 
 describe('getRangeAggregation', () => {

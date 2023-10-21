@@ -1,4 +1,4 @@
-import { Document, Field } from 'lib/types'
+import { Document, Field } from 'lib/common'
 
 export type TermsAggregationBody<TDocument extends Document> = {
     field: Field<TDocument>
