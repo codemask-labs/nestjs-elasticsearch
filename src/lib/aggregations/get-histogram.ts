@@ -1,4 +1,4 @@
-import { Document, Key } from 'lib/types'
+import { Document, Key } from 'lib/common'
 
 export type HistogramAggregationBody<TDocument extends Document> = {
     field: Key<TDocument>

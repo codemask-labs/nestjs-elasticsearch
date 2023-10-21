@@ -1,4 +1,4 @@
-import { Document, Key, Sort } from 'lib/types'
+import { Document, Key, Sort } from 'lib/common'
 
 export type TopHitsAggregationOptions<TDocument extends Document> = {
     sort?: Array<Sort<TDocument>>

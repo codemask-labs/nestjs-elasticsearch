@@ -1,4 +1,4 @@
-import { Document } from 'lib/types'
+import { Document } from 'lib/common'
 import { getBoolQuery, getMustNotQuery, getShouldQuery, MustNotQueryBody, ShouldQuery } from 'lib/queries'
 
 export type ShouldNotQuery<TDocument extends Document> = ShouldQuery<TDocument>

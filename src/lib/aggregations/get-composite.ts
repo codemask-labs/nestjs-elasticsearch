@@ -1,4 +1,4 @@
-import { Document, Key, Keys } from 'lib/types'
+import { Document, Key, Keys } from 'lib/common'
 import { TermsAggregation } from './get-terms'
 import { HistogramAggregation } from './get-histogram'
 import { DateHistogramAggregation } from '.'

@@ -1,11 +1,6 @@
-import type { estypes, ApiResponse } from '@elastic/elasticsearch'
-import { ClassConstructor, Document } from 'lib/types'
-import { Aggregations, AggregationsBody } from 'lib/aggregations'
-
-export type ElasticsearchResult<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
-    hits: estypes.HitsMetadata<TDocument>
-    aggregations?: AggregationsBody<TDocument, TAggregationsBody>
-}
+import type { ApiResponse } from '@elastic/elasticsearch'
+import { ClassConstructor, Document, Result } from 'lib/common'
+import { Aggregations } from 'lib/aggregations'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type SearchResponse<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
@@ -17,7 +12,7 @@ export type SearchResponse<TDocument extends Document, TAggregationsBody extends
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getSearchResponse = <TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>>(
     document: ClassConstructor<TDocument>,
-    { body }: ApiResponse<ElasticsearchResult<TDocument, TAggregationsBody>>
+    { body }: ApiResponse<Result<TDocument, TAggregationsBody>>
 ): SearchResponse<TDocument, TAggregationsBody> => ({
     documents: body.hits.hits.reduce((result, { _source: source }) => {
         if (!source) {
@@ -26,5 +21,5 @@ export const getSearchResponse = <TDocument extends Document, TAggregationsBody 
 
         return [...result, Object.assign(new document(), source)]
     }, [] as Array<TDocument>),
-    aggregations: (body.aggregations || {}) as AggregationsBody<TDocument, TAggregationsBody>
+    aggregations: body.aggregations || {}
 })

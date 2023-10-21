@@ -1,4 +1,4 @@
-export * from './types'
+export * from './common'
 export * from './utils'
 export * from './decorators'
 export * from './queries'

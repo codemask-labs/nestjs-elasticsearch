@@ -1,4 +1,4 @@
-import { Document, Field, FieldType } from 'lib/types'
+import { Document, Field, FieldType } from 'lib/common'
 
 export type TermQueryOptions = {
     case_insensitive?: boolean

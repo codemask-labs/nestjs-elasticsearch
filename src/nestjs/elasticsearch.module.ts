@@ -1,7 +1,7 @@
 import { ClientOptions } from '@elastic/elasticsearch'
 import { ElasticsearchModule as BaseElasticsearchModule } from '@nestjs/elasticsearch'
 import { Module, DynamicModule, Provider } from '@nestjs/common'
-import { ClassConstructor } from 'lib/types'
+import { ClassConstructor } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { Index } from './injectables'
 import { ElasticsearchService } from './elasticsearch.service'

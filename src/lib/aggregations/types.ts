@@ -1,4 +1,4 @@
-import { Document } from 'lib/types'
+import { Document } from 'lib/common'
 import { AvgAggregation } from './get-avg'
 import { DateHistogramAggregation } from './get-date-histogram'
 import { MissingValueAggregation } from './get-missing-value'
