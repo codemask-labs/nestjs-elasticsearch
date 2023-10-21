@@ -1,6 +1,6 @@
 import type { ApiResponse } from '@elastic/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
-import { Aggregations, AggregationsBody } from 'lib/aggregations'
+import { Aggregations } from 'lib/aggregations'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type SearchResponse<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
@@ -21,5 +21,5 @@ export const getSearchResponse = <TDocument extends Document, TAggregationsBody 
 
         return [...result, Object.assign(new document(), source)]
     }, [] as Array<TDocument>),
-    aggregations: (body.aggregations || {}) as AggregationsBody<TDocument, TAggregationsBody>
+    aggregations: body.aggregations || {}
 })
