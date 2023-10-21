@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common'
+import { RequestParams } from '@elastic/elasticsearch'
 import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { AggregationList } from 'lib/aggregations'
 import { getSearchRequest, SearchRequest } from 'lib/requests'
-import { getSearchResponse } from 'lib/responses'
+import { ClusterHealthResponse, getSearchResponse } from 'lib/responses'
 import { Index } from './injectables'
 
 @Injectable()
@@ -30,5 +31,10 @@ export class ElasticsearchService {
 
     getIndex<TDocument extends Document>(document: ClassConstructor<TDocument>) {
         return new Index(this, document)
+    }
+
+    getClusterHealth(options?: RequestParams.ClusterHealth): Promise<ClusterHealthResponse> {
+        return this.elasticsearchBaseService.cluster.health<ClusterHealthResponse>(options)
+            .then(response => response.body)
     }
 }
