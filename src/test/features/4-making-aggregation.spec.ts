@@ -22,8 +22,6 @@ describe('Making a search', () => {
         const service = app.get(TestService)
         const result = await service.getTopAddressesWithHighestAverageAreaSquared()
 
-        result.aggregations.b.buckets.map(bucket => bucket.averageSquareMeters.value)
-
         expect(result.documents).toEqual([])
         expect(result.aggregations).toEqual({
             a: {
