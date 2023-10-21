@@ -27,8 +27,8 @@ export class TestService {
         return this.homes.search({
             size: 0,
             aggregations: {
-                a: getTermsAggregation('city.keyword'),
-                b: {
+                cities: getTermsAggregation('city.keyword'),
+                citiesWithAverageAreaSquared: {
                     ...getTermsAggregation('city.keyword'),
                     aggs: {
                         averageSquareMeters: getAvgAggregation('propertyAreaSquared')

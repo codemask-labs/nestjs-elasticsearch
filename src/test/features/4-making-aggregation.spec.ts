@@ -23,7 +23,7 @@ describe('Making a search', () => {
 
         expect(result.documents).toEqual([])
         expect(result.aggregations).toEqual({
-            a: {
+            cities: {
                 // eslint-disable-next-line camelcase
                 doc_count_error_upper_bound: expect.any(Number),
                 // eslint-disable-next-line camelcase
@@ -36,7 +36,7 @@ describe('Making a search', () => {
                     }
                 ])
             },
-            b: {
+            citiesWithAverageAreaSquared: {
                 // eslint-disable-next-line camelcase
                 doc_count_error_upper_bound: expect.any(Number),
                 // eslint-disable-next-line camelcase
