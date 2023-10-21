@@ -21,8 +21,8 @@ describe('Making a search', () => {
     it('health of a cluster being one of the HealthStatus enum', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.getClusterHealth()
-        const statues = Object.values(HealthStatus)
+        const statuses = Object.values(HealthStatus)
 
-        expect(statues.includes(result.status)).toBeTruthy()
+        expect(statuses.includes(result.status)).toBeTruthy()
     })
 })
