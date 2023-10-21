@@ -1,7 +1,7 @@
 import { validateSync } from 'class-validator'
 import { setupNestApplication } from 'test/toolkit'
 import { HomeDocument, TestService } from 'test/module'
-import { ElasticsearchModule } from 'nestjs/elasticsearch.module'
+import { ElasticsearchModule } from 'module/elasticsearch.module'
 
 describe('Making a search', () => {
     const { app } = setupNestApplication({
