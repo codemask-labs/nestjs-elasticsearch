@@ -1,5 +1,5 @@
-import { Bucket, Buckets, Document, OptionalValue } from 'lib/common'
-import { Aggregations, AggregationsBody, AvgAggregation, TermsAggregation, ValueCountAggregation } from 'lib/aggregations'
+import { Bucket, Buckets, Document, OptionalValue, Value } from 'lib/common'
+import { Aggregations, AggregationsBody, AvgAggregation, CardinalityAggregation, SumAggregation, TermsAggregation, ValueCountAggregation } from 'lib/aggregations'
 
 export type TransformAggregation<
     TDocument extends Document,
@@ -8,9 +8,11 @@ export type TransformAggregation<
     TAggregationsBody extends AggregationsBody<TDocument, Record<string, Aggregations<TDocument>>>
 > = TAggregation extends TermsAggregation<TDocument>
     ? Buckets<Bucket & TransformedAggregations<TDocument, TAggregationsBody>>
-    : TAggregation extends AvgAggregation<TDocument> | ValueCountAggregation<TDocument>
+    : TAggregation extends AvgAggregation<TDocument> | SumAggregation<TDocument>
         ? OptionalValue<number>
-        : `Unhandled aggregation type for name: ${TName}`
+        : TAggregation extends CardinalityAggregation<TDocument> | ValueCountAggregation<TDocument>
+            ? Value<number>
+            : `Unhandled aggregation type for name: ${TName}`
 
 export type TransformedAggregation<
     TDocument extends Document,
