@@ -1,25 +1,19 @@
 import type { ApiResponse } from '@elastic/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
 import { Aggregations } from 'lib/aggregations'
+import { TransformedAggregations, getTransformedAggregations, getTransformedDocuments, getTransformedTotal } from 'lib/transformers'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export type SearchResponse<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
+    total: number
     documents: Array<TDocument>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    aggregations: Record<string, any>
+    aggregations: TransformedAggregations<TDocument, TAggregationsBody>
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getSearchResponse = <TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>>(
     document: ClassConstructor<TDocument>,
     { body }: ApiResponse<Result<TDocument, TAggregationsBody>>
 ): SearchResponse<TDocument, TAggregationsBody> => ({
-    documents: body.hits.hits.reduce((result, { _source: source }) => {
-        if (!source) {
-            return result
-        }
-
-        return [...result, Object.assign(new document(), source)]
-    }, [] as Array<TDocument>),
-    aggregations: body.aggregations || {}
+    total: getTransformedTotal(body.hits),
+    documents: getTransformedDocuments(document, body.hits),
+    aggregations: getTransformedAggregations(body.aggregations)
 })

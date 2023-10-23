@@ -6,8 +6,6 @@ import { HomeDocument, PropertyType } from 'test/module'
 const ELASTICSEARCH_SEED_INDEX_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
 const DOCUMENTS_COUNT = 100
 
-console.log('random data')
-
 const data = new Array(DOCUMENTS_COUNT).fill(null).map((): HomeDocument => {
     const id = faker.string.uuid()
     const name = faker.person.fullName()

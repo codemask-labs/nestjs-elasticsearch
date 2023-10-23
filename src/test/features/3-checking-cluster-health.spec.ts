@@ -1,4 +1,5 @@
 import { setupNestApplication } from 'test/toolkit'
+import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { HealthStatus } from 'lib/enums'
@@ -7,7 +8,7 @@ describe('Making a search', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: 'http://localhost:9200'
+                node: TEST_ELASTICSEARCH_NODE
             })
         ]
     })
@@ -21,8 +22,8 @@ describe('Making a search', () => {
     it('health of a cluster being one of the HealthStatus enum', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.getClusterHealth()
-        const statues = Object.values(HealthStatus)
+        const statuses = Object.values(HealthStatus)
 
-        expect(statues.includes(result.status)).toBeTruthy()
+        expect(statuses.includes(result.status)).toBeTruthy()
     })
 })

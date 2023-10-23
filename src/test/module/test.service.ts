@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectIndex } from 'lib/decorators'
 import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
+import { getAvgAggregation, getTermsAggregation } from 'lib/aggregations'
 import { Index } from 'module/injectables'
 import { PropertyType } from './enums'
 import { HomeDocument } from './home.document'
@@ -19,6 +20,27 @@ export class TestService {
                     getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat])
                 ]
             })
+        })
+    }
+
+    getTopAddressesWithHighestAverageAreaSquared(size: number = 3) {
+        return this.homes.search({
+            size: 0,
+            aggregations: {
+                cities: getTermsAggregation('city.keyword'),
+                citiesWithAverageAreaSquared: {
+                    ...getTermsAggregation('city.keyword'),
+                    aggs: {
+                        averageSquareMeters: getAvgAggregation('propertyAreaSquared')
+                    }
+                },
+                homes: {
+                    ...getTermsAggregation('address.keyword', size),
+                    aggregations: {
+                        averageSquareMeters: getAvgAggregation('propertyAreaSquared')
+                    }
+                }
+            }
         })
     }
 }

@@ -4,6 +4,7 @@
         "target": "ESNext",
         "module": "Node16",
         "lib": ["esnext"],
+        "types": ["expect-more-jest"],
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -28,6 +29,6 @@
         "transpileOnly": true,
         "require": ["reflect-metadata", "tsconfig-paths/register"]
     },
-    "include": ["src", "jest.setup.ts"],
+    "include": ["src"],
     "exclude": ["dist", "node_modules"]
 }

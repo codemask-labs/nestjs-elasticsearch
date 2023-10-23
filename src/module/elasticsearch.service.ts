@@ -34,7 +34,6 @@ export class ElasticsearchService {
     }
 
     getClusterHealth(options?: RequestParams.ClusterHealth): Promise<ClusterHealthResponse> {
-        return this.elasticsearchBaseService.cluster.health<ClusterHealthResponse>(options)
-            .then(response => response.body)
+        return this.elasticsearchBaseService.cluster.health<ClusterHealthResponse>(options).then(response => response.body)
     }
 }
