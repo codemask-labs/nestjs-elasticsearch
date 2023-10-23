@@ -1,10 +1,11 @@
 import { Client } from '@elastic/elasticsearch'
-import { readFile } from 'fs/promises'
 import { join } from 'path'
+import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
+import { readFile } from 'fs/promises'
 
 const index = 'homes'
 const client = new Client({
-    node: 'http://localhost:9200'
+    node: TEST_ELASTICSEARCH_NODE
 })
 
 const path = join(__dirname, './seeds/homes.seed.json')

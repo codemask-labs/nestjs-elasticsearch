@@ -29,6 +29,6 @@
         "transpileOnly": true,
         "require": ["reflect-metadata", "tsconfig-paths/register"]
     },
-    "include": ["src", "src/test/jest.setup.ts"],
+    "include": ["src"],
     "exclude": ["dist", "node_modules"]
 }

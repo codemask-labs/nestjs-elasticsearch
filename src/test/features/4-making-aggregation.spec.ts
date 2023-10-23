@@ -1,5 +1,7 @@
+/* eslint-disable camelcase */
 import { setupNestApplication } from 'test/toolkit'
 import { HomeDocument, TestService } from 'test/module'
+import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 
 describe('Making a search', () => {
@@ -7,7 +9,7 @@ describe('Making a search', () => {
         providers: [TestService],
         imports: [
             ElasticsearchModule.register({
-                node: 'http://localhost:9200'
+                node: TEST_ELASTICSEARCH_NODE
             }),
             ElasticsearchModule.forFeature([HomeDocument])
         ]
@@ -24,26 +26,20 @@ describe('Making a search', () => {
         expect(result.documents).toEqual([])
         expect(result.aggregations).toEqual({
             cities: {
-                // eslint-disable-next-line camelcase
                 doc_count_error_upper_bound: expect.any(Number),
-                // eslint-disable-next-line camelcase
                 sum_other_doc_count: expect.any(Number),
                 buckets: expect.arrayContaining([
                     {
-                        // eslint-disable-next-line camelcase
                         doc_count: expect.any(Number),
                         key: expect.any(String)
                     }
                 ])
             },
             citiesWithAverageAreaSquared: {
-                // eslint-disable-next-line camelcase
                 doc_count_error_upper_bound: expect.any(Number),
-                // eslint-disable-next-line camelcase
                 sum_other_doc_count: expect.any(Number),
                 buckets: expect.arrayContaining([
                     {
-                        // eslint-disable-next-line camelcase
                         doc_count: expect.any(Number),
                         key: expect.any(String),
                         averageSquareMeters: {
@@ -53,13 +49,10 @@ describe('Making a search', () => {
                 ])
             },
             homes: {
-                // eslint-disable-next-line camelcase
                 doc_count_error_upper_bound: expect.any(Number),
-                // eslint-disable-next-line camelcase
                 sum_other_doc_count: expect.any(Number),
                 buckets: expect.arrayContaining([
                     {
-                        // eslint-disable-next-line camelcase
                         doc_count: expect.any(Number),
                         key: expect.any(String),
                         averageSquareMeters: {

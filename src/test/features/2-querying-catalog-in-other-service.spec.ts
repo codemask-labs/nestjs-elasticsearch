@@ -2,13 +2,14 @@ import { validateSync } from 'class-validator'
 import { setupNestApplication } from 'test/toolkit'
 import { HomeDocument, TestService } from 'test/module'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
+import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 
 describe('Making a search', () => {
     const { app } = setupNestApplication({
         providers: [TestService],
         imports: [
             ElasticsearchModule.register({
-                node: 'http://localhost:9200'
+                node: TEST_ELASTICSEARCH_NODE
             }),
             ElasticsearchModule.forFeature([HomeDocument])
         ]
