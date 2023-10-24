@@ -1,15 +1,31 @@
-import { Document, Key } from 'lib/common'
+import { is } from 'ramda'
+import { Document, Field } from 'lib/common'
 
-export type SumAggregationBody<TDocument extends Document> = {
-    field: Key<TDocument>
+export type SumAggregationScript = {
+    script: string
 }
+
+export type SumAggregationField<TDocument extends Document> = {
+    field: Field<TDocument>
+}
+
+export type SumAggregationBody<TDocument extends Document> = (
+    SumAggregationField<TDocument> |
+    SumAggregationScript
+)
 
 export type SumAggregation<TDocument extends Document> = {
     sum: SumAggregationBody<TDocument>
 }
 
-export const getSumAggregation = <TDocument extends Document, Tkey extends Key<TDocument> = Key<TDocument>>(
-    field: Tkey
-): SumAggregation<TDocument> => ({
-    sum: { field } as SumAggregationBody<TDocument>
-})
+export const getSumAggregation = <TDocument extends Document>(
+    fieldOrScript: Field<TDocument> | SumAggregationScript
+): SumAggregation<TDocument> => {
+    if (!is(String, fieldOrScript)) {
+        return { sum: fieldOrScript }
+    }
+
+    return {
+        sum: { field: fieldOrScript }
+    }
+}

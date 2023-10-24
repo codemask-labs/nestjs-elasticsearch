@@ -1,17 +1,34 @@
+import { is } from 'ramda'
 import { Document, Field } from 'lib/common'
 
-export type CardinalityFieldAggregation<TDocument extends Document> = {
-    field: Field<TDocument>
+export type CardinalityAggregationOptions = {
+    precision_threshold?: number
 }
 
-export type CardinalityScriptAggregation = {
+export type CardinalityField<TDocument extends Document> = {
+    field: Field<TDocument>
+    precision_threshold?: number
+}
+
+export type CardinalityScript = {
     script: string
 }
 
+export type CardinalityAggregationBody<TDocument extends Document> = (
+    CardinalityField<TDocument> |
+    CardinalityScript
+)
+
 export type CardinalityAggregation<TDocument extends Document> = {
-    cardinality: CardinalityFieldAggregation<TDocument> | CardinalityScriptAggregation
+    cardinality: CardinalityAggregationBody<TDocument>
 }
 
-export const getCardinalityAggregation = <TDocument extends Document>(field: Field<TDocument>): CardinalityAggregation<TDocument> => ({
-    cardinality: { field }
-})
+export const getCardinalityAggregation = <TDocument extends Document>(fieldOrScript: Field<TDocument> | CardinalityScript, options?: CardinalityAggregationOptions): CardinalityAggregation<TDocument> => {
+    if (!is(String, fieldOrScript)) {
+        return { cardinality: fieldOrScript }
+    }
+
+    return {
+        cardinality: { field: fieldOrScript, ...options }
+    }
+}

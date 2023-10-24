@@ -7,8 +7,7 @@ describe('getTermsAggregation', () => {
 
         expect(query).toEqual({
             terms: {
-                field: 'address.keyword',
-                size: 10
+                field: 'address.keyword'
             }
         })
     })

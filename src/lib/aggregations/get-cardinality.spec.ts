@@ -1,14 +1,17 @@
+/* eslint-disable camelcase */
 import { HomeDocument } from 'test/module'
 import { getCardinalityAggregation } from './get-cardinality'
 
 describe('getCardinalityAggregation', () => {
     it('accepts only schema field', () => {
-        const query = getCardinalityAggregation<HomeDocument>('address')
+        const query = getCardinalityAggregation<HomeDocument>('address', {
+            precision_threshold: 1000
+        })
 
         expect(query).toEqual({
-            // eslint-disable-next-line camelcase
             cardinality: {
-                field: 'address'
+                field: 'address',
+                precision_threshold: 1000
             }
         })
     })
