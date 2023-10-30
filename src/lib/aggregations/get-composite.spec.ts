@@ -1,6 +1,6 @@
 import { HomeDocument } from 'test/module'
 import { CompositeAggregationSource, getCompositeAggregation } from './get-composite'
-import { getTermsAggregation } from '.'
+import { getTermsAggregation } from './get-terms'
 
 describe('getCompositeAggregation', () => {
     it('accepts only schema field', () => {

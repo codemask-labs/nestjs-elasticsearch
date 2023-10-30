@@ -10,20 +10,20 @@ import { ValueCountAggregation } from './get-value-count'
 import { CompositeAggregation } from './get-composite'
 import { TopHitsAggregation } from './get-top-hits'
 import { MaxAggregation } from './get-max'
-import { CardinalityAggregation } from '.'
+import { CardinalityAggregation } from './get-cardinality'
 
 export type AggregationList<TDocument extends Document> =
     | AvgAggregation<TDocument>
+    | MaxAggregation<TDocument>
+    | SumAggregation<TDocument>
     | DateHistogramAggregation<TDocument>
     | MissingValueAggregation<TDocument>
     | PercentileAggregation<TDocument>
     | RangeAggregation<TDocument>
-    | SumAggregation<TDocument>
     | TermsAggregation<TDocument>
     | ValueCountAggregation<TDocument>
     | CompositeAggregation<TDocument>
     | TopHitsAggregation<TDocument>
-    | MaxAggregation<TDocument>
     | CardinalityAggregation<TDocument>
 
 export type AggregationsContainer<TDocument extends Document> = Record<string, Aggregations<TDocument>>

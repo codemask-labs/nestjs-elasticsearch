@@ -1,7 +1,7 @@
 import { Document, Key, Keys } from 'lib/common'
 import { TermsAggregation } from './get-terms'
 import { HistogramAggregation } from './get-histogram'
-import { DateHistogramAggregation } from '.'
+import { DateHistogramAggregation } from './get-date-histogram'
 
 export type AfterKey<TDocument extends Document> = {
     [TKey in Key<TDocument>]?: Keys<TDocument>[TKey]
