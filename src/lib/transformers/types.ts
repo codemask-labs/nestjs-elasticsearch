@@ -1,18 +1,37 @@
 import { Bucket, Buckets, CompositeBuckets, Document, Hits, OptionalValue, Value } from 'lib/common'
-import { Aggregations, AggregationsBody, AggregationsContainer, AvgAggregation, CardinalityAggregation, CompositeAggregation, SumAggregation, TermsAggregation, TopHitsAggregation, ValueCountAggregation } from 'lib/aggregations'
+import {
+    Aggregations,
+    AggregationsBody,
+    AggregationsContainer,
+    AvgAggregation,
+    CardinalityAggregation,
+    CompositeAggregation,
+    DateHistogramAggregation,
+    MaxAggregation,
+    MinAggregation,
+    SumAggregation,
+    TermsAggregation,
+    TopHitsAggregation,
+    ValueCountAggregation
+} from 'lib/aggregations'
 
 export type TransformAggregation<
     TDocument extends Document,
     TName extends string | number | symbol,
     TAggregation extends Aggregations<TDocument>,
     TAggregationsBody extends AggregationsBody<TDocument, AggregationsContainer<TDocument>>
-> = TAggregation extends TermsAggregation<TDocument>
+> = TAggregation extends TermsAggregation<TDocument> | DateHistogramAggregation<TDocument>
     ? Buckets<string, Bucket & TransformedAggregations<TDocument, TAggregationsBody>>
     : TAggregation extends TopHitsAggregation<TDocument>
         ? Hits<TDocument>
-        : TAggregation extends AvgAggregation<TDocument> | SumAggregation<TDocument>
+        : TAggregation extends AvgAggregation<TDocument>
             ? OptionalValue<number>
-            : TAggregation extends CardinalityAggregation<TDocument> | ValueCountAggregation<TDocument>
+            : TAggregation extends
+            | CardinalityAggregation<TDocument>
+            | ValueCountAggregation<TDocument>
+            | MaxAggregation<TDocument>
+            | MinAggregation<TDocument>
+            | SumAggregation<TDocument>
                 ? Value<number>
                 : TAggregation extends CompositeAggregation<TDocument>
                     ? CompositeBuckets

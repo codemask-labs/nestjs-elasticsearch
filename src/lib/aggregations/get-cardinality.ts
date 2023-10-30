@@ -14,16 +14,16 @@ export type CardinalityScript = {
     script: string
 }
 
-export type CardinalityAggregationBody<TDocument extends Document> = (
-    CardinalityField<TDocument> |
-    CardinalityScript
-)
+export type CardinalityAggregationBody<TDocument extends Document> = CardinalityField<TDocument> | CardinalityScript
 
 export type CardinalityAggregation<TDocument extends Document> = {
     cardinality: CardinalityAggregationBody<TDocument>
 }
 
-export const getCardinalityAggregation = <TDocument extends Document>(fieldOrScript: Field<TDocument> | CardinalityScript, options?: CardinalityAggregationOptions): CardinalityAggregation<TDocument> => {
+export const getCardinalityAggregation = <TDocument extends Document>(
+    fieldOrScript: Field<TDocument> | CardinalityScript,
+    options?: CardinalityAggregationOptions
+): CardinalityAggregation<TDocument> => {
     if (!is(String, fieldOrScript)) {
         return { cardinality: fieldOrScript }
     }

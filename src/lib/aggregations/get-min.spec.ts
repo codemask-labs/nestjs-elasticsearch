@@ -1,13 +1,13 @@
 /* eslint-disable camelcase */
 import { HomeDocument } from 'test/module'
-import { getMaxAggregation } from './get-max'
+import { getMinAggregation } from './get-min'
 
-describe('getMaxAggregation', () => {
+describe('getMinAggregation', () => {
     it('accepts only schema field', () => {
-        const query = getMaxAggregation<HomeDocument>('address')
+        const query = getMinAggregation<HomeDocument>('address')
 
         expect(query).toEqual({
-            max: {
+            min: {
                 field: 'address'
             }
         })
