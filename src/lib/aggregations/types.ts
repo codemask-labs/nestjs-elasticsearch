@@ -8,23 +8,35 @@ import { SumAggregation } from './get-sum'
 import { TermsAggregation } from './get-terms'
 import { ValueCountAggregation } from './get-value-count'
 import { CompositeAggregation } from './get-composite'
+import { TopHitsAggregation } from './get-top-hits'
+import { MaxAggregation } from './get-max'
+import { CardinalityAggregation } from './get-cardinality'
+import { PercentAggregation } from './get-percent'
+import { MinAggregation } from './get-min'
 
 export type AggregationList<TDocument extends Document> =
     | AvgAggregation<TDocument>
+    | MaxAggregation<TDocument>
+    | SumAggregation<TDocument>
+    | MinAggregation<TDocument>
     | DateHistogramAggregation<TDocument>
     | MissingValueAggregation<TDocument>
     | PercentileAggregation<TDocument>
+    | PercentAggregation<TDocument>
     | RangeAggregation<TDocument>
-    | SumAggregation<TDocument>
     | TermsAggregation<TDocument>
     | ValueCountAggregation<TDocument>
     | CompositeAggregation<TDocument>
+    | TopHitsAggregation<TDocument>
+    | CardinalityAggregation<TDocument>
 
-export type AggregationsBody<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
+export type AggregationsContainer<TDocument extends Document> = Record<string, Aggregations<TDocument>>
+
+export type AggregationsBody<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     [Key in keyof TAggregationsBody]: TAggregationsBody[Key]
 }
 
 export type Aggregations<TDocument extends Document> = AggregationList<TDocument> & {
-    aggs?: AggregationsBody<TDocument, Record<string, Aggregations<TDocument>>>
-    aggregations?: AggregationsBody<TDocument, Record<string, Aggregations<TDocument>>>
+    aggs?: AggregationsBody<TDocument, AggregationsContainer<TDocument>>
+    aggregations?: AggregationsBody<TDocument, AggregationsContainer<TDocument>>
 }

@@ -1,10 +1,13 @@
 import { HomeDocument } from 'test/module'
-import { getCompositeAggregation } from './get-composite'
-import { getTermsAggregation } from '.'
+import { CompositeAggregationSource, getCompositeAggregation } from './get-composite'
+import { getTermsAggregation } from './get-terms'
 
 describe('getCompositeAggregation', () => {
     it('accepts only schema field', () => {
-        const sources = [getTermsAggregation<HomeDocument>('address.keyword'), getTermsAggregation<HomeDocument>('city.keyword')]
+        const sources: Array<CompositeAggregationSource<HomeDocument>> = [
+            { first: getTermsAggregation<HomeDocument>('address.keyword') },
+            { second: getTermsAggregation<HomeDocument>('city.keyword') }
+        ]
 
         const query = getCompositeAggregation<HomeDocument>(sources, {
             after: {

@@ -1,5 +1,7 @@
 export * from './get-sum'
 export * from './get-avg'
+export * from './get-max'
+export * from './get-min'
 export * from './get-missing-value'
 export * from './get-histogram'
 export * from './get-date-histogram'

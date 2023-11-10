@@ -1,15 +1,15 @@
 import type { ApiResponse } from '@elastic/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
-import { Aggregations } from 'lib/aggregations'
+import { AggregationsContainer } from 'lib/aggregations'
 import { TransformedAggregations, getTransformedAggregations, getTransformedDocuments, getTransformedTotal } from 'lib/transformers'
 
-export type SearchResponse<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
+export type SearchResponse<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     total: number
     documents: Array<TDocument>
     aggregations: TransformedAggregations<TDocument, TAggregationsBody>
 }
 
-export const getSearchResponse = <TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>>(
+export const getSearchResponse = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
     { body }: ApiResponse<Result<TDocument, TAggregationsBody>>
 ): SearchResponse<TDocument, TAggregationsBody> => ({

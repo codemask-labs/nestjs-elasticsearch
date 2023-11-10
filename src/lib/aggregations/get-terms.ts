@@ -1,8 +1,18 @@
 import { Document, Field } from 'lib/common'
+import { Order } from 'lib/enums'
+
+export type TermsAggregationOrder = {
+    [x: string]: Order
+}
+
+export type TermsAggregationOptions = {
+    order?: TermsAggregationOrder
+}
 
 export type TermsAggregationBody<TDocument extends Document> = {
     field: Field<TDocument>
-    size: number
+    size?: number
+    order?: TermsAggregationOrder
 }
 
 export type TermsAggregation<TDocument extends Document> = {
@@ -11,10 +21,8 @@ export type TermsAggregation<TDocument extends Document> = {
 
 export const getTermsAggregation = <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
     field: TField,
-    size: number = 10
+    size?: number,
+    options?: TermsAggregationOptions
 ): TermsAggregation<TDocument> => ({
-    terms: {
-        field,
-        size
-    }
+    terms: { field, size, ...options }
 })

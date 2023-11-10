@@ -8,7 +8,7 @@ describe('getPercentileAggregation', () => {
         expect(query).toEqual({
             percentiles: {
                 field: 'address',
-                percents: [5, 10, 15]
+                percentiles: [5, 10, 15]
             }
         })
     })

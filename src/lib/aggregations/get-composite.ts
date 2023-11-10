@@ -1,7 +1,7 @@
 import { Document, Key, Keys } from 'lib/common'
 import { TermsAggregation } from './get-terms'
 import { HistogramAggregation } from './get-histogram'
-import { DateHistogramAggregation } from '.'
+import { DateHistogramAggregation } from './get-date-histogram'
 
 export type AfterKey<TDocument extends Document> = {
     [TKey in Key<TDocument>]?: Keys<TDocument>[TKey]
@@ -18,8 +18,12 @@ export type CompositeAggregationOptions<TDocument extends Document> = {
     after?: AfterKey<TDocument>
 }
 
+export type CompositeAggregationSource<TDocument extends Document> = {
+    [x: string]: CompositeAggregationList<TDocument>
+}
+
 export type CompositeAggregationBody<TDocument extends Document> = CompositeAggregationOptions<TDocument> & {
-    sources: Array<CompositeAggregationList<TDocument>>
+    sources: Array<CompositeAggregationSource<TDocument>>
 }
 
 export type CompositeAggregation<TDocument extends Document> = {
@@ -27,7 +31,7 @@ export type CompositeAggregation<TDocument extends Document> = {
 }
 
 export const getCompositeAggregation = <TDocument extends Document>(
-    sources: Array<CompositeAggregationList<TDocument>>,
+    sources: Array<CompositeAggregationSource<TDocument>>,
     options?: CompositeAggregationOptions<TDocument>
 ): CompositeAggregation<TDocument> => ({
     composite: { sources, ...options }

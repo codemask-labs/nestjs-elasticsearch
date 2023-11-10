@@ -5,7 +5,9 @@ export type TermQueryOptions = {
 }
 
 export type TermQueryBody<TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>> = {
-    [x in TField]?: { value: FieldType<TDocument, TField> }
+    [x in TField]?: TermQueryOptions & {
+        value: FieldType<TDocument, TField>
+    }
 }
 
 export type TermQuery<TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>> = {
