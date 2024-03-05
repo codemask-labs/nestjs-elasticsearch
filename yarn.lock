@@ -428,7 +428,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@codemaskjs/nestjs-elasticsearch@workspace:."
   dependencies:
-    "@commitlint/config-conventional": 18.0.0
+    "@commitlint/config-conventional": 19.0.3
     "@elastic/elasticsearch": 7.13.0
     "@faker-js/faker": 8.2.0
     "@nestjs/common": 10.2.7
@@ -490,12 +490,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:18.0.0":
-  version: 18.0.0
-  resolution: "@commitlint/config-conventional@npm:18.0.0"
+"@commitlint/config-conventional@npm:19.0.3":
+  version: 19.0.3
+  resolution: "@commitlint/config-conventional@npm:19.0.3"
   dependencies:
+    "@commitlint/types": ^19.0.3
     conventional-changelog-conventionalcommits: ^7.0.2
-  checksum: 24bc2e37335cbc0eb8e56b0981ad05322d4c58737764d1029f25733444595317963dab5f4bffdddccc0a1d910ad7dc604b2bb9963cf458c652015ece35d5b255
+  checksum: 35fc2f8aba87196bf3a50f4d2c851ae462a5f993f0b2ea9baacd381d7db58dce07291874fa32b059ee6b88058acd44410ec7cf1b97519d9b2068f2cb532d0ed4
+  languageName: node
+  linkType: hard
+
+"@commitlint/types@npm:^19.0.3":
+  version: 19.0.3
+  resolution: "@commitlint/types@npm:19.0.3"
+  dependencies:
+    "@types/conventional-commits-parser": ^5.0.0
+    chalk: ^5.3.0
+  checksum: 44e67f4861f9b137f43a441f8ab255676b7a276c82ca46ba7846ca1057d170af92a87d3e2a1378713dc4e33a68c8af513683cb96dcd29544e48e2c825109ea6f
   languageName: node
   linkType: hard
 
@@ -1962,6 +1973,15 @@ __metadata:
   dependencies:
     "@babel/types": ^7.20.7
   checksum: 6d0f70d8972647c9b78b51a54f0b6481c4f23f0bb2699ad276e6070678bd121fede99e8e2c8c3e409d2f31a0bf83ae511abc6fefb91f0630c8d728a3a9136790
+  languageName: node
+  linkType: hard
+
+"@types/conventional-commits-parser@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@types/conventional-commits-parser@npm:5.0.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: 88013c53adccaf359a429412c5d835990a88be33218f01f85eb04cf839a7d5bef51dd52b83a3032b00153e9f3ce4a7e84ff10b0a1f833c022c5e999b00eef24c
   languageName: node
   linkType: hard
 
