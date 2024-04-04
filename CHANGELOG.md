@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.6.0...v1.7.0) (2024-04-04)
+
+
+### Features
+
+* extracting and transforming aggregation responses ([#16](https://github.com/przemyslawwalczak/nestjs-elasticsearch/issues/16)) ([bc8c0d6](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/bc8c0d62f4a00cd268c4a806b5f9c2ed3715547f))
+* transforming known aggregations ([#21](https://github.com/przemyslawwalczak/nestjs-elasticsearch/issues/21)) ([bf7d5b6](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/bf7d5b66a3ef72e75696d905be28c507aff46eea))
+
 # [1.6.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.5.0...v1.6.0) (2023-10-20)
 
 
