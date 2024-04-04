@@ -1,11 +1,6 @@
 name: Release
 on:
   workflow_dispatch:
-    inputs:
-      desc:
-        description: "Description"
-        required: false
-        default: "Manual release"
 
 permissions:
   contents: read # for checkout
@@ -21,23 +16,34 @@ jobs:
       pull-requests: write
       id-token: write
     env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       HUSKY: 0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Setup
         uses: ./.github/actions/setup
+
       - name: Build package
         run: yarn build
+
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
-      - name: Run semantic release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release --branches ${{ github.ref_name }}
-        id: ver
-      - name: Package next version
+
+      - name: Init Git user
         run: |
-          echo "Package next version: ${{ steps.ver.outputs.nextVer }}"
+          git config --global user.email "contact@codemask.com"
+          git config --global user.name "Codemask"
+
+      - name: Init NPM configuration
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Release
+        run: yarn dlx -p release-it -p @release-it/conventional-changelog release-it --ci
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
