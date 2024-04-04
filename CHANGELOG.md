@@ -1,3 +1,12 @@
+
+
+## [1.8.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.7.0...v1.8.0) (2024-04-04)
+
+
+### Features
+
+* updated release workflow ([#77](https://github.com/przemyslawwalczak/nestjs-elasticsearch/issues/77)) ([e79ab70](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/e79ab709e4d97eafa172a2d0a7c13887cdc15eb4))
+
 # [1.7.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.6.0...v1.7.0) (2024-04-04)
 
 
