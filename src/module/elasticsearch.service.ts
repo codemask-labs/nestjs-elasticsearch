@@ -16,10 +16,10 @@ export class ElasticsearchService {
         document: ClassConstructor<TDocument>,
         options?: SearchRequest<TDocument, TAggregationsBody>
     ) {
-        const request = getRequestParams<TDocument, TAggregationsBody>(document, options)
+        const params = getRequestParams<TDocument, TAggregationsBody>(document, options)
 
         return this.elasticsearchBaseService
-            .search<Result<TDocument, TAggregationsBody>>(request)
+            .search<Result<TDocument, TAggregationsBody>>(params)
             .then(response => getSearchResponse(document, response))
     }
 
