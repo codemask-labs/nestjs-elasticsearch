@@ -1,12 +1,15 @@
 import { Document, Key, Sort } from 'lib/common'
 
 export type TopHitsAggregationOptions<TDocument extends Document> = {
-    sort?: Array<Sort<TDocument>>
+    from?: number
     includes?: Array<Key<TDocument>>
+    sort?: Array<Sort<TDocument>>
 }
 
 export type TopHitsAggregationBody<TDocument extends Document> = {
     size: number
+    from?: number
+    sort?: Array<Sort<TDocument>>
     _source?: TopHitsAggregationOptions<TDocument>
 }
 
@@ -25,8 +28,11 @@ export const getTopHitsAggregation = <TDocument extends Document>(
         }
     }
 
+    const { includes, ...params } = options
+    const source = includes?.length ? { _source: { includes } } : {}
+
     return {
         // eslint-disable-next-line camelcase
-        top_hits: { size, _source: { ...options } }
+        top_hits: { size, ...params, ...source }
     }
 }
