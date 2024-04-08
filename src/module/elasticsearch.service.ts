@@ -5,7 +5,7 @@ import { ClassConstructor, Document, Result } from 'lib/common'
 import { AggregationList } from 'lib/aggregations'
 import { SearchRequestOptions } from 'lib/requests'
 import { ClusterHealthResponse, getSearchResponse } from 'lib/responses'
-import { getRequestParams } from 'lib/elasticsearch'
+import { getSearchRequestParams } from 'lib/elasticsearch'
 import { Index } from './injectables'
 
 @Injectable()
@@ -16,7 +16,7 @@ export class ElasticsearchService {
         document: ClassConstructor<TDocument>,
         options?: SearchRequestOptions<TDocument, TAggregationsBody>
     ) {
-        const params = getRequestParams(document, options)
+        const params = getSearchRequestParams(document, options)
 
         return this.baseElasticsearchService
             .search<Result<TDocument, TAggregationsBody>>(params)

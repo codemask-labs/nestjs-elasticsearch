@@ -3,7 +3,7 @@ import { ClassConstructor, Document } from 'lib/common'
 import { AggregationsContainer } from 'lib/aggregations'
 import { SearchRequestOptions, getSearchRequest } from 'lib/requests'
 
-export const getRequestParams = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
+export const getSearchRequestParams = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
     options?: SearchRequestOptions<TDocument, TAggregationsBody>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

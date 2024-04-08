@@ -1,1 +1,1 @@
-export * from './get-request-params'
+export * from './get-search-request-params'
