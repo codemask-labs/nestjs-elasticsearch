@@ -1,6 +1,6 @@
+import { Order } from 'lib/enums'
 import { HomeDocument } from 'test/module'
 import { getTopHitsAggregation } from './get-top-hits'
-import { Order } from '..'
 
 describe('getTopHitsAggregation', () => {
     it('accepts only schema field', () => {
