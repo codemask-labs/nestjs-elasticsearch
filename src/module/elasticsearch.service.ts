@@ -3,7 +3,7 @@ import { RequestParams } from '@elastic/elasticsearch'
 import { ElasticsearchService as BaseElasticsearchService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
 import { AggregationList } from 'lib/aggregations'
-import { SearchRequest } from 'lib/requests'
+import { SearchRequestOptions } from 'lib/requests'
 import { ClusterHealthResponse, getSearchResponse } from 'lib/responses'
 import { getRequestParams } from 'lib/elasticsearch'
 import { Index } from './injectables'
@@ -14,9 +14,9 @@ export class ElasticsearchService {
 
     search<TDocument extends Document, TAggregationsBody extends Record<string, AggregationList<TDocument>>>(
         document: ClassConstructor<TDocument>,
-        options?: SearchRequest<TDocument, TAggregationsBody>
+        options?: SearchRequestOptions<TDocument, TAggregationsBody>
     ) {
-        const params = getRequestParams<TDocument, TAggregationsBody>(document, options)
+        const params = getRequestParams(document, options)
 
         return this.baseElasticsearchService
             .search<Result<TDocument, TAggregationsBody>>(params)
