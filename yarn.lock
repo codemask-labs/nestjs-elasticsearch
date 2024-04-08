@@ -430,7 +430,7 @@ __metadata:
   dependencies:
     "@commitlint/config-conventional": 18.0.0
     "@elastic/elasticsearch": 7.13.0
-    "@faker-js/faker": 8.2.0
+    "@faker-js/faker": 8.4.1
     "@nestjs/common": 10.2.7
     "@nestjs/core": 10.2.7
     "@nestjs/elasticsearch": 9.0.0
@@ -567,10 +567,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@faker-js/faker@npm:8.2.0":
-  version: 8.2.0
-  resolution: "@faker-js/faker@npm:8.2.0"
-  checksum: febc17018acfb841a348591bfe415e815ea981bf7fa0a12670ac2b449479ad7e9e7b130c42878ec30210da964c13a620a3303dc00d63cb13ded00c6fc701e2be
+"@faker-js/faker@npm:8.4.1":
+  version: 8.4.1
+  resolution: "@faker-js/faker@npm:8.4.1"
+  checksum: d802d531f8929562715adc279cfec763c9a4bc596ec67b0ce43fd0ae61b285d2b0eec6f1f4aa852452a63721a842fe7e81926dce7bd92acca94b01e2a1f55f5a
   languageName: node
   linkType: hard
 
