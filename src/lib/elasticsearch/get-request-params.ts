@@ -1,0 +1,22 @@
+import type { RequestParams } from '@elastic/elasticsearch'
+import { ClassConstructor, Document } from 'lib/common'
+import { AggregationsContainer } from 'lib/aggregations'
+import { SearchRequest, getSearchRequest } from 'lib/requests'
+
+export const getRequestParams = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
+    document: ClassConstructor<TDocument>,
+    options?: SearchRequest<TDocument, TAggregationsBody>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): RequestParams.Search<Record<string, any>> => {
+    const { index, size, from, query, aggregations } = getSearchRequest<TDocument, TAggregationsBody>(document, options)
+
+    return {
+        index,
+        size,
+        from,
+        body: {
+            query,
+            aggregations
+        }
+    }
+}

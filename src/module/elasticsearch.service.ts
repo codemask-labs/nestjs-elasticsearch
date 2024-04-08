@@ -3,10 +3,11 @@ import { RequestParams } from '@elastic/elasticsearch'
 import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
 import { AggregationList } from 'lib/aggregations'
-import { getSearchRequest, SearchRequest } from 'lib/requests'
+import { SearchRequest } from 'lib/requests'
+
 import { ClusterHealthResponse, getSearchResponse } from 'lib/responses'
 import { Index } from './injectables'
-
+import { getRequestParams } from 'lib/elasticsearch'
 @Injectable()
 export class ElasticsearchService {
     constructor(private readonly elasticsearchBaseService: ElasticsearchBaseService) {}
@@ -15,7 +16,7 @@ export class ElasticsearchService {
         document: ClassConstructor<TDocument>,
         options?: SearchRequest<TDocument, TAggregationsBody>
     ) {
-        const request = getSearchRequest<TDocument, TAggregationsBody>(document, options)
+        const request = getRequestParams<TDocument, TAggregationsBody>(document, options)
 
         return this.elasticsearchBaseService
             .search<Result<TDocument, TAggregationsBody>>(request)

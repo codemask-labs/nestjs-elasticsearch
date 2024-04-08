@@ -14,11 +14,9 @@ describe('getSearchRequest', () => {
 
         expect(request).toEqual({
             index: 'homes',
-            body: {
-                aggregations: {
-                    test: {
-                        terms: { field: 'address.keyword' }
-                    }
+            aggregations: {
+                test: {
+                    terms: { field: 'address.keyword' }
                 }
             }
         })
