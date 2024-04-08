@@ -1,4 +1,3 @@
-import { is } from 'ramda'
 import type { RequestParams } from '@elastic/elasticsearch'
 import { ClassConstructor, Document } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
@@ -13,11 +12,11 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(indexOrSchema: string | ClassConstructor<TDocument>, options?: SearchRequest<TDocument, TAggregationsBody>): RequestParams.Search<Record<string, any>> => {
-    const index = is(String, indexOrSchema) ? indexOrSchema : Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, indexOrSchema)
+export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(document: ClassConstructor<TDocument>, options?: SearchRequest<TDocument, TAggregationsBody>): RequestParams.Search<Record<string, any>> => {
+    const index = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, document)
 
     if (!index) {
-        throw new Error(`Invalid schema or index: ${indexOrSchema}`)
+        throw new Error(`Unregistered index name for ${document} schema.`)
     }
 
     const { size, from, query, aggregations } = options || {}
