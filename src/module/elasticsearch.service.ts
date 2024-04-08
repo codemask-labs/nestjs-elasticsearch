@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common'
 import { RequestParams } from '@elastic/elasticsearch'
-import { ElasticsearchService as ElasticsearchBaseService } from '@nestjs/elasticsearch'
+import { ElasticsearchService as BaseElasticsearchService } from '@nestjs/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
 import { AggregationList } from 'lib/aggregations'
 import { SearchRequest } from 'lib/requests'
-
 import { ClusterHealthResponse, getSearchResponse } from 'lib/responses'
-import { Index } from './injectables'
 import { getRequestParams } from 'lib/elasticsearch'
+import { Index } from './injectables'
+
 @Injectable()
 export class ElasticsearchService {
-    constructor(private readonly elasticsearchBaseService: ElasticsearchBaseService) {}
+    constructor(private readonly baseElasticsearchService: BaseElasticsearchService) {}
 
     search<TDocument extends Document, TAggregationsBody extends Record<string, AggregationList<TDocument>>>(
         document: ClassConstructor<TDocument>,
@@ -18,7 +18,7 @@ export class ElasticsearchService {
     ) {
         const params = getRequestParams<TDocument, TAggregationsBody>(document, options)
 
-        return this.elasticsearchBaseService
+        return this.baseElasticsearchService
             .search<Result<TDocument, TAggregationsBody>>(params)
             .then(response => getSearchResponse(document, response))
     }
@@ -28,6 +28,10 @@ export class ElasticsearchService {
     }
 
     getClusterHealth(options?: RequestParams.ClusterHealth): Promise<ClusterHealthResponse> {
-        return this.elasticsearchBaseService.cluster.health<ClusterHealthResponse>(options).then(response => response.body)
+        return this.baseElasticsearchService.cluster.health<ClusterHealthResponse>(options).then(response => response.body)
+    }
+
+    getBaseService(): BaseElasticsearchService {
+        return this.baseElasticsearchService
     }
 }
