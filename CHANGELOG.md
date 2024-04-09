@@ -1,5 +1,12 @@
 
 
+## [1.10.1](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.10.0...v1.10.1) (2024-04-09)
+
+
+### Bug Fixes
+
+* fix top hits aggregation ([#85](https://github.com/przemyslawwalczak/nestjs-elasticsearch/issues/85)) ([17580e5](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/17580e59694f0c452ae1249a769703042f945848))
+
 ## [1.10.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.9.0...v1.10.0) (2024-04-09)
 
 
