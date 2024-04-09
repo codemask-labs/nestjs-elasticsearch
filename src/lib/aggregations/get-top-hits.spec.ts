@@ -27,5 +27,27 @@ describe('getTopHitsAggregation', () => {
         })
     })
 
-    test.todo('accepts only schema field with keyword')
+    it('accepts only schema field with keyword', () => {
+        const query = getTopHitsAggregation<HomeDocument>(1, {
+            from: 0,
+            includes: ['address', 'city', 'fullName'],
+            sort: [
+                { 'address.keyword': { order: Order.ASC } }
+            ]
+        })
+
+        expect(query).toEqual({
+            // eslint-disable-next-line camelcase
+            top_hits: {
+                size: 1,
+                from: 0,
+                sort: [
+                    { 'address.keyword': { order: Order.ASC } }
+                ],
+                _source: {
+                    includes: ['address', 'city', 'fullName']
+                }
+            }
+        })
+    })
 })
