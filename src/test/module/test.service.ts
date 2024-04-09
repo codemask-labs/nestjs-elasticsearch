@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { InjectIndex } from 'lib/decorators'
 import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
 import { getAvgAggregation, getTermsAggregation } from 'lib/aggregations'
+import { getSearchRequest } from 'lib/requests'
 import { Index } from 'module/injectables'
 import { PropertyType } from './enums'
 import { HomeDocument } from './home.document'
@@ -12,7 +13,7 @@ export class TestService {
     private readonly homes: Index<HomeDocument>
 
     getHomeDocuments() {
-        return this.homes.search({
+        const request = getSearchRequest(HomeDocument, {
             size: 10,
             query: getBoolQuery({
                 must: [
@@ -21,10 +22,12 @@ export class TestService {
                 ]
             })
         })
+
+        return this.homes.search(request)
     }
 
     getTopAddressesWithHighestAverageAreaSquared(size: number = 3) {
-        return this.homes.search({
+        const request = getSearchRequest(HomeDocument, {
             size: 0,
             aggregations: {
                 cities: getTermsAggregation('city.keyword'),
@@ -42,5 +45,7 @@ export class TestService {
                 }
             }
         })
+
+        return this.homes.search(request)
     }
 }
