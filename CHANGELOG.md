@@ -1,5 +1,12 @@
 
 
+## [1.10.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.9.0...v1.10.0) (2024-04-09)
+
+
+### Features
+
+* accept keyword in sorting in top hits aggregation ([#84](https://github.com/przemyslawwalczak/nestjs-elasticsearch/issues/84)) ([5f27355](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/5f27355ffd6726c3d34fbc236ad8c1ded11d301d))
+
 ## [1.9.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.8.1...v1.9.0) (2024-04-09)
 
 
