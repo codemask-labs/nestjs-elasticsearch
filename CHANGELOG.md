@@ -1,5 +1,17 @@
 
 
+## [1.9.0](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.8.1...v1.9.0) (2024-04-09)
+
+
+### Features
+
+* get search request for document ([#79](https://github.com/przemyslawwalczak/nestjs-elasticsearch/issues/79)) ([29151db](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/29151db034a9f19ae7ae5fed7d57c09b7a15f6fc))
+
+
+### Bug Fixes
+
+* get search request ([#80](https://github.com/przemyslawwalczak/nestjs-elasticsearch/issues/80)) ([2caf3b3](https://github.com/przemyslawwalczak/nestjs-elasticsearch/commit/2caf3b3a28407fe487fec6e980c5a23ee58bd473))
+
 ## [1.8.1](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.8.0...v1.8.1) (2024-04-08)
 
 
