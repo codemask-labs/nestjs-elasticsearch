@@ -2,10 +2,10 @@ import { Injectable } from '@nestjs/common'
 import { InjectIndex } from 'lib/decorators'
 import { getBoolQuery, getTermQuery, getTermsQuery } from 'lib/queries'
 import { getAvgAggregation, getTermsAggregation } from 'lib/aggregations'
+import { getSearchRequest } from 'lib/requests'
 import { Index } from 'module/injectables'
 import { PropertyType } from './enums'
 import { HomeDocument } from './home.document'
-import { getSearchRequest } from 'lib/requests'
 
 @Injectable()
 export class TestService {
