@@ -27,9 +27,9 @@ jobs:
         uses: aquasecurity/trivy-action@0.19.0
         with:
           scan-type: 'fs'
-          scan-ref: 'dist'
+          scan-ref: '.'
           scanners: 'vuln,secret,config'
           exit-code: '1'
           ignore-unfixed: true
-          severity: 'CRITICAL,HIGH'
+          severity: 'LOW,MEDIUM,CRITICAL,HIGH'
           vuln-type: 'os,library'
