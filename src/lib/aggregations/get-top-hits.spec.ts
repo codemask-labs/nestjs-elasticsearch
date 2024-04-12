@@ -7,9 +7,7 @@ describe('getTopHitsAggregation', () => {
         const query = getTopHitsAggregation<HomeDocument>(1, {
             from: 0,
             includes: ['address', 'city', 'fullName'],
-            sort: [
-                { address: { order: Order.ASC } }
-            ]
+            sort: [{ address: { order: Order.ASC } }]
         })
 
         expect(query).toEqual({
@@ -17,9 +15,7 @@ describe('getTopHitsAggregation', () => {
             top_hits: {
                 size: 1,
                 from: 0,
-                sort: [
-                    { address: { order: Order.ASC } }
-                ],
+                sort: [{ address: { order: Order.ASC } }],
                 _source: {
                     includes: ['address', 'city', 'fullName']
                 }
@@ -31,9 +27,7 @@ describe('getTopHitsAggregation', () => {
         const query = getTopHitsAggregation<HomeDocument>(1, {
             from: 0,
             includes: ['address', 'city', 'fullName'],
-            sort: [
-                { 'address.keyword': { order: Order.ASC } }
-            ]
+            sort: [{ 'address.keyword': { order: Order.ASC } }]
         })
 
         expect(query).toEqual({
@@ -41,9 +35,7 @@ describe('getTopHitsAggregation', () => {
             top_hits: {
                 size: 1,
                 from: 0,
-                sort: [
-                    { 'address.keyword': { order: Order.ASC } }
-                ],
+                sort: [{ 'address.keyword': { order: Order.ASC } }],
                 _source: {
                     includes: ['address', 'city', 'fullName']
                 }
