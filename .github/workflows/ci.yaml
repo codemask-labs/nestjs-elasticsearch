@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1
 
       - name: Setup
         uses: ./.github/actions/setup
@@ -24,3 +24,14 @@ jobs:
 
       - name: Type check files
         run: yarn tsc
+
+      - name: Run Trivy fs scanner
+        uses: aquasecurity/trivy-action@0.19.0
+        with:
+          scan-type: 'fs'
+          scan-ref: 'dist'
+          scanners: 'vuln,secret,config'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'
+          vuln-type: 'os,library'
