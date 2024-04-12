@@ -41,11 +41,12 @@ export type TransformedAggregation<
     TDocument extends Document,
     TName extends string | number | symbol,
     TAggregations extends Aggregations<TDocument>
-> = TAggregations['aggregations'] extends AggregationsContainer<TDocument>
-    ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggregations']>
-    : TAggregations['aggs'] extends AggregationsContainer<TDocument>
-        ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggs']>
-        : TransformAggregation<TDocument, TName, TAggregations, AggregationsContainer<TDocument>>
+> =
+    TAggregations['aggregations'] extends AggregationsContainer<TDocument>
+        ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggregations']>
+        : TAggregations['aggs'] extends AggregationsContainer<TDocument>
+            ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggs']>
+            : TransformAggregation<TDocument, TName, TAggregations, AggregationsContainer<TDocument>>
 
 export type TransformedAggregations<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     [Name in keyof TAggregationsBody]: TransformedAggregation<TDocument, Name, TAggregationsBody[Name]>
