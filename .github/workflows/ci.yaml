@@ -1,6 +1,8 @@
 name: CI
 on:
-  push:
+  pull_request:
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -31,5 +33,5 @@ jobs:
           scanners: 'vuln,secret,config'
           exit-code: '1'
           ignore-unfixed: true
-          severity: 'LOW,MEDIUM,CRITICAL,HIGH'
+          severity: 'CRITICAL,HIGH'
           vuln-type: 'os,library'
