@@ -1,7 +1,12 @@
 {
     "name": "@codemaskjs/nestjs-elasticsearch",
-    "author": "Przemysław Walczak <p.d.walczak@gmail.com> (https://github.com/przemyslawwalczak)",
-    "repository": "https://github.com/przemyslawwalczak/nestjs-elasticsearch",
+    "authors": [
+        "Ada Krupa",
+        "Adrian Boratyn",
+        "Grzegorz Wadas",
+        "Przemysław Walczak"
+    ],
+    "repository": "https://github.com/codemaskinc/nestjs-elasticsearch",
     "license": "MIT",
     "version": "1.10.1",
     "description": "Nestjs Elasticsearch Module",
