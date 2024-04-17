@@ -8,7 +8,7 @@ export const getSearchRequestParams = <TDocument extends Document, TAggregations
     options?: SearchRequestOptions<TDocument, TAggregationsBody>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): RequestParams.Search<Record<string, any>> => {
-    const { index, size, from, query, aggregations } = getSearchRequest<TDocument, TAggregationsBody>(document, options)
+    const { index, size, from, query, aggregations, sort } = getSearchRequest<TDocument, TAggregationsBody>(document, options)
 
     return {
         index,
@@ -16,7 +16,8 @@ export const getSearchRequestParams = <TDocument extends Document, TAggregations
         from,
         body: {
             query,
-            aggregations
+            aggregations,
+            sort
         }
     }
 }

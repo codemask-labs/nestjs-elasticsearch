@@ -1,4 +1,4 @@
-import { ClassConstructor, Document } from 'lib/common'
+import { ClassConstructor, Document, Sort } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { BoolQuery } from 'lib/queries'
 import { AggregationsContainer } from 'lib/aggregations'
@@ -8,6 +8,7 @@ export type SearchRequestOptions<TDocument extends Document, TAggregationsBody e
     from?: number
     query?: BoolQuery<TDocument>
     aggregations?: TAggregationsBody
+    sort?: Sort<TDocument> | Array<Sort<TDocument>>
 }
 
 export type SearchRequest<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
@@ -16,6 +17,7 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
     from?: number
     query?: BoolQuery<TDocument>
     aggregations?: TAggregationsBody
+    sort?: Sort<TDocument> | Array<Sort<TDocument>>
 }
 
 export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
@@ -28,13 +30,14 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
         throw new Error(`Unregistered index name for ${document} schema.`)
     }
 
-    const { size, from, query, aggregations } = options || {}
+    const { size, from, query, aggregations, sort } = options || {}
 
     return {
         index,
         size,
         from,
         query,
-        aggregations
+        aggregations,
+        sort
     }
 }
