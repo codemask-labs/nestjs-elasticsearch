@@ -1,5 +1,13 @@
 
 
+## [1.11.0](https://github.com/codemaskinc/nestjs-elasticsearch/compare/v1.10.1...v1.11.0) (2024-04-17)
+
+
+### Features
+
+*  update packages and add husky ([#90](https://github.com/codemaskinc/nestjs-elasticsearch/issues/90)) ([42525c0](https://github.com/codemaskinc/nestjs-elasticsearch/commit/42525c0ec203821483d7bbfd2a0f47a141e36fe9))
+* add sort to get search request ([#94](https://github.com/codemaskinc/nestjs-elasticsearch/issues/94)) ([f00001d](https://github.com/codemaskinc/nestjs-elasticsearch/commit/f00001ddd54104a244b0183711ed8517fe49c9c0))
+
 ## [1.10.1](https://github.com/przemyslawwalczak/nestjs-elasticsearch/compare/v1.10.0...v1.10.1) (2024-04-09)
 
 
