@@ -1,5 +1,6 @@
 import { getTermsAggregation } from 'lib/aggregations'
 import { HomeDocument } from 'test/module'
+import { Order } from 'lib/enums'
 import { getSearchRequest } from './get-search-request'
 
 describe('getSearchRequest', () => {
@@ -17,6 +18,25 @@ describe('getSearchRequest', () => {
             aggregations: {
                 test: {
                     terms: { field: 'address.keyword' }
+                }
+            }
+        })
+    })
+
+    it('should add sort to the search request if added in the request', () => {
+        const request = getSearchRequest(HomeDocument, {
+            sort: {
+                'address.keyword': {
+                    order: Order.DESC
+                }
+            }
+        })
+
+        expect(request).toEqual({
+            index: 'homes',
+            sort: {
+                'address.keyword': {
+                    order: 'desc'
                 }
             }
         })
