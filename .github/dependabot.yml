@@ -15,6 +15,7 @@ updates:
       prefix-development: 'chore(dev-dependencies)'
     ignore:
       - dependency-name: '@elastic/elasticsearch'
+      - dependency-name: 'typescript' # temporary solution, remove after updating code to newer version of typescript
     groups:
       prod-dependencies-minor-and-patch:
         dependency-type: 'production'
