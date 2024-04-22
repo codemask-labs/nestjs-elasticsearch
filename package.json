@@ -1,12 +1,12 @@
 {
-    "name": "@codemaskjs/nestjs-elasticsearch",
+    "name": "@codemask-labs/nestjs-elasticsearch",
     "authors": [
         "Ada Krupa",
         "Adrian Boratyn",
         "Grzegorz Wadas",
         "Przemysław Walczak"
     ],
-    "repository": "https://github.com/codemaskinc/nestjs-elasticsearch",
+    "repository": "https://github.com/codemask-labs/nestjs-elasticsearch",
     "license": "MIT",
     "version": "1.11.0",
     "description": "Nestjs Elasticsearch Module",
@@ -94,7 +94,7 @@
         "wait-on": "7.2.0"
     },
     "publishConfig": {
-        "@codemaskjs:registry": "https://registry.npmjs.org/",
+        "@codemask-labs:registry": "https://registry.npmjs.org/",
         "access": "public"
     }
 }
