@@ -32,10 +32,10 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
 
-      - name: Init Git user
+      - name: Init Git User
         run: |
-          git config --global user.email "contact@codemask.com"
-          git config --global user.name "Codemask"
+          git config --global user.email "labs@codemask.com"
+          git config --global user.name "Codemask Labs"
 
       - name: Init NPM configuration
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN

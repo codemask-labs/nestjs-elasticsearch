@@ -1,15 +1,15 @@
 {
-    "name": "@codemaskjs/nestjs-elasticsearch",
+    "name": "@codemask-labs/nestjs-elasticsearch",
     "authors": [
         "Ada Krupa",
         "Adrian Boratyn",
         "Grzegorz Wadas",
         "Przemysław Walczak"
     ],
-    "repository": "https://github.com/codemaskinc/nestjs-elasticsearch",
+    "repository": "https://github.com/codemask-labs/nestjs-elasticsearch",
     "license": "MIT",
     "version": "1.11.0",
-    "description": "Nestjs Elasticsearch Module",
+    "description": "Schema based Elasticsearch, NestJS module with utilities and type-safe queries and aggregations builders.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "type": "commonjs",
@@ -39,8 +39,8 @@
     "keywords": [
         "nestjs",
         "typescript",
-        "typesafe",
-        "nestjs-elasticsearch"
+        "type-safe",
+        "elasticsearch"
     ],
     "dependencies": {
         "@elastic/elasticsearch": "7.13.0",
@@ -94,7 +94,7 @@
         "wait-on": "7.2.0"
     },
     "publishConfig": {
-        "@codemaskjs:registry": "https://registry.npmjs.org/",
+        "@codemask-labs:registry": "https://registry.npmjs.org/",
         "access": "public"
     }
 }
