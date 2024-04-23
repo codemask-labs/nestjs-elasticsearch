@@ -35,7 +35,7 @@ jobs:
       - name: Init Git user
         run: |
           git config --global user.email "contact@codemask.com"
-          git config --global user.name "Codemask"
+          git config --global user.name "Codemask Labs"
 
       - name: Init NPM configuration
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
