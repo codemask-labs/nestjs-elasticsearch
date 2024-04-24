@@ -1,3 +1,6 @@
 {
-    "extends": ["codemask"]
+    "extends": ["codemask"],
+    "rules": {
+        "@typescript-eslint/indent": "off"
+    }
 }
