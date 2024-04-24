@@ -17,6 +17,12 @@
     "engines": {
         "node": ">= 18.0.0"
     },
+    "files": [
+        "dist",
+        "LICENSE",
+        "CHANGELOG.md",
+        "readme.md"
+    ],
     "commitlint": {
         "extends": [
             "@commitlint/config-conventional"
