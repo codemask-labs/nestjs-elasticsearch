@@ -83,5 +83,5 @@ class AppModule {}
 
 ## Future actions
 1. Filter undefined/null values from request body
-2. Add `checkDocumentIntegrity` with the connection on the source on runtime
+2. Add `checkDocumentIntegrity` to check if documents are a valid based on an index schema
 3. Add optional `script` to `sum`, `avg`, `max` aggregation
