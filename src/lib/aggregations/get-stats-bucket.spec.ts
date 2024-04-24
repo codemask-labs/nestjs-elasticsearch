@@ -24,7 +24,18 @@ describe('getRangeAggregation', () => {
             }
         })
 
-        expect(request).toEqual({})
+        expect(request).toEqual({
+            index: 'homes',
+            aggregations: {
+                test: {
+                    // eslint-disable-next-line camelcase
+                    stats_bucket: {
+                        // eslint-disable-next-line camelcase
+                        buckets_path: 'address'
+                    }
+                }
+            }
+        })
     })
 
     test.todo('accepts only schema field with keyword')
