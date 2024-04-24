@@ -16,14 +16,14 @@ Due to Production Experience when working with Elasticsearch leaded to maintenan
 1. Install package using yarn or npm
 
 ```bash
-$ yarn add @codemaskjs/nestjs-elasticsearch
+$ yarn add @codemask-labs/nestjs-elasticsearch
 // or
-$ npm -i @codemaskjs/nestjs-elasticsearch
+$ npm -i @codemask-labs/nestjs-elasticsearch
 ```
 2. Import module
 
 ```typescript
-import { ElasticsearchModule } from '@codemaskjs/nestjs-elasticsearch'
+import { ElasticsearchModule } from '@codemask-labs/nestjs-elasticsearch'
 
 @Module({
     imports: [
@@ -38,7 +38,7 @@ class AppModule {}
 3. (optional) Registering Index with Document
 
 ```typescript
-import { RegisterIndex } from '@codemaskjs/nestjs-elasticsearch'
+import { RegisterIndex } from '@codemask-labs/nestjs-elasticsearch'
 
 @RegisterIndex('examples')
 export class ExampleDocument {
@@ -49,7 +49,7 @@ export class ExampleDocument {
 
 ```typescript
 import { Injectable } from '@nestjs/common'
-import { Index } from '@codemaskjs/nestjs-elasticsearch'
+import { Index } from '@codemask-labs/nestjs-elasticsearch'
 import { ExampleDocument } from './example.document'
 
 @Injectable()
@@ -64,7 +64,7 @@ export class ExampleService {
 ```
 
 ```typescript
-import { ElasticsearchModule } from '@codemaskjs/nestjs-elasticsearch'
+import { ElasticsearchModule } from '@codemask-labs/nestjs-elasticsearch'
 import { ExampleDocument } from './example.document'
 
 @Module({
@@ -82,13 +82,6 @@ class AppModule {}
 ```
 
 ## Future actions
-1. Add case_insensitive option to term search
-2. Filter undefined/null values from request body
-3. Add <size> field to aggregations body so that it can return more than default 10 results
-4. Add <sort> and <search_after> fields to request type and <sort> field to response type to enable pagination
-5. Add `e2e` tests setup for features scenario tests
-6. Add `extraction` of aggregations on `response`
-7. Add `healthcheck` from `ElasticsearchService`
-8. Add `checkDocumentIntegrity` with the connection on the source on runtime
-9. Add optional `script` to `sum`, `avg`, `max` aggregation
-10. Add order field to `terms` aggregation
+1. Filter undefined/null values from request body
+2. Add `checkDocumentIntegrity` with the connection on the source on runtime
+3. Add optional `script` to `sum`, `avg`, `max` aggregation
