@@ -1,13 +1,15 @@
-export type StatsBucketAggregationBody = {
-    stats_bucket: StatsBucketAggregation
+export type StatsBucketAggregation = {
+    stats_bucket: StatsBucketAggregationBody
 }
 
-export type StatsBucketAggregation = {
+export type StatsBucketAggregationBody = {
     buckets_path: string
 }
 
-export const getStatsBucketAggregation = (aggregation: string): StatsBucketAggregationBody => ({
+export const getStatsBucketAggregation = (path: string): StatsBucketAggregation => ({
+    // eslint-disable-next-line camelcase
     stats_bucket: {
-        buckets_path: aggregation
+        // eslint-disable-next-line camelcase
+        buckets_path: path
     }
 })
