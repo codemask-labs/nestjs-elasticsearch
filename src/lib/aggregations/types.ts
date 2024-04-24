@@ -13,6 +13,7 @@ import { MaxAggregation } from './get-max'
 import { CardinalityAggregation } from './get-cardinality'
 import { PercentAggregation } from './get-percent'
 import { MinAggregation } from './get-min'
+import { StatsBucketAggregation } from './get-stats-bucket'
 
 export type AggregationList<TDocument extends Document> =
     | AvgAggregation<TDocument>
@@ -29,6 +30,7 @@ export type AggregationList<TDocument extends Document> =
     | CompositeAggregation<TDocument>
     | TopHitsAggregation<TDocument>
     | CardinalityAggregation<TDocument>
+    | StatsBucketAggregation
 
 export type AggregationsContainer<TDocument extends Document> = Record<string, Aggregations<TDocument>>
 
