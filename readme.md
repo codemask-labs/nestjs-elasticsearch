@@ -1,8 +1,5 @@
 # Nestjs Elasticsearch Module
 
-> [!NOTE]  
-> This repository is a Work In Progress, driven by the motive.
-
 ## Motive
 
 Due to Production Experience when working with Elasticsearch leaded to maintenance issues when extensively used searches, filters and aggregations (especially aggregations).
