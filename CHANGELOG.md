@@ -1,5 +1,17 @@
 
 
+## [1.13.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.11.0...v1.13.0) (2024-04-24)
+
+
+### Features
+
+* add stats bucket aggregation ([#102](https://github.com/codemask-labs/nestjs-elasticsearch/issues/102)) ([4afc47d](https://github.com/codemask-labs/nestjs-elasticsearch/commit/4afc47dfb43c683cfb1d1d34e1e2881b2c1a0856))
+
+
+### Bug Fixes
+
+* package build ([#104](https://github.com/codemask-labs/nestjs-elasticsearch/issues/104)) ([dedb554](https://github.com/codemask-labs/nestjs-elasticsearch/commit/dedb5543a69b5b1b280a58e303173ba6a9c8439c))
+
 ## [1.11.0](https://github.com/codemaskinc/nestjs-elasticsearch/compare/v1.10.1...v1.11.0) (2024-04-17)
 
 
