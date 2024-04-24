@@ -6,4 +6,4 @@ export type Keywords<TDocument extends Document> = { [K in keyof TDocument as `$
 export type KeywordType<TDocument extends Document, TKeyword extends Keyword<TDocument>> = TKeyword extends keyof Keywords<TDocument>
     ? Keywords<TDocument>[TKeyword]
     : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    any
+      any

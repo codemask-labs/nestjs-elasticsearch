@@ -1,3 +1,4 @@
+import { estypes } from '@elastic/elasticsearch'
 import { Bucket, Buckets, CompositeBuckets, Document, Hits, OptionalValue, Value } from 'lib/common'
 import {
     Aggregations,
@@ -9,6 +10,7 @@ import {
     DateHistogramAggregation,
     MaxAggregation,
     MinAggregation,
+    StatsBucketAggregation,
     SumAggregation,
     TermsAggregation,
     TopHitsAggregation,
@@ -23,19 +25,21 @@ export type TransformAggregation<
 > = TAggregation extends TermsAggregation<TDocument> | DateHistogramAggregation<TDocument>
     ? Buckets<string, Bucket & TransformedAggregations<TDocument, TAggregationsBody>>
     : TAggregation extends TopHitsAggregation<TDocument>
-        ? Hits<TDocument>
-        : TAggregation extends AvgAggregation<TDocument>
-            ? OptionalValue<number>
-            : TAggregation extends
-            | CardinalityAggregation<TDocument>
-            | ValueCountAggregation<TDocument>
-            | MaxAggregation<TDocument>
-            | MinAggregation<TDocument>
-            | SumAggregation<TDocument>
-                ? Value<number>
-                : TAggregation extends CompositeAggregation<TDocument>
-                    ? CompositeBuckets
-                    : `Unhandled aggregation type for name: ${TName & string}`
+      ? Hits<TDocument>
+      : TAggregation extends AvgAggregation<TDocument>
+        ? OptionalValue<number>
+        : TAggregation extends
+                | CardinalityAggregation<TDocument>
+                | ValueCountAggregation<TDocument>
+                | MaxAggregation<TDocument>
+                | MinAggregation<TDocument>
+                | SumAggregation<TDocument>
+          ? Value<number>
+          : TAggregation extends CompositeAggregation<TDocument>
+            ? CompositeBuckets
+            : TAggregation extends StatsBucketAggregation
+              ? estypes.StatsAggregate
+              : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
     TDocument extends Document,
@@ -45,8 +49,8 @@ export type TransformedAggregation<
     TAggregations['aggregations'] extends AggregationsContainer<TDocument>
         ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggregations']>
         : TAggregations['aggs'] extends AggregationsContainer<TDocument>
-            ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggs']>
-            : TransformAggregation<TDocument, TName, TAggregations, AggregationsContainer<TDocument>>
+          ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggs']>
+          : TransformAggregation<TDocument, TName, TAggregations, AggregationsContainer<TDocument>>
 
 export type TransformedAggregations<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     [Name in keyof TAggregationsBody]: TransformedAggregation<TDocument, Name, TAggregationsBody[Name]>

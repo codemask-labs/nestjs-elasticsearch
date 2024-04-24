@@ -7,4 +7,4 @@ export type Fields<TDocument extends Document> = { [K in keyof TDocument as (K &
 export type FieldType<TDocument extends Document, TField extends Key<TDocument> | Keyword<TDocument>> = TField extends keyof Fields<TDocument>
     ? Fields<TDocument>[TField]
     : // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    any
+      any
