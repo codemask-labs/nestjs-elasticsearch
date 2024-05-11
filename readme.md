@@ -149,23 +149,22 @@ import {
 import { ExampleDocument } from './example.document'
 
 const searchRequestBody = getSearchRequest(ExampleDocument, {
-        size: 10,
-        query: getBoolQuery({
-            must: [
-                getTermQuery('exampleField.keyword', 'Some value'),
-                getRangeQuery('exampleNumericField', {
-                    gte: 1,
-                    lte: 10
-                })
-            ]
-        }),
-        sort: {
-            'exampleField.keyword': {
-                order: Order.ASC
-            }
+    size: 10,
+    query: getBoolQuery({
+        must: [
+            getTermQuery('exampleField.keyword', 'Some value'),
+            getRangeQuery('exampleNumericField', {
+                gte: 1,
+                lte: 10
+            })
+        ]
+    }),
+    sort: {
+        'exampleField.keyword': {
+            order: Order.ASC
         }
-    })
-}
+    }
+})
 ```
 
 ### Filtering
