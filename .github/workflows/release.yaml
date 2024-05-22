@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup
-        uses: ./.Fithub/actions/setup
+        uses: ./.github/actions/setup
 
       - name: Build package
         run: yarn build
