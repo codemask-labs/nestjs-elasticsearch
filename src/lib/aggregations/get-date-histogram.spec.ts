@@ -29,5 +29,22 @@ describe('getDateHistogramAggregation', () => {
         })
     })
 
+    it('accepts custom enum that extends same keys', () => {
+        enum SelectedTimePeriod {
+            DAY = 'day'
+        }
+
+        const query = getDateHistogramAggregation<HomeDocument>('address', SelectedTimePeriod.DAY)
+
+        expect(query).toEqual({
+            // eslint-disable-next-line camelcase
+            date_histogram: {
+                field: 'address',
+                // eslint-disable-next-line camelcase
+                calendar_interval: 'day'
+            }
+        })
+    })
+
     test.todo('accepts only schema field with keyword')
 })
