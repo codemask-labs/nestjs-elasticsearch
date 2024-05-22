@@ -1,9 +1,10 @@
 import { Document, Key } from 'lib/common'
+import { ExtractEnumValues } from 'lib/utils'
 import { CalendarIntervalName, CalendarIntervalQuantity } from 'lib/enums'
 
 export type DateHistogramAggregationBody<TDocument extends Document> = {
     field: Key<TDocument>
-    calendar_interval: CalendarIntervalName | CalendarIntervalQuantity
+    calendar_interval: ExtractEnumValues<CalendarIntervalName | CalendarIntervalQuantity>
 }
 
 export type DateHistogramAggregation<TDocument extends Document> = {
@@ -12,7 +13,7 @@ export type DateHistogramAggregation<TDocument extends Document> = {
 
 export const getDateHistogramAggregation = <TDocument extends Document>(
     field: Key<TDocument>,
-    interval: CalendarIntervalName | CalendarIntervalQuantity
+    interval: ExtractEnumValues<CalendarIntervalName | CalendarIntervalQuantity>
 ): DateHistogramAggregation<TDocument> => ({
     // eslint-disable-next-line camelcase
     date_histogram: {
