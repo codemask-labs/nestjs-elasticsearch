@@ -41,7 +41,7 @@ describe('getDateHistogramAggregation', () => {
             date_histogram: {
                 field: 'address',
                 // eslint-disable-next-line camelcase
-                calendar_interval: '1d'
+                calendar_interval: 'day'
             }
         })
     })
