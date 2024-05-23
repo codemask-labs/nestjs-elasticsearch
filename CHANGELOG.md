@@ -1,5 +1,20 @@
 
 
+## [1.15.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.13.1...v1.15.0) (2024-05-23)
+
+
+### Features
+
+* update readme ([#113](https://github.com/codemask-labs/nestjs-elasticsearch/issues/113)) ([e7a9790](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e7a97904ad45af90649f0a2dbdf84e982f03d6d0))
+
+
+### Bug Fixes
+
+* date histogram aggregation ([#119](https://github.com/codemask-labs/nestjs-elasticsearch/issues/119)) ([76b54af](https://github.com/codemask-labs/nestjs-elasticsearch/commit/76b54af8957e7477adfa921b313036814adaad03))
+* export get percent aggregation ([#117](https://github.com/codemask-labs/nestjs-elasticsearch/issues/117)) ([589a8af](https://github.com/codemask-labs/nestjs-elasticsearch/commit/589a8af5bb0989a324e8a570d591a3e29ed13026))
+* prettier and release action ([#120](https://github.com/codemask-labs/nestjs-elasticsearch/issues/120)) ([9729362](https://github.com/codemask-labs/nestjs-elasticsearch/commit/972936208c9a908c2b0320782795f08318010d5b))
+* versioning ([#121](https://github.com/codemask-labs/nestjs-elasticsearch/issues/121)) ([9dc642c](https://github.com/codemask-labs/nestjs-elasticsearch/commit/9dc642c260ed60e24547af0894bf5e56659c638a))
+
 ## [1.13.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.13.0...v1.13.1) (2024-04-24)
 
 
