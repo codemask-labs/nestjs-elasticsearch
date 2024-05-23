@@ -10,6 +10,7 @@ import {
     DateHistogramAggregation,
     MaxAggregation,
     MinAggregation,
+    PercentileAggregation,
     StatsBucketAggregation,
     SumAggregation,
     TermsAggregation,
@@ -39,7 +40,9 @@ export type TransformAggregation<
             ? CompositeBuckets
             : TAggregation extends StatsBucketAggregation
               ? estypes.StatsAggregate
-              : `Unhandled aggregation type for name: ${TName & string}`
+              : TAggregation extends PercentileAggregation<TDocument>
+                ? estypes.TDigestPercentilesAggregate
+                : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
     TDocument extends Document,

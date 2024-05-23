@@ -11,7 +11,6 @@ import { CompositeAggregation } from './get-composite'
 import { TopHitsAggregation } from './get-top-hits'
 import { MaxAggregation } from './get-max'
 import { CardinalityAggregation } from './get-cardinality'
-import { PercentAggregation } from './get-percent'
 import { MinAggregation } from './get-min'
 import { StatsBucketAggregation } from './get-stats-bucket'
 
@@ -23,7 +22,6 @@ export type AggregationList<TDocument extends Document> =
     | DateHistogramAggregation<TDocument>
     | MissingValueAggregation<TDocument>
     | PercentileAggregation<TDocument>
-    | PercentAggregation<TDocument>
     | RangeAggregation<TDocument>
     | TermsAggregation<TDocument>
     | ValueCountAggregation<TDocument>
