@@ -1,5 +1,12 @@
 
 
+## [1.16.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.15.0...v1.16.0) (2024-05-23)
+
+
+### Features
+
+* percentile aggregation ([#122](https://github.com/codemask-labs/nestjs-elasticsearch/issues/122)) ([4729ede](https://github.com/codemask-labs/nestjs-elasticsearch/commit/4729edeafe81f7083916bc1f122722745bbf6a49))
+
 ## [1.15.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.13.1...v1.15.0) (2024-05-23)
 
 
