@@ -1,5 +1,12 @@
 
 
+## [1.16.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.0...v1.16.1) (2024-05-24)
+
+
+### Bug Fixes
+
+* add missing type in aggregation response ([#123](https://github.com/codemask-labs/nestjs-elasticsearch/issues/123)) ([49985e2](https://github.com/codemask-labs/nestjs-elasticsearch/commit/49985e2957785ddb94dda7ee3e5e9a539f155931))
+
 ## [1.16.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.15.0...v1.16.0) (2024-05-23)
 
 
