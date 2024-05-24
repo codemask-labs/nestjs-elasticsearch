@@ -11,6 +11,7 @@ import {
     MaxAggregation,
     MinAggregation,
     PercentileAggregation,
+    RangeAggregation,
     StatsBucketAggregation,
     SumAggregation,
     TermsAggregation,
@@ -35,6 +36,7 @@ export type TransformAggregation<
                 | MaxAggregation<TDocument>
                 | MinAggregation<TDocument>
                 | SumAggregation<TDocument>
+                | RangeAggregation<TDocument>
           ? Value<number>
           : TAggregation extends CompositeAggregation<TDocument>
             ? CompositeBuckets
