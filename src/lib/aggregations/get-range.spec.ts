@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Range } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -57,48 +58,38 @@ describe('getRangeAggregation', () => {
         expect(result.aggregations.test).toStrictEqual({
             buckets: [
                 {
-                    // eslint-disable-next-line camelcase
                     doc_count: 0,
                     key: '*-25.0',
                     to: 25,
                     test2: {
                         buckets: [],
-                        // eslint-disable-next-line camelcase
                         doc_count_error_upper_bound: 0,
-                        // eslint-disable-next-line camelcase
                         sum_other_doc_count: 0
                     }
                 },
                 {
-                    // eslint-disable-next-line camelcase
                     doc_count: 19,
                     key: '10.0-*',
                     from: 10,
                     test2: {
                         buckets: [
                             {
-                                // eslint-disable-next-line camelcase
                                 doc_count: 1,
                                 key: '1510 Jordon Meadow'
                             }
                         ],
-                        // eslint-disable-next-line camelcase
                         doc_count_error_upper_bound: 0,
-                        // eslint-disable-next-line camelcase
                         sum_other_doc_count: 18
                     }
                 },
                 {
-                    // eslint-disable-next-line camelcase
                     doc_count: 0,
                     key: '15.0-20.0',
                     from: 15,
                     to: 20,
                     test2: {
                         buckets: [],
-                        // eslint-disable-next-line camelcase
                         doc_count_error_upper_bound: 0,
-                        // eslint-disable-next-line camelcase
                         sum_other_doc_count: 0
                     }
                 }
