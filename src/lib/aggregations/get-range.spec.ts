@@ -5,7 +5,7 @@ import { setupNestApplication } from 'test/toolkit'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { getRangeAggregation } from './get-range'
-import { getTermsAggregation } from '.'
+import { getTermsAggregation } from './get-terms'
 
 describe('getRangeAggregation', () => {
     const { app } = setupNestApplication({
