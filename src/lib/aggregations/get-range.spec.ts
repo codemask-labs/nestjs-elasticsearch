@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Range } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -5,6 +6,7 @@ import { setupNestApplication } from 'test/toolkit'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { getRangeAggregation } from './get-range'
+import { getTermsAggregation } from './get-terms'
 
 describe('getRangeAggregation', () => {
     const { app } = setupNestApplication({
@@ -39,35 +41,57 @@ describe('getRangeAggregation', () => {
         })
     })
 
-    it('queries es for range aggregation', async () => {
+    it('queries es for range aggregation with nested aggregation', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
             aggregations: {
-                test: getRangeAggregation('propertyAreaSquared', ranges)
+                test: {
+                    ...getRangeAggregation('propertyAreaSquared', ranges),
+                    aggregations: {
+                        test2: getTermsAggregation('address.keyword', 1)
+                    }
+                }
             }
         })
 
         expect(result.aggregations.test).toStrictEqual({
             buckets: [
                 {
-                    // eslint-disable-next-line camelcase
                     doc_count: 0,
                     key: '*-25.0',
-                    to: 25
+                    to: 25,
+                    test2: {
+                        buckets: [],
+                        doc_count_error_upper_bound: 0,
+                        sum_other_doc_count: 0
+                    }
                 },
                 {
-                    // eslint-disable-next-line camelcase
                     doc_count: 19,
                     key: '10.0-*',
-                    from: 10
+                    from: 10,
+                    test2: {
+                        buckets: [
+                            {
+                                doc_count: 1,
+                                key: '1510 Jordon Meadow'
+                            }
+                        ],
+                        doc_count_error_upper_bound: 0,
+                        sum_other_doc_count: 18
+                    }
                 },
                 {
-                    // eslint-disable-next-line camelcase
                     doc_count: 0,
                     key: '15.0-20.0',
                     from: 15,
-                    to: 20
+                    to: 20,
+                    test2: {
+                        buckets: [],
+                        doc_count_error_upper_bound: 0,
+                        sum_other_doc_count: 0
+                    }
                 }
             ]
         })
