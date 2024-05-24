@@ -1,10 +1,10 @@
-import { HomeDocument } from 'test/module'
 import { Range } from 'lib/common'
-import { getRangeAggregation } from './get-range'
+import { HomeDocument } from 'test/module'
+import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
-import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
+import { getRangeAggregation } from './get-range'
 
 describe('getRangeAggregation', () => {
     const { app } = setupNestApplication({
