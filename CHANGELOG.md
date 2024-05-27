@@ -1,5 +1,12 @@
 
 
+## [1.16.2](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.1...v1.16.2) (2024-05-27)
+
+
+### Bug Fixes
+
+* fix aggreation response type for range aggregation ([#124](https://github.com/codemask-labs/nestjs-elasticsearch/issues/124)) ([7d10a9e](https://github.com/codemask-labs/nestjs-elasticsearch/commit/7d10a9e30897923f069b0dfb7884c4f381e00459))
+
 ## [1.16.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.0...v1.16.1) (2024-05-24)
 
 
