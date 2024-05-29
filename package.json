@@ -8,7 +8,7 @@
   ],
   "repository": "https://github.com/codemask-labs/nestjs-elasticsearch",
   "license": "MIT",
-  "version": "1.16.2",
+  "version": "1.16.3",
   "description": "Schema based Elasticsearch, NestJS module with utilities, type-safe queries and aggregations builders.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

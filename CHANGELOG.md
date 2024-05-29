@@ -1,5 +1,7 @@
 
 
+## [1.16.3](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.2...v1.16.3) (2024-05-29)
+
 ## [1.16.2](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.1...v1.16.2) (2024-05-27)
 
 
