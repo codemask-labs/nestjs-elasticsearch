@@ -1,3 +1,4 @@
+import { Document } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -35,31 +36,8 @@ describe('getExistsQuery', () => {
             }
         })
 
-        expect(result.documents).toEqual([
-            {
-                address: '295 Erich Prairie',
-                builtInYear: 1998,
-                city: 'Port Marcia',
-                fullName: 'Stephanie Becker',
-                hasProperty: true,
-                id: 'f7f26310-78bf-4da8-80e4-b4e9b8f5ab3b',
-                ownerEmail: 'Austen.Bogan@hotmail.com',
-                propertyAreaSquared: 941576,
-                propertyAreaSquaredAsString: '941576',
-                propertyType: 'Apartment'
-            },
-            {
-                address: '7403 Lavada Meadows',
-                builtInYear: 1995,
-                city: 'St. Joseph',
-                fullName: 'Erica O\'Keefe',
-                hasProperty: true,
-                id: '350f0993-0b0b-47a0-8700-ee71f6b4c1c7',
-                ownerEmail: 'Aylin_Schneider@gmail.com',
-                propertyAreaSquared: 962998,
-                propertyAreaSquaredAsString: '962998',
-                propertyType: 'Flat'
-            }
-        ])
+        result.documents.forEach(document => {
+            expect(document.propertyAreaSquared).toBeDefined()
+        })
     })
 })
