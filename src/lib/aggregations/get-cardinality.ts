@@ -2,6 +2,9 @@ import { is } from 'ramda'
 import { Document, Field } from 'lib/common'
 
 export type CardinalityAggregationOptions = {
+    /**
+     * @description The default value is 3000. The maximum supported value is 40000, thresholds above this number will have the same effect as a threshold of 40000.
+     */
     precision_threshold?: number
 }
 

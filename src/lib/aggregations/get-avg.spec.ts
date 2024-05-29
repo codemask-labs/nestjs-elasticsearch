@@ -38,7 +38,7 @@ describe('getAvgAggregation', () => {
         expect(result.aggregations.testAggregation.value).toBeDefined()
     })
 
-    it(`should return an error when after passing string field`, async () => {
+    it(`should return an error after passing string field`, async () => {
         const service = app.get(ElasticsearchService)
 
         await service
@@ -58,7 +58,7 @@ describe('getAvgAggregation', () => {
             })
     })
 
-    it(`should return an error when after passing string field with "keyword"`, async () => {
+    it(`should return an error after passing string field with "keyword"`, async () => {
         const service = app.get(ElasticsearchService)
 
         await service
