@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'
@@ -62,7 +63,7 @@ describe('getCardinalityAggregation', () => {
             size: 0,
             aggregations: {
                 testAggregation: getCardinalityAggregation({
-                    script: "doc['address.keyword'].value"
+                    script: `doc['address.keyword'].value`
                 })
             }
         })
@@ -78,7 +79,7 @@ describe('getCardinalityAggregation', () => {
             aggregations: {
                 testAggregation: getCardinalityAggregation(
                     {
-                        script: "doc['address.keyword'].value"
+                        script: `doc['address.keyword'].value`
                     },
                     {
                         precision_threshold: 1
