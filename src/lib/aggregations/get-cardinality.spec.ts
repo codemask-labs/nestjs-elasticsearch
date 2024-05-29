@@ -41,7 +41,7 @@ describe('getCardinalityAggregation', () => {
         expect(result.aggregations.testAggregation.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for cardinality aggregation with specific field and precision control', async () => {
+    it('should queries elasticsearch for cardinality aggregation with specific field and precision threshold', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
@@ -71,7 +71,7 @@ describe('getCardinalityAggregation', () => {
         expect(result.aggregations.testAggregation.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for cardinality aggregation with script and precision control', async () => {
+    it('should queries elasticsearch for cardinality aggregation with script and precision threshold', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
