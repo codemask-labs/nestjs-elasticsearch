@@ -6,6 +6,7 @@ import { getRangeQuery } from './get-range'
 import { getShouldQuery } from './get-should'
 import { getTermQuery } from './get-term'
 import { getTermsQuery } from './get-terms'
+import { getExistsQuery } from './get-exists'
 
 describe('getBoolQuery', () => {
     it('accepts optional must query', () => {
@@ -24,7 +25,9 @@ describe('getBoolQuery', () => {
                 getRangeQuery('propertyAreaSquared', {
                     gte: 500,
                     lte: 1000
-                })
+                }),
+                getExistsQuery('address'),
+                getExistsQuery('id.keyword')
             ])
         })
 
@@ -45,6 +48,12 @@ describe('getBoolQuery', () => {
                         range: {
                             propertyAreaSquared: { gte: 500, lte: 1000 }
                         }
+                    },
+                    {
+                        exists: { field: 'address' }
+                    },
+                    {
+                        exists: { field: 'id.keyword' }
                     }
                 ]
             }

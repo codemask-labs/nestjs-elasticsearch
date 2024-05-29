@@ -190,6 +190,7 @@ Together with that you can also use `getMinimumShouldMatchParameter()` for [mini
 - `getTermQuery()` for [Term query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html)
 - `getTermsQuery()` for [Terms query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html)
 - `getRangeQuery()` for [Range query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)
+- `getExistsQuery` for [Exists query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-exists-query.html)
 
 ### Aggregations
 
