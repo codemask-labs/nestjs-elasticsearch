@@ -9,8 +9,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  linters:
-    name: Linters
+  ci-check:
+    name: CI check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
