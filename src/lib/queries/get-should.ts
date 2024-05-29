@@ -5,6 +5,7 @@ import { BoolQuery } from './get-bool'
 import { RangeQuery } from './get-range'
 import { MatchQuery } from './get-match'
 import { MatchPhrasePrefixQuery } from './get-match-phrase-prefix'
+import { ExistsQuery } from './get-exists'
 
 export type ShouldQueryBody<TDocument extends Document> =
     | BoolQuery<TDocument>
@@ -13,6 +14,7 @@ export type ShouldQueryBody<TDocument extends Document> =
     | RangeQuery<TDocument>
     | MatchQuery<TDocument>
     | MatchPhrasePrefixQuery<TDocument>
+    | ExistsQuery<TDocument>
 
 export type ShouldQuery<TDocument extends Document> = {
     should?: ShouldQueryBody<TDocument> | Array<ShouldQueryBody<TDocument>>
