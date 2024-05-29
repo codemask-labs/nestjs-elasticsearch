@@ -1,4 +1,3 @@
-import { Document } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
