@@ -15,7 +15,7 @@ describe('getAvgAggregation', () => {
         ]
     })
 
-    it('accepts only schema field', () => {
+    it('accepts only schema numeric field', () => {
         const query = getAvgAggregation<HomeDocument>('builtInYear')
 
         expect(query).toEqual({

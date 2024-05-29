@@ -8,3 +8,6 @@ export type FieldType<TDocument extends Document, TField extends Key<TDocument> 
     ? Fields<TDocument>[TField]
     : // eslint-disable-next-line @typescript-eslint/no-explicit-any
       any
+export type NumericField<TDocument extends Document> = {
+    [K in keyof TDocument]: Exclude<TDocument[K], undefined> extends number ? K : never
+}[keyof TDocument]

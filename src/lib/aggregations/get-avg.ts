@@ -1,8 +1,4 @@
-import { Document } from 'lib/common'
-
-type NumericField<TDocument extends Document> = {
-    [K in keyof TDocument]: Exclude<TDocument[K], undefined> extends number ? K : never
-}[keyof TDocument]
+import { Document, NumericField } from 'lib/common'
 
 export type AvgAggregationBody<TDocument extends Document> = {
     field: NumericField<TDocument>
