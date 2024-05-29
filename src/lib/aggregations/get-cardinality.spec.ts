@@ -61,7 +61,9 @@ describe('getCardinalityAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getCardinalityAggregation({ script: "doc['address.keyword'].value" })
+                testAggregation: getCardinalityAggregation({
+                    script: "doc['address.keyword'].value"
+                })
             }
         })
 
