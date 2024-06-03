@@ -16,7 +16,7 @@ describe('getMaxAggregation', () => {
         ]
     })
 
-    it('accepts only schema field', () => {
+    it('accepts only schema numeric field', () => {
         const query = getMaxAggregation<HomeDocument>('propertyAreaSquared')
 
         expect(query).toEqual({
