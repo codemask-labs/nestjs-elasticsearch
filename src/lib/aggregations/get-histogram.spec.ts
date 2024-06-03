@@ -55,12 +55,13 @@ describe('getHistogramAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getHistogramAggregation('builtInYear', 5, minDocCount)
+                testAggregation: getHistogramAggregation('builtInYear', 5, {
+                    min_doc_count: minDocCount // eslint-disable-line camelcase
+                })
             }
         })
 
         const responseBuckets = result.aggregations.testAggregation.buckets
-
         responseBuckets.forEach(bucket => expect(bucket.doc_count).toBeGreaterThanOrEqual(minDocCount))
     })
 
