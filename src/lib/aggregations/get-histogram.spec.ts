@@ -65,7 +65,7 @@ describe('getHistogramAggregation', () => {
         responseBuckets.forEach(bucket => expect(bucket.doc_count).toBeGreaterThanOrEqual(minDocCount))
     })
 
-    it(`should return an error after passing string field`, async () => {
+    it('should return an error after passing string field', async () => {
         const service = app.get(ElasticsearchService)
 
         await service
