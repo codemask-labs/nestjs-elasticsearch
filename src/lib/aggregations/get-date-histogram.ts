@@ -3,6 +3,9 @@ import { ExtractEnumValues } from 'lib/utils'
 import { CalendarIntervalName, CalendarIntervalQuantity } from 'lib/enums'
 
 export type DateHistogramAggregationOptions = {
+    /**
+     * @description By default all buckets between the first bucket that matches documents and the last one are returned.
+     */
     min_doc_count?: number // eslint-disable-line camelcase
 }
 
