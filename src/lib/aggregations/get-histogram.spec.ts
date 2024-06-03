@@ -48,7 +48,7 @@ describe('getHistogramAggregation', () => {
         )
     })
 
-    it('should queries elasticsearch for histogram aggregation with min_doc_count', async () => {
+    it('should queries elasticsearch for histogram aggregation with min doc count', async () => {
         const service = app.get(ElasticsearchService)
         const minDocCount = 10
 

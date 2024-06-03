@@ -13,7 +13,7 @@ export type HistogramAggregation<TDocument extends Document> = {
 export const getHistogramAggregation = <TDocument extends Document>(
     field: NumericField<TDocument>,
     interval: number,
-    min_doc_count?: number
+    min_doc_count?: number // eslint-disable-line camelcase
 ): HistogramAggregation<TDocument> => ({
     histogram: {
         field,
