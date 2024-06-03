@@ -58,7 +58,7 @@ describe('getAvgAggregation', () => {
             })
     })
 
-    it(`should return an error after passing string field with "keyword"`, async () => {
+    it(`should return an error after passing string field with 'keyword'`, async () => {
         const service = app.get(ElasticsearchService)
 
         await service
