@@ -38,14 +38,14 @@ describe('getHistogramAggregation', () => {
 
         const responseBuckets = result.aggregations.testAggregation.buckets
 
-        responseBuckets.forEach(bucket => {
+        responseBuckets.forEach(bucket =>
             expect(bucket).toEqual(
                 expect.objectContaining({
                     key: expect.any(Number),
-                    doc_count: expect.any(Number)
+                    doc_count: expect.any(Number) // eslint-disable-line camelcase
                 })
             )
-        })
+        )
     })
 
     it('should queries elasticsearch for histogram aggregation with min_doc_count', async () => {
@@ -61,10 +61,7 @@ describe('getHistogramAggregation', () => {
 
         const responseBuckets = result.aggregations.testAggregation.buckets
 
-        responseBuckets.forEach(bucket => {
-            console.log(bucket)
-            expect(bucket.doc_count).toBeGreaterThanOrEqual(minDocCount)
-        })
+        responseBuckets.forEach(bucket => expect(bucket.doc_count).toBeGreaterThanOrEqual(minDocCount))
     })
 
     it(`should return an error after passing string field`, async () => {
