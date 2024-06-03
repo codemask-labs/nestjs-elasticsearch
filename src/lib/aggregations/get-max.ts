@@ -1,24 +1,26 @@
 import { is } from 'ramda'
-import { Document, Field } from 'lib/common'
+import { Document, NumericField } from 'lib/common'
 
 export type MaxAggregationScript = {
     script: string
 }
 
 export type MaxAggregationField<TDocument extends Document> = {
-    field: Field<TDocument>
+    field: NumericField<TDocument>
 }
 
 export type MaxAggregation<TDocument extends Document> = {
     max: MaxAggregationField<TDocument> | MaxAggregationScript
 }
 
-export const getMaxAggregation = <TDocument extends Document>(fieldOrScript: Field<TDocument> | MaxAggregationScript): MaxAggregation<TDocument> => {
-    if (!is(String, fieldOrScript)) {
-        return { max: fieldOrScript }
+export const getMaxAggregation = <TDocument extends Document>(
+    fieldOrScript: NumericField<TDocument> | MaxAggregationScript
+): MaxAggregation<TDocument> => {
+    if (is(String, fieldOrScript) || is(Symbol, fieldOrScript) || is(Number, fieldOrScript)) {
+        return { max: { field: fieldOrScript } }
     }
 
     return {
-        max: { field: fieldOrScript }
+        max: fieldOrScript
     }
 }
