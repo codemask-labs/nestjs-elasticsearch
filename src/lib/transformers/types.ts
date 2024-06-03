@@ -8,6 +8,7 @@ import {
     CardinalityAggregation,
     CompositeAggregation,
     DateHistogramAggregation,
+    HistogramAggregation,
     MaxAggregation,
     MinAggregation,
     PercentileAggregation,
@@ -24,7 +25,7 @@ export type TransformAggregation<
     TName extends string | number | symbol,
     TAggregation extends Aggregations<TDocument>,
     TAggregationsBody extends AggregationsBody<TDocument, AggregationsContainer<TDocument>>
-> = TAggregation extends TermsAggregation<TDocument> | DateHistogramAggregation<TDocument>
+> = TAggregation extends TermsAggregation<TDocument> | DateHistogramAggregation<TDocument> | HistogramAggregation<TDocument>
     ? Buckets<string, Bucket & TransformedAggregations<TDocument, TAggregationsBody>>
     : TAggregation extends TopHitsAggregation<TDocument>
       ? Hits<TDocument>
@@ -44,8 +45,8 @@ export type TransformAggregation<
               : TAggregation extends PercentileAggregation<TDocument>
                 ? estypes.TDigestPercentilesAggregate
                 : TAggregation extends RangeAggregation<TDocument>
-                    ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
-                    : `Unhandled aggregation type for name: ${TName & string}`
+                  ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
+                  : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
     TDocument extends Document,

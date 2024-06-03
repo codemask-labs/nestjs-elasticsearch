@@ -1,6 +1,7 @@
 import { Document } from 'lib/common'
 import { AvgAggregation } from './get-avg'
 import { DateHistogramAggregation } from './get-date-histogram'
+import { HistogramAggregation } from './get-histogram'
 import { MissingValueAggregation } from './get-missing-value'
 import { PercentileAggregation } from './get-percentile'
 import { RangeAggregation } from './get-range'
@@ -20,6 +21,7 @@ export type AggregationList<TDocument extends Document> =
     | SumAggregation<TDocument>
     | MinAggregation<TDocument>
     | DateHistogramAggregation<TDocument>
+    | HistogramAggregation<TDocument>
     | MissingValueAggregation<TDocument>
     | PercentileAggregation<TDocument>
     | RangeAggregation<TDocument>
