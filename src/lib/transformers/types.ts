@@ -11,6 +11,7 @@ import {
     HistogramAggregation,
     MaxAggregation,
     MinAggregation,
+    MissingValueAggregation,
     PercentileAggregation,
     RangeAggregation,
     StatsBucketAggregation,
@@ -46,7 +47,9 @@ export type TransformAggregation<
                 ? estypes.TDigestPercentilesAggregate
                 : TAggregation extends RangeAggregation<TDocument>
                   ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
-                  : `Unhandled aggregation type for name: ${TName & string}`
+                  : TAggregation extends MissingValueAggregation<TDocument>
+                    ? estypes.SingleBucketAggregateKeys
+                    : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
     TDocument extends Document,
