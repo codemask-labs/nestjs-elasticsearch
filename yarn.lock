@@ -432,7 +432,7 @@ __metadata:
     "@commitlint/config-conventional": 19.2.2
     "@elastic/elasticsearch": 7.13.0
     "@faker-js/faker": 8.4.1
-    "@nestjs/common": 10.3.8
+    "@nestjs/common": 10.3.9
     "@nestjs/core": 10.3.8
     "@nestjs/elasticsearch": 10.0.1
     "@nestjs/platform-express": 10.3.8
@@ -463,7 +463,7 @@ __metadata:
     husky: 9.0.11
     jest: 29.7.0
     prettier: 3.2.5
-    ramda: 0.30.0
+    ramda: 0.30.1
     reflect-metadata: 0.2.2
     rimraf: 5.0.7
     rxjs: 7.8.1
@@ -1167,9 +1167,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:10.3.8":
-  version: 10.3.8
-  resolution: "@nestjs/common@npm:10.3.8"
+"@nestjs/common@npm:10.3.9":
+  version: 10.3.9
+  resolution: "@nestjs/common@npm:10.3.9"
   dependencies:
     iterare: 1.2.1
     tslib: 2.6.2
@@ -1184,7 +1184,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 1bae37914196a5287249c26b7d381b834a4f3924c86ddb46500e66876ff8a9c92cf7e0356138af5c3a5d8b866096c7d8b69ef68dbe8770c4780794a1cc16371b
+  checksum: c362f2717888626ea3360b280dd42d8d173e3d6640615b9f76c6b202b33534daac362a224ee0be8c16f1270b9891172c3684396a02b06b8309a84342fd1177bc
   languageName: node
   linkType: hard
 
@@ -10272,10 +10272,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ramda@npm:0.30.0":
-  version: 0.30.0
-  resolution: "ramda@npm:0.30.0"
-  checksum: a2b0bfc3d505193a759e5d3a25f617fbfb0dfa4d30ee6917d1975142dbcc1bc92e8465467cc3ccf9260e4d2011aba639db7a915eb376ca485191aff51bad03d8
+"ramda@npm:0.30.1":
+  version: 0.30.1
+  resolution: "ramda@npm:0.30.1"
+  checksum: ce6f4b6b967a84a4e65c01ab1b1cdd73d46b8efe71aeccf5d1443c56c4e31a0ea82ece7df6510453dd3d83b92cabf8a6b4d50d189a1b35c08a6f44b281bebf79
   languageName: node
   linkType: hard
 
