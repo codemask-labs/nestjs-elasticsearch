@@ -20,6 +20,7 @@ import {
     TopHitsAggregation,
     ValueCountAggregation
 } from 'lib/aggregations'
+import { MissingValueAggregationResponse } from 'lib/responses'
 
 export type TransformAggregation<
     TDocument extends Document,
@@ -48,7 +49,7 @@ export type TransformAggregation<
                 : TAggregation extends RangeAggregation<TDocument>
                   ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
                   : TAggregation extends MissingValueAggregation<TDocument>
-                    ? estypes.SingleBucketAggregateKeys
+                    ? MissingValueAggregationResponse
                     : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
