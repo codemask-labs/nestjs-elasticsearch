@@ -2,7 +2,7 @@ import { Document, NumericField } from 'lib/common'
 
 export type HistogramAggregationOptions = {
     /**
-     * @description By default all buckets between the first bucket that matches documents and the last one are returned.
+     * @description By default all buckets are returned, even those with 0 documents.
      */
     min_doc_count?: number // eslint-disable-line camelcase
 }

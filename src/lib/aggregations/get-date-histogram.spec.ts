@@ -101,8 +101,7 @@ describe('getDateHistogramAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    histogram: getDateHistogramAggregation('propertyAreaSquaredAsString' as any, CalendarIntervalName.DAY)
+                    histogram: getDateHistogramAggregation('propertyAreaSquaredAsString', CalendarIntervalName.DAY)
                 }
             })
             .catch(error => {

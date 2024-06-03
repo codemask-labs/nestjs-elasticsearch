@@ -4,7 +4,7 @@ import { CalendarIntervalName, CalendarIntervalQuantity } from 'lib/enums'
 
 export type DateHistogramAggregationOptions = {
     /**
-     * @description By default all buckets between the first bucket that matches documents and the last one are returned.
+     * @description By default all buckets are returned, even those with 0 documents.
      */
     min_doc_count?: number // eslint-disable-line camelcase
 }
@@ -26,7 +26,6 @@ export const getDateHistogramAggregation = <TDocument extends Document>(
     // eslint-disable-next-line camelcase
     date_histogram: {
         field,
-        // note(przemyslaw): Q: is calendar_interval required in integration?
         // eslint-disable-next-line camelcase
         calendar_interval: interval,
         ...options
