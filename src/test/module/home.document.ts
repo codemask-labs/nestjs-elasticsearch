@@ -38,7 +38,7 @@ export class HomeDocument {
     @IsOptional()
     readonly propertyAreaSquaredAsString?: string
 
-    @IsDate()
+    @IsString()
     @IsOptional()
-    readonly contractDate?: Date
+    readonly contractDate?: string
 }

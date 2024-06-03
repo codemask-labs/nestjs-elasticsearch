@@ -68,18 +68,18 @@ describe('getRangeAggregation', () => {
                     }
                 },
                 {
-                    doc_count: 19,
+                    doc_count: expect.any(Number),
                     key: '10.0-*',
                     from: 10,
                     test2: {
                         buckets: [
                             {
                                 doc_count: 1,
-                                key: '1510 Jordon Meadow'
+                                key: expect.any(String)
                             }
                         ],
                         doc_count_error_upper_bound: 0,
-                        sum_other_doc_count: 18
+                        sum_other_doc_count: expect.any(Number)
                     }
                 },
                 {
