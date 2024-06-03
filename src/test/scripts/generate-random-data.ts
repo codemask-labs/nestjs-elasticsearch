@@ -17,6 +17,7 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((): HomeDocument => {
     const hasProperty = faker.number.int({ min: 0, max: 1 })
     const hasPropertyAreaSquared = faker.number.int({ min: 0, max: 1 })
     const areaSquared = faker.number.int({ min: 1, max: 1_000_000 })
+    const contractDate = faker.date.between({ from: '2023-01-01', to: '2023-12-31' })
 
     return {
         id,
@@ -32,7 +33,9 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((): HomeDocument => {
         // eslint-disable-next-line @typescript-eslint/ban-types
         propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : (null as unknown as undefined),
         // eslint-disable-next-line @typescript-eslint/ban-types
-        propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : (null as unknown as undefined)
+        propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : (null as unknown as undefined),
+        // eslint-disable-next-line @typescript-eslint/ban-types
+        contractDate: hasProperty ? contractDate : (null as unknown as undefined)
     }
 })
 

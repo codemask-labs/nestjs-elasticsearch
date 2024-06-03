@@ -1,4 +1,4 @@
-import { IsString, IsEnum, IsNumber, IsBoolean, IsOptional } from 'class-validator'
+import { IsString, IsEnum, IsNumber, IsBoolean, IsOptional, IsDate } from 'class-validator'
 import { RegisterIndex } from 'lib/decorators'
 import { PropertyType } from './enums'
 
@@ -37,4 +37,8 @@ export class HomeDocument {
     @IsString()
     @IsOptional()
     readonly propertyAreaSquaredAsString?: string
+
+    @IsDate()
+    @IsOptional()
+    readonly contractDate?: Date
 }
