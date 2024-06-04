@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
 import { Range } from 'lib/common'
 import { HomeDocument } from 'test/module'
