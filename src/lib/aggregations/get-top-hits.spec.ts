@@ -96,7 +96,7 @@ describe('getTopHitsAggregation', () => {
 
         const responseBuckets = result.aggregations.result.buckets
 
-        responseBuckets.map((bucket: any) => {
+        responseBuckets.map(bucket =>
             expect(bucket.innerResult.hits).toEqual(
                 expect.objectContaining({
                     total: expect.objectContaining({
@@ -107,7 +107,7 @@ describe('getTopHitsAggregation', () => {
                     hits: expect.any(Array)
                 })
             )
-        })
+        )
     })
 
     it('should query elasticsearch for nested top hits aggregation with size', async () => {
@@ -128,7 +128,7 @@ describe('getTopHitsAggregation', () => {
 
         const responseBuckets = result.aggregations.result.buckets
 
-        responseBuckets.forEach((bucket: any) => expect(bucket.innerResult.hits.hits.length).toBeLessThanOrEqual(size))
+        responseBuckets.forEach(bucket => expect(bucket.innerResult.hits.hits.length).toBeLessThanOrEqual(size))
     })
 
     it('should query elasticsearch for nested top hits aggregation with includes option', async () => {
@@ -181,7 +181,7 @@ describe('getTopHitsAggregation', () => {
 
         const responseBuckets = result.aggregations.result.buckets
 
-        responseBuckets.forEach((bucket: any) => {
+        responseBuckets.forEach(bucket => {
             const responseHits = bucket.innerResult.hits.hits
 
             const firstHit = responseHits.at(0)
