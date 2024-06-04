@@ -1,5 +1,6 @@
 import { Bucket } from './bucket'
 
+// todo(slav): support key mappings
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type CompositeAfterKey = Record<string, any>
 

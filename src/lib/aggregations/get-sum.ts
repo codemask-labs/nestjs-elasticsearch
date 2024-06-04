@@ -1,4 +1,4 @@
-import { is } from 'ramda'
+import { has } from 'ramda'
 import { Document, Field } from 'lib/common'
 
 export type SumAggregationScript = {
@@ -16,8 +16,12 @@ export type SumAggregation<TDocument extends Document> = {
 }
 
 export const getSumAggregation = <TDocument extends Document>(fieldOrScript: Field<TDocument> | SumAggregationScript): SumAggregation<TDocument> => {
-    if (!is(String, fieldOrScript)) {
-        return { sum: fieldOrScript }
+    if (has('script', fieldOrScript)) {
+        const { script } = fieldOrScript
+
+        return {
+            sum: { script }
+        }
     }
 
     return {

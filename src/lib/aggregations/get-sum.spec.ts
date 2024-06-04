@@ -12,5 +12,15 @@ describe('getSumAggregation', () => {
         })
     })
 
-    test.todo('accepts only schema field with keyword')
+    it('accepts script as option', () => {
+        const query = getSumAggregation<HomeDocument>({
+            script: 'hello'
+        })
+
+        expect(query).toEqual({
+            sum: {
+                script: 'hello'
+            }
+        })
+    })
 })
