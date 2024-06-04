@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
 import { Order } from 'lib/enums'
 import { getCompositeSources } from 'lib/utils'
@@ -95,6 +96,24 @@ describe('getCompositeAggregation', () => {
                 key: {
                     address: expect.any(String),
                     city: expect.any(String)
+                },
+                innerResult: {
+                    hits: {
+                        hits: expect.arrayContaining([
+                            {
+                                _id: expect.any(String),
+                                _index: 'homes',
+                                _score: 1,
+                                _source: expect.any(Object),
+                                _type: '_doc'
+                            }
+                        ]),
+                        max_score: 1,
+                        total: {
+                            relation: 'eq',
+                            value: 1
+                        }
+                    }
                 }
             })
         })

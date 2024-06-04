@@ -32,7 +32,7 @@ describe('getBoolQuery', () => {
                 getTermQuery('id', id),
                 getTermsQuery('propertyType', [PropertyType.Apartment]),
                 getBoolQuery({
-                    ...getMustQuery([getTermQuery('address', 'test')])
+                    ...getMustQuery(getTermQuery('address', 'test'))
                 }),
                 getRangeQuery('propertyAreaSquared', {
                     gte: 500,
