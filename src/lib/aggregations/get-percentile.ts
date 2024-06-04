@@ -1,7 +1,7 @@
-import { Document, Key } from 'lib/common'
+import { Document, NumericField } from 'lib/common'
 
 export type PercentileAggregationBody<TDocument extends Document> = {
-    field: Key<TDocument>
+    field: NumericField<TDocument>
     percents: Array<number>
 }
 
@@ -10,7 +10,7 @@ export type PercentileAggregation<TDocument extends Document> = {
 }
 
 export const getPercentileAggregation = <TDocument extends Document>(
-    field: Key<TDocument>,
+    field: NumericField<TDocument>,
     percents: Array<number>
 ): PercentileAggregation<TDocument> => ({
     percentiles: {
