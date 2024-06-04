@@ -1,13 +1,13 @@
-import { Document, Key } from 'lib/common'
+import { Document, Field } from 'lib/common'
 
 export type MissingValueAggregationBody<TDocument extends Document> = {
-    field: Key<TDocument>
+    field: Field<TDocument>
 }
 
 export type MissingValueAggregation<TDocument extends Document> = {
     missing: MissingValueAggregationBody<TDocument>
 }
 
-export const getMissingValueAggregation = <TDocument extends Document>(field: Key<TDocument>): MissingValueAggregation<TDocument> => ({
+export const getMissingValueAggregation = <TDocument extends Document>(field: Field<TDocument>): MissingValueAggregation<TDocument> => ({
     missing: { field }
 })

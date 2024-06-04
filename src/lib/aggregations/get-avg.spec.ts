@@ -25,20 +25,20 @@ describe('getAvgAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for avg aggregation ', async () => {
+    it('should query elasticsearch for avg aggregation ', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getAvgAggregation('builtInYear')
+                result: getAvgAggregation('builtInYear')
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
-    it(`should return an error after passing string field`, async () => {
+    it('should return an error after passing string field', async () => {
         const service = app.get(ElasticsearchService)
 
         await service
@@ -46,7 +46,7 @@ describe('getAvgAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getAvgAggregation('address') as any
+                    result: getAvgAggregation('address' as any)
                 }
             })
             .catch(error => {
@@ -66,7 +66,7 @@ describe('getAvgAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getAvgAggregation('address.keyword') as any
+                    result: getAvgAggregation('address.keyword' as any)
                 }
             })
             .catch(error => {

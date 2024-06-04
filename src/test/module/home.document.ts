@@ -37,4 +37,8 @@ export class HomeDocument {
     @IsString()
     @IsOptional()
     readonly propertyAreaSquaredAsString?: string
+
+    @IsString()
+    @IsOptional()
+    readonly contractDate?: string
 }

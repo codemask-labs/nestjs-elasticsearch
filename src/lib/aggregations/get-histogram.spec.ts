@@ -26,17 +26,17 @@ describe('getHistogramAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for histogram aggregation', async () => {
+    it('should query elasticsearch for histogram aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getHistogramAggregation('builtInYear', 5)
+                result: getHistogramAggregation('builtInYear', 5)
             }
         })
 
-        const responseBuckets = result.aggregations.testAggregation.buckets
+        const responseBuckets = result.aggregations.result.buckets
 
         responseBuckets.forEach(bucket =>
             expect(bucket).toEqual(
@@ -48,23 +48,24 @@ describe('getHistogramAggregation', () => {
         )
     })
 
-    it('should queries elasticsearch for histogram aggregation with min doc count', async () => {
+    it('should query elasticsearch for histogram aggregation with min doc count', async () => {
         const service = app.get(ElasticsearchService)
         const minDocCount = 10
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getHistogramAggregation('builtInYear', 5, minDocCount)
+                result: getHistogramAggregation('builtInYear', 5, {
+                    min_doc_count: minDocCount // eslint-disable-line camelcase
+                })
             }
         })
 
-        const responseBuckets = result.aggregations.testAggregation.buckets
-
+        const responseBuckets = result.aggregations.result.buckets
         responseBuckets.forEach(bucket => expect(bucket.doc_count).toBeGreaterThanOrEqual(minDocCount))
     })
 
-    it(`should return an error after passing string field`, async () => {
+    it('should return an error after passing string field', async () => {
         const service = app.get(ElasticsearchService)
 
         await service
@@ -92,7 +93,7 @@ describe('getHistogramAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getHistogramAggregation('address.keyword' as any, 5)
+                    result: getHistogramAggregation('address.keyword' as any, 5)
                 }
             })
             .catch(error => {
