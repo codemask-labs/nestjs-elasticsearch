@@ -48,7 +48,7 @@ describe('getRangeAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getRangeAggregation('propertyAreaSquared', ranges)
+                result: getRangeAggregation('propertyAreaSquared', ranges)
             }
         })
 
@@ -71,7 +71,7 @@ describe('getRangeAggregation', () => {
             }
         ]
 
-        expect(result.aggregations.testAggregation.buckets).toEqual(expectedResponseShape)
+        expect(result.aggregations.result.buckets).toEqual(expectedResponseShape)
     })
 
     it('should queries elasticsearch for range aggregation with nested aggregation', async () => {
@@ -79,10 +79,10 @@ describe('getRangeAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 10,
             aggregations: {
-                testAggregation: {
+                result: {
                     ...getRangeAggregation('propertyAreaSquared', ranges),
                     aggregations: {
-                        testAggregation2: getTermsAggregation('address.keyword', 1)
+                        innerResult: getTermsAggregation('address.keyword', 1)
                     }
                 }
             }
@@ -93,7 +93,7 @@ describe('getRangeAggregation', () => {
                 doc_count: expect.any(Number),
                 key: '*-25.0',
                 to: 25,
-                testAggregation2: {
+                innerResult: {
                     buckets: expect.any(Array),
                     doc_count_error_upper_bound: expect.any(Number),
                     sum_other_doc_count: expect.any(Number)
@@ -103,7 +103,7 @@ describe('getRangeAggregation', () => {
                 doc_count: expect.any(Number),
                 key: '10.0-*',
                 from: 10,
-                testAggregation2: {
+                innerResult: {
                     buckets: expect.any(Array),
                     doc_count_error_upper_bound: expect.any(Number),
                     sum_other_doc_count: expect.any(Number)
@@ -114,7 +114,7 @@ describe('getRangeAggregation', () => {
                 key: '15.0-20.0',
                 from: 15,
                 to: 20,
-                testAggregation2: {
+                innerResult: {
                     buckets: expect.any(Array),
                     doc_count_error_upper_bound: expect.any(Number),
                     sum_other_doc_count: expect.any(Number)
@@ -122,7 +122,7 @@ describe('getRangeAggregation', () => {
             }
         ]
 
-        expect(result.aggregations.testAggregation.buckets).toEqual(expectedResponseShape)
+        expect(result.aggregations.result.buckets).toEqual(expectedResponseShape)
     })
 
     it('should return an error after passing string field', async () => {
@@ -133,7 +133,7 @@ describe('getRangeAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getRangeAggregation('address' as any, ranges)
+                    result: getRangeAggregation('address' as any, ranges)
                 }
             })
             .catch(error => {
@@ -153,7 +153,7 @@ describe('getRangeAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getRangeAggregation('address.keyword' as any, ranges)
+                    result: getRangeAggregation('address.keyword' as any, ranges)
                 }
             })
             .catch(error => {
