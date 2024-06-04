@@ -8,6 +8,7 @@ import { ElasticsearchService } from 'module/elasticsearch.service'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { getCompositeAggregation } from './get-composite'
 import { getTermsAggregation } from './get-terms'
+import { getTopHitsAggregation } from './get-top-hits'
 
 describe('getCompositeAggregation', () => {
     const { app } = setupNestApplication({
@@ -68,7 +69,38 @@ describe('getCompositeAggregation', () => {
         })
     })
 
-    it('queries for composite aggregation that returns address and city keys with undefineed size and sorting', async () => {
+    it('queries for composite aggregation that returns address and city keys', async () => {
+        const service = app.get(ElasticsearchService)
+        const sources = getCompositeSources<HomeDocument>([
+            { address: getTermsAggregation('address.keyword') },
+            { city: getTermsAggregation('city.keyword') }
+        ])
+
+        const result = await service.search(HomeDocument, {
+            size: 0,
+            aggregations: {
+                result: {
+                    ...getCompositeAggregation(sources),
+                    aggregations: {
+                        innerResult: getTopHitsAggregation(1)
+                    }
+                }
+            }
+        })
+
+        result.aggregations.result.buckets.forEach(bucket => {
+            expect(bucket).toStrictEqual({
+                // eslint-disable-next-line camelcase
+                doc_count: expect.any(Number),
+                key: {
+                    address: expect.any(String),
+                    city: expect.any(String)
+                }
+            })
+        })
+    })
+
+    it('queries for composite aggregation that returns address and city keys with undefined size and sorting', async () => {
         const service = app.get(ElasticsearchService)
         const sources = getCompositeSources<HomeDocument>([
             {
