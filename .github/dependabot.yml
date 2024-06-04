@@ -15,26 +15,25 @@ updates:
       prefix-development: 'chore(dev-dependencies)'
     ignore:
       - dependency-name: '@elastic/elasticsearch'
-      - dependency-name: 'typescript' # temporary solution, remove after updating code to newer version of typescript
     groups:
       prod-dependencies-minor-and-patch:
         dependency-type: 'production'
         update-types:
-        - 'minor'
-        - 'patch'
+          - 'minor'
+          - 'patch'
       dev-dependencies-minor-and-patch:
         dependency-type: 'development'
-        update-types: 
-        - 'minor'
-        - 'patch'
+        update-types:
+          - 'minor'
+          - 'patch'
       prod-dependencies-major:
         dependency-type: 'production'
         update-types:
-        - 'major'
+          - 'major'
       dev-dependencies-major:
         dependency-type: 'development'
         update-types:
-        - 'major'
+          - 'major'
 
   - package-ecosystem: 'github-actions'
     directory: '/'
