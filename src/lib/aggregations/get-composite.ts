@@ -11,7 +11,6 @@ export type CompositeAggregationList<TDocument extends Document> =
     | TermsAggregation<TDocument>
     | HistogramAggregation<TDocument>
     | DateHistogramAggregation<TDocument>
-// todo: add geotile_grid aggregation
 
 export type CompositeAggregationOptions<TDocument extends Document> = {
     size?: number
