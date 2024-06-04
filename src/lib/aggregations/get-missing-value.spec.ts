@@ -64,6 +64,7 @@ describe('getMissingValueAggregation', () => {
                 expect(error.message).toContain(
                     'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
                 )
+                expect(error.message).toContain('Please use a keyword field instead.')
             })
     })
 })
