@@ -35,17 +35,17 @@ describe('getMissingValueAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for missing value aggregation', async () => {
+    it('should query elasticsearch for missing value aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getMissingValueAggregation('propertyType.keyword')
+                result: getMissingValueAggregation('propertyType.keyword')
             }
         })
 
-        expect(result.aggregations.testAggregation.doc_count).toBeDefined()
+        expect(result.aggregations.result.doc_count).toBeDefined()
     })
 
     it('should return an error after passing string field which is keyword type', async () => {

@@ -28,56 +28,56 @@ describe('getCardinalityAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for cardinality aggregation with specific field', async () => {
+    it('should query elasticsearch for cardinality aggregation with specific field', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getCardinalityAggregation('address.keyword')
+                result: getCardinalityAggregation('address.keyword')
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for cardinality aggregation with specific field and precision threshold', async () => {
+    it('should query elasticsearch for cardinality aggregation with specific field and precision threshold', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getCardinalityAggregation('address.keyword', {
+                result: getCardinalityAggregation('address.keyword', {
                     precision_threshold: 1
                 })
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for cardinality aggregation with script', async () => {
+    it('should query elasticsearch for cardinality aggregation with script', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getCardinalityAggregation({
+                result: getCardinalityAggregation({
                     script: `doc['address.keyword'].value`
                 })
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for cardinality aggregation with script and precision threshold', async () => {
+    it('should query elasticsearch for cardinality aggregation with script and precision threshold', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getCardinalityAggregation(
+                result: getCardinalityAggregation(
                     {
                         script: `doc['address.keyword'].value`
                     },
@@ -88,6 +88,6 @@ describe('getCardinalityAggregation', () => {
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 })

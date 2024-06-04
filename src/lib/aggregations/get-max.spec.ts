@@ -25,20 +25,20 @@ describe('getMaxAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for max aggregation', async () => {
+    it('should query elasticsearch for max aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getMaxAggregation('propertyAreaSquared')
+                result: getMaxAggregation('propertyAreaSquared')
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for max aggregation with script', async () => {
+    it('should query elasticsearch for max aggregation with script', async () => {
         const service = app.get(ElasticsearchService)
 
         const script = `
@@ -51,13 +51,13 @@ describe('getMaxAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getMaxAggregation({
+                result: getMaxAggregation({
                     script
                 })
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
     it('should return an error after passing string field', async () => {
@@ -88,7 +88,7 @@ describe('getMaxAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getMaxAggregation('address.keyword' as any)
+                    result: getMaxAggregation('address.keyword' as any)
                 }
             })
             .catch(error => {

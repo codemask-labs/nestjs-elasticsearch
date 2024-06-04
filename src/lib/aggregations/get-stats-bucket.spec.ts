@@ -30,7 +30,7 @@ describe('getStatsBucketAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for stats bucket aggregation', async () => {
+    it('should query elasticsearch for stats bucket aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
@@ -52,7 +52,7 @@ describe('getStatsBucketAggregation', () => {
         )
     })
 
-    it('should queries elasticsearch for stats bucket aggregation with nested aggregation', async () => {
+    it('should query elasticsearch for stats bucket aggregation with nested aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {

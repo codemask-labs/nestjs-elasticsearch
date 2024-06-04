@@ -26,16 +26,16 @@ describe('getPercentileAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for percentile aggregation', async () => {
+    it('should query elasticsearch for percentile aggregation', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
             aggregations: {
-                testAggregation: getPercentileAggregation('propertyAreaSquared', [25, 50, 75])
+                result: getPercentileAggregation('propertyAreaSquared', [25, 50, 75])
             }
         })
 
-        expect(result.aggregations.testAggregation).toStrictEqual({
+        expect(result.aggregations.result).toStrictEqual({
             values: {
                 '25.0': expect.any(Number),
                 '50.0': expect.any(Number),
@@ -52,7 +52,7 @@ describe('getPercentileAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getPercentileAggregation('address' as any, [25, 50, 75])
+                    result: getPercentileAggregation('address' as any, [25, 50, 75])
                 }
             })
             .catch(error => {
@@ -72,7 +72,7 @@ describe('getPercentileAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getPercentileAggregation('address.keyword' as any, [25, 50, 75])
+                    result: getPercentileAggregation('address.keyword' as any, [25, 50, 75])
                 }
             })
             .catch(error => {

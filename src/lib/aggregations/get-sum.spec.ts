@@ -25,7 +25,7 @@ describe('getSumAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for sum aggregation', async () => {
+    it('should query elasticsearch for sum aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
@@ -38,7 +38,7 @@ describe('getSumAggregation', () => {
         expect(result.aggregations.result.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for sum aggregation with script', async () => {
+    it('should query elasticsearch for sum aggregation with script', async () => {
         const service = app.get(ElasticsearchService)
 
         const script = `
