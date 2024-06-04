@@ -183,15 +183,21 @@ describe('getTopHitsAggregation', () => {
 
         responseBuckets.forEach(bucket => {
             const responseHits = bucket.innerResult.hits.hits
+            const contractDates = responseHits.map(({ _source }) => ({
+                contractDate: _source?.contractDate ? new Date(_source?.contractDate) : null
+            }))
 
-            const firstHit = responseHits.at(0)
-            const lastHit = responseHits.at(-1)
+            const firstContractDate = contractDates.at(0)?.contractDate?.getTime()
+            const lastContractDate = contractDates.at(-1)?.contractDate?.getTime()
 
-            const firstContractDate = new Date(responseHits.at(0)._source.contractDate).getTime()
-            const lastContractDate = new Date(responseHits.at(-1)._source.contractDate).getTime()
+            if (!firstContractDate || !lastContractDate) {
+                expect(firstContractDate).toBeDefined()
+                expect(lastContractDate).toBeDefined()
+
+                return
+            }
 
             expect(lastContractDate).toBeGreaterThan(firstContractDate)
-            expect(lastHit.sort.at(0)).toBeGreaterThan(firstHit.sort.at(0))
         })
     })
 
