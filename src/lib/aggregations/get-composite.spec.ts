@@ -40,7 +40,7 @@ describe('getCompositeAggregation', () => {
         })
     })
 
-    it('returns composite aggregation returns address and city keys', async () => {
+    it('queries for composite aggregation that returns address and city keys', async () => {
         const service = app.get(ElasticsearchService)
 
         const sources = getCompositeSources<HomeDocument>([
@@ -67,7 +67,7 @@ describe('getCompositeAggregation', () => {
         })
     })
 
-    it('returns composite aggregation returns enum keys', async () => {
+    it('queries for composite aggregation that returns enum keys', async () => {
         enum SourceKey {
             Address = 'address',
             City = 'city'
