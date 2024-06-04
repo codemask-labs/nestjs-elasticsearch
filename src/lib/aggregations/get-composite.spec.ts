@@ -1,3 +1,5 @@
+import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { Order } from 'lib/enums'
 import { getCompositeSources } from 'lib/utils'
 import { HomeDocument } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
@@ -16,7 +18,7 @@ describe('getCompositeAggregation', () => {
         ]
     })
 
-    it('accepts only schema field', () => {
+    it('accepts only schema fields', () => {
         const sources = getCompositeSources<HomeDocument>([
             { first: getTermsAggregation('address.keyword') },
             { second: getTermsAggregation('city.keyword') }
@@ -42,7 +44,6 @@ describe('getCompositeAggregation', () => {
 
     it('queries for composite aggregation that returns address and city keys', async () => {
         const service = app.get(ElasticsearchService)
-
         const sources = getCompositeSources<HomeDocument>([
             { address: getTermsAggregation('address.keyword') },
             { city: getTermsAggregation('city.keyword') }
@@ -67,6 +68,57 @@ describe('getCompositeAggregation', () => {
         })
     })
 
+    it('queries for composite aggregation that returns address and city keys with undefineed size and sorting', async () => {
+        const service = app.get(ElasticsearchService)
+        const sources = getCompositeSources<HomeDocument>([
+            {
+                address: getTermsAggregation('address.keyword', undefined, {
+                    order: Order.ASC
+                })
+            },
+            { city: getTermsAggregation('city.keyword') }
+        ])
+
+        const result = await service.search(HomeDocument, {
+            size: 0,
+            aggregations: {
+                result: getCompositeAggregation(sources)
+            }
+        })
+
+        result.aggregations.result.buckets.forEach(bucket => {
+            expect(bucket).toStrictEqual({
+                // eslint-disable-next-line camelcase
+                doc_count: expect.any(Number),
+                key: {
+                    address: expect.any(String),
+                    city: expect.any(String)
+                }
+            })
+        })
+    })
+
+    it('throws error in composite aggregation when source terms specified size', async () => {
+        const service = app.get(ElasticsearchService)
+        const sources = getCompositeSources<HomeDocument>([
+            {
+                address: getTermsAggregation('address.keyword', 10)
+            }
+        ])
+
+        await service
+            .search(HomeDocument, {
+                size: 0,
+                aggregations: {
+                    result: getCompositeAggregation(sources)
+                }
+            })
+            .catch(error => {
+                expect(error).toBeInstanceOf(ResponseError)
+                expect(error.message).toContain('x_content_parse_exception: [x_content_parse_exception] Reason: [1:99] [terms] unknown field [size]')
+            })
+    })
+
     it('queries for composite aggregation that returns enum keys', async () => {
         enum SourceKey {
             Address = 'address',
@@ -74,7 +126,6 @@ describe('getCompositeAggregation', () => {
         }
 
         const service = app.get(ElasticsearchService)
-
         const sources = getCompositeSources<HomeDocument>([
             { [SourceKey.Address]: getTermsAggregation('address.keyword') },
             { [SourceKey.City]: getTermsAggregation('city.keyword') }
