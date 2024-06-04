@@ -25,20 +25,20 @@ describe('getMinAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for min aggregation', async () => {
+    it('should query elasticsearch for min aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getMinAggregation('propertyAreaSquared')
+                result: getMinAggregation('propertyAreaSquared')
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
-    it('should queries elasticsearch for min aggregation with script', async () => {
+    it('should query elasticsearch for min aggregation with script', async () => {
         const service = app.get(ElasticsearchService)
 
         const script = `
@@ -51,13 +51,13 @@ describe('getMinAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getMinAggregation({
+                result: getMinAggregation({
                     script
                 })
             }
         })
 
-        expect(result.aggregations.testAggregation.value).toBeDefined()
+        expect(result.aggregations.result.value).toBeDefined()
     })
 
     it('should return an error after passing string field', async () => {
@@ -88,7 +88,7 @@ describe('getMinAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getMinAggregation('address.keyword' as any)
+                    result: getMinAggregation('address.keyword' as any)
                 }
             })
             .catch(error => {

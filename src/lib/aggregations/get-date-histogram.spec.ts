@@ -54,17 +54,17 @@ describe('getDateHistogramAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for date histogram aggregation', async () => {
+    it('should query elasticsearch for date histogram aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getDateHistogramAggregation('contractDate', CalendarIntervalName.DAY)
+                result: getDateHistogramAggregation('contractDate', CalendarIntervalName.DAY)
             }
         })
 
-        const responseBuckets = result.aggregations.testAggregation.buckets
+        const responseBuckets = result.aggregations.result.buckets
 
         responseBuckets.forEach(bucket =>
             expect(bucket).toEqual(
@@ -77,20 +77,20 @@ describe('getDateHistogramAggregation', () => {
         )
     })
 
-    it('should queries elasticsearch for date histogram aggregation with min doc count', async () => {
+    it('should query elasticsearch for date histogram aggregation with min doc count', async () => {
         const service = app.get(ElasticsearchService)
         const minDocCount = 1
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                testAggregation: getDateHistogramAggregation('contractDate', CalendarIntervalName.DAY, {
+                result: getDateHistogramAggregation('contractDate', CalendarIntervalName.DAY, {
                     min_doc_count: minDocCount
                 })
             }
         })
 
-        const responseBuckets = result.aggregations.testAggregation.buckets
+        const responseBuckets = result.aggregations.result.buckets
         responseBuckets.forEach(bucket => expect(bucket.doc_count).toBeGreaterThanOrEqual(minDocCount))
     })
 
@@ -121,7 +121,7 @@ describe('getDateHistogramAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    testAggregation: getDateHistogramAggregation('address.keyword' as any, CalendarIntervalName.DAY)
+                    result: getDateHistogramAggregation('address.keyword' as any, CalendarIntervalName.DAY)
                 }
             })
             .catch(error => {

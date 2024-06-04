@@ -42,7 +42,7 @@ describe('getRangeAggregation', () => {
         })
     })
 
-    it('should queries elasticsearch for range aggregation ', async () => {
+    it('should query elasticsearch for range aggregation ', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
@@ -74,7 +74,7 @@ describe('getRangeAggregation', () => {
         expect(result.aggregations.result.buckets).toEqual(expectedResponseShape)
     })
 
-    it('should queries elasticsearch for range aggregation with nested aggregation', async () => {
+    it('should query elasticsearch for range aggregation with nested aggregation', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
