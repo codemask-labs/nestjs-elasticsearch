@@ -68,7 +68,7 @@ describe('getMinAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    histogram: getMinAggregation('propertyAreaSquaredAsString' as any)
+                    result: getMinAggregation('propertyAreaSquaredAsString' as any)
                 }
             })
             .catch(error => {

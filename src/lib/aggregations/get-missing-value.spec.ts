@@ -55,7 +55,7 @@ describe('getMissingValueAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    histogram: getMissingValueAggregation('propertyType')
+                    result: getMissingValueAggregation('propertyType')
                 }
             })
             .catch(error => {

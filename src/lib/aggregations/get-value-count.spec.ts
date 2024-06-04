@@ -56,7 +56,7 @@ describe('getValueCountAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    histogram: getValueCountAggregation('address')
+                    result: getValueCountAggregation('address')
                 }
             })
             .catch(error => {

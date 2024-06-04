@@ -68,7 +68,7 @@ describe('getMaxAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    histogram: getMaxAggregation('propertyAreaSquaredAsString' as any)
+                    result: getMaxAggregation('propertyAreaSquaredAsString' as any)
                 }
             })
             .catch(error => {
