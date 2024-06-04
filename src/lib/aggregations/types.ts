@@ -30,6 +30,7 @@ export type AggregationList<TDocument extends Document> =
     | CompositeAggregation<TDocument>
     | TopHitsAggregation<TDocument>
     | CardinalityAggregation<TDocument>
+    | CompositeAggregation<TDocument>
     | StatsBucketAggregation
 
 export type AggregationsContainer<TDocument extends Document> = Record<string, Aggregations<TDocument>>

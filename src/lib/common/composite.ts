@@ -1,5 +1,4 @@
-import { Bucket } from './bucket'
-
+// todo(slav): support key mappings
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type CompositeAfterKey = Record<string, any>
 
@@ -8,8 +7,8 @@ export type CompositeBucket = {
     doc_count: number
 }
 
-export type CompositeBuckets = {
+export type CompositeBuckets<TBucket> = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     after_key?: CompositeAfterKey
-    buckets: Array<Bucket<CompositeAfterKey>>
+    buckets: Array<TBucket>
 }

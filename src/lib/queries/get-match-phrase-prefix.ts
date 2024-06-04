@@ -4,19 +4,19 @@ export type MatchPhrasePrefixQueryOptions = {
     boost?: number
 }
 
-export type MatchPhrasePrefixQueryBody<TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>> = {
-    [x in TKeyword]?: { query: FieldType<TDocument, TKeyword> } & MatchPhrasePrefixQueryOptions
+export type MatchPhrasePrefixQueryBody<TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>> = {
+    [x in TField]?: { query: FieldType<TDocument, TField> } & MatchPhrasePrefixQueryOptions
 }
 
-export type MatchPhrasePrefixQuery<TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>> = {
-    match_phrase_prefix: MatchPhrasePrefixQueryBody<TDocument, TKeyword>
+export type MatchPhrasePrefixQuery<TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>> = {
+    match_phrase_prefix: MatchPhrasePrefixQueryBody<TDocument, TField>
 }
 
-export const getMatchPhrasePrefixQuery = <TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>>(
-    field: TKeyword,
-    query?: FieldType<TDocument, TKeyword>,
+export const getMatchPhrasePrefixQuery = <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
+    field: TField,
+    query?: FieldType<TDocument, TField>,
     options?: MatchPhrasePrefixQueryOptions
-): MatchPhrasePrefixQuery<TDocument, TKeyword> => ({
+): MatchPhrasePrefixQuery<TDocument, TField> => ({
     // eslint-disable-next-line camelcase
-    match_phrase_prefix: { [field]: { query, ...options } } as MatchPhrasePrefixQueryBody<TDocument, TKeyword>
+    match_phrase_prefix: { [field]: { query, ...options } } as MatchPhrasePrefixQueryBody<TDocument, TField>
 })

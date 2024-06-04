@@ -1,5 +1,5 @@
 import { estypes } from '@elastic/elasticsearch'
-import { Bucket, Buckets, CompositeBuckets, Document, Hits, OptionalValue, RangeBucket, Value } from 'lib/common'
+import { Bucket, Buckets, CompositeBucket, CompositeBuckets, Document, Hits, OptionalValue, RangeBucket, Value } from 'lib/common'
 import {
     Aggregations,
     AggregationsBody,
@@ -41,15 +41,15 @@ export type TransformAggregation<
                 | SumAggregation<TDocument>
           ? Value<number>
           : TAggregation extends CompositeAggregation<TDocument>
-            ? CompositeBuckets
-            : TAggregation extends StatsBucketAggregation
-              ? estypes.StatsAggregate
-              : TAggregation extends PercentileAggregation<TDocument>
-                ? estypes.TDigestPercentilesAggregate
-                : TAggregation extends RangeAggregation<TDocument>
-                  ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
-                  : TAggregation extends MissingValueAggregation<TDocument>
-                    ? MissingValueAggregationResponse
+            ? CompositeBuckets<CompositeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
+            : TAggregation extends PercentileAggregation<TDocument>
+              ? estypes.TDigestPercentilesAggregate
+              : TAggregation extends RangeAggregation<TDocument>
+                ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
+                : TAggregation extends MissingValueAggregation<TDocument>
+                  ? MissingValueAggregationResponse
+                  : TAggregation extends StatsBucketAggregation
+                    ? estypes.StatsAggregate
                     : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
