@@ -4,12 +4,15 @@ import { getCompositeSources } from './get-composite-sources'
 
 describe('getCompositeSources', () => {
     it('returns composite sources', () => {
-        const sources = getCompositeSources<HomeDocument>([
-            //
-            { city: getTermsAggregation('city') },
-            { address: getTermsAggregation('address') }
-        ])
+        const sources = getCompositeSources<HomeDocument>([{ city: getTermsAggregation('city') }, { address: getTermsAggregation('address') }])
 
-        expect(sources).toEqual([{ city: { terms: { field: 'city' } } }, { address: { terms: { field: 'address' } } }])
+        expect(sources).toEqual([
+            {
+                city: { terms: { field: 'city' } }
+            },
+            {
+                address: { terms: { field: 'address' } }
+            }
+        ])
     })
 })
