@@ -1,9 +1,18 @@
 import { Document, Key, Sort } from 'lib/common'
 
 export type TopHitsAggregationOptions<TDocument extends Document> = {
+    /**
+     * @description The offset from the first result you want to fetch.
+     */
+
     from?: number
-    includes?: Array<Key<TDocument>>
+
+    /**
+     * @description How the top matching hits should be sorted. By default the hits are sorted by the score of the main query.
+     */
     sort?: Array<Sort<TDocument>>
+
+    includes?: Array<Key<TDocument>>
 }
 
 export type TopHitsAggregationBody<TDocument extends Document> = {
