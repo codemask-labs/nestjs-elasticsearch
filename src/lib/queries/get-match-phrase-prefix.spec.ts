@@ -21,6 +21,7 @@ describe('getMatchPhrasePrefixQuery', () => {
         const query = getMatchPhrasePrefixQuery<HomeDocument>('address', 'avenue')
 
         expect(query).toEqual({
+            // eslint-disable-next-line camelcase
             match_phrase_prefix: {
                 address: {
                     query: 'avenue'
@@ -52,6 +53,7 @@ describe('getMatchPhrasePrefixQuery', () => {
         await service
             .search(HomeDocument, {
                 size: 0,
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 query: getBoolQuery(getMustQuery(getMatchPhrasePrefixQuery('address.keyword' as any, 'avenue')))
             })
             .catch(error => {
