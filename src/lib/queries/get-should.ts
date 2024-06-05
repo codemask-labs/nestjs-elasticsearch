@@ -17,7 +17,7 @@ export type ShouldQueryBody<TDocument extends Document> =
     | ExistsQuery<TDocument>
 
 export type ShouldQuery<TDocument extends Document> = {
-    should?: ShouldQueryBody<TDocument> | Array<ShouldQueryBody<TDocument>>
+    should: ShouldQueryBody<TDocument> | Array<ShouldQueryBody<TDocument>>
 }
 
 export const getShouldQuery = <TDocument extends Document>(
