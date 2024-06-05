@@ -1,5 +1,12 @@
 
 
+## [1.17.2](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.1...v1.17.2) (2024-06-05)
+
+
+### Bug Fixes
+
+* get search request ([#150](https://github.com/codemask-labs/nestjs-elasticsearch/issues/150)) ([f1d2a25](https://github.com/codemask-labs/nestjs-elasticsearch/commit/f1d2a2562c89862f975ef41e5e56783aee6b94b1))
+
 ## [1.17.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.0...v1.17.1) (2024-06-05)
 
 

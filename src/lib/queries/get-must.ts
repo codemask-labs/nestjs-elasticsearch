@@ -17,7 +17,7 @@ export type MustQueryBody<TDocument extends Document> =
     | ExistsQuery<TDocument>
 
 export type MustQuery<TDocument extends Document> = {
-    must?: MustQueryBody<TDocument> | Array<MustQueryBody<TDocument>>
+    must: MustQueryBody<TDocument> | Array<MustQueryBody<TDocument>>
 }
 
 export const getMustQuery = <TDocument extends Document>(must: MustQueryBody<TDocument> | Array<MustQueryBody<TDocument>>): MustQuery<TDocument> => ({

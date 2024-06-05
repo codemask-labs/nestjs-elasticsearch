@@ -1,4 +1,4 @@
-import { getTermsAggregation } from 'lib/aggregations'
+import { getSumAggregation, getTermsAggregation } from 'lib/aggregations'
 import { HomeDocument } from 'test/module'
 import { Order } from 'lib/enums'
 import { getSearchRequest } from './get-search-request'
@@ -8,7 +8,10 @@ describe('getSearchRequest', () => {
         const request = getSearchRequest(HomeDocument, {
             aggregations: {
                 test: {
-                    ...getTermsAggregation('address.keyword')
+                    ...getTermsAggregation('address.keyword'),
+                    aggregations: {
+                        value: getSumAggregation('builtInYear')
+                    }
                 }
             }
         })
@@ -17,7 +20,12 @@ describe('getSearchRequest', () => {
             index: 'homes',
             aggregations: {
                 test: {
-                    terms: { field: 'address.keyword' }
+                    terms: { field: 'address.keyword' },
+                    aggregations: {
+                        value: {
+                            sum: { field: 'builtInYear' }
+                        }
+                    }
                 }
             }
         })
