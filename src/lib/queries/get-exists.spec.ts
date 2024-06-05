@@ -31,7 +31,7 @@ describe('getExistsQuery', () => {
     it('should query elasticsearch for exists aggregation', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
-            size: 2,
+            size: 10,
             query: getBoolQuery(getMustQuery(getExistsQuery('address')))
         })
 
@@ -42,7 +42,7 @@ describe('getExistsQuery', () => {
     it(`should query elasticsearch for exists aggregation when passing string field with 'keyword'`, async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
-            size: 2,
+            size: 10,
             query: getBoolQuery(getMustQuery(getExistsQuery('address.keyword')))
         })
 
@@ -53,7 +53,7 @@ describe('getExistsQuery', () => {
     it('should query elasticsearch for exists aggregation for documents that are missing an indexed values', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
-            size: 2,
+            size: 10,
             query: getBoolQuery(getMustNotQuery(getExistsQuery('propertyAreaSquared')))
         })
 
@@ -66,7 +66,8 @@ describe('getExistsQuery', () => {
 
         await service
             .search(HomeDocument, {
-                size: 2,
+                size: 10,
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 query: getBoolQuery(getMustQuery(getExistsQuery('' as any)))
             })
             .catch(error => {
