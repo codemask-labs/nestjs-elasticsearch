@@ -6,12 +6,12 @@ import { HomeDocument, PropertyType } from 'test/module'
 const ELASTICSEARCH_SEED_INDEX_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
 const DOCUMENTS_COUNT = 100
 
-const data = new Array(DOCUMENTS_COUNT).fill(null).map((): HomeDocument => {
+const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument => {
     const id = faker.string.uuid()
     const name = faker.person.fullName()
     const builtInYear = faker.number.int({ min: 1995, max: 2015 })
     const ownerEmail = faker.internet.email()
-    const address = faker.location.streetAddress()
+    const address = index === 0 ? '36025 Church Walk' : faker.location.streetAddress() // note: to ensure that the seed has this address, needed for unit tests for the match query
     const city = faker.location.city()
 
     const hasProperty = faker.number.int({ min: 0, max: 1 })

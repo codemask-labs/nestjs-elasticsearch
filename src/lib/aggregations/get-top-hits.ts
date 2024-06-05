@@ -12,6 +12,9 @@ export type TopHitsAggregationOptions<TDocument extends Document> = {
      */
     sort?: Array<Sort<TDocument>>
 
+    /**
+     * @description Specifies which fields to include in the returned hits. This helps in reducing the amount of data returned by including only the necessary fields.
+     */
     includes?: Array<Key<TDocument>>
 }
 
