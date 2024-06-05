@@ -1,5 +1,32 @@
 
 
+## [1.17.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.0...v1.17.1) (2024-06-05)
+
+
+### Bug Fixes
+
+* update numeric field type ([#149](https://github.com/codemask-labs/nestjs-elasticsearch/issues/149)) ([d76c66f](https://github.com/codemask-labs/nestjs-elasticsearch/commit/d76c66fc28d4895d85b3f0fa7aa1d26be5c61b66))
+
+## [1.17.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.3...v1.17.0) (2024-06-04)
+
+
+### Features
+
+* composite aggregation ([#145](https://github.com/codemask-labs/nestjs-elasticsearch/issues/145)) ([8f83007](https://github.com/codemask-labs/nestjs-elasticsearch/commit/8f83007eff1235ea0812e0150ac44cec92e39d2b))
+
+
+### Bug Fixes
+
+* min doc count in date histogram aggregation with unit tests ([#134](https://github.com/codemask-labs/nestjs-elasticsearch/issues/134)) ([e300832](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e300832b4b28dfad57e32f325057b63ce8f7c99c))
+* update get avg to supports only numeric fields ([#130](https://github.com/codemask-labs/nestjs-elasticsearch/issues/130)) ([6d710b4](https://github.com/codemask-labs/nestjs-elasticsearch/commit/6d710b49c07c9c9797603d9fb608ef5445681b16))
+* update get max aggregation and add unit tests ([#135](https://github.com/codemask-labs/nestjs-elasticsearch/issues/135)) ([31086cf](https://github.com/codemask-labs/nestjs-elasticsearch/commit/31086cf386f67bff6f60d22cebd8abb614e532df))
+* update get min aggregation and add unit tests  ([#136](https://github.com/codemask-labs/nestjs-elasticsearch/issues/136)) ([5d3d7d0](https://github.com/codemask-labs/nestjs-elasticsearch/commit/5d3d7d0a14c8590129a35d3d98b97d51175cb04d))
+* update get missing value aggregation and add unit tests ([#137](https://github.com/codemask-labs/nestjs-elasticsearch/issues/137)) ([4499792](https://github.com/codemask-labs/nestjs-elasticsearch/commit/449979263a5811af547df952bc3197b3c8f36206))
+* update histogram aggregation and add unit tests ([#132](https://github.com/codemask-labs/nestjs-elasticsearch/issues/132)) ([90a4055](https://github.com/codemask-labs/nestjs-elasticsearch/commit/90a4055bbb1a404911b0231af45b1160022a6202))
+* update percentile aggregation and add unit tests  ([#142](https://github.com/codemask-labs/nestjs-elasticsearch/issues/142)) ([36da851](https://github.com/codemask-labs/nestjs-elasticsearch/commit/36da851aaa57316a1df6411bf36beaaee9004bdc))
+* update range aggregation and add unit tests ([#143](https://github.com/codemask-labs/nestjs-elasticsearch/issues/143)) ([ff6b363](https://github.com/codemask-labs/nestjs-elasticsearch/commit/ff6b363c9c3c1788a3cafbe4bdea57ebfc02688d))
+* update sum aggregation and add unit tests  ([#146](https://github.com/codemask-labs/nestjs-elasticsearch/issues/146)) ([0422acf](https://github.com/codemask-labs/nestjs-elasticsearch/commit/0422acf42987ebc1121d8e0e250c2a0aaea0b995))
+
 ## [1.16.3](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.2...v1.16.3) (2024-05-29)
 
 ## [1.16.2](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.1...v1.16.2) (2024-05-27)
