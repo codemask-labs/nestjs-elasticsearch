@@ -1,5 +1,12 @@
 
 
+## [1.17.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.0...v1.17.1) (2024-06-05)
+
+
+### Bug Fixes
+
+* update numeric field type ([#149](https://github.com/codemask-labs/nestjs-elasticsearch/issues/149)) ([d76c66f](https://github.com/codemask-labs/nestjs-elasticsearch/commit/d76c66fc28d4895d85b3f0fa7aa1d26be5c61b66))
+
 ## [1.17.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.16.3...v1.17.0) (2024-06-04)
 
 
