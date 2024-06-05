@@ -77,7 +77,10 @@ describe('getMustNotQuery', () => {
         })
 
         expect(result.total).toEqual(expect.any(Number))
-        result.documents.forEach(document => expect(document.city).not.toBe(PropertyType.Flat || PropertyType.Apartment))
+        result.documents.forEach(document => {
+            expect(document.city).not.toBe(PropertyType.Flat)
+            expect(document.city).not.toBe(PropertyType.Apartment)
+        })
     })
 
     it('should query elasticsearch for must not query with bool query', async () => {
