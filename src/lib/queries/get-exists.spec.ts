@@ -28,7 +28,17 @@ describe('getExistsQuery', () => {
         })
     })
 
-    it('should query elasticsearch for exists aggregation', async () => {
+    it('accepts only schema fields with keyword', () => {
+        const query = getExistsQuery<HomeDocument>('address.keyword')
+
+        expect(query).toEqual({
+            exists: {
+                field: 'address.keyword'
+            }
+        })
+    })
+
+    it('should query elasticsearch for exists query', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
@@ -39,7 +49,7 @@ describe('getExistsQuery', () => {
         expect(result.total).toEqual(expect.any(Number))
     })
 
-    it(`should query elasticsearch for exists aggregation when passing string field with 'keyword'`, async () => {
+    it(`should query elasticsearch for exists query when passing string field with 'keyword'`, async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
@@ -50,7 +60,7 @@ describe('getExistsQuery', () => {
         expect(result.total).toEqual(expect.any(Number))
     })
 
-    it('should query elasticsearch for exists aggregation for documents that are missing an indexed values', async () => {
+    it('should query elasticsearch for exists query for documents that are missing an indexed values', async () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
