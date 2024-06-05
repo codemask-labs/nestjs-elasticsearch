@@ -22,7 +22,9 @@ describe('getSearchRequest', () => {
                 test: {
                     terms: { field: 'address.keyword' },
                     aggregations: {
-                        value: { field: 'builtInYear' }
+                        value: {
+                            sum: { field: 'builtInYear' }
+                        }
                     }
                 }
             }
