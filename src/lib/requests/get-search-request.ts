@@ -1,9 +1,9 @@
 import { ClassConstructor, Document, Sort } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { BoolQuery } from 'lib/queries'
-import { AggregationsContainer } from 'lib/aggregations'
+import { Aggregations } from 'lib/aggregations'
 
-export type SearchRequestOptions<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
+export type SearchRequestOptions<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     size?: number
     from?: number
     query?: BoolQuery<TDocument>
@@ -11,7 +11,7 @@ export type SearchRequestOptions<TDocument extends Document, TAggregationsBody e
     sort?: Sort<TDocument> | Array<Sort<TDocument>>
 }
 
-export type SearchRequest<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
+export type SearchRequest<TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>> = {
     index: string
     size?: number
     from?: number
@@ -20,7 +20,7 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
     sort?: Sort<TDocument> | Array<Sort<TDocument>>
 }
 
-export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
+export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends Record<string, Aggregations<TDocument>>>(
     document: ClassConstructor<TDocument>,
     options?: SearchRequestOptions<TDocument, TAggregationsBody>
 ): SearchRequest<TDocument, TAggregationsBody> => {
