@@ -1,4 +1,4 @@
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -81,7 +81,8 @@ describe('getExistsQuery', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('x_content_parse_exception: [x_content_parse_exception]')
+                expect(error.message).toContain('x_content_parse_exception')
+                expect(error.message).toContain('illegal_argument_exception: field name is null or empty')
                 expect(error.message).toContain('[bool] failed to parse field [must]')
             })
     })

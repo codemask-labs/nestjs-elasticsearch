@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { Order } from 'lib/enums'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -213,7 +213,8 @@ describe('getTopHitsAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('search_phase_execution_exception: [illegal_argument_exception]')
+                expect(error.message).toContain('search_phase_execution_exception')
+                expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
                     `Top hits result window is too large, the top hits aggregator [result]'s from + size must be less than or equal to: [100] but was [1000].`
                 )
@@ -234,7 +235,8 @@ describe('getTopHitsAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('search_phase_execution_exception: [illegal_argument_exception]')
+                expect(error.message).toContain('search_phase_execution_exception')
+                expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
                     `Top hits result window is too large, the top hits aggregator [result]'s from + size must be less than or equal to: [100] but was [107].`
                 )
