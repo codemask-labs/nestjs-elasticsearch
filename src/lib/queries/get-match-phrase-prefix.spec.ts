@@ -47,7 +47,7 @@ describe('getMatchPhrasePrefixQuery', () => {
         })
     })
 
-    it('should query elasticsearch for match phrase prefix query and support boost option', async () => {
+    it('should query elasticsearch for match phrase prefix query which supports boost option', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {

@@ -66,7 +66,7 @@ describe('getTermsQuery', () => {
         result.documents.forEach(document => expect(values).toContain(document.builtInYear))
     })
 
-    it('should query elasticsearch for terms query and support boost option', async () => {
+    it('should query elasticsearch for terms query which supports boost option', async () => {
         const service = app.get(ElasticsearchService)
 
         const values = [PropertyType.Flat, PropertyType.Apartment]

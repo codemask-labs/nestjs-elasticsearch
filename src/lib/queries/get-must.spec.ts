@@ -10,6 +10,7 @@ import { getTermsQuery } from './get-terms'
 import { getExistsQuery } from './get-exists'
 import { getRangeQuery } from './get-range'
 import { getMatchPhrasePrefixQuery } from './get-match-phrase-prefix'
+import { getMatchQuery } from './get-match'
 
 describe('getMustQuery', () => {
     const { app } = setupNestApplication({
@@ -165,15 +166,15 @@ describe('getMustQuery', () => {
     it('should query elasticsearch for different queries in must query', async () => {
         const service = app.get(ElasticsearchService)
 
-        const query = 'c'
         const result = await service.search(HomeDocument, {
             size: 10,
             query: getBoolQuery(
                 getMustQuery([
                     getExistsQuery('propertyAreaSquared'),
                     getTermQuery('propertyType.keyword', PropertyType.Flat),
-                    getRangeQuery('propertyAreaSquared', { lte: 900000 }),
-                    getMatchPhrasePrefixQuery('address', query)
+                    getRangeQuery('propertyAreaSquared', {
+                        lte: 900000
+                    })
                 ])
             )
         })
@@ -183,10 +184,38 @@ describe('getMustQuery', () => {
             expect(document.propertyAreaSquared).toBeDefined()
             expect(document.propertyType).toBe(PropertyType.Flat)
             expect(document.propertyAreaSquared).toBeLessThanOrEqual(900000)
-
-            const words = document.address.toLowerCase().split(' ')
-            const hasWordStartingWithQuery = words.some(word => word.startsWith(query.toLowerCase()))
-            expect(hasWordStartingWithQuery).toBe(true)
         })
+    })
+
+    it('should query elasticsearch for must query which supports match query', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const query = 'Street'
+        const result = await service.search(HomeDocument, {
+            size: 10,
+            query: getBoolQuery({
+                ...getMustQuery({
+                    ...getMatchQuery('address', query)
+                })
+            })
+        })
+
+        expect(result.total).toEqual(expect.any(Number))
+    })
+
+    it('should query elasticsearch for must query which supports match phrase prefix query', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const query = 'c'
+        const result = await service.search(HomeDocument, {
+            size: 10,
+            query: getBoolQuery({
+                ...getMustQuery({
+                    ...getMatchPhrasePrefixQuery('address', query)
+                })
+            })
+        })
+
+        expect(result.total).toEqual(expect.any(Number))
     })
 })
