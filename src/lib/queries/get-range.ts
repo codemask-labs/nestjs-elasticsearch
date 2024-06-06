@@ -1,7 +1,13 @@
 import { Document, Field, FieldType } from 'lib/common'
 
 export type RangeQueryOptions<TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>> = {
+    /**
+     * @description Allows to specify the format of the date or numeric values being queried.
+     * This ensures accurate comparison of values, particularly useful when dealing with dates or numbers in specific formats.
+     * e.g. "yyyy-MM-dd"
+     */
     format?: string
+
     gt?: FieldType<TDocument, TKeyword>
     gte?: FieldType<TDocument, TKeyword>
     lt?: FieldType<TDocument, TKeyword>
