@@ -99,7 +99,7 @@ describe('getTermQuery', () => {
         result.documents.forEach(document => expect(document.address).toBe('36025 Church Walk'))
     })
 
-    it('should query elasticsearch for term query and support boost option', async () => {
+    it('should query elasticsearch for term query which supports boost option', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {

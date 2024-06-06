@@ -70,7 +70,7 @@ describe('getMatchQuery', () => {
         result.documents.forEach(document => expect(document.address).toBeDefined())
     })
 
-    it('should query elasticsearch for match query and support boost option', async () => {
+    it('should query elasticsearch for match query which supports boost option', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
