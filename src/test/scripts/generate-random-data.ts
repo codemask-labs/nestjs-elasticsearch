@@ -11,7 +11,7 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument 
     const name = faker.person.fullName()
     const builtInYear = faker.number.int({ min: 1995, max: 2015 })
     const ownerEmail = faker.internet.email()
-    const address = index === 0 ? '36025 Church Walk' : faker.location.streetAddress() // note: to ensure that the seed has this address, needed for unit tests for the match query
+    const address = index === 0 ? '36025 Church Walk' : faker.location.streetAddress() // note: to ensure that the seed has this address, needed for unit tests
     const city = faker.location.city()
 
     const hasProperty = faker.number.int({ min: 0, max: 1 })
