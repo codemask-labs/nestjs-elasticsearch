@@ -45,8 +45,8 @@ describe('getExistsQuery', () => {
             query: getBoolQuery(getMustQuery(getExistsQuery('address')))
         })
 
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => expect(document.address).toBeDefined())
-        expect(result.total).toEqual(expect.any(Number))
     })
 
     it(`should query elasticsearch for exists query when passing string field with 'keyword'`, async () => {
@@ -56,8 +56,8 @@ describe('getExistsQuery', () => {
             query: getBoolQuery(getMustQuery(getExistsQuery('address.keyword')))
         })
 
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => expect(document.address).toBeDefined())
-        expect(result.total).toEqual(expect.any(Number))
     })
 
     it('should query elasticsearch for exists query for documents that are missing an indexed values', async () => {
@@ -67,8 +67,7 @@ describe('getExistsQuery', () => {
             query: getBoolQuery(getMustNotQuery(getExistsQuery('propertyAreaSquared')))
         })
 
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeDefined())
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
     })
 
     it('should return an error when passing empty string', async () => {

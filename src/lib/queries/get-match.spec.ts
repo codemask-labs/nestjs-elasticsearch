@@ -69,4 +69,22 @@ describe('getMatchQuery', () => {
 
         result.documents.forEach(document => expect(document.address).toBeDefined())
     })
+
+    it('should query elasticsearch for match query and support boost option', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const result = await service.search(HomeDocument, {
+            size: 10,
+            query: getBoolQuery(
+                getMustQuery(
+                    getMatchQuery('address', 'church', {
+                        boost: 2.5
+                    })
+                )
+            )
+        })
+
+        expect(result.total).toBeGreaterThan(0)
+        result.documents.forEach(document => expect(document.address).toBeDefined())
+    })
 })

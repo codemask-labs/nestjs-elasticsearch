@@ -99,7 +99,25 @@ describe('getTermQuery', () => {
         result.documents.forEach(document => expect(document.address).toBe('36025 Church Walk'))
     })
 
-    it('should return an error when passing invalid paramter', async () => {
+    it('should query elasticsearch for term query and support boost option', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const result = await service.search(HomeDocument, {
+            size: 10,
+            query: getBoolQuery(
+                getMustQuery(
+                    getTermQuery('propertyType.keyword', PropertyType.Flat, {
+                        boost: 0.5
+                    })
+                )
+            )
+        })
+
+        expect(result.total).toBeGreaterThan(0)
+        result.documents.forEach(document => expect(document.address).toBeDefined())
+    })
+
+    it('should return an error when passing an invalid parameter', async () => {
         const service = app.get(ElasticsearchService)
 
         await service

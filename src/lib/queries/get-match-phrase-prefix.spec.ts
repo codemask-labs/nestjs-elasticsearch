@@ -47,6 +47,24 @@ describe('getMatchPhrasePrefixQuery', () => {
         })
     })
 
+    it('should query elasticsearch for match phrase prefix query and support boost option', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const result = await service.search(HomeDocument, {
+            size: 10,
+            query: getBoolQuery(
+                getMustQuery(
+                    getMatchPhrasePrefixQuery('address', 'ch', {
+                        boost: 1.8
+                    })
+                )
+            )
+        })
+
+        expect(result.total).toBeGreaterThan(0)
+        result.documents.forEach(document => expect(document.address).toBeDefined())
+    })
+
     it(`should return an error after passing string field with 'keyword'`, async () => {
         const service = app.get(ElasticsearchService)
 
