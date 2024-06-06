@@ -41,9 +41,9 @@ describe('getMatchPhrasePrefixQuery', () => {
 
         result.documents.forEach(document => {
             const words = document.address.toLowerCase().split(' ')
-            const hasWordStartingWithAve = words.some(word => word.startsWith(query.toLowerCase()))
+            const hasWordStartingWithQuery = words.some(word => word.startsWith(query.toLowerCase()))
 
-            expect(hasWordStartingWithAve).toBe(true)
+            expect(hasWordStartingWithQuery).toBe(true)
         })
     })
 
