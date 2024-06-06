@@ -187,7 +187,7 @@ describe('getMustQuery', () => {
         })
     })
 
-    it('should query elasticsearch for must query and support match query', async () => {
+    it('should query elasticsearch for must query which supports match query', async () => {
         const service = app.get(ElasticsearchService)
 
         const query = 'Street'
@@ -203,7 +203,7 @@ describe('getMustQuery', () => {
         expect(result.total).toEqual(expect.any(Number))
     })
 
-    it('should query elasticsearch for must query and support match phrase prefix query', async () => {
+    it('should query elasticsearch for must query which supports match phrase prefix query', async () => {
         const service = app.get(ElasticsearchService)
 
         const query = 'c'
