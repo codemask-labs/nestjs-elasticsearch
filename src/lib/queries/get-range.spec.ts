@@ -168,7 +168,7 @@ describe('getRangeQuery', () => {
                         getRangeQuery('contractDate', {
                             gte: '2023-05-01',
                             lte: '2023-10-01',
-                            format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+                            format: `yyyy-MM-dd'T'HH:mm:ss.SSSZ`
                         })
                     )
                 )
