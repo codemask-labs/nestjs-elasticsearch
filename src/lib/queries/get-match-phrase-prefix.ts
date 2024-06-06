@@ -2,7 +2,8 @@ import { Document, Key, FieldType } from 'lib/common'
 
 export type MatchPhrasePrefixQueryOptions = {
     /**
-     * @description Increases the importance of that query clause relative to others, affecting the relevance scoring of documents.
+     * @description Floating point number used to decrease or increase the importance of that query clause relative to others, affecting the relevance scoring of documents.
+     * The default value is 1.0.
      */
     boost?: number
 }
