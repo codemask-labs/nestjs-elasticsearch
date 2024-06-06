@@ -21,7 +21,9 @@ describe('getMustNotQuery', () => {
     })
 
     it('accepts optional term queries', () => {
-        const query = getMustNotQuery<HomeDocument>(getTermQuery('hasProperty', true))
+        const query = getMustNotQuery<HomeDocument>({
+            ...getTermQuery('hasProperty', true)
+        })
 
         expect(query).toEqual({
             // eslint-disable-next-line camelcase
@@ -43,7 +45,7 @@ describe('getMustNotQuery', () => {
             })
         })
 
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => expect(document.hasProperty).not.toBe(false))
     })
 
@@ -57,7 +59,7 @@ describe('getMustNotQuery', () => {
             })
         })
 
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
             expect(document.hasProperty).not.toBe(false)
             expect(document.propertyType).not.toBe(PropertyType.Flat)
@@ -76,10 +78,10 @@ describe('getMustNotQuery', () => {
             })
         })
 
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
-            expect(document.city).not.toBe(PropertyType.Flat)
-            expect(document.city).not.toBe(PropertyType.Apartment)
+            expect(document.propertyType).not.toBe(PropertyType.Flat)
+            expect(document.propertyType).not.toBe(PropertyType.Apartment)
         })
     })
 
@@ -99,7 +101,7 @@ describe('getMustNotQuery', () => {
             })
         })
 
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => expect(document.hasProperty).not.toBe(false))
     })
 
@@ -115,7 +117,7 @@ describe('getMustNotQuery', () => {
             })
         })
 
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => expect(document.propertyAreaSquared).toBeNull())
     })
 
@@ -136,7 +138,7 @@ describe('getMustNotQuery', () => {
             })
         })
 
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => expect(document.propertyAreaSquared).toBeGreaterThanOrEqual(10000))
     })
 
@@ -145,23 +147,19 @@ describe('getMustNotQuery', () => {
 
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery({
-                ...getMustQuery([
-                    {
-                        ...getTermQuery('hasProperty', true)
-                    },
-                    {
-                        ...getBoolQuery({
-                            ...getMustNotQuery({
-                                ...getTermQuery('propertyType.keyword', PropertyType.Flat)
-                            })
+            query: getBoolQuery(
+                getMustQuery([
+                    getTermQuery('hasProperty', true),
+                    getBoolQuery({
+                        ...getMustNotQuery({
+                            ...getTermQuery('propertyType.keyword', PropertyType.Flat)
                         })
-                    }
+                    })
                 ])
-            })
+            )
         })
 
-        expect(result.total).toEqual(expect.any(Number))
+        expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
             expect(document.hasProperty).toBe(true)
             expect(document.propertyType).not.toBe(PropertyType.Flat)
