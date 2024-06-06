@@ -2,12 +2,13 @@ import { Document, Field, FieldType } from 'lib/common'
 
 export type MatchQueryOptions = {
     /**
-     * @description Increases the importance of that query clause relative to others, affecting the relevance scoring of documents.
+     * @description Floating point number used to decrease or increase the importance of that query clause relative to others, affecting the relevance scoring of documents.
+     * The default value is 1.0.
      */
     boost?: number
 
     /**
-     * @description Number of beginning characters left unchanged for fuzzy matching. Defaults to 0.
+     * @description Number of beginning characters left unchanged for fuzzy matching. The default value is 0.
      */
     prefix_length?: number
 
