@@ -1,5 +1,14 @@
 
 
+## [1.17.3](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.2...v1.17.3) (2024-06-06)
+
+
+### Bug Fixes
+
+* match and match phrase prefix query ([#152](https://github.com/codemask-labs/nestjs-elasticsearch/issues/152)) ([860314b](https://github.com/codemask-labs/nestjs-elasticsearch/commit/860314b9bca7526b11f79b5c56e3ed748632f652))
+* must not query and add unit tests ([#153](https://github.com/codemask-labs/nestjs-elasticsearch/issues/153)) ([4320f7d](https://github.com/codemask-labs/nestjs-elasticsearch/commit/4320f7dc06f73dbb8761fa9194efe3ac3453b47e))
+* term and terms query ([#155](https://github.com/codemask-labs/nestjs-elasticsearch/issues/155)) ([a756544](https://github.com/codemask-labs/nestjs-elasticsearch/commit/a756544cdc0fb5edbf536add0adcc31e5a6e6ac5))
+
 ## [1.17.2](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.1...v1.17.2) (2024-06-05)
 
 
