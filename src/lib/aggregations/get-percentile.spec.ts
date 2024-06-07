@@ -1,4 +1,5 @@
 import { ResponseError } from 'lib/common'
+import { isKeyedPercentiles } from 'lib/utils'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'
@@ -35,6 +36,7 @@ describe('getPercentileAggregation', () => {
             }
         })
 
+        expect(isKeyedPercentiles(result.aggregations.result.values)).toBe(true)
         expect(result.aggregations.result).toStrictEqual({
             values: {
                 '25.0': expect.any(Number),

@@ -1,4 +1,4 @@
-import { AggregationsPercentilesAggregation, AggregationsStatsAggregate } from '@elastic/elasticsearch/lib/api/types'
+import { AggregationsPercentilesAggregateBase, AggregationsStatsAggregate } from '@elastic/elasticsearch/lib/api/types'
 import { Bucket, Buckets, CompositeBucket, CompositeBuckets, Document, Hits, OptionalValue, RangeBucket, Value } from 'lib/common'
 import {
     Aggregations,
@@ -43,7 +43,7 @@ export type TransformAggregation<
           : TAggregation extends CompositeAggregation<TDocument>
             ? CompositeBuckets<CompositeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
             : TAggregation extends PercentileAggregation<TDocument>
-              ? AggregationsPercentilesAggregation
+              ? AggregationsPercentilesAggregateBase
               : TAggregation extends RangeAggregation<TDocument>
                 ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
                 : TAggregation extends MissingValueAggregation<TDocument>
