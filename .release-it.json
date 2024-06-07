@@ -10,6 +10,9 @@
         "publish": true,
         "skipChecks": true
     },
+    "hooks": {
+        "after:release": "echo \"version=${version}\" >> $GITHUB_OUTPUT"
+    },
     "plugins": {
         "@release-it/conventional-changelog": {
             "infile": "CHANGELOG.md",

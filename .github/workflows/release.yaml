@@ -1,20 +1,34 @@
 name: Release
 on:
   workflow_dispatch:
+    inputs:
+      release-branch:
+        type: choice
+        description: To which branch you want to release
+        default: main
+        options:
+          - main
+          - beta
+          - rc
+      dry-run:
+        type: boolean
+        description: 'Dry run'
+        required: true
+        default: true
 
 permissions:
   contents: write
   issues: write
   pull-requests: write
-  id-token: write
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     env:
       HUSKY: 0
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.6
@@ -41,7 +55,14 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Release
-        run: yarn dlx -p release-it -p @release-it/conventional-changelog release-it --ci
+        id: release-it
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          dry_run=""
+          pre_release=""
+
+          if [ "${{ inputs.dry-run }}" == "true" ]; then dry_run="--dry-run"; fi
+          if [ "${{ inputs.release-branch }}" != "main" ]; then pre_release="--preRelease=${{ inputs.release-branch }}"; fi
+
+          yarn dlx -p release-it -p @release-it/conventional-changelog release-it --ci $pre_release $dry_run
