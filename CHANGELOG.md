@@ -1,5 +1,12 @@
 
 
+## [2.0.0-beta.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2024-06-07)
+
+
+### Bug Fixes
+
+* get percentiles aggregation transformed type ([f781af6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/f781af6fa517592dfc7e679ab38a9af984ec6b41))
+
 ## [2.0.0-beta.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.3...v2.0.0-beta.0) (2024-06-07)
 
 
