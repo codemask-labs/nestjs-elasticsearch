@@ -1,4 +1,4 @@
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { HomeDocument, PropertyType } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -96,8 +96,9 @@ describe('getTermsQuery', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('x_content_parse_exception: [parsing_exception] ')
-                expect(error.message).toContain(`Reason: [terms] query does not support [hasProperty]`)
+                expect(error.message).toContain('x_content_parse_exception')
+                expect(error.message).toContain('parsing_exception')
+                expect(error.message).toContain(`[terms] query does not support [hasProperty]`)
             })
     })
 })

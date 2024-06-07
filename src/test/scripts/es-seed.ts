@@ -17,7 +17,7 @@ readFile(path)
     .then((data: any) => data.flatMap((record: any) => [{ index: { _index: index } }, record]))
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .then(async (records: Array<any>) => {
-        const { body: indexExists } = await client.indices.exists({ index })
+        const indexExists = await client.indices.exists({ index })
 
         if (indexExists) {
             await client.indices.delete({ index })

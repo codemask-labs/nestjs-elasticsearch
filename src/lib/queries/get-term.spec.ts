@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { HomeDocument, PropertyType } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -128,8 +128,9 @@ describe('getTermQuery', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('search_phase_execution_exception: [query_shard_exception]')
-                expect(error.message).toContain(`Reason: failed to create query: Can't parse boolean value [test], expected [true] or [false]`)
+                expect(error.message).toContain('search_phase_execution_exception')
+                expect(error.message).toContain('query_shard_exception')
+                expect(error.message).toContain(`failed to create query: Can't parse boolean value [test], expected [true] or [false]`)
             })
     })
 })

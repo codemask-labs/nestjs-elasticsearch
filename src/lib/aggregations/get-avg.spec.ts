@@ -1,4 +1,4 @@
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'
@@ -51,7 +51,8 @@ describe('getAvgAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('search_phase_execution_exception: [illegal_argument_exception]')
+                expect(error.message).toContain('search_phase_execution_exception')
+                expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
                     'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
                 )
@@ -71,7 +72,8 @@ describe('getAvgAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('search_phase_execution_exception: [illegal_argument_exception]')
+                expect(error.message).toContain('search_phase_execution_exception')
+                expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain('Field [address.keyword] of type [keyword] is not supported for aggregation [avg]')
             })
     })

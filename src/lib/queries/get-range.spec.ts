@@ -1,4 +1,4 @@
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -175,9 +175,10 @@ describe('getRangeQuery', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('search_phase_execution_exception: [parse_exception]')
+                expect(error.message).toContain('search_phase_execution_exception')
+                expect(error.message).toContain('parse_exception')
                 expect(error.message).toContain(
-                    `Reason: failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]: [failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]]`
+                    `failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]: [failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]]`
                 )
             })
     })

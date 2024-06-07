@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { CalendarIntervalName } from 'lib/enums'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -92,9 +92,7 @@ describe('getStatsBucketAggregation', () => {
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('action_request_validation_exception')
-                expect(error.message).toContain(
-                    '[action_request_validation_exception] Reason: Validation Failed: 1: No aggregation found for path [address]'
-                )
+                expect(error.message).toContain('No aggregation found for path [address]')
             })
     })
 
@@ -111,9 +109,7 @@ describe('getStatsBucketAggregation', () => {
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('action_request_validation_exception')
-                expect(error.message).toContain(
-                    '[action_request_validation_exception] Reason: Validation Failed: 1: No aggregation found for path [address.keyword]'
-                )
+                expect(error.message).toContain('No aggregation found for path [address.keyword]')
             })
     })
 })

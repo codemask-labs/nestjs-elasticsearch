@@ -1,7 +1,6 @@
 {
     "git": {
-        "commitMessage": "chore: release v${version}",
-        "requireBranch": "main"
+        "commitMessage": "chore: release v${version}"
     },
     "github": {
         "release": true
@@ -9,6 +8,9 @@
     "npm": {
         "publish": true,
         "skipChecks": true
+    },
+    "hooks": {
+        "after:release": "echo \"version=${version}\" >> $GITHUB_OUTPUT"
     },
     "plugins": {
         "@release-it/conventional-changelog": {
