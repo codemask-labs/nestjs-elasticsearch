@@ -49,4 +49,25 @@ describe('getSearchRequest', () => {
             }
         })
     })
+
+    it('should support search_after if added in the request', () => {
+        const request = getSearchRequest(HomeDocument, {
+            sort: {
+                'address.keyword': {
+                    order: Order.DESC
+                }
+            },
+            search_after: ['1']
+        })
+
+        expect(request).toEqual({
+            index: 'homes',
+            sort: {
+                'address.keyword': {
+                    order: 'desc'
+                }
+            },
+            search_after: ['1']
+        })
+    })
 })
