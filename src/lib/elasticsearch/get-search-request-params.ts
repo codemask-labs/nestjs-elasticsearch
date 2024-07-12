@@ -8,6 +8,7 @@ export const getSearchRequestParams = <TDocument extends Document, TAggregations
     options?: SearchRequestOptions<TDocument, TAggregationsBody>
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): RequestParams.Search<Record<string, any>> => {
+    // eslint-disable-next-line camelcase
     const { index, size, from, query, aggregations, sort, search_after } = getSearchRequest<TDocument, TAggregationsBody>(document, options)
 
     return {
@@ -18,7 +19,7 @@ export const getSearchRequestParams = <TDocument extends Document, TAggregations
             query,
             aggregations,
             sort,
-            search_after
+            search_after // eslint-disable-line camelcase
         }
     }
 }
