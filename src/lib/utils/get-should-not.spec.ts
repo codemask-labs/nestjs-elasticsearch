@@ -11,7 +11,6 @@ describe('getShouldNotQuery', () => {
         expect(query).toEqual({
             should: {
                 bool: {
-                    // eslint-disable-next-line camelcase
                     must_not: {
                         term: { hasProperty: { value: true } }
                     }

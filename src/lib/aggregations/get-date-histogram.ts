@@ -6,7 +6,7 @@ export type DateHistogramAggregationOptions = {
     /**
      * @description By default all buckets are returned, even those with 0 documents.
      */
-    min_doc_count?: number // eslint-disable-line camelcase
+    min_doc_count?: number
 }
 
 export type DateHistogramAggregationBody<TDocument extends Document> = {
@@ -23,10 +23,8 @@ export const getDateHistogramAggregation = <TDocument extends Document>(
     interval: ExtractEnumValues<CalendarIntervalName | CalendarIntervalQuantity>,
     options?: DateHistogramAggregationOptions
 ): DateHistogramAggregation<TDocument> => ({
-    // eslint-disable-next-line camelcase
     date_histogram: {
         field,
-        // eslint-disable-next-line camelcase
         calendar_interval: interval,
         ...options
     }

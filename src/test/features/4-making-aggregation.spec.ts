@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { setupNestApplication } from 'test/toolkit'
 import { HomeDocument, TestService } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'

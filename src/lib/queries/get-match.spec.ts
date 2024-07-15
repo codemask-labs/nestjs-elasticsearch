@@ -37,7 +37,7 @@ describe('getMatchQuery', () => {
             query: getBoolQuery(getMustQuery(getMatchQuery('address', query)))
         })
 
-        result.documents.forEach(document => expect(document.address.toLowerCase()).toContain(query.toLowerCase()))
+        result.documents.forEach(document => expect(document.source.address.toLowerCase()).toContain(query.toLowerCase()))
     })
 
     it(`should query elasticsearch for match query when passing string field with 'keyword'`, async () => {
@@ -67,7 +67,7 @@ describe('getMatchQuery', () => {
             )
         })
 
-        result.documents.forEach(document => expect(document.address).toBeDefined())
+        result.documents.forEach(document => expect(document.source.address).toBeDefined())
     })
 
     it('should query elasticsearch for match query which supports boost option', async () => {
@@ -85,6 +85,6 @@ describe('getMatchQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.address).toBeDefined())
+        result.documents.forEach(document => expect(document.source.address).toBeDefined())
     })
 })

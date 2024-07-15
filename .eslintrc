@@ -1,6 +1,29 @@
 {
-    "extends": ["codemask"],
-    "rules": {
-        "@typescript-eslint/indent": "off"
-    }
+  "extends": ["codemask"],
+  "rules": {
+    "@typescript-eslint/indent": "off",
+    "camelcase": [
+      "error",
+      {
+        "allow": [
+          "search_after",
+          "doc_count",
+          "top_hits",
+          "must_not",
+          "match_phrase_prefix",
+          "case_insensitive",
+          "value_count",
+          "max_score",
+          "date_histogram",
+          "calendar_interval",
+          "minimum_should_match",
+          "stats_bucket",
+          "buckets_path",
+          "precision_threshold",
+          "missing_order",
+          "missing_bucket"
+        ]
+      }
+    ]
+  }
 }

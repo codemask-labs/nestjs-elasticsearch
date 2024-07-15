@@ -7,9 +7,7 @@ export type StatsBucketAggregationBody = {
 }
 
 export const getStatsBucketAggregation = (path: string): StatsBucketAggregation => ({
-    // eslint-disable-next-line camelcase
     stats_bucket: {
-        // eslint-disable-next-line camelcase
         buckets_path: path
     }
 })

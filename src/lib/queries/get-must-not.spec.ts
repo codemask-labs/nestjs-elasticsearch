@@ -26,7 +26,6 @@ describe('getMustNotQuery', () => {
         })
 
         expect(query).toEqual({
-            // eslint-disable-next-line camelcase
             must_not: {
                 term: { hasProperty: { value: true } }
             }
@@ -46,7 +45,7 @@ describe('getMustNotQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.hasProperty).not.toBe(false))
+        result.documents.forEach(document => expect(document.source.hasProperty).not.toBe(false))
     })
 
     it('should query elasticsearch for must not query with an array of term queries', async () => {
@@ -61,8 +60,8 @@ describe('getMustNotQuery', () => {
 
         expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
-            expect(document.hasProperty).not.toBe(false)
-            expect(document.propertyType).not.toBe(PropertyType.Flat)
+            expect(document.source.hasProperty).not.toBe(false)
+            expect(document.source.propertyType).not.toBe(PropertyType.Flat)
         })
     })
 
@@ -80,8 +79,8 @@ describe('getMustNotQuery', () => {
 
         expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
-            expect(document.propertyType).not.toBe(PropertyType.Flat)
-            expect(document.propertyType).not.toBe(PropertyType.Apartment)
+            expect(document.source.propertyType).not.toBe(PropertyType.Flat)
+            expect(document.source.propertyType).not.toBe(PropertyType.Apartment)
         })
     })
 
@@ -102,7 +101,7 @@ describe('getMustNotQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.hasProperty).not.toBe(false))
+        result.documents.forEach(document => expect(document.source.hasProperty).not.toBe(false))
     })
 
     it('should query elasticsearch for must not query with exists query', async () => {
@@ -118,7 +117,7 @@ describe('getMustNotQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeNull())
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeNull())
     })
 
     it('should query elasticsearch for must not query with range query', async () => {
@@ -139,7 +138,7 @@ describe('getMustNotQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeGreaterThanOrEqual(10000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeGreaterThanOrEqual(10000))
     })
 
     it('should query elasticsearch for nested must not query ', async () => {
@@ -161,8 +160,8 @@ describe('getMustNotQuery', () => {
 
         expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
-            expect(document.hasProperty).toBe(true)
-            expect(document.propertyType).not.toBe(PropertyType.Flat)
+            expect(document.source.hasProperty).toBe(true)
+            expect(document.source.propertyType).not.toBe(PropertyType.Flat)
         })
     })
 })

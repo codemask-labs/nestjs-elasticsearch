@@ -1,11 +1,11 @@
 import type { ApiResponse } from '@elastic/elasticsearch'
 import { ClassConstructor, Document, Result } from 'lib/common'
 import { AggregationsContainer } from 'lib/aggregations'
-import { TransformedAggregations, getTransformedAggregations, getTransformedDocuments, getTransformedTotal } from 'lib/transformers'
+import { TDocumentWrapper, TransformedAggregations, getTransformedAggregations, getTransformedDocuments, getTransformedTotal } from 'lib/transformers'
 
 export type SearchResponse<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     total: number
-    documents: Array<TDocument>
+    documents: Array<TDocumentWrapper<TDocument>>
     aggregations: TransformedAggregations<TDocument, TAggregationsBody>
 }
 

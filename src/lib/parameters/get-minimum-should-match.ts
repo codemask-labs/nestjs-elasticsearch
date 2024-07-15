@@ -3,6 +3,5 @@ export type MinimumShouldMatchParameter = {
 }
 
 export const getMinimumShouldMatchParameter = (value: number | string): MinimumShouldMatchParameter => ({
-    // eslint-disable-next-line camelcase
     minimum_should_match: value
 })

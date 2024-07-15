@@ -9,6 +9,7 @@ export type SearchRequestOptions<TDocument extends Document, TAggregationsBody e
     query?: BoolQuery<TDocument>
     aggregations?: TAggregationsBody
     sort?: Sort<TDocument> | Array<Sort<TDocument>>
+    search_after?: Array<any> // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export type SearchRequest<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
@@ -18,6 +19,7 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
     query?: BoolQuery<TDocument>
     aggregations?: TAggregationsBody
     sort?: Sort<TDocument> | Array<Sort<TDocument>>
+    search_after?: Array<any> // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
@@ -30,7 +32,7 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
         throw new Error(`Unregistered index name for ${document} schema.`)
     }
 
-    const { size, from, query, aggregations, sort } = options || {}
+    const { size, from, query, aggregations, sort, search_after } = options || {}
 
     return {
         index,
@@ -38,6 +40,7 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
         from,
         query,
         aggregations,
-        sort
+        sort,
+        search_after
     }
 }

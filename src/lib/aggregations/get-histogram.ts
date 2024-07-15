@@ -4,7 +4,7 @@ export type HistogramAggregationOptions = {
     /**
      * @description By default all buckets are returned, even those with 0 documents.
      */
-    min_doc_count?: number // eslint-disable-line camelcase
+    min_doc_count?: number
 }
 
 export type HistogramAggregationBody<TDocument extends Document> = {
