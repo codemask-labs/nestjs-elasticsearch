@@ -432,7 +432,7 @@ __metadata:
     "@commitlint/config-conventional": 19.2.2
     "@elastic/elasticsearch": 7.13.0
     "@faker-js/faker": 8.4.1
-    "@nestjs/common": 10.3.9
+    "@nestjs/common": 10.3.10
     "@nestjs/core": 10.3.9
     "@nestjs/elasticsearch": 10.0.1
     "@nestjs/platform-express": 10.3.9
@@ -1167,12 +1167,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:10.3.9":
-  version: 10.3.9
-  resolution: "@nestjs/common@npm:10.3.9"
+"@nestjs/common@npm:10.3.10":
+  version: 10.3.10
+  resolution: "@nestjs/common@npm:10.3.10"
   dependencies:
     iterare: 1.2.1
-    tslib: 2.6.2
+    tslib: 2.6.3
     uid: 2.0.2
   peerDependencies:
     class-transformer: "*"
@@ -1184,7 +1184,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: c362f2717888626ea3360b280dd42d8d173e3d6640615b9f76c6b202b33534daac362a224ee0be8c16f1270b9891172c3684396a02b06b8309a84342fd1177bc
+  checksum: 4cddac01408d17bec7c521732b96faeeab76e116ece51f436869afce6b331d63b7cd276589224393502a0b6afd6dd829925ce374b74ff44ab9860e845dec94fe
   languageName: node
   linkType: hard
 
@@ -12042,6 +12042,13 @@ __metadata:
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
+  languageName: node
+  linkType: hard
+
+"tslib@npm:2.6.3":
+  version: 2.6.3
+  resolution: "tslib@npm:2.6.3"
+  checksum: 74fce0e100f1ebd95b8995fbbd0e6c91bdd8f4c35c00d4da62e285a3363aaa534de40a80db30ecfd388ed7c313c42d930ee0eaf108e8114214b180eec3dbe6f5
   languageName: node
   linkType: hard
 
