@@ -66,3 +66,8 @@ export type TransformedAggregation<
 export type TransformedAggregations<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     [Name in keyof TAggregationsBody]: TransformedAggregation<TDocument, Name, TAggregationsBody[Name]>
 }
+
+export interface TDocumentWrapper<TDocument> {
+    source: TDocument
+    sort?: Array<any>
+}
