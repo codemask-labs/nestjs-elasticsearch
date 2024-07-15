@@ -69,5 +69,6 @@ export type TransformedAggregations<TDocument extends Document, TAggregationsBod
 
 export interface TDocumentWrapper<TDocument> {
     source: TDocument
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sort?: Array<any>
 }
