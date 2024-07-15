@@ -1,5 +1,12 @@
 
 
+## [1.18.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.3...v1.18.0) (2024-07-15)
+
+
+### Features
+
+* change type of search response documents and add search after ([#165](https://github.com/codemask-labs/nestjs-elasticsearch/issues/165)) ([f475d03](https://github.com/codemask-labs/nestjs-elasticsearch/commit/f475d030643e7f016d2b7fedf79de4a7a875efa9))
+
 ## [1.17.3](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.2...v1.17.3) (2024-06-06)
 
 
