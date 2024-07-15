@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { MissingOrder, Order } from 'lib/enums'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'

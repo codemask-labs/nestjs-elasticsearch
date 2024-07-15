@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
 import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
 import { Order } from 'lib/enums'

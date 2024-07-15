@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
 import { CalendarIntervalName } from 'lib/enums'
 import { HomeDocument } from 'test/module'

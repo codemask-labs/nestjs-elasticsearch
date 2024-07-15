@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
 import { HomeDocument, PropertyType } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'

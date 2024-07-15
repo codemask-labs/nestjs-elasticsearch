@@ -45,7 +45,6 @@ describe('getBoolQuery', () => {
 
         expect(query).toEqual({
             bool: {
-                // eslint-disable-next-line camelcase
                 minimum_should_match: 1,
                 should: [
                     { term: { 'id.keyword': { value: id } } },

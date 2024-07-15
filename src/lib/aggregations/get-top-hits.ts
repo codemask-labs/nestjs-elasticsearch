@@ -35,7 +35,6 @@ export const getTopHitsAggregation = <TDocument extends Document>(
 ): TopHitsAggregation<TDocument> => {
     if (!options) {
         return {
-            // eslint-disable-next-line camelcase
             top_hits: { size }
         }
     }
@@ -44,7 +43,6 @@ export const getTopHitsAggregation = <TDocument extends Document>(
     const source = includes?.length ? { _source: { includes } } : {}
 
     return {
-        // eslint-disable-next-line camelcase
         top_hits: { size, ...params, ...source }
     }
 }
