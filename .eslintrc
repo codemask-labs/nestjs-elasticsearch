@@ -1,6 +1,7 @@
 {
-    "extends": ["codemask"],
-    "rules": {
-        "@typescript-eslint/indent": "off"
-    }
+  "extends": ["codemask"],
+  "rules": {
+    "@typescript-eslint/indent": "off",
+    "camelcase": ["error", { "allow": ["search_after"] }]
+  }
 }

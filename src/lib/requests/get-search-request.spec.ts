@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { getSumAggregation, getTermsAggregation } from 'lib/aggregations'
 import { HomeDocument } from 'test/module'
 import { Order } from 'lib/enums'
