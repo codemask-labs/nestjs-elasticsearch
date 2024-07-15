@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ClassConstructor, Document, Sort } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { BoolQuery } from 'lib/queries'
