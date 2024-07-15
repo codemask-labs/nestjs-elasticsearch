@@ -81,7 +81,7 @@ describe('getBoolQuery', () => {
             query: getBoolQuery(getMustQuery(getTermQuery('fullName.keyword', fullName)))
         })
 
-        result.documents.forEach(document => expect(document.fullName).toBe(fullName))
+        result.documents.forEach(document => expect(document.source.fullName).toBe(fullName))
     })
 
     it('supports must not query', async () => {
@@ -93,7 +93,7 @@ describe('getBoolQuery', () => {
             query: getBoolQuery(getMustNotQuery(getTermQuery('city.keyword', city)))
         })
 
-        result.documents.forEach(document => expect(document.fullName).not.toBe(city))
+        result.documents.forEach(document => expect(document.source.fullName).not.toBe(city))
     })
 
     it('supports should query', async () => {
@@ -107,7 +107,7 @@ describe('getBoolQuery', () => {
         })
 
         result.documents.forEach(document => {
-            const isMatch = document.fullName === fullName || document.city === city
+            const isMatch = document.source.fullName === fullName || document.source.city === city
 
             expect(isMatch).toBe(true)
         })
@@ -128,7 +128,7 @@ describe('getBoolQuery', () => {
         })
 
         result.documents.forEach(document => {
-            const isMatch = document.fullName === fullName && document.city === city
+            const isMatch = document.source.fullName === fullName && document.source.city === city
 
             expect(isMatch).toBe(true)
         })

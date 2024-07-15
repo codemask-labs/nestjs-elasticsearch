@@ -40,7 +40,7 @@ describe('getMatchPhrasePrefixQuery', () => {
         })
 
         result.documents.forEach(document => {
-            const words = document.address.toLowerCase().split(' ')
+            const words = document.source.address.toLowerCase().split(' ')
             const hasWordStartingWithQuery = words.some(word => word.startsWith(query.toLowerCase()))
 
             expect(hasWordStartingWithQuery).toBe(true)
@@ -62,7 +62,7 @@ describe('getMatchPhrasePrefixQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.address).toBeDefined())
+        result.documents.forEach(document => expect(document.source.address).toBeDefined())
     })
 
     it(`should return an error after passing string field with 'keyword'`, async () => {

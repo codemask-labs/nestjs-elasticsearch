@@ -46,7 +46,7 @@ describe('getMustQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.hasProperty).toBe(true))
+        result.documents.forEach(document => expect(document.source.hasProperty).toBe(true))
     })
 
     it('should query elasticsearch for must query with an array of term queries', async () => {
@@ -61,8 +61,8 @@ describe('getMustQuery', () => {
 
         expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
-            expect(document.hasProperty).toBe(true)
-            expect(document.propertyType).toBe(PropertyType.Flat)
+            expect(document.source.hasProperty).toBe(true)
+            expect(document.source.propertyType).toBe(PropertyType.Flat)
         })
     })
 
@@ -79,7 +79,7 @@ describe('getMustQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect([PropertyType.Flat, PropertyType.Apartment]).toContain(document.propertyType))
+        result.documents.forEach(document => expect([PropertyType.Flat, PropertyType.Apartment]).toContain(document.source.propertyType))
     })
 
     it('should query elasticsearch for must query with bool query', async () => {
@@ -99,7 +99,7 @@ describe('getMustQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.hasProperty).toBe(false))
+        result.documents.forEach(document => expect(document.source.hasProperty).toBe(false))
     })
 
     it('should query elasticsearch for must query with exists query', async () => {
@@ -115,7 +115,7 @@ describe('getMustQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeDefined())
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeDefined())
     })
 
     it('should query elasticsearch for must query with range query', async () => {
@@ -135,8 +135,8 @@ describe('getMustQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeGreaterThanOrEqual(500000))
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeLessThanOrEqual(900000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeGreaterThanOrEqual(500000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeLessThanOrEqual(900000))
     })
 
     it('should query elasticsearch for nested must query ', async () => {
@@ -158,8 +158,8 @@ describe('getMustQuery', () => {
 
         expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
-            expect(document.hasProperty).toBe(true)
-            expect(document.propertyType).toBe(PropertyType.Flat)
+            expect(document.source.hasProperty).toBe(true)
+            expect(document.source.propertyType).toBe(PropertyType.Flat)
         })
     })
 
@@ -181,9 +181,9 @@ describe('getMustQuery', () => {
 
         expect(result.total).toBeGreaterThan(0)
         result.documents.forEach(document => {
-            expect(document.propertyAreaSquared).toBeDefined()
-            expect(document.propertyType).toBe(PropertyType.Flat)
-            expect(document.propertyAreaSquared).toBeLessThanOrEqual(900000)
+            expect(document.source.propertyAreaSquared).toBeDefined()
+            expect(document.source.propertyType).toBe(PropertyType.Flat)
+            expect(document.source.propertyAreaSquared).toBeLessThanOrEqual(900000)
         })
     })
 

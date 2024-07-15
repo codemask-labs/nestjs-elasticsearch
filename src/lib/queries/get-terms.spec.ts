@@ -37,7 +37,7 @@ describe('getTermsQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(values).toContain(document.propertyType))
+        result.documents.forEach(document => expect(values).toContain(document.source.propertyType))
     })
 
     it('should query elasticsearch for terms query for a boolean field', async () => {
@@ -50,7 +50,7 @@ describe('getTermsQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(values).toContain(document.hasProperty))
+        result.documents.forEach(document => expect(values).toContain(document.source.hasProperty))
     })
 
     it('should query elasticsearch for terms query for a number field', async () => {
@@ -63,7 +63,7 @@ describe('getTermsQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(values).toContain(document.builtInYear))
+        result.documents.forEach(document => expect(values).toContain(document.source.builtInYear))
     })
 
     it('should query elasticsearch for terms query which supports boost option', async () => {
@@ -82,7 +82,7 @@ describe('getTermsQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(values).toContain(document.propertyType))
+        result.documents.forEach(document => expect(values).toContain(document.source.propertyType))
     })
 
     it('should return an error when passing an invalid parameter', async () => {
