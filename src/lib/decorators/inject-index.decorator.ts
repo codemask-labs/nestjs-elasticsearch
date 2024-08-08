@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import { Inject } from '@nestjs/common'
 import { ClassConstructor, Document } from 'lib/common'
 import { getIndexInjectionToken } from 'module/utils'

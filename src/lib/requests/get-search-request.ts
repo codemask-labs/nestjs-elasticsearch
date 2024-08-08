@@ -1,7 +1,7 @@
 import { ClassConstructor, Document, Sort } from 'lib/common'
-import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { BoolQuery } from 'lib/queries'
 import { AggregationsContainer } from 'lib/aggregations'
+import { getIndexName } from 'module/utils'
 
 export type SearchRequestOptions<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     size?: number
@@ -26,12 +26,7 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
     document: ClassConstructor<TDocument>,
     options?: SearchRequestOptions<TDocument, TAggregationsBody>
 ): SearchRequest<TDocument, TAggregationsBody> => {
-    const index = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, document)
-
-    if (!index) {
-        throw new Error(`Unregistered index name for ${document} schema.`)
-    }
-
+    const index = getIndexName(document)
     const { size, from, query, aggregations, sort, search_after } = options || {}
 
     return {

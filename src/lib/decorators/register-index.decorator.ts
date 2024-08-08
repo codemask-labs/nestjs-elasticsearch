@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import { is, isEmpty, isNil } from 'ramda'
 import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 
