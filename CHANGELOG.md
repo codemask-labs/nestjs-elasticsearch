@@ -1,5 +1,12 @@
 
 
+## [1.19.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.18.0...v1.19.0) (2024-08-09)
+
+
+### Features
+
+* improved errors for decorators when registering and index or injecting ([b71156b](https://github.com/codemask-labs/nestjs-elasticsearch/commit/b71156b10c79ef5549f99c0b4c1fda6a30f61c62))
+
 ## [1.18.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.3...v1.18.0) (2024-07-15)
 
 
