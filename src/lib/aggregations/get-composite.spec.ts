@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ResponseError } from 'lib/common'
 import { Order } from 'lib/enums'
 import { getCompositeSources } from 'lib/utils'

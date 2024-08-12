@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ResponseError } from 'lib/common'
 import { HomeDocument, PropertyType } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'

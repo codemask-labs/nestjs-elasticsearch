@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ResponseError } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'

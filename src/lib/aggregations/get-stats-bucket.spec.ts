@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ResponseError } from 'lib/common'
 import { CalendarIntervalName } from 'lib/enums'
 import { HomeDocument } from 'test/module'
