@@ -42,7 +42,7 @@ describe('getHistogramAggregation', () => {
             expect(bucket).toEqual(
                 expect.objectContaining({
                     key: expect.any(Number),
-                    doc_count: expect.any(Number) // eslint-disable-line camelcase
+                    doc_count: expect.any(Number)
                 })
             )
         )
@@ -56,7 +56,7 @@ describe('getHistogramAggregation', () => {
             size: 0,
             aggregations: {
                 result: getHistogramAggregation('builtInYear', 5, {
-                    min_doc_count: minDocCount // eslint-disable-line camelcase
+                    min_doc_count: minDocCount
                 })
             }
         })

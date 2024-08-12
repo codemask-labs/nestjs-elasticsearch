@@ -60,7 +60,6 @@ describe('getCompositeAggregation', () => {
 
         result.aggregations.result.buckets.forEach(bucket => {
             expect(bucket).toStrictEqual({
-                // eslint-disable-next-line camelcase
                 doc_count: expect.any(Number),
                 key: {
                     address: expect.any(String),
@@ -91,7 +90,6 @@ describe('getCompositeAggregation', () => {
 
         result.aggregations.result.buckets.forEach(bucket => {
             expect(bucket).toStrictEqual({
-                // eslint-disable-next-line camelcase
                 doc_count: expect.any(Number),
                 key: {
                     address: expect.any(String),
@@ -138,7 +136,6 @@ describe('getCompositeAggregation', () => {
 
         result.aggregations.result.buckets.forEach(bucket => {
             expect(bucket).toStrictEqual({
-                // eslint-disable-next-line camelcase
                 doc_count: expect.any(Number),
                 key: {
                     address: expect.any(String),
@@ -191,7 +188,6 @@ describe('getCompositeAggregation', () => {
 
         result.aggregations.result.buckets.forEach(bucket => {
             expect(bucket).toStrictEqual({
-                // eslint-disable-next-line camelcase
                 doc_count: expect.any(Number),
                 key: {
                     [SourceKey.Address]: expect.any(String),

@@ -1,7 +1,7 @@
 import { ClassConstructor, Document, Sort } from 'lib/common'
-import { ELASTICSEARCH_INDEX_NAME_METADATA } from 'lib/constants'
 import { BoolQuery } from 'lib/queries'
 import { AggregationsContainer } from 'lib/aggregations'
+import { getIndexName } from 'module/utils'
 
 export type SearchRequestOptions<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
     size?: number
@@ -9,6 +9,7 @@ export type SearchRequestOptions<TDocument extends Document, TAggregationsBody e
     query?: BoolQuery<TDocument>
     aggregations?: TAggregationsBody
     sort?: Sort<TDocument> | Array<Sort<TDocument>>
+    search_after?: Array<any> // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export type SearchRequest<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>> = {
@@ -18,19 +19,15 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
     query?: BoolQuery<TDocument>
     aggregations?: TAggregationsBody
     sort?: Sort<TDocument> | Array<Sort<TDocument>>
+    search_after?: Array<any> // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
     options?: SearchRequestOptions<TDocument, TAggregationsBody>
 ): SearchRequest<TDocument, TAggregationsBody> => {
-    const index = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, document)
-
-    if (!index) {
-        throw new Error(`Unregistered index name for ${document} schema.`)
-    }
-
-    const { size, from, query, aggregations, sort } = options || {}
+    const index = getIndexName(document)
+    const { size, from, query, aggregations, sort, search_after } = options || {}
 
     return {
         index,
@@ -38,6 +35,7 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
         from,
         query,
         aggregations,
-        sort
+        sort,
+        search_after
     }
 }

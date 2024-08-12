@@ -46,7 +46,7 @@ describe('getExistsQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.address).toBeDefined())
+        result.documents.forEach(document => expect(document.source.address).toBeDefined())
     })
 
     it(`should query elasticsearch for exists query when passing string field with 'keyword'`, async () => {
@@ -57,7 +57,7 @@ describe('getExistsQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.address).toBeDefined())
+        result.documents.forEach(document => expect(document.source.address).toBeDefined())
     })
 
     it('should query elasticsearch for exists query for documents that are missing an indexed values', async () => {

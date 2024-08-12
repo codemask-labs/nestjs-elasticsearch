@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
 import { ResponseError } from 'lib/common'
 import { Order } from 'lib/enums'

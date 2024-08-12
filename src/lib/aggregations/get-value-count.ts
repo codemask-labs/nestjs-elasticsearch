@@ -9,6 +9,7 @@ export type ValueCountAggregation<TDocument extends Document> = {
 }
 
 export const getValueCountAggregation = <TDocument extends Document>(field: Field<TDocument>): ValueCountAggregation<TDocument> => ({
-    // eslint-disable-next-line camelcase
-    value_count: { field }
+    value_count: {
+        field
+    }
 })

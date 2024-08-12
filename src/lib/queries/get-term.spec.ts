@@ -54,7 +54,7 @@ describe('getTermQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyType).toBe(PropertyType.Flat))
+        result.documents.forEach(document => expect(document.source.propertyType).toBe(PropertyType.Flat))
     })
 
     it('should query elasticsearch for term query for a boolean field', async () => {
@@ -66,7 +66,7 @@ describe('getTermQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.hasProperty).toBe(true))
+        result.documents.forEach(document => expect(document.source.hasProperty).toBe(true))
     })
 
     it('should query elasticsearch for term query for a number field', async () => {
@@ -78,7 +78,7 @@ describe('getTermQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.builtInYear).toBe(2015))
+        result.documents.forEach(document => expect(document.source.builtInYear).toBe(2015))
     })
 
     it('should query elasticsearch for term query with case insensitive', async () => {
@@ -96,7 +96,7 @@ describe('getTermQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.address).toBe('36025 Church Walk'))
+        result.documents.forEach(document => expect(document.source.address).toBe('36025 Church Walk'))
     })
 
     it('should query elasticsearch for term query which supports boost option', async () => {
@@ -114,7 +114,7 @@ describe('getTermQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.address).toBeDefined())
+        result.documents.forEach(document => expect(document.source.address).toBeDefined())
     })
 
     it('should return an error when passing an invalid parameter', async () => {

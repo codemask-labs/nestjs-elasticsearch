@@ -21,6 +21,7 @@ export const getMatchPhrasePrefixQuery = <TDocument extends Document, TField ext
     query: FieldType<TDocument, TField>,
     options?: MatchPhrasePrefixQueryOptions
 ): MatchPhrasePrefixQuery<TDocument, TField> => ({
-    // eslint-disable-next-line camelcase
-    match_phrase_prefix: { [field]: { query, ...options } } as MatchPhrasePrefixQueryBody<TDocument, TField>
+    match_phrase_prefix: {
+        [field]: { query, ...options }
+    } as MatchPhrasePrefixQueryBody<TDocument, TField>
 })

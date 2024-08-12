@@ -1,5 +1,3 @@
-
-
 ## [2.0.0-beta.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2024-06-07)
 
 
@@ -23,6 +21,19 @@
 ### Bug Fixes
 
 * release-it ([e5a9d8a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e5a9d8a46d1e813f64eefc43da4dc6f0f56da9ab))
+## [1.19.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.18.0...v1.19.0) (2024-08-09)
+
+
+### Features
+
+* improved errors for decorators when registering and index or injecting ([b71156b](https://github.com/codemask-labs/nestjs-elasticsearch/commit/b71156b10c79ef5549f99c0b4c1fda6a30f61c62))
+
+## [1.18.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.3...v1.18.0) (2024-07-15)
+
+
+### Features
+
+* change type of search response documents and add search after ([#165](https://github.com/codemask-labs/nestjs-elasticsearch/issues/165)) ([f475d03](https://github.com/codemask-labs/nestjs-elasticsearch/commit/f475d030643e7f016d2b7fedf79de4a7a875efa9))
 
 ## [1.17.3](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.2...v1.17.3) (2024-06-06)
 

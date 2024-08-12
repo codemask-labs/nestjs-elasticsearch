@@ -45,7 +45,7 @@ describe('getRangeQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeGreaterThan(10000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeGreaterThan(10000))
     })
 
     it(`should query elasticsearch for range query with 'gte' option`, async () => {
@@ -63,7 +63,7 @@ describe('getRangeQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeGreaterThanOrEqual(20000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeGreaterThanOrEqual(20000))
     })
 
     it(`should query elasticsearch for range query with 'lt' option`, async () => {
@@ -81,7 +81,7 @@ describe('getRangeQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeLessThan(70000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeLessThan(70000))
     })
 
     it(`should query elasticsearch for range query with 'lte' option`, async () => {
@@ -99,7 +99,7 @@ describe('getRangeQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeLessThanOrEqual(70000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeLessThanOrEqual(70000))
     })
 
     it(`should query elasticsearch for range query with gte' and 'lte' option`, async () => {
@@ -118,8 +118,8 @@ describe('getRangeQuery', () => {
         })
 
         expect(result.total).toBeGreaterThan(0)
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeGreaterThanOrEqual(10000))
-        result.documents.forEach(document => expect(document.propertyAreaSquared).toBeLessThanOrEqual(80000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeGreaterThanOrEqual(10000))
+        result.documents.forEach(document => expect(document.source.propertyAreaSquared).toBeLessThanOrEqual(80000))
     })
 
     it('should query elasticsearch for range query with format option', async () => {
@@ -141,7 +141,7 @@ describe('getRangeQuery', () => {
         expect(result.total).toBeGreaterThan(0)
 
         const contractDates = result.documents.map(document => ({
-            contractDate: document?.contractDate ? new Date(document?.contractDate) : null
+            contractDate: document?.source.contractDate ? new Date(document?.source.contractDate) : null
         }))
 
         const firstContractDate = contractDates.at(0)?.contractDate?.getTime()
