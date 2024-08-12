@@ -1,3 +1,22 @@
+
+
+## [2.0.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.19.0...v2.0.0) (2024-08-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* support elasticsearch v8 (#157)
+
+### Features
+
+* support elasticsearch v8 ([#157](https://github.com/codemask-labs/nestjs-elasticsearch/issues/157)) ([e7806fd](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e7806fd9277606f270e45e6234f1986c1b8b840c))
+
+
+### Bug Fixes
+
+* syntax when installing the package with npm ([#170](https://github.com/codemask-labs/nestjs-elasticsearch/issues/170)) ([147b7b1](https://github.com/codemask-labs/nestjs-elasticsearch/commit/147b7b11daa56bafadc86cecff0a017b2c7f73f1))
+* yarn.lock ([52042a9](https://github.com/codemask-labs/nestjs-elasticsearch/commit/52042a9cf6f2f67d563c891795e3191356d9e30b))
+
 ## [2.0.0-beta.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2024-06-07)
 
 
