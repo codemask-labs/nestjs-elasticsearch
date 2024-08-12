@@ -1,5 +1,26 @@
+## [2.0.0-beta.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2024-06-07)
 
 
+### Bug Fixes
+
+* get percentiles aggregation transformed type ([f781af6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/f781af6fa517592dfc7e679ab38a9af984ec6b41))
+
+## [2.0.0-beta.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.3...v2.0.0-beta.0) (2024-06-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* support elasticsearch v8
+
+### Features
+
+* support elasticsearch v8 ([1fba0c3](https://github.com/codemask-labs/nestjs-elasticsearch/commit/1fba0c3d4367fdbf4271db9250d590efd557e1a4))
+* updated package.json ([1bd764c](https://github.com/codemask-labs/nestjs-elasticsearch/commit/1bd764c74ef000ca91b79cab4eb63b9c5ed675d5))
+
+
+### Bug Fixes
+
+* release-it ([e5a9d8a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e5a9d8a46d1e813f64eefc43da4dc6f0f56da9ab))
 ## [1.19.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.18.0...v1.19.0) (2024-08-09)
 
 
