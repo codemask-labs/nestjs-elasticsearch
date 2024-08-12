@@ -33,7 +33,7 @@ You can install package using yarn or npm
 ```bash
 $ yarn add @codemask-labs/nestjs-elasticsearch
 // or
-$ npm -i @codemask-labs/nestjs-elasticsearch
+$ npm i @codemask-labs/nestjs-elasticsearch
 ```
 
 ## Getting started
