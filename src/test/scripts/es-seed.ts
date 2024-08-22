@@ -2,7 +2,6 @@ import { Client } from '@elastic/elasticsearch'
 import { join } from 'path'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { readFile } from 'fs/promises'
-import { DOCUMENTS_COUNT } from './generate-random-data'
 
 const index = 'homes'
 const client = new Client({
@@ -39,7 +38,7 @@ readFile(path)
 
         await client.bulk({ body: records })
 
-        console.log('Seeded `homes` with:', DOCUMENTS_COUNT, 'results.')
+        console.log('Seeded `homes` with:', records.length / 2, 'results.')
     })
     .catch(error => {
         throw new Error(`Failed to load homes seed: ${error.message}`)

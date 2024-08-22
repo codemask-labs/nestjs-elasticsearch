@@ -3,7 +3,7 @@ import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { HomeDocument, PropertyType } from 'test/module'
 
-export const DOCUMENTS_COUNT = 100
+const DOCUMENTS_COUNT = 100
 const ELASTICSEARCH_SEED_INDEX_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
 
 const getAnimals = () => {
