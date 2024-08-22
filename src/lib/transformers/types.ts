@@ -48,7 +48,7 @@ export type TransformAggregation<
               : TAggregation extends RangeAggregation<TDocument>
                 ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
                 : TAggregation extends MissingValueAggregation<TDocument>
-                  ? MissingValueAggregationResponse
+                  ? MissingValueAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
                   : TAggregation extends StatsBucketAggregation
                     ? estypes.StatsAggregate
                     : TAggregation extends NestedAggregation<TDocument>
