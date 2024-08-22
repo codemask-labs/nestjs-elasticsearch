@@ -3,8 +3,18 @@ import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { HomeDocument, PropertyType } from 'test/module'
 
-const ELASTICSEARCH_SEED_INDEX_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
 const DOCUMENTS_COUNT = 100
+const ELASTICSEARCH_SEED_INDEX_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
+
+const getAnimals = () => {
+    const animals = new Array(Math.floor(Math.random() * 5)).fill(undefined)
+
+    return animals.map(() => ({
+        id: faker.string.uuid(),
+        type: faker.animal.type(),
+        color: faker.color.human()
+    }))
+}
 
 const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument => {
     const id = faker.string.uuid()
@@ -18,6 +28,8 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument 
     const hasPropertyAreaSquared = faker.number.int({ min: 0, max: 1 })
     const areaSquared = faker.number.int({ min: 1, max: 1_000_000 })
     const contractDate = faker.date.between({ from: '2023-01-01', to: '2023-12-31' }).toISOString()
+
+    const animals = getAnimals()
 
     return {
         id,
@@ -35,7 +47,8 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument 
         // eslint-disable-next-line @typescript-eslint/ban-types
         propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : (null as unknown as undefined),
         // eslint-disable-next-line @typescript-eslint/ban-types
-        contractDate: hasProperty ? contractDate : (null as unknown as undefined)
+        contractDate: hasProperty ? contractDate : (null as unknown as undefined),
+        animals
     }
 })
 

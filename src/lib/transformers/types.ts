@@ -12,6 +12,7 @@ import {
     MaxAggregation,
     MinAggregation,
     MissingValueAggregation,
+    NestedAggregation,
     PercentileAggregation,
     RangeAggregation,
     StatsBucketAggregation,
@@ -20,7 +21,7 @@ import {
     TopHitsAggregation,
     ValueCountAggregation
 } from 'lib/aggregations'
-import { MissingValueAggregationResponse } from 'lib/responses'
+import { MissingValueAggregationResponse, NestedAggregationResponse } from 'lib/responses'
 
 export type TransformAggregation<
     TDocument extends Document,
@@ -47,10 +48,12 @@ export type TransformAggregation<
               : TAggregation extends RangeAggregation<TDocument>
                 ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
                 : TAggregation extends MissingValueAggregation<TDocument>
-                  ? MissingValueAggregationResponse
+                  ? MissingValueAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
                   : TAggregation extends StatsBucketAggregation
                     ? AggregationsStatsAggregate
-                    : `Unhandled aggregation type for name: ${TName & string}`
+                    : TAggregation extends NestedAggregation<TDocument>
+                      ? NestedAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
+                      : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
     TDocument extends Document,

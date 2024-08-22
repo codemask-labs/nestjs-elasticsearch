@@ -11,3 +11,6 @@ export type FieldType<TDocument extends Document, TField extends Key<TDocument> 
 export type NumericField<TDocument extends Document> = {
     [K in keyof TDocument]: Exclude<TDocument[K], undefined> extends number | null ? K : never
 }[keyof TDocument]
+export type ArrayOfObjectsField<TDocument extends Document> = {
+    [K in keyof TDocument]: TDocument[K] extends Array<object | null> ? K : never
+}[keyof TDocument]
