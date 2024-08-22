@@ -44,6 +44,7 @@ describe('getNestedAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 nestedAggregation: getNestedAggregation('address' as any)
             }
         })
