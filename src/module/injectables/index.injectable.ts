@@ -12,6 +12,6 @@ export class Index<TDocument extends Document> {
     ) {}
 
     search<TAggregationsBody extends AggregationsContainer<TDocument>>(options?: SearchRequestOptions<TDocument, TAggregationsBody>) {
-        return this.service.search<TDocument, TAggregationsBody>(this.document, options)
+        return this.service.search(this.document, options)
     }
 }

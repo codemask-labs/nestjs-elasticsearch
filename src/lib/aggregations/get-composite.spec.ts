@@ -1,4 +1,4 @@
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 import { Order } from 'lib/enums'
 import { getCompositeSources } from 'lib/utils'
 import { HomeDocument } from 'test/module'
@@ -98,11 +98,10 @@ describe('getCompositeAggregation', () => {
                     hits: {
                         hits: expect.arrayContaining([
                             {
-                                _id: expect.any(String),
                                 _index: 'homes',
+                                _id: expect.any(String),
                                 _score: 1,
-                                _source: expect.any(Object),
-                                _type: '_doc'
+                                _source: expect.any(Object)
                             }
                         ]),
                         max_score: 1,
@@ -162,7 +161,8 @@ describe('getCompositeAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('x_content_parse_exception: [x_content_parse_exception] Reason: [1:99] [terms] unknown field [size]')
+                expect(error.message).toContain('x_content_parse_exception')
+                expect(error.message).toContain('[terms] unknown field [size]')
             })
     })
 

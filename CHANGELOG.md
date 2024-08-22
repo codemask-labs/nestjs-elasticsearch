@@ -1,4 +1,40 @@
+## [2.0.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.19.0...v2.0.0) (2024-08-12)
 
+
+### ⚠ BREAKING CHANGES
+
+* support elasticsearch v8 (#157)
+
+### Features
+
+* support elasticsearch v8 ([#157](https://github.com/codemask-labs/nestjs-elasticsearch/issues/157)) ([e7806fd](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e7806fd9277606f270e45e6234f1986c1b8b840c))
+
+
+### Bug Fixes
+
+* syntax when installing the package with npm ([#170](https://github.com/codemask-labs/nestjs-elasticsearch/issues/170)) ([147b7b1](https://github.com/codemask-labs/nestjs-elasticsearch/commit/147b7b11daa56bafadc86cecff0a017b2c7f73f1))
+* update response for missing value aggregation ([c63e4d6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/c63e4d6b33708d583451cca81db769f04d48c7f6))
+
+* yarn.lock ([52042a9](https://github.com/codemask-labs/nestjs-elasticsearch/commit/52042a9cf6f2f67d563c891795e3191356d9e30b))
+
+## [2.0.0-beta.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2024-06-07)
+
+
+### Bug Fixes
+
+* get percentiles aggregation transformed type ([f781af6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/f781af6fa517592dfc7e679ab38a9af984ec6b41))
+
+## [2.0.0-beta.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.17.3...v2.0.0-beta.0) (2024-06-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* support elasticsearch v8
+
+### Features
+
+* support elasticsearch v8 ([1fba0c3](https://github.com/codemask-labs/nestjs-elasticsearch/commit/1fba0c3d4367fdbf4271db9250d590efd557e1a4))
+* updated package.json ([1bd764c](https://github.com/codemask-labs/nestjs-elasticsearch/commit/1bd764c74ef000ca91b79cab4eb63b9c5ed675d5))
 
 ## [1.20.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.19.0...v1.20.0) (2024-08-22)
 
@@ -8,12 +44,9 @@
 * add nested aggregation ([2016923](https://github.com/codemask-labs/nestjs-elasticsearch/commit/20169239259cb3ba637294fe69dccd6c18e61f13))
 * updated release action ([6b7fe3a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/6b7fe3a42411577eb9ed9d85e22291ec1a5746b7))
 
-
 ### Bug Fixes
 
-* syntax when installing the package with npm ([#170](https://github.com/codemask-labs/nestjs-elasticsearch/issues/170)) ([147b7b1](https://github.com/codemask-labs/nestjs-elasticsearch/commit/147b7b11daa56bafadc86cecff0a017b2c7f73f1))
-* update response for missing value aggregation ([c63e4d6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/c63e4d6b33708d583451cca81db769f04d48c7f6))
-
+* release-it ([e5a9d8a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e5a9d8a46d1e813f64eefc43da4dc6f0f56da9ab))
 ## [1.19.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.18.0...v1.19.0) (2024-08-09)
 
 

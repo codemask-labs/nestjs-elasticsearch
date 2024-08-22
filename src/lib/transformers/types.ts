@@ -1,4 +1,4 @@
-import { estypes } from '@elastic/elasticsearch'
+import { AggregationsPercentilesAggregateBase, AggregationsStatsAggregate } from '@elastic/elasticsearch/lib/api/types'
 import { Bucket, Buckets, CompositeBucket, CompositeBuckets, Document, Hits, OptionalValue, RangeBucket, Value } from 'lib/common'
 import {
     Aggregations,
@@ -44,13 +44,13 @@ export type TransformAggregation<
           : TAggregation extends CompositeAggregation<TDocument>
             ? CompositeBuckets<CompositeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
             : TAggregation extends PercentileAggregation<TDocument>
-              ? estypes.TDigestPercentilesAggregate
+              ? AggregationsPercentilesAggregateBase
               : TAggregation extends RangeAggregation<TDocument>
                 ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
                 : TAggregation extends MissingValueAggregation<TDocument>
                   ? MissingValueAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
                   : TAggregation extends StatsBucketAggregation
-                    ? estypes.StatsAggregate
+                    ? AggregationsStatsAggregate
                     : TAggregation extends NestedAggregation<TDocument>
                       ? NestedAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
                       : `Unhandled aggregation type for name: ${TName & string}`

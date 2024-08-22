@@ -5,7 +5,7 @@ import { HomeDocument } from 'test/module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { getTermsAggregation } from './get-terms'
-import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { ResponseError } from 'lib/common'
 
 describe('getTermsAggregation', () => {
     const { app } = setupNestApplication({
@@ -99,9 +99,10 @@ describe('getTermsAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain('search_phase_execution_exception: [illegal_argument_exception]')
+                expect(error.message).toContain('search_phase_execution_exception')
+                expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Reason: Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
                 )
             })
     })
@@ -119,9 +120,8 @@ describe('getTermsAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain(
-                    'x_content_parse_exception: [x_content_parse_exception] Reason: [1:52] [terms] unknown field [missing_bucket]'
-                )
+                expect(error.message).toContain('x_content_parse_exception')
+                expect(error.message).toContain('[terms] unknown field [missing_bucket]')
             })
     })
 
@@ -138,9 +138,8 @@ describe('getTermsAggregation', () => {
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
-                expect(error.message).toContain(
-                    'x_content_parse_exception: [x_content_parse_exception] Reason: [1:52] [terms] unknown field [missing_order]'
-                )
+                expect(error.message).toContain('x_content_parse_exception')
+                expect(error.message).toContain('[terms] unknown field [missing_order]')
             })
     })
 })
