@@ -13,7 +13,6 @@
 ### Bug Fixes
 
 * syntax when installing the package with npm ([#170](https://github.com/codemask-labs/nestjs-elasticsearch/issues/170)) ([147b7b1](https://github.com/codemask-labs/nestjs-elasticsearch/commit/147b7b11daa56bafadc86cecff0a017b2c7f73f1))
-
 * yarn.lock ([52042a9](https://github.com/codemask-labs/nestjs-elasticsearch/commit/52042a9cf6f2f67d563c891795e3191356d9e30b))
 
 ## [2.0.0-beta.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2024-06-07)
