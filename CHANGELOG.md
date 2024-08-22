@@ -1,5 +1,19 @@
 
 
+## [1.20.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.19.0...v1.20.0) (2024-08-22)
+
+
+### Features
+
+* add nested aggregation ([2016923](https://github.com/codemask-labs/nestjs-elasticsearch/commit/20169239259cb3ba637294fe69dccd6c18e61f13))
+* updated release action ([6b7fe3a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/6b7fe3a42411577eb9ed9d85e22291ec1a5746b7))
+
+
+### Bug Fixes
+
+* syntax when installing the package with npm ([#170](https://github.com/codemask-labs/nestjs-elasticsearch/issues/170)) ([147b7b1](https://github.com/codemask-labs/nestjs-elasticsearch/commit/147b7b11daa56bafadc86cecff0a017b2c7f73f1))
+* update response for missing value aggregation ([c63e4d6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/c63e4d6b33708d583451cca81db769f04d48c7f6))
+
 ## [1.19.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.18.0...v1.19.0) (2024-08-09)
 
 
