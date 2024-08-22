@@ -1,4 +1,4 @@
-import { fa, faker } from '@faker-js/faker'
+import { faker } from '@faker-js/faker'
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { HomeDocument, PropertyType } from 'test/module'
