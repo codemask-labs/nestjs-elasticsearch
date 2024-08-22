@@ -446,6 +446,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 7.12.0
     "@typescript-eslint/eslint-plugin-tslint": 7.0.2
     "@typescript-eslint/parser": 7.12.0
+    class-transformer: 0.5.1
     class-validator: 0.14.1
     eslint: 8.57.0
     eslint-config-codemask: 1.1.7
@@ -3815,6 +3816,13 @@ __metadata:
   version: 1.2.3
   resolution: "cjs-module-lexer@npm:1.2.3"
   checksum: 5ea3cb867a9bb609b6d476cd86590d105f3cfd6514db38ff71f63992ab40939c2feb68967faa15a6d2b1f90daa6416b79ea2de486e9e2485a6f8b66a21b4fb0a
+  languageName: node
+  linkType: hard
+
+"class-transformer@npm:0.5.1":
+  version: 0.5.1
+  resolution: "class-transformer@npm:0.5.1"
+  checksum: f191c8b4cc4239990f5efdd790cabdd852c243ed66248e39f6616a349c910c6eed2d9fd1fbf7ee6ea89f69b4f1d0b493b27347fe0cd0ae26b47c3745a805b6d3
   languageName: node
   linkType: hard
 

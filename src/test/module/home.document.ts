@@ -1,6 +1,8 @@
-import { IsString, IsEnum, IsNumber, IsBoolean, IsOptional } from 'class-validator'
+import { IsString, IsEnum, IsNumber, IsBoolean, IsOptional, ValidateNested, IsArray } from 'class-validator'
+import { Type } from 'class-transformer'
 import { RegisterIndex } from 'lib/decorators'
 import { PropertyType } from './enums'
+import { AnimalDocument } from './animal.document'
 
 @RegisterIndex('homes')
 export class HomeDocument {
@@ -41,4 +43,11 @@ export class HomeDocument {
     @IsString()
     @IsOptional()
     readonly contractDate?: string
+
+    @IsArray()
+    @ValidateNested({
+        each: true
+    })
+    @Type(() => AnimalDocument)
+    readonly animals: Array<AnimalDocument>
 }

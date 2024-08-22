@@ -1,1302 +1,2456 @@
 [
     {
-        "id": "fda9d96a-8582-4c1e-83ea-1aa11d5dfdde",
-        "fullName": "Charlotte Cruickshank",
-        "ownerEmail": "Peyton52@yahoo.com",
+        "id": "30c26008-872b-4f44-81f4-1a2ed191cf68",
+        "fullName": "Raul O'Connell",
+        "ownerEmail": "Dina_Torphy@yahoo.com",
         "address": "36025 Church Walk",
-        "city": "Cortneyborough",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2014,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-05-16T23:46:35.209Z"
-    },
-    {
-        "id": "0a0638d3-a643-4abc-9659-9b6d1acfd043",
-        "fullName": "Luther Herzog DVM",
-        "ownerEmail": "Donnell_Bradtke-Trantow4@yahoo.com",
-        "address": "60265 Kasey Island",
-        "city": "Tristinhaven",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2011,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-12-23T22:09:06.495Z"
-    },
-    {
-        "id": "ab4437d4-5214-4906-a3fd-06164c433ebd",
-        "fullName": "Dr. Jeanne Kris",
-        "ownerEmail": "Alyce22@hotmail.com",
-        "address": "2782 Johnson Mall",
-        "city": "New Misaelton",
+        "city": "Hintzcester",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "4455f2ca-5409-400d-b332-819bb58b44cd",
+                "type": "fish",
+                "color": "mint green"
+            },
+            {
+                "id": "4488e21c-ec42-4d3b-8416-2d77de4c5743",
+                "type": "snake",
+                "color": "blue"
+            },
+            {
+                "id": "712c3ea2-6205-4e6c-9a51-f36f349fbdc4",
+                "type": "cetacean",
+                "color": "teal"
+            },
+            {
+                "id": "2e5c30f8-b626-450f-9487-f63d7560ab5b",
+                "type": "cow",
+                "color": "magenta"
+            }
+        ]
     },
     {
-        "id": "9d46bbe9-abe2-4a3f-88e3-49283b1a4c62",
-        "fullName": "Dan Grady",
-        "ownerEmail": "Karolann.Wehner@yahoo.com",
-        "address": "8417 Bahringer Mountain",
-        "city": "North Miami",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 1999,
+        "id": "828a2325-ec1e-4c97-b120-04fcc2b7a8f1",
+        "fullName": "Madeline Hettinger",
+        "ownerEmail": "Velda_Lindgren81@yahoo.com",
+        "address": "406 Lolita Station",
+        "city": "North Fern",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-11-24T13:17:16.459Z"
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "d65e08d6-2261-4b64-acd6-f97352601d8f",
+                "type": "cetacean",
+                "color": "black"
+            },
+            {
+                "id": "64086cad-2790-412d-a485-07ce9341461e",
+                "type": "crocodilia",
+                "color": "lime"
+            },
+            {
+                "id": "4e92bcfd-5cf4-4275-8ff2-9b8c05a13a90",
+                "type": "cat",
+                "color": "lime"
+            },
+            {
+                "id": "1cba2ae4-2e86-4674-a397-61e4199384ba",
+                "type": "cow",
+                "color": "sky blue"
+            }
+        ]
     },
     {
-        "id": "14f61743-87b1-4d7f-b28a-e734896f6217",
-        "fullName": "Dana Hudson",
-        "ownerEmail": "Oral_Weber-Gerlach@hotmail.com",
-        "address": "55642 Jada Walk",
-        "city": "Funkfort",
+        "id": "275537e5-151e-4d39-8cb0-34e2d42eb9f5",
+        "fullName": "Lowell Stiedemann",
+        "ownerEmail": "Melyna_Keeling41@gmail.com",
+        "address": "42042 Cole Forges",
+        "city": "New Corbinton",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 1999,
+        "propertyAreaSquared": 921659,
+        "propertyAreaSquaredAsString": "921659",
+        "contractDate": "2023-04-19T13:16:56.651Z",
+        "animals": [
+            {
+                "id": "7668d6a6-8956-4bed-aa75-26ac9150f3ce",
+                "type": "cow",
+                "color": "yellow"
+            }
+        ]
+    },
+    {
+        "id": "efd5e77f-80f8-445b-aafd-6e2c1214a0dd",
+        "fullName": "Brandi Veum DVM",
+        "ownerEmail": "Karine77@yahoo.com",
+        "address": "4870 Murray Lakes",
+        "city": "Fort Rahsaan",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "b3a7bfa3-1ca8-4107-9f9f-4fdfbbf6aa30",
+                "type": "rabbit",
+                "color": "fuchsia"
+            },
+            {
+                "id": "e93eb344-b0b9-4f79-9dd7-82e7b7351122",
+                "type": "cetacean",
+                "color": "orchid"
+            },
+            {
+                "id": "0c558090-b0ff-4583-a85b-4dc9cb234ac4",
+                "type": "cetacean",
+                "color": "violet"
+            }
+        ]
+    },
+    {
+        "id": "aa505e98-1071-46be-8989-f45e0b1b11cf",
+        "fullName": "Francis Nicolas",
+        "ownerEmail": "Broderick76@hotmail.com",
+        "address": "8483 Langworth Knoll",
+        "city": "North Josieworth",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2012,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-05-03T04:53:36.239Z",
+        "animals": [
+            {
+                "id": "bb010912-90d3-44f7-8cba-588704d445d0",
+                "type": "dog",
+                "color": "lime"
+            },
+            {
+                "id": "37e02da0-31dc-4aab-9d64-1569ff7fafb7",
+                "type": "insect",
+                "color": "cyan"
+            },
+            {
+                "id": "742a7680-61eb-4ac3-8355-c69192eca51a",
+                "type": "snake",
+                "color": "white"
+            },
+            {
+                "id": "8c6da1cc-5d6d-465a-b7d0-7eba2ecb3b37",
+                "type": "snake",
+                "color": "fuchsia"
+            }
+        ]
+    },
+    {
+        "id": "93a41d64-63bb-4ae3-a782-97ecd0cf9544",
+        "fullName": "Brandon Crooks",
+        "ownerEmail": "Dwight_VonRueden91@gmail.com",
+        "address": "30027 Harris Drive",
+        "city": "Antoniettastead",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2015,
+        "propertyAreaSquared": 912392,
+        "propertyAreaSquaredAsString": "912392",
+        "contractDate": "2023-08-19T22:40:04.112Z",
+        "animals": [
+            {
+                "id": "5b39144f-19ec-4af7-b043-bda239b6891d",
+                "type": "cat",
+                "color": "azure"
+            }
+        ]
+    },
+    {
+        "id": "9c20ff04-fce9-4a80-ad1d-e76ee3f491ec",
+        "fullName": "Ellen Kunde",
+        "ownerEmail": "Adam31@hotmail.com",
+        "address": "8924 Lueilwitz Row",
+        "city": "Rockwall",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2004,
+        "propertyAreaSquared": 912521,
+        "propertyAreaSquaredAsString": "912521",
+        "contractDate": "2023-07-05T11:52:41.544Z",
+        "animals": []
+    },
+    {
+        "id": "2ca3d9b6-28fb-4f04-8a98-fd37aa021b28",
+        "fullName": "Loren Pouros",
+        "ownerEmail": "Tevin.Yundt97@gmail.com",
+        "address": "63145 Camryn Shoal",
+        "city": "Boehmbury",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2001,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-08-01T18:57:05.363Z",
+        "animals": []
+    },
+    {
+        "id": "f15a4d3f-bb4a-4ce0-90ba-7b16bab46ccb",
+        "fullName": "Marvin Shields",
+        "ownerEmail": "Darren.Kling73@gmail.com",
+        "address": "7027 Koelpin Burgs",
+        "city": "Plantation",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2004,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-09-20T22:57:33.127Z",
+        "animals": []
+    },
+    {
+        "id": "0b105537-8e39-4304-a195-8c45e69674ff",
+        "fullName": "Jerome Cummings",
+        "ownerEmail": "Alene.Grant@gmail.com",
+        "address": "885 The Grove",
+        "city": "Waylonshire",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2012,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-06-19T08:32:37.380Z",
+        "animals": []
+    },
+    {
+        "id": "2ba2b67d-f0a6-4787-9271-5c247461fa1a",
+        "fullName": "Joanna Kuhlman",
+        "ownerEmail": "Jennifer_Graham@gmail.com",
+        "address": "649 Hettinger Alley",
+        "city": "Nellaboro",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "ad9f772e-73aa-4f4a-9d13-8abfe7acc7ca",
+                "type": "crocodilia",
+                "color": "red"
+            },
+            {
+                "id": "9a78a1bf-fd4b-416f-b9b4-aaa99b85d4f8",
+                "type": "dog",
+                "color": "magenta"
+            }
+        ]
+    },
+    {
+        "id": "83bfd79a-c6e4-4843-b5c3-49b9280bd603",
+        "fullName": "Neal Lebsack",
+        "ownerEmail": "Jody86@gmail.com",
+        "address": "875 Windsor Close",
+        "city": "Germainebury",
         "hasProperty": true,
         "propertyType": "Flat",
         "builtInYear": 2007,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-05-26T11:00:43.610Z"
+        "propertyAreaSquared": 791618,
+        "propertyAreaSquaredAsString": "791618",
+        "contractDate": "2023-01-29T18:57:12.190Z",
+        "animals": [
+            {
+                "id": "8c9fb830-48f2-468d-af8d-49f42c719caf",
+                "type": "bear",
+                "color": "plum"
+            },
+            {
+                "id": "6d512806-0d3a-4c6f-aee8-128a3f49c302",
+                "type": "bear",
+                "color": "mint green"
+            },
+            {
+                "id": "374c6c5c-df22-4fe3-92da-3b40c86cc6e7",
+                "type": "cow",
+                "color": "teal"
+            }
+        ]
     },
     {
-        "id": "0a53078d-5a8e-4529-bcd7-0c50c6a247c7",
-        "fullName": "Ed Hartmann",
-        "ownerEmail": "Lavon.Hackett@yahoo.com",
-        "address": "3626 Bernadette Gardens",
-        "city": "Westland",
+        "id": "e3f1dded-5f4d-473e-8297-9f4e2da5c1d2",
+        "fullName": "Lewis Metz",
+        "ownerEmail": "Pete_Mueller55@hotmail.com",
+        "address": "7749 Wade Orchard",
+        "city": "Wolffmouth",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "98bc9640-10a7-48b3-8ee9-f89111a933b1",
+                "type": "rabbit",
+                "color": "black"
+            },
+            {
+                "id": "dda5c8cd-e9c3-4468-b843-56ccefb2b471",
+                "type": "bird",
+                "color": "tan"
+            }
+        ]
     },
     {
-        "id": "e8c6a11d-56a7-439f-a157-71237b2b5c2f",
-        "fullName": "Martin Collier",
-        "ownerEmail": "Donato29@yahoo.com",
-        "address": "537 Vern Dam",
-        "city": "Herthacester",
+        "id": "bcf0fac5-dec9-4886-856b-b4610f264311",
+        "fullName": "Ron Dibbert PhD",
+        "ownerEmail": "Dianna_Marvin@gmail.com",
+        "address": "848 A Street",
+        "city": "Port Mayville",
         "hasProperty": true,
         "propertyType": "Flat",
         "builtInYear": 2009,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-05-14T08:15:14.683Z"
+        "contractDate": "2023-11-21T05:30:12.148Z",
+        "animals": [
+            {
+                "id": "b6e2cecf-99cb-4ebd-ac80-25852335f795",
+                "type": "bird",
+                "color": "sky blue"
+            }
+        ]
     },
     {
-        "id": "8c0a6072-676c-440b-bbd1-2eb650de6d5b",
-        "fullName": "Marianne Tromp",
-        "ownerEmail": "Alvera60@yahoo.com",
-        "address": "823 Botsford Keys",
-        "city": "Plymouth",
+        "id": "f6a39475-2f65-472a-9893-af0aa31408cb",
+        "fullName": "Courtney Hegmann DDS",
+        "ownerEmail": "Rylan.Hoppe@yahoo.com",
+        "address": "70695 Cummerata Circle",
+        "city": "Wisozkville",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "b2fc490a-720c-44a1-bbf3-32f506f1d7a2",
+                "type": "bird",
+                "color": "maroon"
+            }
+        ]
     },
     {
-        "id": "78aa6c92-ef0b-4232-8f5b-f7258be10850",
-        "fullName": "Ed Sipes",
-        "ownerEmail": "Richie92@yahoo.com",
-        "address": "98691 Cemetery Road",
-        "city": "Chattanooga",
+        "id": "8639ead3-4525-42ab-bfba-a9c6511306a4",
+        "fullName": "Mr. Orville Roberts",
+        "ownerEmail": "Rowland66@gmail.com",
+        "address": "2909 Bosco Parkways",
+        "city": "Huldaborough",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": []
     },
     {
-        "id": "ce79df6f-a663-4832-bff9-1c93cb6acc16",
-        "fullName": "Violet Harvey",
-        "ownerEmail": "Fatima.Johns30@hotmail.com",
-        "address": "816 Skyline Drive",
-        "city": "Lake Randallstead",
+        "id": "d233b943-1005-4eb0-b08d-72db8566ee14",
+        "fullName": "Ramona Wuckert",
+        "ownerEmail": "Antwan_Leffler@gmail.com",
+        "address": "8837 Heidenreich Villages",
+        "city": "Mitchellfield",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "2352c8ef-1abf-4d30-85af-0fdbd6fc853c",
+                "type": "crocodilia",
+                "color": "mint green"
+            }
+        ]
     },
     {
-        "id": "5eaaaf63-e8bb-4594-ad14-8654588b2543",
-        "fullName": "Erica Dickinson",
-        "ownerEmail": "Nestor94@gmail.com",
-        "address": "9044 S 4th Street",
-        "city": "Stiedemannstead",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "1539c939-944f-4a6f-803c-85baf5cd90cb",
-        "fullName": "Chris Bartell",
-        "ownerEmail": "Isaias.DuBuque@hotmail.com",
-        "address": "6050 W Jefferson Street",
-        "city": "Port Albinton",
+        "id": "10131939-ff6f-4c6d-b3e3-9ee4829ca457",
+        "fullName": "Albert Lesch",
+        "ownerEmail": "Josefina15@gmail.com",
+        "address": "276 Brooks Stravenue",
+        "city": "Moniqueberg",
         "hasProperty": true,
         "propertyType": "Flat",
-        "builtInYear": 1996,
-        "propertyAreaSquared": 232526,
-        "propertyAreaSquaredAsString": "232526",
-        "contractDate": "2023-08-27T09:22:25.653Z"
+        "builtInYear": 1999,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-07-02T01:22:40.031Z",
+        "animals": []
     },
     {
-        "id": "546af9bc-703d-4fc3-89d1-11757c893847",
-        "fullName": "Austin Borer",
-        "ownerEmail": "Maye31@hotmail.com",
-        "address": "442 Trantow Plain",
-        "city": "Bernhardburgh",
+        "id": "cf6e2454-7ac1-4bec-8369-886767e9183c",
+        "fullName": "Dr. Vera Corkery",
+        "ownerEmail": "Leatha.Hauck68@gmail.com",
+        "address": "144 Melany Wells",
+        "city": "Redwood City",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 1997,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-11-25T12:26:24.494Z",
+        "animals": [
+            {
+                "id": "4981c959-49df-4a92-82c5-995e980bd25f",
+                "type": "snake",
+                "color": "green"
+            },
+            {
+                "id": "33c63493-e5cd-4a2f-b2c9-f52f764c4ab3",
+                "type": "insect",
+                "color": "magenta"
+            },
+            {
+                "id": "a03171d1-f832-4a40-9f3f-80f2e8676547",
+                "type": "cow",
+                "color": "cyan"
+            }
+        ]
+    },
+    {
+        "id": "89de1feb-e364-48e2-b67f-a6c3b614e5d9",
+        "fullName": "Miss Angelica Steuber",
+        "ownerEmail": "Lenora.Schowalter@hotmail.com",
+        "address": "57117 W 1st Street",
+        "city": "Sydneestead",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2012,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-01-20T19:37:57.320Z",
+        "animals": [
+            {
+                "id": "2d9fbac2-56a2-47d1-b2ec-19db148f3e76",
+                "type": "horse",
+                "color": "orchid"
+            },
+            {
+                "id": "8db3ec0e-e4ae-4d97-b31e-84c082ac27d4",
+                "type": "fish",
+                "color": "purple"
+            }
+        ]
+    },
+    {
+        "id": "a281c9c4-25ea-4d3f-ac47-6066b48d5c60",
+        "fullName": "Roxanne Pfannerstill",
+        "ownerEmail": "Augustus.Jast@hotmail.com",
+        "address": "70431 Kestrel Close",
+        "city": "West Willa",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "b54fb2a7-1b0b-4ea1-8e79-0570fda3ff24",
+                "type": "horse",
+                "color": "maroon"
+            },
+            {
+                "id": "f48c3334-87dc-4286-8e6e-7b94ea7e3f6c",
+                "type": "bird",
+                "color": "azure"
+            },
+            {
+                "id": "f841a6aa-0ec5-401c-9421-454a71eee30a",
+                "type": "bird",
+                "color": "lavender"
+            },
+            {
+                "id": "9d164a2c-1251-4638-9238-95db0aad614a",
+                "type": "crocodilia",
+                "color": "magenta"
+            }
+        ]
     },
     {
-        "id": "75299ea1-3316-496f-8e15-6bfe20b692d6",
-        "fullName": "Nathan Crona",
-        "ownerEmail": "Geoffrey_Boyle86@gmail.com",
-        "address": "69372 Swift Forks",
-        "city": "Oceanside",
+        "id": "cce720e0-f8e2-4e51-b19a-d1e386a5f55d",
+        "fullName": "Charles Bosco",
+        "ownerEmail": "Josephine40@yahoo.com",
+        "address": "4637 Braxton Viaduct",
+        "city": "Balistrerihaven",
         "hasProperty": true,
         "propertyType": "Flat",
-        "builtInYear": 2006,
+        "builtInYear": 2012,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-04-02T03:25:39.774Z"
+        "contractDate": "2023-08-24T19:58:30.030Z",
+        "animals": [
+            {
+                "id": "d50bf69f-a13b-4a03-830a-98caa12bb5b4",
+                "type": "bird",
+                "color": "violet"
+            }
+        ]
     },
     {
-        "id": "ea243bb5-751b-49b1-b33e-9e994377a7a6",
-        "fullName": "Ms. Rose Bechtelar Jr.",
-        "ownerEmail": "Marlon_Runolfsdottir19@gmail.com",
-        "address": "979 E Broadway",
-        "city": "Hacienda Heights",
+        "id": "ffc0217a-b395-4711-94dd-3758e55bd964",
+        "fullName": "Billy Zemlak",
+        "ownerEmail": "Aric_Rutherford55@yahoo.com",
+        "address": "3415 Field Lane",
+        "city": "Hiramberg",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": []
+    },
+    {
+        "id": "c766759f-45f0-4e11-9503-38fd35eeef1d",
+        "fullName": "Dean Weber",
+        "ownerEmail": "Forest34@hotmail.com",
+        "address": "6689 E Main",
+        "city": "Brownside",
         "hasProperty": true,
         "propertyType": "Flat",
         "builtInYear": 2013,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-12-03T05:13:01.432Z"
+        "contractDate": "2023-10-05T09:12:47.119Z",
+        "animals": []
     },
     {
-        "id": "e27ba07f-8b5f-4fe0-9ae3-01afa375dbc7",
-        "fullName": "Sylvester Johns",
-        "ownerEmail": "Hope52@yahoo.com",
-        "address": "9505 Veda Village",
-        "city": "West Palm Beach",
+        "id": "2d9e4fc3-5071-4629-9994-bf0b56c26856",
+        "fullName": "Ron Denesik",
+        "ownerEmail": "Taylor49@yahoo.com",
+        "address": "14749 Broad Lane",
+        "city": "Shanelleshire",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "9cb30786-ac9a-4ed2-b442-cf6843f965fb",
+                "type": "dog",
+                "color": "fuchsia"
+            },
+            {
+                "id": "a0f756ac-fb63-4bcc-b576-906c179b2184",
+                "type": "snake",
+                "color": "red"
+            },
+            {
+                "id": "aae99174-a73b-49a7-96d2-7088e704f24d",
+                "type": "lion",
+                "color": "sky blue"
+            },
+            {
+                "id": "d6986066-3375-4fa7-8bbc-6ff1456e44c7",
+                "type": "crocodilia",
+                "color": "turquoise"
+            }
+        ]
     },
     {
-        "id": "7936f91d-016c-47ad-b148-37499deda654",
-        "fullName": "Bethany Kilback",
-        "ownerEmail": "Shany.Kessler4@hotmail.com",
-        "address": "21761 Abernathy Ford",
-        "city": "Patsyburgh",
+        "id": "30e373ba-6ebd-4a44-a827-3c9271dc450f",
+        "fullName": "Lillian Langworth",
+        "ownerEmail": "Renee53@gmail.com",
+        "address": "14815 Hillary Coves",
+        "city": "Fort Hilarioworth",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "91afe27b-e874-4cdf-9417-6e301de2cf7d",
-        "fullName": "Joseph Hagenes",
-        "ownerEmail": "Lessie_Gorczany59@yahoo.com",
-        "address": "604 Chet Branch",
-        "city": "Fort Fernandobury",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 1998,
-        "propertyAreaSquared": 756649,
-        "propertyAreaSquaredAsString": "756649",
-        "contractDate": "2023-04-06T17:01:30.949Z"
-    },
-    {
-        "id": "b118e947-0454-4e99-a7ec-0294e788039f",
-        "fullName": "Frances Denesik IV",
-        "ownerEmail": "Deondre.Greenholt72@hotmail.com",
-        "address": "87893 W 14th Street",
-        "city": "Ryannstead",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2014,
-        "propertyAreaSquared": 38148,
-        "propertyAreaSquaredAsString": "38148",
-        "contractDate": "2023-05-02T04:12:37.416Z"
-    },
-    {
-        "id": "57987357-0a43-4361-8edb-760857607be0",
-        "fullName": "Mr. Jean Swift",
-        "ownerEmail": "Santa.Daugherty@yahoo.com",
-        "address": "94979 11th Street",
-        "city": "St. Charles",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2009,
-        "propertyAreaSquared": 783356,
-        "propertyAreaSquaredAsString": "783356",
-        "contractDate": "2023-08-13T13:51:55.556Z"
-    },
-    {
-        "id": "32fb071b-9af1-4d37-bffa-52ca805b7e03",
-        "fullName": "Phillip Reinger",
-        "ownerEmail": "Aaron.Nolan@gmail.com",
-        "address": "90960 Tremblay Common",
-        "city": "Shaniaton",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "d0c02066-7a3d-4921-a6a0-e378c19b3b5b",
-        "fullName": "Johnnie Zulauf",
-        "ownerEmail": "Alexandrea_Torphy@gmail.com",
-        "address": "8367 Predovic Drives",
-        "city": "West Abdiel",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "39e0366e-8e12-4995-bbe7-71ee4140af3f",
-        "fullName": "Andrea Satterfield",
-        "ownerEmail": "Zoey76@gmail.com",
-        "address": "2542 Gerlach Station",
-        "city": "South Veda",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "822f28be-89d8-4903-a9df-4ec82b51c713",
-        "fullName": "Abel Hartmann",
-        "ownerEmail": "Claud_Osinski@hotmail.com",
-        "address": "6524 Brook Street",
-        "city": "South Bend",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "7b0a3e8d-8efb-4c0c-afa4-7ec7bbcdcf6a",
-        "fullName": "Lela Romaguera",
-        "ownerEmail": "Rhoda_Pouros-Lesch@hotmail.com",
-        "address": "5454 N East Street",
-        "city": "North Dashawnburgh",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "dd231086-50fd-4eb3-81fb-71d0e9733264",
-        "fullName": "Kari Medhurst",
-        "ownerEmail": "Delaney.Huel10@yahoo.com",
-        "address": "23486 Springfield Close",
-        "city": "Hansenton",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2001,
-        "propertyAreaSquared": 977353,
-        "propertyAreaSquaredAsString": "977353",
-        "contractDate": "2023-03-20T18:17:21.327Z"
-    },
-    {
-        "id": "fdcfb3d7-f55c-48fb-ba8e-90de14e9fbfc",
-        "fullName": "Van Franecki",
-        "ownerEmail": "Dulce.Hammes94@hotmail.com",
-        "address": "920 Terrill Views",
-        "city": "South Rhoda",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2014,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-10-25T15:04:29.471Z"
-    },
-    {
-        "id": "daf5102a-ea43-4ad5-b7fa-d7e30a431d3e",
-        "fullName": "Nina Sawayn",
-        "ownerEmail": "Miller_Krajcik-Kutch@yahoo.com",
-        "address": "757 Abbott Glens",
-        "city": "East Natasha",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2003,
-        "propertyAreaSquared": 115263,
-        "propertyAreaSquaredAsString": "115263",
-        "contractDate": "2023-07-02T10:01:14.035Z"
-    },
-    {
-        "id": "c7ac131c-6646-48a5-a81f-37dcf2095040",
-        "fullName": "Kelly Flatley",
-        "ownerEmail": "Vita.Graham-Boyer@hotmail.com",
-        "address": "24256 Pollich Bridge",
-        "city": "New Aurelioland",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 1998,
-        "propertyAreaSquared": 429179,
-        "propertyAreaSquaredAsString": "429179",
-        "contractDate": "2023-09-09T16:15:26.376Z"
-    },
-    {
-        "id": "51f9dd25-ceee-4479-bcd3-d3364eb9596b",
-        "fullName": "Sherman Weber",
-        "ownerEmail": "Dannie.Okuneva48@hotmail.com",
-        "address": "88414 Jacobs Burgs",
-        "city": "Kunzeport",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "1eef0b79-360c-491f-b642-8d7e16bd2744",
-        "fullName": "Alejandro Torp",
-        "ownerEmail": "Monty_Kshlerin@gmail.com",
-        "address": "81020 Rau Valleys",
-        "city": "Fort Jonatanfurt",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "20422609-a990-4d04-924c-78f2a996bae6",
-        "fullName": "Christopher Durgan",
-        "ownerEmail": "Bell.Stiedemann0@gmail.com",
-        "address": "33465 Abernathy Bypass",
-        "city": "New Phyllis",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "8251a2d7-6c46-41c0-9bad-0bb9b3e4733d",
-        "fullName": "Joanne Cassin",
-        "ownerEmail": "Koby_Senger@gmail.com",
-        "address": "16399 Gibson Locks",
-        "city": "West Keira",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "aec0f0f5-a140-48e8-8fe5-b85284783c43",
-        "fullName": "Rex Bayer",
-        "ownerEmail": "Dee.Daugherty@yahoo.com",
-        "address": "44324 Alfonzo Common",
-        "city": "Eribertostad",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2004,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-02-14T19:12:22.988Z"
-    },
-    {
-        "id": "c1eef588-7a4a-4385-86df-3bcc22efd737",
-        "fullName": "Pat Lehner",
-        "ownerEmail": "Mozelle45@gmail.com",
-        "address": "2002 Erika Alley",
-        "city": "Rancho Cucamonga",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "68ba06e1-c961-431f-a666-5df9bc7550c8",
-        "fullName": "Lionel Goodwin",
-        "ownerEmail": "Kallie52@yahoo.com",
-        "address": "70340 Gleichner Lane",
-        "city": "Hoboken",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2009,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-12-21T15:08:29.961Z"
-    },
-    {
-        "id": "ffdf9cba-6f53-4cf8-9444-5c757e9394cf",
-        "fullName": "Larry Bartell",
-        "ownerEmail": "Jovani21@yahoo.com",
-        "address": "325 N Court Street",
-        "city": "West Ellen",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2012,
-        "propertyAreaSquared": 800847,
-        "propertyAreaSquaredAsString": "800847",
-        "contractDate": "2023-04-30T03:44:46.125Z"
-    },
-    {
-        "id": "63937e35-4ab9-4e3e-9113-2d235ab62f0c",
-        "fullName": "Melba Dietrich",
-        "ownerEmail": "Jameson_Champlin@yahoo.com",
-        "address": "49691 Chapel Street",
-        "city": "Delray Beach",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2005,
-        "propertyAreaSquared": 350505,
-        "propertyAreaSquaredAsString": "350505",
-        "contractDate": "2023-08-10T04:30:57.602Z"
-    },
-    {
-        "id": "e379814d-6f98-472f-bfb6-9c47b187f002",
-        "fullName": "Ernest Mueller",
-        "ownerEmail": "Andreane39@gmail.com",
-        "address": "5851 Coby Rapid",
-        "city": "Hesperia",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2006,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-10-13T20:47:14.359Z"
-    },
-    {
-        "id": "ea1e10ce-e70f-4c27-a4dc-166ff383d909",
-        "fullName": "Miss Kendra Weber",
-        "ownerEmail": "Rosemarie_Jakubowski0@hotmail.com",
-        "address": "32276 Juniper Close",
-        "city": "Krajcikfort",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "8e486e42-e429-4bd2-ba12-3beb6ede0a40",
-        "fullName": "Jay Schimmel",
-        "ownerEmail": "Raphael.Russel@yahoo.com",
-        "address": "9163 Salisbury Road",
-        "city": "Audraborough",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2001,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-07-07T11:22:23.960Z"
-    },
-    {
-        "id": "2826cf36-57e1-4dbd-813d-f6ec18d2eba0",
-        "fullName": "Edwin Weimann",
-        "ownerEmail": "Korey.Bruen@yahoo.com",
-        "address": "10804 Constantin Pines",
-        "city": "Myrticeberg",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "750ee18c-4d01-4f29-a7c7-0f5defe9f232",
-        "fullName": "Wilbert Price",
-        "ownerEmail": "Rowena.Bernier8@hotmail.com",
-        "address": "70909 Conroy Ridge",
-        "city": "Fort Giovaniton",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2004,
-        "propertyAreaSquared": 868149,
-        "propertyAreaSquaredAsString": "868149",
-        "contractDate": "2023-04-24T14:51:41.812Z"
-    },
-    {
-        "id": "2a8ae115-be8d-46a8-ab4e-c99d525630e3",
-        "fullName": "Roxanne Thiel",
-        "ownerEmail": "Aisha.Gutkowski@hotmail.com",
-        "address": "454 E 14th Street",
-        "city": "South Bonitaside",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2005,
-        "propertyAreaSquared": 435497,
-        "propertyAreaSquaredAsString": "435497",
-        "contractDate": "2023-02-03T13:00:55.880Z"
-    },
-    {
-        "id": "28efc5ae-8f2f-4bc6-b497-739603bab24c",
-        "fullName": "Leslie Nicolas",
-        "ownerEmail": "Jannie.Goodwin-Walker76@yahoo.com",
-        "address": "96947 Swift Heights",
-        "city": "Moline",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "a8c8059e-5686-423f-a2ae-484f798ff9c7",
-        "fullName": "Lucia Upton",
-        "ownerEmail": "Teagan_Collins@yahoo.com",
-        "address": "991 Sycamore Avenue",
-        "city": "Schneiderfurt",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "2aa8036a-4c55-41c6-8731-8fc26e09e453",
-        "fullName": "Marc Ferry",
-        "ownerEmail": "Brett94@hotmail.com",
-        "address": "616 Pollich Haven",
-        "city": "New Daleboro",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2012,
-        "propertyAreaSquared": 171253,
-        "propertyAreaSquaredAsString": "171253",
-        "contractDate": "2023-08-30T16:11:11.753Z"
-    },
-    {
-        "id": "e87d4759-5dc6-4084-a334-a2e2de7a89af",
-        "fullName": "Myrtle Grimes",
-        "ownerEmail": "Zackary_Altenwerth@gmail.com",
-        "address": "3660 Main",
-        "city": "East Kamron",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "d7509e07-1373-493d-bd3f-5e21d04e32f9",
-        "fullName": "Maggie Okuneva",
-        "ownerEmail": "Mitchell_Gerlach@hotmail.com",
-        "address": "1495 Steve Divide",
-        "city": "East Hailey",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "33b50ab9-c5ab-49dd-9e8f-045362a02605",
-        "fullName": "Andrea Hermiston",
-        "ownerEmail": "Creola_Johnston@hotmail.com",
-        "address": "40899 Roman Way",
-        "city": "Effertzcester",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "8a173397-ecab-4031-b2b5-e5b7ca040f08",
-        "fullName": "Betsy Pollich",
-        "ownerEmail": "Breana_Quitzon63@gmail.com",
-        "address": "135 New Lane",
-        "city": "Fond du Lac",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2012,
-        "propertyAreaSquared": 291312,
-        "propertyAreaSquaredAsString": "291312",
-        "contractDate": "2023-12-07T16:32:03.716Z"
-    },
-    {
-        "id": "cb881eea-1605-4661-ad45-37f41a266546",
-        "fullName": "Ruth Considine",
-        "ownerEmail": "Francesco.Pouros@hotmail.com",
-        "address": "730 Lake Drive",
-        "city": "Fort Jaleelborough",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2015,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-04-13T09:04:39.643Z"
-    },
-    {
-        "id": "b628f584-77c7-4e44-8d1b-d2668d1f4e62",
-        "fullName": "Elisa Lang-Purdy",
-        "ownerEmail": "Tracy_Gutkowski-Frami76@gmail.com",
-        "address": "931 Walter Circle",
-        "city": "Rosemead",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2012,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-11-04T17:09:13.507Z"
-    },
-    {
-        "id": "dd6815bb-6172-46bb-88e0-22cca2b263e9",
-        "fullName": "Kathy Baumbach",
-        "ownerEmail": "Jade87@yahoo.com",
-        "address": "66851 Lennie Alley",
-        "city": "Enterprise",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2015,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-12-24T00:01:17.947Z"
-    },
-    {
-        "id": "0af22fa4-7f43-4229-92b2-3b51a8af8f14",
-        "fullName": "Dr. Morris Littel",
-        "ownerEmail": "Demond59@gmail.com",
-        "address": "1143 Swift Locks",
-        "city": "Jazmynehaven",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2015,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-07-04T04:12:49.203Z"
-    },
-    {
-        "id": "97a92ff1-664b-4d98-bae6-72c6036ac938",
-        "fullName": "Rachel Hagenes",
-        "ownerEmail": "Wilmer.Stoltenberg8@yahoo.com",
-        "address": "790 S 3rd Street",
-        "city": "Koeppfurt",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "4419fb2f-bdc3-42ee-b193-190eff5d6b81",
-        "fullName": "Willis Spinka",
-        "ownerEmail": "Ralph_Runte39@hotmail.com",
-        "address": "645 Travis Mountain",
-        "city": "Hutchinson",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2008,
-        "propertyAreaSquared": 755594,
-        "propertyAreaSquaredAsString": "755594",
-        "contractDate": "2023-01-19T07:14:19.551Z"
-    },
-    {
-        "id": "157e13d0-012c-4151-be73-de8c26e44a71",
-        "fullName": "Ms. Dora Wiza",
-        "ownerEmail": "Camden.Crooks20@hotmail.com",
-        "address": "1736 Reilly Run",
-        "city": "Rippinchester",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 1996,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-04-14T08:02:02.375Z"
-    },
-    {
-        "id": "239b9114-34a4-4ab6-9915-725279148d0b",
-        "fullName": "Stacey Lockman",
-        "ownerEmail": "Jevon.Dare62@gmail.com",
-        "address": "20598 Highfield Road",
-        "city": "Lake Hilarioside",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 1999,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-11-04T06:05:16.387Z"
-    },
-    {
-        "id": "d146d113-c51f-4016-9415-34c70da869f8",
-        "fullName": "Phyllis Mills",
-        "ownerEmail": "Kory.DuBuque@yahoo.com",
-        "address": "50746 Weissnat Turnpike",
-        "city": "South Ashlyfort",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "0f8c0bd4-c98f-4e92-9e57-7bc837d43658",
-        "fullName": "Anita Bins IV",
-        "ownerEmail": "Zena_Kassulke-Durgan56@hotmail.com",
-        "address": "186 Atlantic Avenue",
-        "city": "Schmittstead",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2000,
-        "propertyAreaSquared": 881927,
-        "propertyAreaSquaredAsString": "881927",
-        "contractDate": "2023-01-29T09:19:49.514Z"
-    },
-    {
-        "id": "6ac65c15-6a08-4c59-9076-47cb7ca4116e",
-        "fullName": "Woodrow Parisian",
-        "ownerEmail": "Dulce.Keeling@gmail.com",
-        "address": "353 Satterfield Forge",
-        "city": "Fort Gregg",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2009,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-11-12T11:15:44.200Z"
-    },
-    {
-        "id": "247e546e-3c62-4513-a52f-bb2e62c63976",
-        "fullName": "Sophie Boyle",
-        "ownerEmail": "Damaris.Cremin@hotmail.com",
-        "address": "5053 Torphy Street",
-        "city": "Fort Dianna",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "d2dd954b-2b71-476c-a8e5-9d92f6896f66",
-        "fullName": "Miss Marta Kozey-Schulist",
-        "ownerEmail": "Kayla_Homenick-Zemlak97@yahoo.com",
-        "address": "933 Lea Rest",
-        "city": "Lake Freddie",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "23dae7f9-cf68-4814-bc06-64d451b9a221",
-        "fullName": "Brandy Wisozk",
-        "ownerEmail": "Otilia29@hotmail.com",
-        "address": "58396 Norris Ferry",
-        "city": "Orenworth",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 1998,
-        "propertyAreaSquared": 555051,
-        "propertyAreaSquaredAsString": "555051",
-        "contractDate": "2023-04-30T10:26:14.337Z"
-    },
-    {
-        "id": "801e0f5a-54f0-429c-8d9b-8aaac07d6b2b",
-        "fullName": "Tricia Schroeder",
-        "ownerEmail": "Stephon28@gmail.com",
-        "address": "135 Amina Lane",
-        "city": "Haneborough",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2014,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-10-26T23:52:33.162Z"
-    },
-    {
-        "id": "463e997a-ba41-493a-8a82-895d5be5c038",
-        "fullName": "Javier Marquardt",
-        "ownerEmail": "Amiya.Bashirian47@hotmail.com",
-        "address": "95381 Forest Park",
-        "city": "North Baby",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2014,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-09-22T07:53:39.073Z"
-    },
-    {
-        "id": "1d478df1-4320-484f-81e3-68e6846b08b5",
-        "fullName": "Max Kassulke-Kris",
-        "ownerEmail": "Rudy33@yahoo.com",
-        "address": "8485 McKenzie Place",
-        "city": "South Walker",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2007,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-10-07T00:38:24.316Z"
-    },
-    {
-        "id": "2c285467-7b0d-4005-8796-fe92b99dcba1",
-        "fullName": "Alyssa Rolfson",
-        "ownerEmail": "Cristian.MacGyver-Witting@hotmail.com",
-        "address": "5184 Dillon Dale",
-        "city": "Mayertton",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "d12696a1-6f0d-4e06-800e-ac2b84f0a063",
-        "fullName": "Allison Mann",
-        "ownerEmail": "Arnaldo9@yahoo.com",
-        "address": "95723 Chanel Shore",
-        "city": "West Abigayleview",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "3366669b-6ae3-4aff-9186-d0716f0e9a71",
-        "fullName": "Josefina Rogahn",
-        "ownerEmail": "Eloisa5@hotmail.com",
-        "address": "1107 Oxford Road",
-        "city": "Haverhill",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "6d7c33b8-6eab-4269-b16a-3c39dd42664f",
-        "fullName": "Felipe Bernhard",
-        "ownerEmail": "Bettie_OConner82@hotmail.com",
-        "address": "910 Mills Drive",
-        "city": "Kiehnport",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "01635a68-26df-44ab-86bc-74f6e2288c27",
-        "fullName": "Angie Lockman",
-        "ownerEmail": "Stephania74@gmail.com",
-        "address": "528 Forest Road",
-        "city": "Braunboro",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2001,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-07-19T07:52:38.705Z"
-    },
-    {
-        "id": "1cf84a45-3af1-440f-895c-5d60b6de405d",
-        "fullName": "Edgar Marvin",
-        "ownerEmail": "Amya.Kling@yahoo.com",
-        "address": "22282 S Washington Street",
-        "city": "Broomfield",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "36eb8e25-6472-4d46-8655-a939ee49880d",
-        "fullName": "Lamar Larson",
-        "ownerEmail": "Laura98@hotmail.com",
-        "address": "533 Dovie Manor",
-        "city": "Adrielcester",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2002,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-08-06T19:36:00.885Z"
-    },
-    {
-        "id": "c907cda4-c39b-4e75-ab6d-a878d27c8338",
-        "fullName": "Pat Raynor",
-        "ownerEmail": "Eliezer_Steuber@yahoo.com",
-        "address": "839 Gottlieb Manors",
-        "city": "Willmstown",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2014,
-        "propertyAreaSquared": 742089,
-        "propertyAreaSquaredAsString": "742089",
-        "contractDate": "2023-11-14T06:18:34.276Z"
-    },
-    {
-        "id": "eaafa6a1-4ac3-4f77-9a47-08c0912119b8",
-        "fullName": "Lisa Bogan IV",
-        "ownerEmail": "Emmett58@hotmail.com",
-        "address": "22679 Felicity Estate",
-        "city": "South Germainefurt",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2001,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-06-22T22:28:53.764Z"
-    },
-    {
-        "id": "2bc412f0-4812-4363-8cb6-c7ca8077f108",
-        "fullName": "Ian Schowalter MD",
-        "ownerEmail": "Raphaelle94@hotmail.com",
-        "address": "941 Hazel Close",
-        "city": "Port Odessaburgh",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2005,
-        "propertyAreaSquared": 284488,
-        "propertyAreaSquaredAsString": "284488",
-        "contractDate": "2023-10-10T10:03:53.625Z"
-    },
-    {
-        "id": "78cb54e2-7852-4d14-b7b9-e5a071610284",
-        "fullName": "Ismael Sipes",
-        "ownerEmail": "Burdette.Altenwerth45@hotmail.com",
-        "address": "2804 S Market Street",
-        "city": "Simfurt",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2007,
-        "propertyAreaSquared": 491712,
-        "propertyAreaSquaredAsString": "491712",
-        "contractDate": "2023-06-10T07:56:17.605Z"
-    },
-    {
-        "id": "3a1259a6-274d-41c9-8843-37a89a148404",
-        "fullName": "Ginger Raynor",
-        "ownerEmail": "Duncan.Franey53@gmail.com",
-        "address": "3470 Heidenreich Drives",
-        "city": "North Vicentaville",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "23017ff0-d282-4b3c-8547-455c4ec90285",
-        "fullName": "Jonathan Beier MD",
-        "ownerEmail": "Jewell92@hotmail.com",
-        "address": "52501 E Central Avenue",
-        "city": "Tavaresmouth",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 1995,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-09-23T11:35:29.050Z"
-    },
-    {
-        "id": "951ec6e3-dbca-43fa-8f2b-b723ad2eb359",
-        "fullName": "Olivia Renner",
-        "ownerEmail": "Velma23@yahoo.com",
-        "address": "50364 Vicenta Prairie",
-        "city": "North Earnestbury",
-        "hasProperty": false,
-        "propertyType": null,
-        "builtInYear": null,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": null
-    },
-    {
-        "id": "689e57de-1dc4-4c84-adaa-6ec6325506f0",
-        "fullName": "Stanley Runolfsson",
-        "ownerEmail": "Rahsaan_Sipes@hotmail.com",
-        "address": "4964 Grimes Falls",
-        "city": "Lawton",
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "a43c3536-b39b-4e74-b01c-24dad88cee1e",
+                "type": "snake",
+                "color": "purple"
+            },
+            {
+                "id": "15a0e230-6a62-4f39-86e0-90586f2249e9",
+                "type": "bird",
+                "color": "white"
+            },
+            {
+                "id": "6585eb0e-fb87-4536-85b2-08d19f151608",
+                "type": "bird",
+                "color": "olive"
+            }
+        ]
+    },
+    {
+        "id": "0322024e-47fa-450c-91dd-189462dfd7ba",
+        "fullName": "Steve Pacocha",
+        "ownerEmail": "Ari_Brekke4@hotmail.com",
+        "address": "451 Coronation Road",
+        "city": "Maureenfield",
         "hasProperty": true,
         "propertyType": "Flat",
         "builtInYear": 2011,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-09-03T23:36:57.613Z"
+        "propertyAreaSquared": 514103,
+        "propertyAreaSquaredAsString": "514103",
+        "contractDate": "2023-06-26T18:47:19.461Z",
+        "animals": [
+            {
+                "id": "cfbc722e-fb8a-43bb-a6db-4f5cc4639598",
+                "type": "lion",
+                "color": "azure"
+            }
+        ]
     },
     {
-        "id": "0182b1ab-8751-40b8-82d9-f07d0bc0f742",
-        "fullName": "Priscilla Lesch V",
-        "ownerEmail": "Claudie.Yundt51@hotmail.com",
-        "address": "3183 The Mews",
-        "city": "Paucekstad",
+        "id": "4a90f792-a45f-41a4-b1f4-53b4860efc7b",
+        "fullName": "Maureen Hegmann",
+        "ownerEmail": "Dayton24@gmail.com",
+        "address": "47138 Cedar Street",
+        "city": "Maggioside",
         "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2000,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-04-28T06:23:44.546Z"
+        "propertyType": "Apartment",
+        "builtInYear": 2002,
+        "propertyAreaSquared": 380725,
+        "propertyAreaSquaredAsString": "380725",
+        "contractDate": "2023-11-29T18:09:56.258Z",
+        "animals": []
     },
     {
-        "id": "3a7dbe20-6e74-4fd5-92ce-8e08092c1a63",
-        "fullName": "Lila Ryan",
-        "ownerEmail": "Eliza_Rogahn@hotmail.com",
-        "address": "117 Marisol Motorway",
-        "city": "Gulgowskiland",
+        "id": "8b441079-5f37-4261-be2a-20150ac43160",
+        "fullName": "Edith Jenkins MD",
+        "ownerEmail": "Arne.Schumm7@yahoo.com",
+        "address": "128 Maple Close",
+        "city": "Fort Kaelyn",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "6be27650-3433-4953-93d1-a25b379ec6f5",
+                "type": "snake",
+                "color": "ivory"
+            },
+            {
+                "id": "e2c31875-f393-49ee-a7fa-5261a3b41e18",
+                "type": "dog",
+                "color": "lime"
+            },
+            {
+                "id": "ea9ae45a-f17f-4c2a-9260-46608c21aa63",
+                "type": "cetacean",
+                "color": "yellow"
+            },
+            {
+                "id": "6e671398-c6bd-41d8-96e5-4573a4fc0b39",
+                "type": "snake",
+                "color": "plum"
+            }
+        ]
     },
     {
-        "id": "cf7ebe44-c7ed-48e6-b173-73a7a9dc8515",
-        "fullName": "Owen Hammes DDS",
-        "ownerEmail": "Donnie42@gmail.com",
-        "address": "5849 Gordon Street",
-        "city": "North Eulaliaworth",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 2000,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-06-15T21:03:36.153Z"
-    },
-    {
-        "id": "f8af5eb4-a6ad-419e-985f-afb0d1639cc1",
-        "fullName": "Bob Smith",
-        "ownerEmail": "Jeanne.Mills@yahoo.com",
-        "address": "339 Jakubowski Track",
-        "city": "Dickinsonburgh",
+        "id": "e822a97e-1d10-44f8-b746-0d45542727f4",
+        "fullName": "Sabrina Christiansen",
+        "ownerEmail": "Antonietta25@yahoo.com",
+        "address": "30244 Gutkowski Drives",
+        "city": "Fort Kory",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "c140d160-945f-4b1f-9506-bc9a3055bae5",
+                "type": "crocodilia",
+                "color": "sky blue"
+            },
+            {
+                "id": "5972317d-3e5f-46ba-825b-45071a472efe",
+                "type": "cetacean",
+                "color": "cyan"
+            },
+            {
+                "id": "e53da4de-74e3-4874-abcb-0b6055885602",
+                "type": "lion",
+                "color": "violet"
+            }
+        ]
     },
     {
-        "id": "93529d9b-0ca0-4af5-b0e4-fdd6d134886d",
-        "fullName": "Ed Bogan",
-        "ownerEmail": "Winfield_Medhurst@hotmail.com",
-        "address": "54974 10th Street",
-        "city": "Morissettestad",
+        "id": "11fe0ad5-5488-4bb3-af11-1d7444bd0adf",
+        "fullName": "Ms. Dolores Reynolds",
+        "ownerEmail": "Abdul19@yahoo.com",
+        "address": "500 The Mews",
+        "city": "Lake Vernon",
         "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 1996,
-        "propertyAreaSquared": 165870,
-        "propertyAreaSquaredAsString": "165870",
-        "contractDate": "2023-12-07T00:30:32.299Z"
-    },
-    {
-        "id": "1a846fe7-6310-4ade-8837-c7e072691586",
-        "fullName": "Benny Rowe",
-        "ownerEmail": "Marlee.Friesen@hotmail.com",
-        "address": "27075 N Chestnut Street",
-        "city": "Nelsshire",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2012,
+        "propertyType": "Flat",
+        "builtInYear": 2000,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-08-28T14:42:11.720Z"
+        "contractDate": "2023-09-22T05:07:54.971Z",
+        "animals": [
+            {
+                "id": "35e5f30a-d164-4a98-9a69-3e06bca10e33",
+                "type": "fish",
+                "color": "grey"
+            },
+            {
+                "id": "42ebe39f-d917-46f6-b555-89d2b115c806",
+                "type": "bird",
+                "color": "plum"
+            },
+            {
+                "id": "c5edf2b3-4fb4-4700-a20b-f8731ef7307d",
+                "type": "bear",
+                "color": "tan"
+            }
+        ]
     },
     {
-        "id": "b9fb3b1a-63d6-45a5-aefe-26da1ba63110",
-        "fullName": "Thelma Farrell",
-        "ownerEmail": "Virgil.Gleason@hotmail.com",
-        "address": "86985 Lavada Walk",
-        "city": "Laredo",
+        "id": "e0c71358-a9b9-4b6b-8ce9-14d874c23990",
+        "fullName": "Jesus Herzog",
+        "ownerEmail": "Mariano_Walter40@gmail.com",
+        "address": "4646 Pattie Haven",
+        "city": "Hudsonborough",
         "hasProperty": true,
-        "propertyType": "Apartment",
+        "propertyType": "Flat",
+        "builtInYear": 1998,
+        "propertyAreaSquared": 589239,
+        "propertyAreaSquaredAsString": "589239",
+        "contractDate": "2023-04-02T17:17:45.966Z",
+        "animals": [
+            {
+                "id": "c9d4462e-01d1-486e-948a-be37dd8cf314",
+                "type": "snake",
+                "color": "purple"
+            },
+            {
+                "id": "d8de2666-7643-47f2-b7b0-015e721406e7",
+                "type": "rabbit",
+                "color": "orchid"
+            }
+        ]
+    },
+    {
+        "id": "f9a0a842-4acc-4e5e-88cf-d3221cbdfb9f",
+        "fullName": "Gerardo Toy",
+        "ownerEmail": "Gladys27@hotmail.com",
+        "address": "33428 Dulce Curve",
+        "city": "Skilesfield",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2014,
+        "propertyAreaSquared": 686402,
+        "propertyAreaSquaredAsString": "686402",
+        "contractDate": "2023-02-24T15:04:35.547Z",
+        "animals": [
+            {
+                "id": "909e6137-ee4e-4bb8-ac06-92f249e63256",
+                "type": "fish",
+                "color": "black"
+            },
+            {
+                "id": "0b5fa1cf-d9d5-4ac6-804e-acc81cdcf7a0",
+                "type": "horse",
+                "color": "fuchsia"
+            },
+            {
+                "id": "31e55969-f95b-4d55-8838-39064e758e15",
+                "type": "fish",
+                "color": "teal"
+            }
+        ]
+    },
+    {
+        "id": "b61c8cf3-8be6-4ad1-964b-9b2f4308157a",
+        "fullName": "Evan Maggio",
+        "ownerEmail": "Reymundo.Bartell42@yahoo.com",
+        "address": "36102 Kali Meadows",
+        "city": "Port Jonworth",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2003,
+        "propertyAreaSquared": 682022,
+        "propertyAreaSquaredAsString": "682022",
+        "contractDate": "2023-12-08T15:55:06.318Z",
+        "animals": []
+    },
+    {
+        "id": "ea1dda5c-5dbd-4b3e-9e75-bc43030f5919",
+        "fullName": "Myron Treutel",
+        "ownerEmail": "Alan.Leannon@hotmail.com",
+        "address": "11614 Lucas Hollow",
+        "city": "New Dahliafield",
+        "hasProperty": true,
+        "propertyType": "Flat",
         "builtInYear": 2007,
-        "propertyAreaSquared": 211351,
-        "propertyAreaSquaredAsString": "211351",
-        "contractDate": "2023-04-28T19:46:25.725Z"
+        "propertyAreaSquared": 437273,
+        "propertyAreaSquaredAsString": "437273",
+        "contractDate": "2023-04-15T16:49:09.492Z",
+        "animals": [
+            {
+                "id": "a657b885-ae09-4ba9-a4d1-c0006c224215",
+                "type": "snake",
+                "color": "green"
+            },
+            {
+                "id": "2eae93e7-3440-4c96-b690-55dcb1d7ac99",
+                "type": "insect",
+                "color": "red"
+            }
+        ]
     },
     {
-        "id": "c79f00f9-02b2-479d-9511-eeba0cd2937a",
-        "fullName": "Mrs. Jennie Macejkovic",
-        "ownerEmail": "Carolanne.Wehner34@hotmail.com",
-        "address": "4978 Clay Knolls",
-        "city": "Angieshire",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 1995,
-        "propertyAreaSquared": 529481,
-        "propertyAreaSquaredAsString": "529481",
-        "contractDate": "2023-11-06T14:29:15.592Z"
-    },
-    {
-        "id": "19fa0da9-b611-4681-8955-4f495267b893",
-        "fullName": "Helen Treutel",
-        "ownerEmail": "Nathan_Orn@gmail.com",
-        "address": "1909 Welch Villages",
-        "city": "Robertahaven",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2012,
-        "propertyAreaSquared": 231509,
-        "propertyAreaSquaredAsString": "231509",
-        "contractDate": "2023-06-14T03:21:41.281Z"
-    },
-    {
-        "id": "735e0bee-effc-4eac-af27-9dc7af264df0",
-        "fullName": "Karla Reichert",
-        "ownerEmail": "Orval.Durgan@hotmail.com",
-        "address": "479 The Fairway",
-        "city": "Faystead",
-        "hasProperty": true,
-        "propertyType": "Flat",
-        "builtInYear": 1996,
-        "propertyAreaSquared": 626707,
-        "propertyAreaSquaredAsString": "626707",
-        "contractDate": "2023-05-02T07:37:33.900Z"
-    },
-    {
-        "id": "5b96259d-bffd-48c9-9fc1-7749f7ee8d05",
-        "fullName": "Clayton Kub",
-        "ownerEmail": "Myrtice.Luettgen89@gmail.com",
-        "address": "55105 Reinger Ramp",
-        "city": "Los Angeles",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2012,
-        "propertyAreaSquared": null,
-        "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-09-14T01:31:48.020Z"
-    },
-    {
-        "id": "7e6fb79b-553a-4954-a05c-eb683415be1b",
-        "fullName": "Joseph Walsh",
-        "ownerEmail": "Justine.Upton2@gmail.com",
-        "address": "66865 Mikel Radial",
-        "city": "Borerbury",
-        "hasProperty": true,
-        "propertyType": "Apartment",
-        "builtInYear": 2008,
-        "propertyAreaSquared": 428788,
-        "propertyAreaSquaredAsString": "428788",
-        "contractDate": "2023-10-08T11:21:22.610Z"
-    },
-    {
-        "id": "39df0b87-96ee-4418-b53b-6175b3f6dd64",
-        "fullName": "Dr. Brendan Legros",
-        "ownerEmail": "Sandy_Wunsch30@gmail.com",
-        "address": "468 Hahn Plain",
-        "city": "East Zachery",
+        "id": "1e80c627-3c9b-479f-ab29-e9c8b5ed023f",
+        "fullName": "Darin Lowe",
+        "ownerEmail": "Brandt_Ullrich@yahoo.com",
+        "address": "123 Arnold Oval",
+        "city": "Largo",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "1ded91a7-f4a4-489f-9732-40c277f3f9e7",
+                "type": "horse",
+                "color": "salmon"
+            }
+        ]
     },
     {
-        "id": "84a9ea11-20a9-4b19-9c37-4d0ede9e3e46",
-        "fullName": "Raul Gorczany",
-        "ownerEmail": "Beaulah75@yahoo.com",
-        "address": "774 W Bridge Street",
-        "city": "Baileybury",
+        "id": "310847df-08aa-410a-a315-c3962b128143",
+        "fullName": "Aubrey Bruen",
+        "ownerEmail": "Marjolaine.Stehr45@gmail.com",
+        "address": "642 Gerhold Mountain",
+        "city": "Bechtelarbury",
         "hasProperty": true,
         "propertyType": "Apartment",
-        "builtInYear": 1995,
-        "propertyAreaSquared": 848586,
-        "propertyAreaSquaredAsString": "848586",
-        "contractDate": "2023-04-24T16:04:00.161Z"
+        "builtInYear": 2013,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-07-13T05:36:31.070Z",
+        "animals": [
+            {
+                "id": "75ec0c74-56bb-4bc4-809f-89cbd3f9b324",
+                "type": "crocodilia",
+                "color": "blue"
+            },
+            {
+                "id": "2722774e-0d09-45be-ba75-334638300c2d",
+                "type": "insect",
+                "color": "black"
+            },
+            {
+                "id": "71194881-46b9-469c-8fb8-2975ea33a213",
+                "type": "rabbit",
+                "color": "red"
+            },
+            {
+                "id": "9f97cacb-914d-421a-bf55-7119dfd29f0f",
+                "type": "bear",
+                "color": "violet"
+            }
+        ]
     },
     {
-        "id": "f05cec3a-0a76-461d-a148-cc3937b00601",
-        "fullName": "Roland McKenzie",
-        "ownerEmail": "Anderson68@hotmail.com",
-        "address": "94672 Heidenreich Shores",
-        "city": "Mayaguez",
+        "id": "bab1bf81-58b4-4063-8638-0055ead7cd50",
+        "fullName": "Laverne Braun PhD",
+        "ownerEmail": "Cecelia_Gutkowski@hotmail.com",
+        "address": "19510 Lindgren Estates",
+        "city": "Auerstead",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": []
     },
     {
-        "id": "c5350ccc-10ca-45f1-985a-6354a7192164",
-        "fullName": "Nellie Schinner",
-        "ownerEmail": "Garret.Legros@hotmail.com",
-        "address": "30823 Mayfield Road",
-        "city": "Roxaneland",
+        "id": "ff048690-7288-4ed6-b7bb-7e9657b221b4",
+        "fullName": "Maurice Padberg",
+        "ownerEmail": "Domingo71@yahoo.com",
+        "address": "8757 Moore Crossing",
+        "city": "Pedroport",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "978a42c5-46f6-454f-9f05-15130008de35",
+                "type": "snake",
+                "color": "cyan"
+            },
+            {
+                "id": "4703cf36-284a-4b7a-8e1c-901ceb9537f0",
+                "type": "cow",
+                "color": "salmon"
+            },
+            {
+                "id": "42d2b850-536f-4d8c-952e-0926314c4126",
+                "type": "horse",
+                "color": "white"
+            }
+        ]
+    },
+    {
+        "id": "dfcb198e-a3bd-460c-a768-5adadeae5457",
+        "fullName": "Wendell Roberts",
+        "ownerEmail": "Edwina89@hotmail.com",
+        "address": "4226 Toy Lakes",
+        "city": "Coleshire",
         "hasProperty": true,
         "propertyType": "Flat",
         "builtInYear": 1997,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": "2023-01-18T15:09:00.985Z"
+        "contractDate": "2023-05-25T18:56:01.400Z",
+        "animals": [
+            {
+                "id": "2dae4c56-dd9a-4add-b823-34fbf3ae948a",
+                "type": "lion",
+                "color": "fuchsia"
+            },
+            {
+                "id": "ac5e3cc5-ada5-41ab-927f-d3e8e6b47235",
+                "type": "horse",
+                "color": "plum"
+            },
+            {
+                "id": "02aaa126-e98e-4cfc-b4b9-da648a1e2fe2",
+                "type": "fish",
+                "color": "green"
+            },
+            {
+                "id": "3cbdc5d6-34ce-4d2d-9cc0-1c6173fd3129",
+                "type": "bird",
+                "color": "pink"
+            }
+        ]
     },
     {
-        "id": "8618616e-0bca-48dd-bac6-98c64540fa98",
-        "fullName": "Dr. Clark Thiel",
-        "ownerEmail": "Nestor82@hotmail.com",
-        "address": "343 S 3rd Street",
-        "city": "Port Jasper",
+        "id": "79e75776-f775-4cbf-b711-e5482a3acb25",
+        "fullName": "Nicole Rau",
+        "ownerEmail": "Kole.Moore@yahoo.com",
+        "address": "78034 Hubert Park",
+        "city": "Weldonville",
         "hasProperty": false,
         "propertyType": null,
         "builtInYear": null,
         "propertyAreaSquared": null,
         "propertyAreaSquaredAsString": null,
-        "contractDate": null
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "c989fa5c-6557-4837-9cd9-413638005d1b",
+                "type": "bird",
+                "color": "olive"
+            },
+            {
+                "id": "d5ac4d3f-647d-465a-9feb-e10d9d5deff8",
+                "type": "cetacean",
+                "color": "cyan"
+            }
+        ]
+    },
+    {
+        "id": "b5600407-e1f0-4589-88a9-dd40b0f77c12",
+        "fullName": "Kyle Littel",
+        "ownerEmail": "Brandt.Mueller@yahoo.com",
+        "address": "135 Cory Green",
+        "city": "West Darrickfurt",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 1996,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-05-13T10:38:21.087Z",
+        "animals": []
+    },
+    {
+        "id": "81b128c2-fd7f-4100-9e9b-e6e9b64aff30",
+        "fullName": "Travis Cremin",
+        "ownerEmail": "Carlotta62@hotmail.com",
+        "address": "42229 Church Walk",
+        "city": "Lenoremouth",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "ea26ca96-7c17-4509-b57f-06353c74663f",
+                "type": "fish",
+                "color": "white"
+            },
+            {
+                "id": "d34c92a4-56cf-4d3a-8fe1-d78f4a597d9d",
+                "type": "cat",
+                "color": "teal"
+            }
+        ]
+    },
+    {
+        "id": "a485f263-40c0-4a3f-b5ba-2d4d428c3cab",
+        "fullName": "Ms. Eunice Pfeffer",
+        "ownerEmail": "Nettie_Wyman@yahoo.com",
+        "address": "4246 Central Avenue",
+        "city": "North Francisco",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2008,
+        "propertyAreaSquared": 697770,
+        "propertyAreaSquaredAsString": "697770",
+        "contractDate": "2023-06-01T09:47:34.463Z",
+        "animals": [
+            {
+                "id": "299a9259-e080-4fdd-932b-7cf0eb468513",
+                "type": "snake",
+                "color": "lavender"
+            },
+            {
+                "id": "5e0d5930-83b2-4de6-a242-9be183cd87f1",
+                "type": "snake",
+                "color": "red"
+            }
+        ]
+    },
+    {
+        "id": "9a20f897-3397-4668-92f4-775ff9e0be97",
+        "fullName": "Mr. Ira Kris",
+        "ownerEmail": "Jade15@gmail.com",
+        "address": "7121 Vidal Stream",
+        "city": "Port Einar",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2013,
+        "propertyAreaSquared": 346042,
+        "propertyAreaSquaredAsString": "346042",
+        "contractDate": "2023-08-19T10:40:52.875Z",
+        "animals": [
+            {
+                "id": "cbe9e6e8-669e-4ae6-a3bb-2253904ffe6d",
+                "type": "crocodilia",
+                "color": "turquoise"
+            },
+            {
+                "id": "eb4c8a76-4113-4c3f-b215-fd7d11d94927",
+                "type": "bear",
+                "color": "azure"
+            },
+            {
+                "id": "5f53a7dc-47fe-49c4-9906-eb17442d9748",
+                "type": "cetacean",
+                "color": "fuchsia"
+            }
+        ]
+    },
+    {
+        "id": "2966c47a-9e9b-492e-baa1-7b505bb4cf18",
+        "fullName": "Daniel Bednar",
+        "ownerEmail": "Alize88@yahoo.com",
+        "address": "61387 Park Avenue",
+        "city": "Abernathymouth",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2012,
+        "propertyAreaSquared": 524902,
+        "propertyAreaSquaredAsString": "524902",
+        "contractDate": "2023-04-21T18:14:57.548Z",
+        "animals": [
+            {
+                "id": "a64f620e-b41d-411f-b9b2-b733b12ee01d",
+                "type": "cat",
+                "color": "silver"
+            },
+            {
+                "id": "277870bc-a100-4416-826b-18f60be821e6",
+                "type": "rabbit",
+                "color": "tan"
+            },
+            {
+                "id": "30c84888-4dd9-43b5-b01c-5d30d539063a",
+                "type": "horse",
+                "color": "red"
+            },
+            {
+                "id": "16a4ca59-07aa-4ac1-8ce0-ed51a02d19f9",
+                "type": "cat",
+                "color": "pink"
+            }
+        ]
+    },
+    {
+        "id": "eab5d97c-f931-4045-8395-f959dce13e02",
+        "fullName": "Ivan Ortiz",
+        "ownerEmail": "Jayda.McLaughlin@gmail.com",
+        "address": "280 Schuppe Spring",
+        "city": "Bergstrommouth",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "3b65b4a9-b05d-442e-be99-881d06c5c5ed",
+                "type": "bear",
+                "color": "grey"
+            }
+        ]
+    },
+    {
+        "id": "e042347e-a22a-41c9-9302-cc48cb1f2a8d",
+        "fullName": "Jonathan Corwin",
+        "ownerEmail": "Kaycee.Spinka9@gmail.com",
+        "address": "95533 Joel Island",
+        "city": "Ricechester",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "73135a6f-e4c1-4268-a233-5f778f8d2ea1",
+                "type": "insect",
+                "color": "lavender"
+            },
+            {
+                "id": "9a53ca29-9dce-465c-a5af-8d9a4d21ace5",
+                "type": "insect",
+                "color": "tan"
+            }
+        ]
+    },
+    {
+        "id": "d0223a14-e033-4c4f-9e95-aa433aea2563",
+        "fullName": "Ron Tillman-Kessler",
+        "ownerEmail": "Karen_Kessler@hotmail.com",
+        "address": "9766 State Street",
+        "city": "Clairestad",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2010,
+        "propertyAreaSquared": 850696,
+        "propertyAreaSquaredAsString": "850696",
+        "contractDate": "2023-12-26T02:18:42.445Z",
+        "animals": [
+            {
+                "id": "9b14bb12-6422-4e95-9863-a6b16027659f",
+                "type": "cow",
+                "color": "plum"
+            }
+        ]
+    },
+    {
+        "id": "a995a3fe-59ef-4f68-8bdd-3c77219ef6d6",
+        "fullName": "Claire Becker",
+        "ownerEmail": "Thurman82@yahoo.com",
+        "address": "515 Schuppe Track",
+        "city": "Lake Marielachester",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2011,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-04-25T23:32:49.559Z",
+        "animals": [
+            {
+                "id": "0346c8b0-454a-4049-b512-1992d009a898",
+                "type": "cow",
+                "color": "green"
+            },
+            {
+                "id": "9ee81b35-50ba-47cb-bd84-ff2f17169d26",
+                "type": "dog",
+                "color": "mint green"
+            },
+            {
+                "id": "3fd41b84-65a8-4bcd-99fc-cfaea2f728c1",
+                "type": "cat",
+                "color": "pink"
+            },
+            {
+                "id": "d5540ec7-26ab-4ad5-8d03-59d1ff210039",
+                "type": "cat",
+                "color": "pink"
+            }
+        ]
+    },
+    {
+        "id": "b3b55c0c-4e9e-40e8-bfd2-6475ee78baab",
+        "fullName": "Brandi Brakus",
+        "ownerEmail": "Liliane.Crona94@hotmail.com",
+        "address": "8179 Pennsylvania Avenue",
+        "city": "Fort Makaylaland",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2007,
+        "propertyAreaSquared": 478626,
+        "propertyAreaSquaredAsString": "478626",
+        "contractDate": "2023-04-08T20:16:39.615Z",
+        "animals": [
+            {
+                "id": "ecfa1a32-f68c-456c-bad2-b289203cc396",
+                "type": "fish",
+                "color": "salmon"
+            },
+            {
+                "id": "7ab86156-df85-4169-889b-5e072709403a",
+                "type": "cat",
+                "color": "lavender"
+            },
+            {
+                "id": "e58028d5-3f48-46eb-a72e-cdca0537904c",
+                "type": "cat",
+                "color": "plum"
+            }
+        ]
+    },
+    {
+        "id": "82c73bbe-0c14-485e-bdd5-a66c5b2c934a",
+        "fullName": "Terri Smitham",
+        "ownerEmail": "Matilde85@gmail.com",
+        "address": "598 Feil Mount",
+        "city": "Kutchton",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": []
+    },
+    {
+        "id": "4fc79d5f-f753-41d7-83c6-15d932a0f66f",
+        "fullName": "Maryann VonRueden",
+        "ownerEmail": "Jamil_Mraz42@gmail.com",
+        "address": "798 Eduardo Pass",
+        "city": "North Coleton",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2001,
+        "propertyAreaSquared": 632409,
+        "propertyAreaSquaredAsString": "632409",
+        "contractDate": "2023-05-09T23:01:56.853Z",
+        "animals": [
+            {
+                "id": "0dd55b8d-be83-4812-8c61-4b5833a151d9",
+                "type": "crocodilia",
+                "color": "teal"
+            },
+            {
+                "id": "35450bc2-ef1e-41de-bd80-b26ae194b077",
+                "type": "fish",
+                "color": "yellow"
+            }
+        ]
+    },
+    {
+        "id": "dc6517c2-c592-4513-9a66-d075ed6208ef",
+        "fullName": "Hannah Cremin",
+        "ownerEmail": "Javonte82@gmail.com",
+        "address": "686 Jast Plains",
+        "city": "Fort Calliemouth",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2000,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-09-26T04:11:12.620Z",
+        "animals": [
+            {
+                "id": "dc295f53-3233-4396-851b-983420353f66",
+                "type": "bird",
+                "color": "red"
+            },
+            {
+                "id": "49ce43d6-424e-4cba-ba3c-30330b9e46f7",
+                "type": "crocodilia",
+                "color": "olive"
+            }
+        ]
+    },
+    {
+        "id": "a7b5a7a7-3946-4848-9188-ff029da1a878",
+        "fullName": "Lauren Stracke",
+        "ownerEmail": "Reina_Hermiston@hotmail.com",
+        "address": "411 Cronin Village",
+        "city": "Brownville",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2010,
+        "propertyAreaSquared": 163518,
+        "propertyAreaSquaredAsString": "163518",
+        "contractDate": "2023-07-04T10:21:39.763Z",
+        "animals": [
+            {
+                "id": "5035e959-6d6b-4fbd-a848-6cb35d484ed7",
+                "type": "lion",
+                "color": "yellow"
+            },
+            {
+                "id": "3ee5e1a8-7ed8-4443-b55a-6ae83ae3c199",
+                "type": "horse",
+                "color": "magenta"
+            },
+            {
+                "id": "add50276-45da-4bc8-93e4-3aaf31a1b968",
+                "type": "snake",
+                "color": "pink"
+            }
+        ]
+    },
+    {
+        "id": "4e9a9330-bc93-4a1c-9027-7afa5f62770b",
+        "fullName": "Dr. Grady Dare",
+        "ownerEmail": "Arvid_Price@gmail.com",
+        "address": "53495 Breanne Streets",
+        "city": "Jaysonchester",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2013,
+        "propertyAreaSquared": 301503,
+        "propertyAreaSquaredAsString": "301503",
+        "contractDate": "2023-01-13T21:02:47.727Z",
+        "animals": [
+            {
+                "id": "9bf82033-2754-4eff-89a0-fed3f5a95812",
+                "type": "fish",
+                "color": "ivory"
+            }
+        ]
+    },
+    {
+        "id": "a34fc4ae-898d-4e3b-a0db-299f41c21c1d",
+        "fullName": "Leona Rowe",
+        "ownerEmail": "Annamarie_Sawayn-Lesch@yahoo.com",
+        "address": "198 Noemie Avenue",
+        "city": "North Ludwig",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2004,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-02-15T06:12:53.367Z",
+        "animals": [
+            {
+                "id": "38cec2a8-720d-49a9-8cb3-e0151513021c",
+                "type": "cetacean",
+                "color": "olive"
+            },
+            {
+                "id": "5d666875-b0fc-46d1-bbf1-f53cb7043817",
+                "type": "bird",
+                "color": "teal"
+            },
+            {
+                "id": "f58b9782-9ed2-447f-b1e0-8a873587518c",
+                "type": "crocodilia",
+                "color": "yellow"
+            }
+        ]
+    },
+    {
+        "id": "dab386e3-f21d-4f10-a88d-8f41f2c24dd5",
+        "fullName": "Lorenzo Morissette MD",
+        "ownerEmail": "Ismael_Rodriguez46@hotmail.com",
+        "address": "29169 Roman Way",
+        "city": "Norfolk",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "7ddb6b14-61b0-43a9-99d9-01388ac10878",
+                "type": "rabbit",
+                "color": "gold"
+            }
+        ]
+    },
+    {
+        "id": "427d630d-5782-4cd9-82ee-53b045480720",
+        "fullName": "Jamie Collier",
+        "ownerEmail": "Frederique.Russel@hotmail.com",
+        "address": "165 Stokes Greens",
+        "city": "Athens-Clarke County",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2011,
+        "propertyAreaSquared": 792792,
+        "propertyAreaSquaredAsString": "792792",
+        "contractDate": "2023-02-21T11:46:50.193Z",
+        "animals": []
+    },
+    {
+        "id": "5a52573e-c557-4bac-a921-b0ada75b330e",
+        "fullName": "Aubrey Wilderman",
+        "ownerEmail": "Guy62@hotmail.com",
+        "address": "968 Terry Parks",
+        "city": "East Kristianchester",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2012,
+        "propertyAreaSquared": 21478,
+        "propertyAreaSquaredAsString": "21478",
+        "contractDate": "2023-08-07T12:03:29.285Z",
+        "animals": [
+            {
+                "id": "ca89d8b3-fb9b-4f57-857c-704ac272e65d",
+                "type": "horse",
+                "color": "fuchsia"
+            }
+        ]
+    },
+    {
+        "id": "742aca5a-d8a5-42a3-b78e-b1db9df7d456",
+        "fullName": "Katrina Ruecker",
+        "ownerEmail": "Vidal.Lowe40@yahoo.com",
+        "address": "7660 W Pine Street",
+        "city": "Eugene",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2009,
+        "propertyAreaSquared": 880397,
+        "propertyAreaSquaredAsString": "880397",
+        "contractDate": "2023-11-17T02:11:16.680Z",
+        "animals": [
+            {
+                "id": "81b12141-4c24-458f-b72b-90292540dca3",
+                "type": "lion",
+                "color": "lavender"
+            },
+            {
+                "id": "8bef6902-726e-40e2-90ae-9ab8eb6bed4c",
+                "type": "crocodilia",
+                "color": "turquoise"
+            },
+            {
+                "id": "ecdb4d90-4d93-4147-90c3-6351e5e31151",
+                "type": "rabbit",
+                "color": "ivory"
+            },
+            {
+                "id": "55decdc4-6f75-4a0a-b5eb-061f6c4e32fa",
+                "type": "cat",
+                "color": "indigo"
+            }
+        ]
+    },
+    {
+        "id": "cae90c7a-de97-4d48-8b77-cbba402eed38",
+        "fullName": "Marty Olson",
+        "ownerEmail": "Noah.Rosenbaum@yahoo.com",
+        "address": "6270 E 9th Street",
+        "city": "Fort Leann",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "fc1370a4-df2d-4d76-b6c9-38a194934be6",
+                "type": "rabbit",
+                "color": "turquoise"
+            },
+            {
+                "id": "fbe1adce-6ebc-417b-b258-bbc5c402beb0",
+                "type": "crocodilia",
+                "color": "violet"
+            }
+        ]
+    },
+    {
+        "id": "786dd745-e143-40cd-8af6-b3cf4894c062",
+        "fullName": "Gregory Kshlerin",
+        "ownerEmail": "Floyd61@yahoo.com",
+        "address": "418 Lakin Extensions",
+        "city": "Rosenbaumbury",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2003,
+        "propertyAreaSquared": 15261,
+        "propertyAreaSquaredAsString": "15261",
+        "contractDate": "2023-11-27T17:56:55.639Z",
+        "animals": []
+    },
+    {
+        "id": "2ff57d75-a7be-4716-b71c-9858ea56af2d",
+        "fullName": "Julio Prosacco",
+        "ownerEmail": "Peyton_Thiel66@yahoo.com",
+        "address": "37141 Rhiannon Cape",
+        "city": "Lake Ansleyfield",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2000,
+        "propertyAreaSquared": 680521,
+        "propertyAreaSquaredAsString": "680521",
+        "contractDate": "2023-11-11T00:04:18.103Z",
+        "animals": [
+            {
+                "id": "a1d6c11d-6f36-4b72-b2c2-e9c40f01f2d3",
+                "type": "horse",
+                "color": "gold"
+            },
+            {
+                "id": "85c8c512-a69d-441f-9295-0476b26d673a",
+                "type": "bear",
+                "color": "lime"
+            },
+            {
+                "id": "25c1d3f4-2a08-45e7-b6e2-c31db7f6a482",
+                "type": "cow",
+                "color": "azure"
+            },
+            {
+                "id": "0f27ad21-f53c-4484-ab94-d1a935b8ade0",
+                "type": "cat",
+                "color": "purple"
+            }
+        ]
+    },
+    {
+        "id": "72b0e04a-0709-446f-b09b-9c23384c328f",
+        "fullName": "Donnie Monahan",
+        "ownerEmail": "Benjamin.Koch@yahoo.com",
+        "address": "22369 11th Street",
+        "city": "Florence-Graham",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2003,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-09-04T20:01:04.785Z",
+        "animals": [
+            {
+                "id": "9453ca34-e707-4347-a713-f6b5cac522e3",
+                "type": "lion",
+                "color": "black"
+            }
+        ]
+    },
+    {
+        "id": "9b9448d4-a622-4bab-b17e-c10f9329ec65",
+        "fullName": "Trevor Moore",
+        "ownerEmail": "Dorris10@hotmail.com",
+        "address": "822 Collins Ville",
+        "city": "Tyreeworth",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2010,
+        "propertyAreaSquared": 734536,
+        "propertyAreaSquaredAsString": "734536",
+        "contractDate": "2023-11-22T15:23:49.017Z",
+        "animals": []
+    },
+    {
+        "id": "49ecd120-0681-4080-b9b0-1f6e12b375ef",
+        "fullName": "Yolanda Douglas-Smith",
+        "ownerEmail": "Eusebio.Bernier57@yahoo.com",
+        "address": "29759 N Central Avenue",
+        "city": "South Allanshire",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2005,
+        "propertyAreaSquared": 383806,
+        "propertyAreaSquaredAsString": "383806",
+        "contractDate": "2023-10-03T06:34:30.098Z",
+        "animals": [
+            {
+                "id": "e64b245e-e4a7-4fe1-bc63-de983798e0a4",
+                "type": "insect",
+                "color": "mint green"
+            },
+            {
+                "id": "3454357c-b4dd-4fc2-a13a-1c29dd9e1f2b",
+                "type": "horse",
+                "color": "tan"
+            },
+            {
+                "id": "4700377a-04ba-489b-912f-a7ef49f2a250",
+                "type": "bear",
+                "color": "black"
+            }
+        ]
+    },
+    {
+        "id": "7034f427-0ff0-4e87-9e31-b7a1e6ba2c1c",
+        "fullName": "Teri Rosenbaum",
+        "ownerEmail": "Lindsay.Auer@hotmail.com",
+        "address": "91416 W Broad Street",
+        "city": "Shannonfurt",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2015,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-03-31T17:20:13.223Z",
+        "animals": []
+    },
+    {
+        "id": "6218671d-f36b-47e4-ba21-be50c6c68fb4",
+        "fullName": "Jim Marvin V",
+        "ownerEmail": "Moriah.Schinner@gmail.com",
+        "address": "313 Angelica Ports",
+        "city": "New Jasen",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "c1681d97-b99a-4846-849d-0967c05fca4a",
+                "type": "bird",
+                "color": "ivory"
+            },
+            {
+                "id": "1db67fc3-7a84-4934-bdff-2619cd98a701",
+                "type": "rabbit",
+                "color": "maroon"
+            },
+            {
+                "id": "f61a11e1-bff0-478a-81eb-de2a490f7730",
+                "type": "cetacean",
+                "color": "plum"
+            }
+        ]
+    },
+    {
+        "id": "dde272c3-8a1c-4090-9a47-1cd70d3d7848",
+        "fullName": "Dr. Joshua Schmidt",
+        "ownerEmail": "Vance.Schaefer@gmail.com",
+        "address": "2194 Edwina Passage",
+        "city": "East Hughville",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "9605c374-4526-49e3-89da-07c397c43e9e",
+                "type": "snake",
+                "color": "plum"
+            }
+        ]
+    },
+    {
+        "id": "8eb8f977-6a19-4b24-8dd3-e32a16fbaa22",
+        "fullName": "Mercedes Padberg",
+        "ownerEmail": "Yessenia_Hackett@yahoo.com",
+        "address": "97736 Cole Inlet",
+        "city": "South Jaren",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "42c1abe6-16f7-4b6e-8be9-7c991cfa2a4e",
+                "type": "fish",
+                "color": "white"
+            },
+            {
+                "id": "de2836a6-342b-4a8b-bdb5-4da7ed278078",
+                "type": "bear",
+                "color": "teal"
+            }
+        ]
+    },
+    {
+        "id": "f99009ed-0736-40c9-928f-6d1c08eb98e6",
+        "fullName": "Andre Purdy",
+        "ownerEmail": "Eliezer_Rippin64@hotmail.com",
+        "address": "5722 S 6th Street",
+        "city": "Fort Providenci",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "b3f6f3c0-cae0-48a7-8612-3c907d19da7b",
+                "type": "insect",
+                "color": "blue"
+            },
+            {
+                "id": "0d6a0287-23bd-4f77-adc0-2734eeabf639",
+                "type": "lion",
+                "color": "tan"
+            },
+            {
+                "id": "2dd28b37-5a19-49fc-9237-89c5bc498150",
+                "type": "cat",
+                "color": "green"
+            }
+        ]
+    },
+    {
+        "id": "f063a5eb-41a8-49cc-b330-cc235ae66b5f",
+        "fullName": "Lorena Schroeder PhD",
+        "ownerEmail": "Estella_Hoeger@yahoo.com",
+        "address": "476 Kent Road",
+        "city": "Fort Louvenia",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": []
+    },
+    {
+        "id": "636fbf60-0317-4ae8-82a2-96b9dab2c394",
+        "fullName": "Mario Kunze",
+        "ownerEmail": "Kaylie_McLaughlin@gmail.com",
+        "address": "779 Grove Street",
+        "city": "East Katrine",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2012,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-12-21T22:52:19.495Z",
+        "animals": []
+    },
+    {
+        "id": "9a97d917-4b7c-47ec-a396-ca711a4aca6c",
+        "fullName": "Victor Tromp",
+        "ownerEmail": "Sincere.Labadie@gmail.com",
+        "address": "4939 Clara Canyon",
+        "city": "Bennettmouth",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2006,
+        "propertyAreaSquared": 682616,
+        "propertyAreaSquaredAsString": "682616",
+        "contractDate": "2023-11-26T11:25:55.997Z",
+        "animals": [
+            {
+                "id": "0e2ddd12-2c0d-497f-b659-0b2388ed22be",
+                "type": "snake",
+                "color": "teal"
+            },
+            {
+                "id": "e7938e47-aab4-469d-84ec-8a0d14ac74a8",
+                "type": "fish",
+                "color": "yellow"
+            },
+            {
+                "id": "1164be97-00bb-48e4-bc4d-f859717ae726",
+                "type": "bird",
+                "color": "orchid"
+            },
+            {
+                "id": "fa116293-9501-416e-8e49-c1af44f583c4",
+                "type": "snake",
+                "color": "white"
+            }
+        ]
+    },
+    {
+        "id": "26b060e8-d8b5-4442-b207-d1175d970ecd",
+        "fullName": "Camille Dickens",
+        "ownerEmail": "Melody_Wehner2@hotmail.com",
+        "address": "263 Shields Landing",
+        "city": "Binston",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "4e86c61a-f38d-40d2-adab-e701d30b8f9f",
+                "type": "bear",
+                "color": "black"
+            },
+            {
+                "id": "4a96a4a2-9d57-45b4-ac38-34026594421d",
+                "type": "crocodilia",
+                "color": "blue"
+            },
+            {
+                "id": "f5e2f779-d299-4972-956b-798095285109",
+                "type": "snake",
+                "color": "plum"
+            },
+            {
+                "id": "0b7583a1-0c4a-4b7f-b369-4715cb1dfcfe",
+                "type": "horse",
+                "color": "cyan"
+            }
+        ]
+    },
+    {
+        "id": "9ecb3cf3-77af-4f27-b444-a9fd38fb7165",
+        "fullName": "Myrtle Sanford",
+        "ownerEmail": "Justyn76@yahoo.com",
+        "address": "15350 Emmie Groves",
+        "city": "South Athenaside",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2004,
+        "propertyAreaSquared": 680077,
+        "propertyAreaSquaredAsString": "680077",
+        "contractDate": "2023-08-29T09:17:44.103Z",
+        "animals": [
+            {
+                "id": "35174796-01ba-4217-ab60-99212f27d373",
+                "type": "crocodilia",
+                "color": "indigo"
+            }
+        ]
+    },
+    {
+        "id": "c763401a-309e-4ba7-aafc-aeee87276885",
+        "fullName": "Mrs. Monica Haag",
+        "ownerEmail": "Filomena.VonRueden@hotmail.com",
+        "address": "2233 Jaquan Circle",
+        "city": "Stokeston",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2000,
+        "propertyAreaSquared": 341806,
+        "propertyAreaSquaredAsString": "341806",
+        "contractDate": "2023-03-18T19:44:51.828Z",
+        "animals": [
+            {
+                "id": "e1520aeb-4196-4973-b0dd-126b5b6e826e",
+                "type": "cat",
+                "color": "lime"
+            },
+            {
+                "id": "b5f8c462-08e3-4adc-a2de-f0461b178302",
+                "type": "fish",
+                "color": "green"
+            },
+            {
+                "id": "d9d1defe-ac7b-4d9b-9e2f-2b8c8ac49cac",
+                "type": "cetacean",
+                "color": "olive"
+            },
+            {
+                "id": "63a8047c-550a-4fdb-ab11-4001a8dd2e1c",
+                "type": "crocodilia",
+                "color": "white"
+            }
+        ]
+    },
+    {
+        "id": "0cf4f69f-4756-48dd-84fa-907fff580b01",
+        "fullName": "Gilberto Volkman",
+        "ownerEmail": "Kevin27@yahoo.com",
+        "address": "52264 S Market Street",
+        "city": "Kacibury",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2005,
+        "propertyAreaSquared": 385941,
+        "propertyAreaSquaredAsString": "385941",
+        "contractDate": "2023-11-22T02:29:55.910Z",
+        "animals": [
+            {
+                "id": "73bf1cf1-505b-4d96-bc27-4e30113e2b24",
+                "type": "dog",
+                "color": "mint green"
+            },
+            {
+                "id": "72c22d64-600e-492f-8360-34cd654c35de",
+                "type": "crocodilia",
+                "color": "orange"
+            }
+        ]
+    },
+    {
+        "id": "611ebab3-8746-4334-84cd-c491ec7deb07",
+        "fullName": "Lynn Huel",
+        "ownerEmail": "Marjolaine.Reilly@hotmail.com",
+        "address": "4230 Church Close",
+        "city": "Clearwater",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "17b412a1-fee2-44a2-912d-38b58085496c",
+                "type": "snake",
+                "color": "turquoise"
+            },
+            {
+                "id": "bd6c6dcd-26c2-42d9-8e9c-7457f6c485aa",
+                "type": "bird",
+                "color": "purple"
+            },
+            {
+                "id": "3e5232f3-35cb-4c2b-bfe5-a7507ddf686a",
+                "type": "cetacean",
+                "color": "blue"
+            }
+        ]
+    },
+    {
+        "id": "95b3dfda-02d7-4105-b252-959566dce5e8",
+        "fullName": "Randall Stracke",
+        "ownerEmail": "Cecelia66@yahoo.com",
+        "address": "684 Chestnut Street",
+        "city": "Bethelborough",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2005,
+        "propertyAreaSquared": 107762,
+        "propertyAreaSquaredAsString": "107762",
+        "contractDate": "2023-12-20T02:45:43.764Z",
+        "animals": [
+            {
+                "id": "170c26c4-ab44-4ec4-9947-58d2398f2502",
+                "type": "bear",
+                "color": "pink"
+            },
+            {
+                "id": "0f6a5894-1680-41f2-bc09-e8783fff8ff5",
+                "type": "horse",
+                "color": "mint green"
+            },
+            {
+                "id": "2eac8f93-1a85-4025-aef7-81b02de519b6",
+                "type": "crocodilia",
+                "color": "white"
+            },
+            {
+                "id": "30c08379-c367-4aa7-86bc-72a1c0a91494",
+                "type": "crocodilia",
+                "color": "orange"
+            }
+        ]
+    },
+    {
+        "id": "0096478a-138b-43f7-b06c-452270ce78cc",
+        "fullName": "Lance Barton",
+        "ownerEmail": "Leonard_Jerde73@gmail.com",
+        "address": "749 Mandy Point",
+        "city": "North Zoilaberg",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2015,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-10-15T06:33:44.293Z",
+        "animals": [
+            {
+                "id": "ff2b4584-085d-4c06-bbd0-0b9c54891f52",
+                "type": "cetacean",
+                "color": "orchid"
+            },
+            {
+                "id": "49d57e01-3458-41db-bf45-d1fbaefbea9b",
+                "type": "crocodilia",
+                "color": "ivory"
+            }
+        ]
+    },
+    {
+        "id": "48f8b8f3-81f4-4140-848e-aac2591d8d80",
+        "fullName": "Samantha Tremblay",
+        "ownerEmail": "Cristobal.Mertz@yahoo.com",
+        "address": "6466 Christina Shoals",
+        "city": "Orland Park",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2008,
+        "propertyAreaSquared": 747354,
+        "propertyAreaSquaredAsString": "747354",
+        "contractDate": "2023-11-08T02:08:36.944Z",
+        "animals": [
+            {
+                "id": "7fb78427-6918-49e2-8010-bb4e73e3e28d",
+                "type": "cow",
+                "color": "black"
+            },
+            {
+                "id": "950056de-92a2-441f-8f9d-51ff51527a87",
+                "type": "rabbit",
+                "color": "silver"
+            },
+            {
+                "id": "b6f2d430-99c7-45fe-a52f-d2efd9b59c91",
+                "type": "cat",
+                "color": "pink"
+            },
+            {
+                "id": "972a134f-2a21-48af-b512-7f1a531152ac",
+                "type": "dog",
+                "color": "orchid"
+            }
+        ]
+    },
+    {
+        "id": "27392b57-be1b-4e72-92a8-56af2cceaa9d",
+        "fullName": "Miss Eileen Huels Jr.",
+        "ownerEmail": "Estel.Greenfelder@yahoo.com",
+        "address": "235 St George's Road",
+        "city": "Earnestineside",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2000,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-09-01T20:25:07.224Z",
+        "animals": [
+            {
+                "id": "bea994b6-3689-48cb-b12a-18bc96ab8844",
+                "type": "bird",
+                "color": "magenta"
+            }
+        ]
+    },
+    {
+        "id": "d5263f1f-cf10-4153-bb4a-d1913adfe81b",
+        "fullName": "Julio White",
+        "ownerEmail": "Herminio.Halvorson@gmail.com",
+        "address": "19419 Castle Street",
+        "city": "Susiestead",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2008,
+        "propertyAreaSquared": 787734,
+        "propertyAreaSquaredAsString": "787734",
+        "contractDate": "2023-05-13T17:49:09.209Z",
+        "animals": [
+            {
+                "id": "a1c089a5-ed04-4ce3-b5fd-d4e91f0b8b23",
+                "type": "cow",
+                "color": "violet"
+            },
+            {
+                "id": "f08d4512-f71b-48d2-9bef-66a554ca31e6",
+                "type": "crocodilia",
+                "color": "gold"
+            }
+        ]
+    },
+    {
+        "id": "c63e4be5-0cc1-40e7-9998-eb33727a9bba",
+        "fullName": "Byron Miller",
+        "ownerEmail": "Johnnie_Brown-Stehr@hotmail.com",
+        "address": "246 Albert Road",
+        "city": "Port Archibaldtown",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "7f471cc6-4611-494d-8c49-268c143fc65c",
+                "type": "cow",
+                "color": "blue"
+            }
+        ]
+    },
+    {
+        "id": "603e5b09-632f-45a0-892d-cdab1afd3c49",
+        "fullName": "Miss Guadalupe Kemmer",
+        "ownerEmail": "Werner54@yahoo.com",
+        "address": "714 Jaylon Land",
+        "city": "Port Rogelio",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2011,
+        "propertyAreaSquared": 671007,
+        "propertyAreaSquaredAsString": "671007",
+        "contractDate": "2023-06-30T20:33:44.563Z",
+        "animals": [
+            {
+                "id": "60454501-41dd-401c-bbd6-f5a43c00c2e6",
+                "type": "rabbit",
+                "color": "indigo"
+            }
+        ]
+    },
+    {
+        "id": "c8bb75f5-3e9f-43fb-af19-812d3142cc5e",
+        "fullName": "Ryan Jaskolski",
+        "ownerEmail": "Aglae.Bernhard@gmail.com",
+        "address": "4110 Lauryn Pike",
+        "city": "Starkton",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "f174a757-0d64-4743-9fee-792c49089f4b",
+                "type": "horse",
+                "color": "red"
+            },
+            {
+                "id": "98589da7-722c-4643-bf3d-1bdfa0564e7d",
+                "type": "horse",
+                "color": "cyan"
+            },
+            {
+                "id": "7e600cd2-a7db-4eb4-be64-c55706634cf7",
+                "type": "horse",
+                "color": "tan"
+            }
+        ]
+    },
+    {
+        "id": "0b65d8e3-f181-421f-a10b-1049a2dc2816",
+        "fullName": "Alan Collins",
+        "ownerEmail": "Cecelia_Weber@yahoo.com",
+        "address": "903 Douglas Flat",
+        "city": "Greeley",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "22b0e839-c847-421a-92d9-53f12b944cbd",
+                "type": "bear",
+                "color": "mint green"
+            },
+            {
+                "id": "33c592e5-7cd0-47f9-bd4c-0563a7a89b69",
+                "type": "snake",
+                "color": "violet"
+            }
+        ]
+    },
+    {
+        "id": "2e070059-482c-43b6-a555-5da9aa2107ce",
+        "fullName": "Rodney Casper",
+        "ownerEmail": "Kassandra_Rogahn@yahoo.com",
+        "address": "7226 Schultz Prairie",
+        "city": "Port Dorothy",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "22908022-2ee5-4251-891c-9bb01671d065",
+                "type": "bear",
+                "color": "magenta"
+            }
+        ]
+    },
+    {
+        "id": "d85089a6-a4f4-4b92-8f51-8af33692f5d7",
+        "fullName": "Percy Hirthe",
+        "ownerEmail": "Jamel.Feeney24@yahoo.com",
+        "address": "34274 Blair Ridge",
+        "city": "Neomafort",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 1998,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-12-08T10:39:25.430Z",
+        "animals": [
+            {
+                "id": "8587274d-7343-40ee-a5c9-f3c54273b781",
+                "type": "snake",
+                "color": "teal"
+            },
+            {
+                "id": "a242a2cd-5440-446c-b49b-5da194a747e0",
+                "type": "dog",
+                "color": "cyan"
+            },
+            {
+                "id": "66068658-7ac2-47ab-9ee7-18a94440a94f",
+                "type": "cow",
+                "color": "pink"
+            }
+        ]
+    },
+    {
+        "id": "4d679711-e148-425e-9b18-a5c2caeb9835",
+        "fullName": "Mr. Tommie Rodriguez",
+        "ownerEmail": "Margarett19@yahoo.com",
+        "address": "26812 Hudson Brooks",
+        "city": "New Carolanne",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2013,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-05-13T10:00:06.421Z",
+        "animals": [
+            {
+                "id": "2daa48f7-0bcd-4bdd-aed3-2754abae802b",
+                "type": "fish",
+                "color": "tan"
+            },
+            {
+                "id": "4d8c4398-4acd-4337-818a-dd45b0b6b77e",
+                "type": "crocodilia",
+                "color": "orchid"
+            },
+            {
+                "id": "759ff763-c42f-4f07-a484-8263a658f1dd",
+                "type": "horse",
+                "color": "violet"
+            },
+            {
+                "id": "70131c93-848b-4f57-a418-321df055e278",
+                "type": "dog",
+                "color": "azure"
+            }
+        ]
+    },
+    {
+        "id": "4a7629a7-28fb-4ca1-a244-cc913d461ff2",
+        "fullName": "Jean Lesch",
+        "ownerEmail": "Jeanie_Baumbach99@gmail.com",
+        "address": "81635 Stefan Viaduct",
+        "city": "New Alvera",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 1997,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-08-03T13:48:50.899Z",
+        "animals": [
+            {
+                "id": "0c0fd9fe-8fbe-43dd-b4f1-24b51ae1131b",
+                "type": "cetacean",
+                "color": "mint green"
+            },
+            {
+                "id": "35d970b6-82eb-4d3b-9a7d-ea89ff7de2aa",
+                "type": "cow",
+                "color": "turquoise"
+            }
+        ]
+    },
+    {
+        "id": "b66a2f2f-3d88-489a-8c57-0a6f58f49711",
+        "fullName": "Whitney Runolfsson",
+        "ownerEmail": "Roxane_Borer@gmail.com",
+        "address": "173 Oberbrunner Spurs",
+        "city": "Lakinmouth",
+        "hasProperty": true,
+        "propertyType": "Apartment",
+        "builtInYear": 2010,
+        "propertyAreaSquared": 858179,
+        "propertyAreaSquaredAsString": "858179",
+        "contractDate": "2023-02-11T06:15:13.751Z",
+        "animals": [
+            {
+                "id": "59f59f1e-a67e-4c62-b50a-7847a96482f9",
+                "type": "horse",
+                "color": "maroon"
+            },
+            {
+                "id": "7fefdad4-c495-47c7-8825-56a6e40d5156",
+                "type": "fish",
+                "color": "purple"
+            },
+            {
+                "id": "85f91158-805e-444d-922a-397264cca67b",
+                "type": "snake",
+                "color": "olive"
+            },
+            {
+                "id": "0c7c7edb-536f-4f37-a1b0-a59cda442ebf",
+                "type": "cow",
+                "color": "turquoise"
+            }
+        ]
+    },
+    {
+        "id": "6aab4c40-d0b9-4303-ba2a-1bb3fca72497",
+        "fullName": "Geneva Kling",
+        "ownerEmail": "Maia_Harber48@yahoo.com",
+        "address": "268 Maryse Cliffs",
+        "city": "Port Alvina",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": []
+    },
+    {
+        "id": "c22ccf70-1bad-4706-b8a7-f09b000848b1",
+        "fullName": "Miss Margarita Bashirian",
+        "ownerEmail": "Cedrick.Marvin@hotmail.com",
+        "address": "521 Conn Pines",
+        "city": "Hildaburgh",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "6124c506-f051-4253-8347-e6dc50b844ad",
+                "type": "cat",
+                "color": "red"
+            },
+            {
+                "id": "c2810528-48c2-4993-9c11-4488e3cb1bc9",
+                "type": "fish",
+                "color": "green"
+            },
+            {
+                "id": "93e880d9-cc0f-4788-bfd8-891f18c30b6e",
+                "type": "fish",
+                "color": "violet"
+            }
+        ]
+    },
+    {
+        "id": "9bc6c3c2-6fab-45a4-ad03-9745303bdb54",
+        "fullName": "Stephanie Schneider",
+        "ownerEmail": "Arjun_Braun@hotmail.com",
+        "address": "23182 Williamson Brooks",
+        "city": "Summerville",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": []
+    },
+    {
+        "id": "5b345783-1a04-4936-9eaa-c837f57e16f6",
+        "fullName": "Lee Herman",
+        "ownerEmail": "Alexandra.Cartwright@hotmail.com",
+        "address": "63148 Ernser Flat",
+        "city": "Lake Erikachester",
+        "hasProperty": true,
+        "propertyType": "Flat",
+        "builtInYear": 2000,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": "2023-12-27T09:26:35.731Z",
+        "animals": [
+            {
+                "id": "83fcb545-c73d-43f9-bcb1-59ad82777618",
+                "type": "crocodilia",
+                "color": "ivory"
+            }
+        ]
+    },
+    {
+        "id": "8ae39ea9-866a-4287-acac-0bde84e5f1dc",
+        "fullName": "Todd Morissette",
+        "ownerEmail": "Heidi88@yahoo.com",
+        "address": "34582 Rowe Forest",
+        "city": "Aleneberg",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "f8b12cb4-e91d-4545-9187-9744bf9cc258",
+                "type": "insect",
+                "color": "salmon"
+            }
+        ]
+    },
+    {
+        "id": "f53b6baf-ea23-447b-b35c-2dcbc859c9a3",
+        "fullName": "Glen Christiansen",
+        "ownerEmail": "Carlotta.Russel52@gmail.com",
+        "address": "999 N Court Street",
+        "city": "Pattieworth",
+        "hasProperty": false,
+        "propertyType": null,
+        "builtInYear": null,
+        "propertyAreaSquared": null,
+        "propertyAreaSquaredAsString": null,
+        "contractDate": null,
+        "animals": [
+            {
+                "id": "0566dd22-f666-4b4d-92c5-208769bd4be6",
+                "type": "horse",
+                "color": "maroon"
+            },
+            {
+                "id": "44c33367-71cc-47d8-b724-c02b06bf968d",
+                "type": "lion",
+                "color": "black"
+            },
+            {
+                "id": "1016007b-d6e3-48c6-a3c7-bb4a222428ea",
+                "type": "cat",
+                "color": "cyan"
+            },
+            {
+                "id": "049dacc2-f0ae-4536-9b45-d3583a96a678",
+                "type": "dog",
+                "color": "green"
+            }
+        ]
     }
 ]
