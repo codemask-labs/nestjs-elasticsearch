@@ -13,7 +13,6 @@
 ### Bug Fixes
 
 * syntax when installing the package with npm ([#170](https://github.com/codemask-labs/nestjs-elasticsearch/issues/170)) ([147b7b1](https://github.com/codemask-labs/nestjs-elasticsearch/commit/147b7b11daa56bafadc86cecff0a017b2c7f73f1))
-* update response for missing value aggregation ([c63e4d6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/c63e4d6b33708d583451cca81db769f04d48c7f6))
 
 * yarn.lock ([52042a9](https://github.com/codemask-labs/nestjs-elasticsearch/commit/52042a9cf6f2f67d563c891795e3191356d9e30b))
 
@@ -46,6 +45,7 @@
 
 ### Bug Fixes
 
+* update response for missing value aggregation ([c63e4d6](https://github.com/codemask-labs/nestjs-elasticsearch/commit/c63e4d6b33708d583451cca81db769f04d48c7f6))
 * release-it ([e5a9d8a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/e5a9d8a46d1e813f64eefc43da4dc6f0f56da9ab))
 ## [1.19.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.18.0...v1.19.0) (2024-08-09)
 
