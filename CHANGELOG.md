@@ -1,5 +1,12 @@
 
 
+## [1.21.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.20.0...v1.21.0) (2024-08-23)
+
+
+### Features
+
+* add nested field ([ad7c91d](https://github.com/codemask-labs/nestjs-elasticsearch/commit/ad7c91d39ed3a7217c62ede80ee87620e5b578ee))
+
 ## [1.20.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.19.0...v1.20.0) (2024-08-22)
 
 
