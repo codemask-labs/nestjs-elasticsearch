@@ -28,11 +28,11 @@ describe('getTermsAggregation', () => {
     })
 
     it('accepts only schema field with default size and supports the nested array of objects', () => {
-        const query = getTermsAggregation<HomeDocument>('animals.color.keyword')
+        const query = getTermsAggregation<HomeDocument>('animals.type.keyword')
 
         expect(query).toEqual({
             terms: {
-                field: 'animals.color.keyword'
+                field: 'animals.type.keyword'
             }
         })
     })

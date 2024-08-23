@@ -25,6 +25,16 @@ describe('getSumAggregation', () => {
         })
     })
 
+    it('accepts only schema numeric field and supports the nested array of objects', () => {
+        const query = getSumAggregation<HomeDocument>('animals.year')
+
+        expect(query).toEqual({
+            sum: {
+                field: 'animals.year'
+            }
+        })
+    })
+
     it('should query elasticsearch for sum aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
