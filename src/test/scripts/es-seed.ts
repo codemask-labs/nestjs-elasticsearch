@@ -2,7 +2,6 @@ import { Client } from '@elastic/elasticsearch'
 import { join } from 'path'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { readFile } from 'fs/promises'
-import { DOCUMENTS_COUNT } from './generate-random-data'
 
 const index = 'homes'
 const client = new Client({
@@ -18,7 +17,7 @@ readFile(path)
     .then((data: any) => data.flatMap((record: any) => [{ index: { _index: index } }, record]))
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .then(async (records: Array<any>) => {
-        const { body: indexExists } = await client.indices.exists({ index })
+        const indexExists = await client.indices.exists({ index })
 
         if (indexExists) {
             await client.indices.delete({ index })
@@ -39,7 +38,8 @@ readFile(path)
 
         await client.bulk({ body: records })
 
-        console.log('Seeded `homes` with:', DOCUMENTS_COUNT, 'results.')
+        // note: on line 17 index is added to each record, which means there are twice as many results - therefore the length is divided by 2
+        console.log('\x1b[32m', `Seeded 'homes' with: ${records.length / 2} results.`)
     })
     .catch(error => {
         throw new Error(`Failed to load homes seed: ${error.message}`)
