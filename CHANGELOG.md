@@ -1,5 +1,12 @@
 
 
+## [1.22.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.21.0...v1.22.0) (2024-08-23)
+
+
+### Features
+
+* add nested numeric key ([879e4d8](https://github.com/codemask-labs/nestjs-elasticsearch/commit/879e4d86586fe9078554780bfae650da12001f6b))
+
 ## [1.21.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.20.0...v1.21.0) (2024-08-23)
 
 
