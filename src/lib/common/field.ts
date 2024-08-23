@@ -29,18 +29,18 @@ type NumericKey<TDocument extends Document> = {
     [K in keyof TDocument]: Exclude<TDocument[K], undefined> extends number | null ? K : never
 }[keyof TDocument]
 
-type NestedNNumericKey<T> = {
+type NestedNumericKey<T> = {
     [K in ObjectKeys<T>]: T[K] extends Array<infer U>
         ? U extends object
-            ? `${K}.${NestedNNumericKey<U>}`
+            ? `${K}.${NestedNumericKey<U>}`
             : U extends number | null
               ? `${K}`
               : never
         : T[K] extends object
-          ? `${K}.${NestedNNumericKey<T[K]>}`
+          ? `${K}.${NestedNumericKey<T[K]>}`
           : T[K] extends number | null
             ? `${K}`
             : never
 }[ObjectKeys<T>]
 
-export type NumericField<TDocument extends Document> = NumericKey<TDocument> | NestedNNumericKey<TDocument>
+export type NumericField<TDocument extends Document> = NumericKey<TDocument> | NestedNumericKey<TDocument>
