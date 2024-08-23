@@ -6,6 +6,7 @@ import { ElasticsearchService } from 'module/elasticsearch.service'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { getTermsAggregation } from './get-terms'
 import { ResponseError } from 'lib/common'
+import { getNestedAggregation } from './get-nested'
 
 describe('getTermsAggregation', () => {
     const { app } = setupNestApplication({
@@ -22,6 +23,16 @@ describe('getTermsAggregation', () => {
         expect(query).toEqual({
             terms: {
                 field: 'address.keyword'
+            }
+        })
+    })
+
+    it('accepts only schema field with default size and supports the nested array of objects', () => {
+        const query = getTermsAggregation<HomeDocument>('animals.type.keyword')
+
+        expect(query).toEqual({
+            terms: {
+                field: 'animals.type.keyword'
             }
         })
     })
@@ -81,6 +92,31 @@ describe('getTermsAggregation', () => {
         })
 
         result.aggregations.result.buckets.forEach(bucket => {
+            expect(bucket).toStrictEqual({
+                doc_count: expect.any(Number),
+                key: expect.any(String)
+            })
+        })
+    })
+
+    it('queries elasticsearch for terms aggregation and supports the nested array of objects', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const result = await service.search(HomeDocument, {
+            size: 0,
+            aggregations: {
+                nestedAggregation: {
+                    ...getNestedAggregation('animals'),
+                    aggregations: {
+                        result: getTermsAggregation('animals.type.keyword')
+                    }
+                }
+            }
+        })
+
+        expect(result.aggregations.nestedAggregation.doc_count).not.toEqual(0)
+        expect(result.aggregations.nestedAggregation.result.buckets).not.toEqual(0)
+        result.aggregations.nestedAggregation.result.buckets.forEach(bucket => {
             expect(bucket).toStrictEqual({
                 doc_count: expect.any(Number),
                 key: expect.any(String)

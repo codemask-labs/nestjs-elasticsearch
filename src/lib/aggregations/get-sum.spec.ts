@@ -5,6 +5,7 @@ import { setupNestApplication } from 'test/toolkit'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { getSumAggregation } from './get-sum'
+import { getNestedAggregation } from './get-nested'
 
 describe('getSumAggregation', () => {
     const { app } = setupNestApplication({
@@ -23,6 +24,35 @@ describe('getSumAggregation', () => {
                 field: 'propertyAreaSquared'
             }
         })
+    })
+
+    it('accepts only schema numeric field and supports the nested array of objects', () => {
+        const query = getSumAggregation<HomeDocument>('animals.year')
+
+        expect(query).toEqual({
+            sum: {
+                field: 'animals.year'
+            }
+        })
+    })
+
+    it('queries elasticsearch for terms aggregation and supports the nested array of objects', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const result = await service.search(HomeDocument, {
+            size: 0,
+            aggregations: {
+                nestedAggregation: {
+                    ...getNestedAggregation('animals'),
+                    aggregations: {
+                        result: getSumAggregation('animals.year')
+                    }
+                }
+            }
+        })
+
+        expect(result.aggregations.nestedAggregation.doc_count).not.toEqual(0)
+        expect(result.aggregations.nestedAggregation.result.value).not.toEqual(0)
     })
 
     it('should query elasticsearch for sum aggregation', async () => {

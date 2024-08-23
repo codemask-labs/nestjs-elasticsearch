@@ -39,7 +39,7 @@ readFile(path)
         await client.bulk({ body: records })
 
         // note: on line 17 index is added to each record, which means there are twice as many results - therefore the length is divided by 2
-        console.log('Seeded `homes` with:', records.length / 2, 'results.')
+        console.log('\x1b[32m', `Seeded 'homes' index, with ${records.length / 2} records.`)
     })
     .catch(error => {
         throw new Error(`Failed to load homes seed: ${error.message}`)

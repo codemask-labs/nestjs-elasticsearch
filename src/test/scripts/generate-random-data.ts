@@ -12,7 +12,7 @@ const getAnimals = () => {
     return animals.map(() => ({
         id: faker.string.uuid(),
         type: faker.animal.type(),
-        color: faker.color.human()
+        year: Math.floor(Math.random() * 15) + 1
     }))
 }
 
