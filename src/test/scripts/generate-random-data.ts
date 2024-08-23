@@ -7,12 +7,12 @@ const DOCUMENTS_COUNT = 100
 const ELASTICSEARCH_SEED_INDEX_FILENAME = join(process.cwd(), 'src/test/scripts/seeds/homes.seed.json')
 
 const getAnimals = () => {
-    const animals = new Array(Math.floor(Math.random() * 5)).fill(undefined)
+    const animals = new Array(faker.number.int({ max: 5 })).fill(undefined)
 
     return animals.map(() => ({
         id: faker.string.uuid(),
         type: faker.animal.type(),
-        color: faker.color.human()
+        year: faker.number.int({ min: 1, max: 15 })
     }))
 }
 

@@ -1,4 +1,4 @@
-import { IsString } from 'class-validator'
+import { IsNumber, IsString } from 'class-validator'
 
 export class AnimalDocument {
     @IsString()
@@ -7,6 +7,6 @@ export class AnimalDocument {
     @IsString()
     readonly type: string
 
-    @IsString()
-    readonly color: string
+    @IsNumber()
+    readonly year: number
 }
