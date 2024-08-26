@@ -53,9 +53,7 @@ describe('getTermsAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                filterAggregation: {
-                    ...getFilterAggregation(getTermQuery('propertyType.keyword', PropertyType.Flat))
-                }
+                filterAggregation: getFilterAggregation(getTermQuery('propertyType.keyword', PropertyType.Flat))
             }
         })
 
@@ -68,13 +66,11 @@ describe('getTermsAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                filterAggregation: {
-                    ...getFilterAggregation(
-                        getRangeQuery('propertyAreaSquared', {
-                            gt: 20000
-                        })
-                    )
-                }
+                filterAggregation: getFilterAggregation(
+                    getRangeQuery('propertyAreaSquared', {
+                        gt: 20000
+                    })
+                )
             }
         })
 
