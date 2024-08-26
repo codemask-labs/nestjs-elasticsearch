@@ -97,7 +97,7 @@ describe('getTermsAggregation', () => {
 
     it('queries elasticsearch with bool query', async () => {
         const service = app.get(ElasticsearchService)
-        const fullName = 'Stephanie Becker'
+
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
