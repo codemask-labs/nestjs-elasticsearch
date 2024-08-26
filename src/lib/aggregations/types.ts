@@ -15,6 +15,7 @@ import { CardinalityAggregation } from './get-cardinality'
 import { MinAggregation } from './get-min'
 import { StatsBucketAggregation } from './get-stats-bucket'
 import { NestedAggregation } from './get-nested'
+import { FilterAggregation } from './get-filter'
 
 export type AggregationList<TDocument extends Document> =
     | AvgAggregation<TDocument>
@@ -34,6 +35,7 @@ export type AggregationList<TDocument extends Document> =
     | CompositeAggregation<TDocument>
     | StatsBucketAggregation
     | NestedAggregation<TDocument>
+    | FilterAggregation<TDocument>
 
 export type AggregationsContainer<TDocument extends Document> = Record<string, Aggregations<TDocument>>
 

@@ -1,4 +1,3 @@
 export * from './search'
 export * from './cluster-health'
-export * from './missing-value-aggregation'
-export * from './nested-aggregation'
+export * from './aggregation-bucket-base.response'
