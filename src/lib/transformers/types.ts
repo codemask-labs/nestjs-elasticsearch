@@ -8,6 +8,7 @@ import {
     CardinalityAggregation,
     CompositeAggregation,
     DateHistogramAggregation,
+    FilterAggregation,
     HistogramAggregation,
     MaxAggregation,
     MinAggregation,
@@ -21,7 +22,7 @@ import {
     TopHitsAggregation,
     ValueCountAggregation
 } from 'lib/aggregations'
-import { MissingValueAggregationResponse, NestedAggregationResponse } from 'lib/responses'
+import { FilterAggregationResponse, MissingValueAggregationResponse, NestedAggregationResponse } from 'lib/responses'
 
 export type TransformAggregation<
     TDocument extends Document,
@@ -53,7 +54,9 @@ export type TransformAggregation<
                     ? estypes.StatsAggregate
                     : TAggregation extends NestedAggregation<TDocument>
                       ? NestedAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
-                      : `Unhandled aggregation type for name: ${TName & string}`
+                      : TAggregation extends FilterAggregation<TDocument>
+                        ? FilterAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
+                        : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
     TDocument extends Document,
