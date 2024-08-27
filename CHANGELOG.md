@@ -1,5 +1,12 @@
 
 
+## [2.3.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.2.1...v2.3.0) (2024-08-27)
+
+
+### Features
+
+* add filter aggregation ([#178](https://github.com/codemask-labs/nestjs-elasticsearch/issues/178)) ([421143f](https://github.com/codemask-labs/nestjs-elasticsearch/commit/421143fdef0a8bf90126a6aceea457e1a262f62a))
+
 ## [2.2.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.2.0...v2.2.1) (2024-08-27)
 
 ## [2.2.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.1.0...v2.2.0) (2024-08-23)
