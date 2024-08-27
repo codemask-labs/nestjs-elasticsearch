@@ -1,7 +1,7 @@
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'
 import { HomeDocument, PropertyType } from 'test/module'
-import { getRangeQuery, getTermQuery } from 'lib/queries'
+import { getBoolQuery, getMustQuery, getRangeQuery, getTermQuery } from 'lib/queries'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { getFilterAggregation } from './get-filter'
@@ -47,15 +47,31 @@ describe('getTermsAggregation', () => {
         })
     })
 
+    it('should accept bool query', () => {
+        const query = getFilterAggregation<HomeDocument>(getBoolQuery(getMustQuery(getTermQuery('propertyType.keyword', PropertyType.Flat))))
+
+        expect(query).toEqual({
+            filter: {
+                bool: {
+                    must: {
+                        term: {
+                            'propertyType.keyword': {
+                                value: 'Flat'
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    })
+
     it('queries elasticsearch with term query', async () => {
         const service = app.get(ElasticsearchService)
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                filterAggregation: {
-                    ...getFilterAggregation(getTermQuery('city.keyword', 'Stiedemannboro'))
-                }
+                filterAggregation: getFilterAggregation(getTermQuery('propertyType.keyword', PropertyType.Flat))
             }
         })
 
@@ -68,13 +84,26 @@ describe('getTermsAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                filterAggregation: {
-                    ...getFilterAggregation(
-                        getRangeQuery('propertyAreaSquared', {
-                            gt: 20000
-                        })
-                    )
-                }
+                filterAggregation: getFilterAggregation(
+                    getRangeQuery('propertyAreaSquared', {
+                        gt: 20000
+                    })
+                )
+            }
+        })
+
+        expect(result.aggregations.filterAggregation.doc_count).not.toEqual(0)
+    })
+
+    it('queries elasticsearch with bool query', async () => {
+        const service = app.get(ElasticsearchService)
+
+        const result = await service.search(HomeDocument, {
+            size: 0,
+            aggregations: {
+                filterAggregation: getFilterAggregation(
+                    getBoolQuery(getMustQuery([getTermQuery('hasProperty', true), getTermQuery('propertyType.keyword', PropertyType.Flat)]))
+                )
             }
         })
 

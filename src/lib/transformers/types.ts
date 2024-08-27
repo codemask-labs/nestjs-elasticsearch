@@ -22,7 +22,7 @@ import {
     TopHitsAggregation,
     ValueCountAggregation
 } from 'lib/aggregations'
-import { FilterAggregationResponse, MissingValueAggregationResponse, NestedAggregationResponse } from 'lib/responses'
+import { AggregationBucketBaseResponse } from 'lib/responses'
 
 export type TransformAggregation<
     TDocument extends Document,
@@ -49,13 +49,13 @@ export type TransformAggregation<
               : TAggregation extends RangeAggregation<TDocument>
                 ? Buckets<string, RangeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
                 : TAggregation extends MissingValueAggregation<TDocument>
-                  ? MissingValueAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
+                  ? AggregationBucketBaseResponse & TransformedAggregations<TDocument, TAggregationsBody>
                   : TAggregation extends StatsBucketAggregation
                     ? estypes.StatsAggregate
                     : TAggregation extends NestedAggregation<TDocument>
-                      ? NestedAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
+                      ? AggregationBucketBaseResponse & TransformedAggregations<TDocument, TAggregationsBody>
                       : TAggregation extends FilterAggregation<TDocument>
-                        ? FilterAggregationResponse & TransformedAggregations<TDocument, TAggregationsBody>
+                        ? AggregationBucketBaseResponse & TransformedAggregations<TDocument, TAggregationsBody>
                         : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
