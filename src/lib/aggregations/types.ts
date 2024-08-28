@@ -32,7 +32,6 @@ export type AggregationList<TDocument extends Document> =
     | CompositeAggregation<TDocument>
     | TopHitsAggregation<TDocument>
     | CardinalityAggregation<TDocument>
-    | CompositeAggregation<TDocument>
     | StatsBucketAggregation
     | NestedAggregation<TDocument>
     | FilterAggregation<TDocument>
