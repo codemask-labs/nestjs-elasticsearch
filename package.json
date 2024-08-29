@@ -40,7 +40,8 @@
         "format": "yarn prettier -w src && yarn lint --fix",
         "generate:random-data": "yarn ts-node ./src/test/scripts/generate-random-data.ts",
         "es:seed": "yarn ts-node --project tsconfig.json ./src/test/scripts/es-seed.ts",
-        "prepare": "husky"
+        "prepare": "husky",
+        "test:cov": "jest --coverage"
     },
     "keywords": [
         "nestjs",
