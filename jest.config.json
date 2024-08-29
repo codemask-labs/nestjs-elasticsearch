@@ -1,6 +1,7 @@
 {
     "moduleFileExtensions": ["js", "ts"],
     "modulePaths": ["<rootDir>", "src"],
+    "coverageDirectory": "../unit-test/coverage",
     "rootDir": "./src",
     "setupFilesAfterEnv": ["<rootDir>/test/jest.setup.ts"],
     "testRegex": ".spec.ts$",
