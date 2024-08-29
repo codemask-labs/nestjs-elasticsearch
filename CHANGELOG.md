@@ -1,5 +1,12 @@
 
 
+## [2.4.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.3.0...v2.4.0) (2024-08-29)
+
+
+### Features
+
+* add bucket script aggregation ([#182](https://github.com/codemask-labs/nestjs-elasticsearch/issues/182)) ([8eb71e7](https://github.com/codemask-labs/nestjs-elasticsearch/commit/8eb71e71c8a2b4f72f27446d5c5e0db3408edf2c))
+
 ## [2.3.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.2.1...v2.3.0) (2024-08-27)
 
 
