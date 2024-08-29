@@ -61,6 +61,8 @@ describe('getBucketScriptAggregation', () => {
             }
         })
 
+        expect(result.aggregations.date.buckets.length).toBeGreaterThan(0)
+
         result.aggregations.date.buckets.forEach(bucket => {
             expect(bucket.script).toEqual(
                 expect.objectContaining({
