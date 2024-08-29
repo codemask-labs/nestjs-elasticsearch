@@ -7,7 +7,7 @@ import { ElasticsearchService } from 'module/elasticsearch.service'
 import { getTermsAggregation } from './get-terms'
 import { getValueCountAggregation } from './get-value-count'
 import { getSumAggregation } from './get-sum'
-import { getBucketScriptAggregation,  } from './get-bucket-script'
+import { getBucketScriptAggregation  } from './get-bucket-script'
 
 describe('getBucketScriptAggregation', () => {
     const { app } = setupNestApplication({
@@ -21,19 +21,19 @@ describe('getBucketScriptAggregation', () => {
     it('accepts object with string values for each field', () => {
         const query = getBucketScriptAggregation(
             {
-                my_var1: 'the_sum',
-                my_var2: 'the_value_count'
+                myVar1: 'theSum',
+                myVar2: 'theValueCount'
             },
-            'params.my_var1 / params.my_var2'
+            'params.myVar1 / params.myVar2'
         )
 
         expect(query).toEqual({
             bucket_script: {
                 buckets_path: {
-                    my_var1: 'the_sum',
-                    my_var2: 'the_value_count' 
+                    myVar1: 'theSum',
+                    myVar2: 'theValueCount'
                 },
-                script: 'params.my_var1 / params.my_var2'
+                script: 'params.myVar1 / params.myVar2'
             }
         })
     })
@@ -51,10 +51,10 @@ describe('getBucketScriptAggregation', () => {
                         count: getValueCountAggregation('id.keyword'),
                         script: getBucketScriptAggregation(
                             {
-                                my_var1: 'sum',
-                                my_var2: 'count'
+                                myVar1: 'sum',
+                                myVar2: 'count'
                             },
-                            'params.my_var1 / params.my_var2'
+                            'params.myVar1 / params.myVar2'
                         )
                     }
                 }
@@ -81,10 +81,10 @@ describe('getBucketScriptAggregation', () => {
                     count: getValueCountAggregation('id.keyword'),
                     script: getBucketScriptAggregation(
                         {
-                            my_var1: 'sum',
-                            my_var2: 'count'
+                            myVar1: 'sum',
+                            myVar2: 'count'
                         },
-                        'params.my_var1 / params.my_var2'
+                        'params.myVar1 / params.myVar2'
                     )
                 }
             })
@@ -106,10 +106,10 @@ describe('getBucketScriptAggregation', () => {
                     count: getValueCountAggregation('id.keyword'),
                     script: getBucketScriptAggregation(
                         {
-                            my_var1: 'sumAggregation',
-                            my_var2: 'count'
+                            myVar1: 'sumAggregation',
+                            myVar2: 'count'
                         },
-                        'params.my_var1 / params.my_var2'
+                        'params.myVar1 / params.myVar2'
                     )
                 }
             })
