@@ -5,6 +5,7 @@ import {
     AggregationsBody,
     AggregationsContainer,
     AvgAggregation,
+    BucketScriptAggregation,
     CardinalityAggregation,
     CompositeAggregation,
     DateHistogramAggregation,
@@ -41,6 +42,7 @@ export type TransformAggregation<
                 | MaxAggregation<TDocument>
                 | MinAggregation<TDocument>
                 | SumAggregation<TDocument>
+                | BucketScriptAggregation
           ? Value<number>
           : TAggregation extends CompositeAggregation<TDocument>
             ? CompositeBuckets<CompositeBucket & TransformedAggregations<TDocument, TAggregationsBody>>
