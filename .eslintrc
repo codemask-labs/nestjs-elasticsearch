@@ -21,7 +21,8 @@
           "buckets_path",
           "precision_threshold",
           "missing_order",
-          "missing_bucket"
+          "missing_bucket",
+          "bucket_script"
         ]
       }
     ]
