@@ -7,7 +7,7 @@ export type BucketScriptAggregationBody = {
     script: string
 }
 
-export const getBucketScriptAggregation = (bucketsPath: Record<string, string>, script: string): BucketScriptAggregation => ({
+export const getBucketScriptAggregation = (script: string, bucketsPath: Record<string, string>): BucketScriptAggregation => ({
     bucket_script: {
         buckets_path: bucketsPath,
         script

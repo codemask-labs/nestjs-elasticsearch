@@ -19,13 +19,10 @@ describe('getBucketScriptAggregation', () => {
     })
 
     it('accepts object with string values for each field', () => {
-        const query = getBucketScriptAggregation(
-            {
-                myVar1: 'theSum',
-                myVar2: 'theValueCount'
-            },
-            'params.myVar1 / params.myVar2'
-        )
+        const query = getBucketScriptAggregation('params.myVar1 / params.myVar2', {
+            myVar1: 'theSum',
+            myVar2: 'theValueCount'
+        })
 
         expect(query).toEqual({
             bucket_script: {
@@ -49,13 +46,10 @@ describe('getBucketScriptAggregation', () => {
                     aggregations: {
                         sum: getSumAggregation('builtInYear'),
                         count: getValueCountAggregation('id.keyword'),
-                        script: getBucketScriptAggregation(
-                            {
-                                myVar1: 'sum',
-                                myVar2: 'count'
-                            },
-                            'params.myVar1 / params.myVar2'
-                        )
+                        script: getBucketScriptAggregation('params.myVar1 / params.myVar2', {
+                            myVar1: 'sum',
+                            myVar2: 'count'
+                        })
                     }
                 }
             }
@@ -81,13 +75,10 @@ describe('getBucketScriptAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     count: getValueCountAggregation('id.keyword'),
-                    script: getBucketScriptAggregation(
-                        {
-                            myVar1: 'sum',
-                            myVar2: 'count'
-                        },
-                        'params.myVar1 / params.myVar2'
-                    )
+                    script: getBucketScriptAggregation('params.myVar1 / params.myVar2', {
+                        myVar1: 'sum',
+                        myVar2: 'count'
+                    })
                 }
             })
             .catch(error => {
@@ -106,13 +97,10 @@ describe('getBucketScriptAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     count: getValueCountAggregation('id.keyword'),
-                    script: getBucketScriptAggregation(
-                        {
-                            myVar1: 'sumAggregation',
-                            myVar2: 'count'
-                        },
-                        'params.myVar1 / params.myVar2'
-                    )
+                    script: getBucketScriptAggregation('params.myVar1 / params.myVar2', {
+                        myVar1: 'sumAggregation',
+                        myVar2: 'count'
+                    })
                 }
             })
             .catch(error => {
