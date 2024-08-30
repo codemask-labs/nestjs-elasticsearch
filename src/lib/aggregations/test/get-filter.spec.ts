@@ -7,7 +7,7 @@ import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { getFilterAggregation } from '../get-filter'
 import { getSumAggregation } from '../get-sum'
 
-describe('getTermsAggregation', () => {
+describe('getFilterAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
