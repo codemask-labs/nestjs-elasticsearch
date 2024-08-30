@@ -23,7 +23,8 @@
           "missing_order",
           "missing_bucket",
           "bucket_script",
-          "bucket_selector"
+          "bucket_selector",
+          "bucket_sort"
         ]
       }
     ]
