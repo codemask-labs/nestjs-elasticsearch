@@ -62,3 +62,6 @@ dist
 *.launch
 .settings/
 *.sublime-workspace
+
+# unit test coverage & execution reports
+unit-test/
