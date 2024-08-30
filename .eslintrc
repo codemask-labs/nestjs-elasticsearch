@@ -22,7 +22,8 @@
           "precision_threshold",
           "missing_order",
           "missing_bucket",
-          "bucket_script"
+          "bucket_script",
+          "bucket_selector"
         ]
       }
     ]

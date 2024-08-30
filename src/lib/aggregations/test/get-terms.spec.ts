@@ -1,11 +1,11 @@
 import { MissingOrder, Order } from 'lib/enums'
+import { ResponseError } from 'lib/common'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'
 import { HomeDocument } from 'test/module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { getTermsAggregation } from '../get-terms'
-import { ResponseError } from 'lib/common'
 import { getNestedAggregation } from '../get-nested'
 
 describe('getTermsAggregation', () => {

@@ -17,6 +17,7 @@ import { StatsBucketAggregation } from './get-stats-bucket'
 import { NestedAggregation } from './get-nested'
 import { FilterAggregation } from './get-filter'
 import { BucketScriptAggregation } from './get-bucket-script'
+import { BucketSelectorAggregation } from './get-bucket-selector'
 
 export type AggregationList<TDocument extends Document> =
     | AvgAggregation<TDocument>
@@ -38,6 +39,7 @@ export type AggregationList<TDocument extends Document> =
     | NestedAggregation<TDocument>
     | FilterAggregation<TDocument>
     | BucketScriptAggregation
+    | BucketSelectorAggregation
 
 export type AggregationsContainer<TDocument extends Document> = Record<string, Aggregations<TDocument>>
 
