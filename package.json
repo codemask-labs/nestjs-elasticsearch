@@ -41,7 +41,8 @@
     "generate:random-data": "yarn ts-node ./src/test/scripts/generate-random-data.ts",
     "es:seed": "yarn ts-node --project tsconfig.json ./src/test/scripts/es-seed.ts",
     "prepare": "husky",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "precommit": "yarn lint"
   },
   "keywords": [
     "nestjs",
