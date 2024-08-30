@@ -1,4 +1,5 @@
 import { ResponseError } from 'lib/common'
+import { Order } from 'lib/enums'
 import { HomeDocument } from 'test/module'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
 import { setupNestApplication } from 'test/toolkit'
@@ -7,7 +8,6 @@ import { ElasticsearchService } from 'module/elasticsearch.service'
 import { getTermsAggregation } from '../get-terms'
 import { getSumAggregation } from '../get-sum'
 import { getBucketSortAggregation } from '../get-bucket-sort'
-import { Order } from 'lib/enums'
 
 describe('getBucketSortAggregation', () => {
     const { app } = setupNestApplication({
