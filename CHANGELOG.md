@@ -1,5 +1,13 @@
 
 
+## [1.25.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.24.0...v1.25.0) (2024-08-30)
+
+
+### Features
+
+* add bucket selector aggregation ([a92e296](https://github.com/codemask-labs/nestjs-elasticsearch/commit/a92e2966797de68f4bd2799b083f33167c53f59e))
+* add bucket sort aggregation ([3ec54aa](https://github.com/codemask-labs/nestjs-elasticsearch/commit/3ec54aad823b5fdee15192a01ec34914595b7454))
+
 ## [1.24.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.23.0...v1.24.0) (2024-08-29)
 
 
