@@ -47,6 +47,15 @@ describe('getBucketSortAggregation', () => {
         })
     })
 
+    it('accepts no arguments', () => {
+        // note: it will of course throw error while quering elastic
+        const query = getBucketSortAggregation()
+
+        expect(query).toEqual({
+            bucket_sort: {}
+        })
+    })
+
     it('should query elasticsearch for bucket sort aggregation', async () => {
         const service = app.get(ElasticsearchService)
 
