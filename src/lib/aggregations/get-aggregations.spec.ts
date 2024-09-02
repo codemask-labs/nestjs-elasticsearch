@@ -22,7 +22,7 @@ describe('getAggregations', () => {
         const aggregations = getAggregations(schema, {
             hello: {
                 avg: {
-                    field
+                    field: 'animals.year'
                 }
                 // avg: {
                 //     field: ''
@@ -36,6 +36,12 @@ describe('getAggregations', () => {
                 // })
             }
         })
+
+        aggregations.8
+
+        if (aggregations instanceof HomeDocument) {
+            // aggregations
+        }
 
         const request = getSearchRequest(HomeDocument, {
             aggregations

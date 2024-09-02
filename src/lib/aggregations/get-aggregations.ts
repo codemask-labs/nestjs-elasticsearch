@@ -31,7 +31,12 @@ type Push<T extends Array<any>, V> = [...T, V]
 // TS4.1+
 type TuplifyUnion<T, L = LastOf<T>, N = [T] extends [never] ? true : false> = true extends N ? [] : Push<TuplifyUnion<Exclude<T, L>>, L>
 
-export const getAggregations = <TDocument extends ClassConstructor<Document>, TAggregationsBody extends AggregationsContainer<TDocument>>(
+export const getAggregations = <
+    TDocument extends ClassConstructor<Document>,
+    TAggregationsBody extends AggregationsContainer<
+        MergeInstances<TuplifyUnion<TDocument>> extends Document ? MergeInstances<TuplifyUnion<TDocument>> : never
+    >
+>(
     _document: TDocument,
     aggregations: TAggregationsBody
 ) => aggregations as unknown as MergeInstances<TuplifyUnion<TDocument>>
