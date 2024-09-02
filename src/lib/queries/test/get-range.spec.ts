@@ -125,13 +125,16 @@ describe('getRangeQuery', () => {
     it('should query elasticsearch for range query with format option', async () => {
         const service = app.get(ElasticsearchService)
 
+        const gteContractDate = '2023-05-01'
+        const lteContractDate = '2023-10-01'
+
         const result = await service.search(HomeDocument, {
             size: 10,
             query: getBoolQuery(
                 getMustQuery(
                     getRangeQuery('contractDate', {
-                        gte: '2023-05-01',
-                        lte: '2023-10-01',
+                        gte: gteContractDate,
+                        lte: lteContractDate,
                         format: 'yyyy-MM-dd'
                     })
                 )
@@ -140,21 +143,18 @@ describe('getRangeQuery', () => {
 
         expect(result.total).toBeGreaterThan(0)
 
-        const contractDates = result.documents.map(document => ({
-            contractDate: document?.source.contractDate ? new Date(document?.source.contractDate) : null
-        }))
+        result.documents.forEach(result => {
+            const contractDate = result.source.contractDate
 
-        const firstContractDate = contractDates.at(0)?.contractDate?.getTime()
-        const lastContractDate = contractDates.at(-1)?.contractDate?.getTime()
+            if (!contractDate) {
+                expect(contractDate).toBeDefined()
 
-        if (!firstContractDate || !lastContractDate) {
-            expect(firstContractDate).toBeDefined()
-            expect(lastContractDate).toBeDefined()
+                return
+            }
 
-            return
-        }
-
-        expect(lastContractDate).toBeGreaterThanOrEqual(firstContractDate)
+            expect(new Date(contractDate).getTime()).toBeGreaterThanOrEqual(new Date(gteContractDate).getTime())
+            expect(new Date(contractDate).getTime()).toBeLessThanOrEqual(new Date(lteContractDate).getTime())
+        })
     })
 
     it('should return an error when passing an invalid parameter with format option', async () => {
