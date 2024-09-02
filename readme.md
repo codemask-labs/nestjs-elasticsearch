@@ -167,26 +167,26 @@ const searchRequestBody = getSearchRequest(ExampleDocument, {
 
 As for now the package provides utils for the following filter queries:
 
-| Query DSL                      | Function Name                      | Documentation                                                                                                                                     |
-| ------------------------------ | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Compound queries               | `getBoolQuery()`                   | [Boolean query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)                                        |
-|                                | `getMustQuery()`                   |                                                                                                                                                   |
-|                                | `getMustNotQuery()`                |                                                                                                                                                   |
-|                                | `getShouldQuery()`                 |                                                                                                                                                   |
-| Full text queries              | `getMatchQuery()`                  | [Match query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)                                         |
-|                                | `getMatchPhrasePrefixQuery()`      | [Match phrase prefix query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase-prefix.html)             |
-| Term-level queries             | `getExistsQuery()`                 | [Exists query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-exists-query.html)                                       |
-|                                | `getRangeQuery()`                  | [Range query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)                                         |
-|                                | `getTermQuery()`                   | [Term query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html)                                           |
-|                                | `getTermsQuery()`                  | [Terms query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html)                                         |
-| minimum_should_match parameter | `getMinimumShouldMatchParameter()` | [minimum_should_match parameter](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html#bool-min-should-match) |
+| Query DSL                        | Function Name                      | Documentation                                                                                                                         |
+| :------------------------------- | :--------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| Compound queries                 | `getBoolQuery()`                   | [Boolean query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)                            |
+|                                  | `getMustQuery()`                   |                                                                                                                                       |
+|                                  | `getMustNotQuery()`                |                                                                                                                                       |
+|                                  | `getShouldQuery()`                 |                                                                                                                                       |
+| Full text queries                | `getMatchQuery()`                  | [Match query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)                             |
+|                                  | `getMatchPhrasePrefixQuery()`      | [Match phrase prefix query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase-prefix.html) |
+| Term-level queries               | `getExistsQuery()`                 | [Exists query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-exists-query.html)                           |
+|                                  | `getRangeQuery()`                  | [Range query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)                             |
+|                                  | `getTermQuery()`                   | [Term query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html)                               |
+|                                  | `getTermsQuery()`                  | [Terms query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html)                             |
+| `minimum_should_match` parameter | `getMinimumShouldMatchParameter()` | [minimum_should_match parameter](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-minimum-should-match.html) |
 
 ### Aggregations
 
 As for now the package provides utils for the following aggregation queries:
 
 | Aggregations          | Function Name                    | Documentation                                                                                                                                                |
-| --------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| :-------------------- | :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Bucket Aggregations   | `getCompositeAggregation()`      | [Composite aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-composite-aggregation.html)               |
 |                       | `getDateHistogramAggregation()`  | [Date histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html)      |
 |                       | `getFilterAggregation()`         | [Filter aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-filter-aggregation.html)                     |
