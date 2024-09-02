@@ -1,5 +1,12 @@
 
 
+## [1.26.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.25.0...v1.26.0) (2024-09-02)
+
+
+### Features
+
+* add geo-centroid aggregation ([0539ab4](https://github.com/codemask-labs/nestjs-elasticsearch/commit/0539ab4399f5f0ec6121969f46ccf80a478b18f2))
+
 ## [1.25.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v1.24.0...v1.25.0) (2024-08-30)
 
 
