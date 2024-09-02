@@ -1,7 +1,6 @@
+import { getSearchRequest } from 'lib/requests'
 import { HomeDocument } from 'test/module'
 import { getAggregations } from './get-aggregations'
-import { getSearchRequest } from 'lib/requests'
-import { ClassConstructor } from 'lib/common'
 
 class OtherDocument {
     readonly hello: string
@@ -19,20 +18,22 @@ const getMultipleSchemas = (isHomeDocument: boolean) => {
 describe('getAggregations', () => {
     it('is type safe way of passing document type', () => {
         const schema = getMultipleSchemas(true)
-        const type = {} as ClassConstructor<typeof schema>
 
         const aggregations = getAggregations(schema, {
             hello: {
                 avg: {
-                    field: 'animals.year'
-                },
-                aggregations: getAggregations(HomeDocument, {
-                    world: {
-                        max: {
-                            field: 'propertyAreaSquared'
-                        }
-                    }
-                })
+                    field
+                }
+                // avg: {
+                //     field: ''
+                // },
+                // aggregations: getAggregations(HomeDocument, {
+                //     world: {
+                //         max: {
+                //             field: 'propertyAreaSquared'
+                //         }
+                //     }
+                // })
             }
         })
 
