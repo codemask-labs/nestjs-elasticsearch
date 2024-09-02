@@ -17,9 +17,9 @@ The main issues we encountered and which our package fixes are:
 
 ### Features
 
--   Quick Setup: Get up and running in minutes using our easy-to-understand API.
+-   :zap: Quick Setup: Get up and running in minutes using our easy-to-understand API.
 
--   Developer Experience: Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
+-   :computer: Developer Experience: Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
 
 -   Full TypeScript Support: Enjoy the benefits of code autocompletion and types for both request and response objects. ⁤⁤Unlike the original Elasticsearch library, this package provides full type definitions in order to provide better development experience and minimize runtime errors. ⁤
 
