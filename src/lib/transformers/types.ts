@@ -10,6 +10,7 @@ import {
     CompositeAggregation,
     DateHistogramAggregation,
     FilterAggregation,
+    GeoCentroidAggregation,
     HistogramAggregation,
     MaxAggregation,
     MinAggregation,
@@ -23,7 +24,7 @@ import {
     TopHitsAggregation,
     ValueCountAggregation
 } from 'lib/aggregations'
-import { AggregationBucketBaseResponse } from 'lib/responses'
+import { AggregationBucketBaseResponse, GeoCentroidAggregationResponse } from 'lib/responses'
 
 export type TransformAggregation<
     TDocument extends Document,
@@ -58,7 +59,9 @@ export type TransformAggregation<
                       ? AggregationBucketBaseResponse & TransformedAggregations<TDocument, TAggregationsBody>
                       : TAggregation extends FilterAggregation<TDocument>
                         ? AggregationBucketBaseResponse & TransformedAggregations<TDocument, TAggregationsBody>
-                        : `Unhandled aggregation type for name: ${TName & string}`
+                        : TAggregation extends GeoCentroidAggregation<TDocument>
+                          ? GeoCentroidAggregationResponse
+                          : `Unhandled aggregation type for name: ${TName & string}`
 
 export type TransformedAggregation<
     TDocument extends Document,
