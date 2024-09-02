@@ -198,8 +198,9 @@ As for now the package provides utils for the following aggregation queries:
 
 -   `getCompositeAggregation()` for [Composite aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-composite-aggregation.html)
 -   `getDateHistogramAggregation()` for [Date histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html)
--   `getMissingValueAggregation()` for [Missing aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-missing-aggregation.html)
+-   `getFilterAggregation` for [Filter aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-filter-aggregation.html)
 -   `getHistogramAggregation()` [Histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-histogram-aggregation.html)
+-   `getMissingValueAggregation()` for [Missing aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-missing-aggregation.html)
 -   `getRangeAggregation()` for [Range aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-range-aggregation.html)
 -   `getTermsAggregation()` for [Terms aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html)
 
@@ -217,6 +218,9 @@ As for now the package provides utils for the following aggregation queries:
 
 #### Pipiline aggregations
 
+-   `getBucketScriptAggregation` for [Bucket script aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-script-aggregation.html)
+-   `getBucketSelectorAggregation()` for [Bucket selector aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-selector-aggregation.html)
+-   `getBucketSortAggregation()` for [Bucket sort aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-sort-aggregation.html)
 -   `getStatsBucketAggregation()` for [Stats bucket aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-stats-bucket-aggregation.html)
 
 ## License
