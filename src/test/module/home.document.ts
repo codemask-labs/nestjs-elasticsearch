@@ -50,4 +50,7 @@ export class HomeDocument {
     })
     @Type(() => AnimalDocument)
     readonly animals: Array<AnimalDocument>
+
+    @IsString()
+    readonly location: string
 }

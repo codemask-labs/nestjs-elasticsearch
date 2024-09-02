@@ -31,6 +31,9 @@ readFile(path)
                 properties: {
                     animals: {
                         type: 'nested'
+                    },
+                    location: {
+                        type: 'geo_point'
                     }
                 }
             }
