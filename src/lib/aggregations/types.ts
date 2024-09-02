@@ -19,6 +19,7 @@ import { FilterAggregation } from './get-filter'
 import { BucketScriptAggregation } from './get-bucket-script'
 import { BucketSelectorAggregation } from './get-bucket-selector'
 import { BucketSortAggregation } from './get-bucket-sort'
+import { GeoCentroidAggregation } from './get-geo-centroid'
 
 export type AggregationList<TDocument extends Document> =
     | AvgAggregation<TDocument>
@@ -42,6 +43,7 @@ export type AggregationList<TDocument extends Document> =
     | BucketScriptAggregation
     | BucketSelectorAggregation
     | BucketSortAggregation
+    | GeoCentroidAggregation<TDocument>
 
 export type AggregationsContainer<TDocument extends Document> = Record<string, Aggregations<TDocument>>
 
