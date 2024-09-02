@@ -1,4 +1,5 @@
 import { ResponseError } from '@elastic/elasticsearch/lib/errors.js'
+import { Order } from 'lib/enums'
 import { HomeDocument } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
 import { TEST_ELASTICSEARCH_NODE } from 'test/constants'
@@ -135,7 +136,12 @@ describe('getRangeQuery', () => {
                         format: 'yyyy-MM-dd'
                     })
                 )
-            )
+            ),
+            sort: {
+                contractDate: {
+                    order: Order.ASC
+                }
+            }
         })
 
         expect(result.total).toBeGreaterThan(0)
