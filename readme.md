@@ -17,15 +17,15 @@ The main issues we encountered and which our package fixes are:
 
 ### Features
 
--   :zap: Quick Setup: Get up and running in minutes using our easy-to-understand API.
+-   :rocket: Quick Setup - Get up and running in minutes using our easy-to-understand API.
 
--   :computer: Developer Experience: Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
+-   :nerd_face: :computer: Developer Experience - Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
 
--   Full TypeScript Support: Enjoy the benefits of code autocompletion and types for both request and response objects. ⁤⁤Unlike the original Elasticsearch library, this package provides full type definitions in order to provide better development experience and minimize runtime errors. ⁤
+-   :white_check_mark: Full TypeScript Support - Enjoy the benefits of code autocompletion and types for both request and response objects. ⁤⁤Unlike the original Elasticsearch library, this package provides full type definitions in order to provide better development experience and minimize runtime errors. ⁤
 
--   Utility Methods: Say goodbye to repetitive boilerplate code. The package offers set of utility methods for most common Elasticsearch filtering, sorting, pagination and aggregations use cases.
+-   :hammer_and_wrench: Utility Methods - Say goodbye to repetitive boilerplate code. The package offers set of utility methods for most common Elasticsearch filtering, sorting, pagination and aggregations use cases.
 
--   Schema definitions: Elasticsearch index itself may be schema-less, but we integrated schema definitions into our package. Each schema maps to an Elasticsearch index. This gives us clear data model, which can be used when building request object, ensuring only fields available for given index are used. These definitions are also used to register indexes in module scope and inject them into a service, similar to how it is approached in TypeORM NestJS module.
+-   :bookmark_tabs: Schema definitions - We integrated schema definitions into our package, mapping each schema to an Elasticsearch index, providing a clear data model. These definitions are used to register indexes in the module scope and inject them into a service, similar to the approach in the TypeORM NestJS module, ensuring that only available fields for a given index are used when building request objects.
 
 ### Instalation
 
@@ -108,7 +108,7 @@ export class ExampleService {
 
 Now you can start creating request to Elasticsearch.
 
-## Api Reference
+## Usage
 
 Once you finish the Getting Started guide, you can start building Elasticsearch request objects.
 
@@ -163,7 +163,7 @@ const searchRequestBody = getSearchRequest(ExampleDocument, {
 })
 ```
 
-### Filtering
+## Queries
 
 As for now the package provides utils for the following filter queries:
 
@@ -181,7 +181,7 @@ As for now the package provides utils for the following filter queries:
 |                                  | `getTermsQuery()`                  | [Terms query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html)                             |
 | `minimum_should_match` parameter | `getMinimumShouldMatchParameter()` | [minimum_should_match parameter](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-minimum-should-match.html) |
 
-### Aggregations
+## Aggregations
 
 As for now the package provides utils for the following aggregation queries:
 
