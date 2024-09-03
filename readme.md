@@ -1,7 +1,5 @@
 # NestJS Elasticsearch Module
 
-## Introduction
-
 Welcome to Nestjs Elasticsearch module based on [@nestjs/elasticsearch](https://www.npmjs.com/package/@nestjs/elasticsearch) package.
 
 The current version (2.x) is fully compatible with Elasticsearch 8. For projects using Elasticsearch 7, use the previous version (1.x).
