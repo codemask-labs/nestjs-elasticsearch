@@ -4,6 +4,8 @@
 
 Welcome to Nestjs Elasticsearch module based on [@nestjs/elasticsearch](https://www.npmjs.com/package/@nestjs/elasticsearch) package.
 
+The current version (2.x) is fully compatible with Elasticsearch 8. For projects using Elasticsearch 7, use the previous version (1.x).
+
 ### Motive
 
 This package originates from our experience with using Elasticsearch in production environments, which leaded to maintenance issues when extensively used aggregations, searches and filters (especially aggregations).
@@ -25,7 +27,7 @@ The main issues we encountered and which our package fixes are:
 
 -   :hammer_and_wrench: Utility Methods - Say goodbye to repetitive boilerplate code. The package offers set of utility methods for most common Elasticsearch filtering, sorting, pagination and aggregations use cases.
 
--   :bookmark_tabs: Schema definitions - We integrated schema definitions into our package, mapping each schema to an Elasticsearch index, providing a clear data model. These definitions are used to register indexes in the module scope and inject them into a service, similar to the approach in the TypeORM NestJS module, ensuring that only available fields for a given index are used when building request objects.
+-   :bookmark_tabs: Schema definitions - Schema definitions are integrated into the package, with each schema mapping to an Elasticsearch index to provide a clear data model. These definitions are used to register indexes in the module scope and inject them into a service, similar to the approach in the TypeORM NestJS module, ensuring that only fields available for a given index are used when building request objects.
 
 ### Instalation
 
