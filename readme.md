@@ -27,13 +27,15 @@ The main issues we encountered and which our package fixes are:
 
 -   :bookmark_tabs: Schema definitions - Schema definitions are integrated into the package, with each schema mapping to an Elasticsearch index to provide a clear data model. These definitions are used to register indexes in the module scope and inject them into a service, similar to the approach in the TypeORM NestJS module, ensuring that only fields available for a given index are used when building request objects.
 
-### Instalation
+### Installation
 
-You can install package using yarn or npm
+You can install package using yarn or npm:
 
 ```bash
 $ yarn add @codemask-labs/nestjs-elasticsearch
-// or
+```
+
+```bash
 $ npm i @codemask-labs/nestjs-elasticsearch
 ```
 
