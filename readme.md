@@ -1,8 +1,8 @@
 # NestJS Elasticsearch Module
 
-## Introduction
-
 Welcome to Nestjs Elasticsearch module based on [@nestjs/elasticsearch](https://www.npmjs.com/package/@nestjs/elasticsearch) package.
+
+The current version (2.x) is fully compatible with Elasticsearch 8. For projects using Elasticsearch 7, use the previous version (1.x).
 
 ### Motive
 
@@ -17,15 +17,15 @@ The main issues we encountered and which our package fixes are:
 
 ### Features
 
--   Quick Setup: Get up and running in minutes using our easy-to-understand API.
+-   :rocket: Quick Setup - Get up and running in minutes using our easy-to-understand API.
 
--   Developer Experience: Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
+-   :nerd_face: :computer: Developer Experience - Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
 
--   Full TypeScript Support: Enjoy the benefits of code autocompletion and types for both request and response objects. ⁤⁤Unlike the original Elasticsearch library, this package provides full type definitions in order to provide better development experience and minimize runtime errors. ⁤
+-   :white_check_mark: Full TypeScript Support - Enjoy the benefits of code autocompletion and types for both request and response objects. ⁤⁤Unlike the original Elasticsearch library, this package provides full type definitions in order to provide better development experience and minimize runtime errors. ⁤
 
--   Utility Methods: Say goodbye to repetitive boilerplate code. The package offers set of utility methods for most common Elasticsearch filtering, sorting, pagination and aggregations use cases.
+-   :hammer_and_wrench: Utility Methods - Say goodbye to repetitive boilerplate code. The package offers set of utility methods for most common Elasticsearch filtering, sorting, pagination and aggregations use cases.
 
--   Schema definitions: Elasticsearch index itself may be schema-less, but we integrated schema definitions into our package. Each schema maps to an Elasticsearch index. This gives us clear data model, which can be used when building request object, ensuring only fields available for given index are used. These definitions are also used to register indexes in module scope and inject them into a service, similar to how it is approached in TypeORM NestJS module.
+-   :bookmark_tabs: Schema definitions - Schema definitions are integrated into the package, with each schema mapping to an Elasticsearch index to provide a clear data model. These definitions are used to register indexes in the module scope and inject them into a service, similar to the approach in the TypeORM NestJS module, ensuring that only fields available for a given index are used when building request objects.
 
 ### Instalation
 
@@ -108,7 +108,7 @@ export class ExampleService {
 
 Now you can start creating request to Elasticsearch.
 
-## Api Reference
+## Usage
 
 Once you finish the Getting Started guide, you can start building Elasticsearch request objects.
 
@@ -163,65 +163,50 @@ const searchRequestBody = getSearchRequest(ExampleDocument, {
 })
 ```
 
-### Filtering
+## Queries
 
 As for now the package provides utils for the following filter queries:
 
-#### Boolean query
+| Query DSL                        | Function Name                      | Documentation                                                                                                                         |
+| :------------------------------- | :--------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| Compound queries                 | `getBoolQuery()`                   | [Boolean query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)                            |
+|                                  | `getMustQuery()`                   |                                                                                                                                       |
+|                                  | `getMustNotQuery()`                |                                                                                                                                       |
+|                                  | `getShouldQuery()`                 |                                                                                                                                       |
+| Full text queries                | `getMatchQuery()`                  | [Match query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)                             |
+|                                  | `getMatchPhrasePrefixQuery()`      | [Match phrase prefix query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase-prefix.html) |
+| Term-level queries               | `getExistsQuery()`                 | [Exists query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-exists-query.html)                           |
+|                                  | `getRangeQuery()`                  | [Range query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)                             |
+|                                  | `getTermQuery()`                   | [Term query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html)                               |
+|                                  | `getTermsQuery()`                  | [Terms query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html)                             |
+| `minimum_should_match` parameter | `getMinimumShouldMatchParameter()` | [minimum_should_match parameter](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-minimum-should-match.html) |
 
-Use `getBoolQuery()` for [Boolean query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
-and its most common occurrence types:
-
--   `getMustNotQuery()` for **Must not query**
--   `getShouldQuery()` for **Should query**
--   `getMustQuery()` for **Must query**
-
-Together with that you can also use `getMinimumShouldMatchParameter()` for [minimum_should_match parameter](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html#bool-min-should-match)
-
-#### Full text queries
-
--   `getMatchPhrasePrefixQuery()` for [Match phrase prefix query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase-prefix.html)
--   `getMatchQuery()` for [Match query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)
-
-#### Term-level queries
-
--   `getTermQuery()` for [Term query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html)
--   `getTermsQuery()` for [Terms query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-terms-query.html)
--   `getRangeQuery()` for [Range query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-range-query.html)
--   `getExistsQuery` for [Exists query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-exists-query.html)
-
-### Aggregations
+## Aggregations
 
 As for now the package provides utils for the following aggregation queries:
 
-#### Bucket aggregations
-
--   `getCompositeAggregation()` for [Composite aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-composite-aggregation.html)
--   `getDateHistogramAggregation()` for [Date histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html)
--   `getFilterAggregation` for [Filter aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-filter-aggregation.html)
--   `getHistogramAggregation()` [Histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-histogram-aggregation.html)
--   `getMissingValueAggregation()` for [Missing aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-missing-aggregation.html)
--   `getRangeAggregation()` for [Range aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-range-aggregation.html)
--   `getTermsAggregation()` for [Terms aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html)
-
-#### Metrics aggregations:
-
--   `getAvgAggregation()` for [Avg aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-avg-aggregation.html)
--   `getCardinalityAggregation()` for [Cardinality aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-cardinality-aggregation.html)
--   `getGeoCentroidAggregation()` for [Geo-centroid aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-geocentroid-aggregation.html)
--   `getMaxAggregation()` for [Max aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-max-aggregation.html)
--   `getMinAggregation()` for [Min aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-min-aggregation.html)
--   `getPercentileAggregation()` for [Percentiles aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-percentile-aggregation.html)
--   `getSumAggregation()` for [Sum aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-sum-aggregation.html)
--   `getTopHitsAggregation()` for [Top hits aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-top-hits-aggregation.html)
--   `getValueCountAggregation()` for [Value count aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-valuecount-aggregation.html)
-
-#### Pipiline aggregations
-
--   `getBucketScriptAggregation` for [Bucket script aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-script-aggregation.html)
--   `getBucketSelectorAggregation()` for [Bucket selector aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-selector-aggregation.html)
--   `getBucketSortAggregation()` for [Bucket sort aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-sort-aggregation.html)
--   `getStatsBucketAggregation()` for [Stats bucket aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-stats-bucket-aggregation.html)
+| Aggregations          | Function Name                    | Documentation                                                                                                                                                |
+| :-------------------- | :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bucket Aggregations   | `getCompositeAggregation()`      | [Composite aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-composite-aggregation.html)               |
+|                       | `getDateHistogramAggregation()`  | [Date histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html)      |
+|                       | `getFilterAggregation()`         | [Filter aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-filter-aggregation.html)                     |
+|                       | `getHistogramAggregation()`      | [Histogram aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-histogram-aggregation.html)               |
+|                       | `getMissingValueAggregation()`   | [Missing aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-missing-aggregation.html)                   |
+|                       | `getRangeAggregation()`          | [Range aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-range-aggregation.html)                       |
+|                       | `getTermsAggregation()`          | [Terms aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html)                       |
+| Metrics Aggregations  | `getAvgAggregation()`            | [Avg aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-avg-aggregation.html)                          |
+|                       | `getCardinalityAggregation()`    | [Cardinality aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-cardinality-aggregation.html)          |
+|                       | `getGeoCentroidAggregation()`    | [Geo-centroid aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-geocentroid-aggregation.html)         |
+|                       | `getMaxAggregation()`            | [Max aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-max-aggregation.html)                          |
+|                       | `getMinAggregation()`            | [Min aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-min-aggregation.html)                          |
+|                       | `getPercentileAggregation()`     | [Percentiles aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-percentile-aggregation.html)           |
+|                       | `getSumAggregation()`            | [Sum aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-sum-aggregation.html)                          |
+|                       | `getTopHitsAggregation()`        | [Top hits aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-top-hits-aggregation.html)                |
+|                       | `getValueCountAggregation()`     | [Value count aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-valuecount-aggregation.html)           |
+| Pipeline Aggregations | `getBucketScriptAggregation()`   | [Bucket script aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-script-aggregation.html)     |
+|                       | `getBucketSelectorAggregation()` | [Bucket selector aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-selector-aggregation.html) |
+|                       | `getBucketSortAggregation()`     | [Bucket sort aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-bucket-sort-aggregation.html)         |
+|                       | `getStatsBucketAggregation()`    | [Stats bucket aggregation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-stats-bucket-aggregation.html)       |
 
 ## License
 
