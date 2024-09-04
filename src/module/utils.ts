@@ -8,7 +8,7 @@ export const getIndexName = <T>(nameOrDocument: string | ClassConstructor<T>) =>
         return nameOrDocument
     }
 
-    const indexName = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, nameOrDocument)
+    const indexName = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, nameOrDocument) as string | undefined
 
     if (!indexName) {
         throw new Error(

@@ -91,7 +91,7 @@ describe('getTermsQuery', () => {
         await service
             .search(HomeDocument, {
                 size: 10,
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                 query: getBoolQuery(getMustQuery(getTermsQuery('hasProperty', true as any)))
             })
             .catch(error => {

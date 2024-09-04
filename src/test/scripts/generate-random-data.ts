@@ -42,16 +42,13 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument 
         address,
         city,
         hasProperty: hasProperty ? true : false,
-        // eslint-disable-next-line @typescript-eslint/ban-types
+        /* eslint-disable @typescript-eslint/no-restricted-types */
         propertyType: hasProperty ? faker.helpers.arrayElement(Object.values(PropertyType)) : (null as unknown as undefined),
-        // eslint-disable-next-line @typescript-eslint/ban-types
         builtInYear: hasProperty ? builtInYear : (null as unknown as undefined),
-        // eslint-disable-next-line @typescript-eslint/ban-types
         propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : (null as unknown as undefined),
-        // eslint-disable-next-line @typescript-eslint/ban-types
         propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : (null as unknown as undefined),
-        // eslint-disable-next-line @typescript-eslint/ban-types
         contractDate: hasProperty ? contractDate : (null as unknown as undefined),
+        /* eslint-enable @typescript-eslint/no-restricted-types */
         location,
         animals
     }

@@ -7,7 +7,7 @@ import { ElasticsearchService } from 'module/elasticsearch.service'
 import { getTermsAggregation } from '../get-terms'
 import { getValueCountAggregation } from '../get-value-count'
 import { getSumAggregation } from '../get-sum'
-import { getBucketScriptAggregation  } from '../get-bucket-script'
+import { getBucketScriptAggregation } from '../get-bucket-script'
 
 describe('getBucketScriptAggregation', () => {
     const { app } = setupNestApplication({

@@ -48,7 +48,7 @@ export const setupNestApplication = (setup: TestToolkitSetup) => {
 
     return {
         app: {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             get: <T = any>(token: NestModuleTokens<T>) => app.get<T>(token)
         },
         withHttpRequest: () => request(app.getHttpServer())

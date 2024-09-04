@@ -67,7 +67,7 @@ describe('getMinAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getMinAggregation('propertyAreaSquaredAsString' as any)
                 }
             })
@@ -88,7 +88,7 @@ describe('getMinAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getMinAggregation('address.keyword' as any)
                 }
             })
