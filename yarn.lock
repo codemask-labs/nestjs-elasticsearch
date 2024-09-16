@@ -436,8 +436,8 @@ __metadata:
     "@types/supertest": 6.0.2
     class-transformer: 0.5.1
     class-validator: 0.14.1
-    eslint: ^9.9.1
-    eslint-config-codemask: ^2.0.0-beta.15
+    eslint: 9.9.1
+    eslint-config-codemask: 2.0.0-beta.15
     expect-more-jest: 5.5.0
     husky: 9.0.11
     jest: 29.7.0
@@ -4786,7 +4786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-codemask@npm:^2.0.0-beta.15":
+"eslint-config-codemask@npm:2.0.0-beta.15":
   version: 2.0.0-beta.15
   resolution: "eslint-config-codemask@npm:2.0.0-beta.15"
   dependencies:
@@ -4993,7 +4993,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:>=9.x, eslint@npm:^9.9.1":
+"eslint@npm:9.9.1, eslint@npm:>=9.x":
   version: 9.9.1
   resolution: "eslint@npm:9.9.1"
   dependencies:

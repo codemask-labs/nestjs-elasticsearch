@@ -36,11 +36,19 @@ export default [
                         'minimum_should_match',
                         'precision_threshold',
                         'match_phrase_prefix',
-                        'case_insensitive'
+                        'case_insensitive',
+                        'geo_centroid',
+                        'key_as_string'
                     ]
                 }
             ],
             'import/order': 'off'
+        }
+    },
+    {
+        files: ['*/test/scripts/*.ts'],
+        rules: {
+            'no-console': 'off'
         }
     }
 ]

@@ -68,7 +68,6 @@ describe('getDateHistogramAggregation', () => {
         responseBuckets.forEach(bucket =>
             expect(bucket).toEqual(
                 expect.objectContaining({
-                    // eslint-disable-next-line camelcase
                     key_as_string: expect.any(String),
                     key: expect.any(Number),
                     doc_count: expect.any(Number)

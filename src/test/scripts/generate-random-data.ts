@@ -41,7 +41,7 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument 
         ownerEmail,
         address,
         city,
-        hasProperty: hasProperty ? true : false,
+        hasProperty: Boolean(hasProperty),
         /* eslint-disable @typescript-eslint/no-restricted-types */
         propertyType: hasProperty ? faker.helpers.arrayElement(Object.values(PropertyType)) : (null as unknown as undefined),
         builtInYear: hasProperty ? builtInYear : (null as unknown as undefined),

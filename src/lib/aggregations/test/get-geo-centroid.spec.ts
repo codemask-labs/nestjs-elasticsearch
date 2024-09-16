@@ -19,7 +19,6 @@ describe('getGeoCentroidAggregation', () => {
         const query = getGeoCentroidAggregation<HomeDocument>('location')
 
         expect(query).toEqual({
-            // eslint-disable-next-line camelcase
             geo_centroid: {
                 field: 'location'
             }
