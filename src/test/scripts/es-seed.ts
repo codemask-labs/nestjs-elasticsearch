@@ -12,8 +12,9 @@ const path = join(__dirname, './seeds/homes.seed.json')
 
 readFile(path)
     .then(buffer => buffer.toString())
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     .then(data => JSON.parse(data))
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-return
     .then((data: any) => data.flatMap((record: any) => [{ index: { _index: index } }, record]))
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .then(async (records: Array<any>) => {

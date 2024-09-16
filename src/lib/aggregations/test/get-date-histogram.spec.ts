@@ -68,7 +68,6 @@ describe('getDateHistogramAggregation', () => {
         responseBuckets.forEach(bucket =>
             expect(bucket).toEqual(
                 expect.objectContaining({
-                    // eslint-disable-next-line camelcase
                     key_as_string: expect.any(String),
                     key: expect.any(Number),
                     doc_count: expect.any(Number)
@@ -121,7 +120,7 @@ describe('getDateHistogramAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getDateHistogramAggregation('address.keyword' as any, CalendarIntervalName.DAY)
                 }
             })

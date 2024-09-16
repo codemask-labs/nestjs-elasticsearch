@@ -97,7 +97,7 @@ describe('getSumAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getSumAggregation('propertyAreaSquaredAsString' as any)
                 }
             })
@@ -118,7 +118,7 @@ describe('getSumAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getSumAggregation('address.keyword' as any)
                 }
             })

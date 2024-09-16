@@ -30,6 +30,7 @@ export type TopHitsAggregation<TDocument extends Document> = {
 }
 
 export const getTopHitsAggregation = <TDocument extends Document>(
+    // eslint-disable-next-line default-param-last
     size: number = 3,
     options?: TopHitsAggregationOptions<TDocument>
 ): TopHitsAggregation<TDocument> => {

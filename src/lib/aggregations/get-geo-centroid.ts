@@ -9,7 +9,6 @@ export type GeoCentroidAggregation<TDocument extends Document> = {
 }
 
 export const getGeoCentroidAggregation = <TDocument extends Document>(field: Field<TDocument>): GeoCentroidAggregation<TDocument> => ({
-    // eslint-disable-next-line camelcase
     geo_centroid: {
         field
     }

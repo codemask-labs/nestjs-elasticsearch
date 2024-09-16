@@ -45,7 +45,7 @@ describe('getAvgAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getAvgAggregation('address' as any)
                 }
             })
@@ -66,7 +66,7 @@ describe('getAvgAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getAvgAggregation('address.keyword' as any)
                 }
             })

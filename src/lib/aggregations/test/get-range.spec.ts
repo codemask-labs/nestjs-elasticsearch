@@ -130,7 +130,7 @@ describe('getRangeAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getRangeAggregation('address' as any, ranges)
                 }
             })
@@ -151,7 +151,7 @@ describe('getRangeAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
                     result: getRangeAggregation('address.keyword' as any, ranges)
                 }
             })

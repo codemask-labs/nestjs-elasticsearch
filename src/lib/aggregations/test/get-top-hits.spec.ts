@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { ResponseError } from 'lib/common'
 import { Order } from 'lib/enums'
 import { HomeDocument } from 'test/module'
@@ -150,6 +149,7 @@ describe('getTopHitsAggregation', () => {
 
         const responseBuckets = result.aggregations.result.buckets
 
+        // eslint-disable-next-line no-underscore-dangle
         responseBuckets.forEach(bucket => bucket.innerResult.hits.hits.forEach(hit => expect(hit._source).toHaveProperty('city')))
     })
 
