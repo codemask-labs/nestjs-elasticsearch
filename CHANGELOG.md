@@ -1,5 +1,17 @@
 
 
+## [2.7.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.6.0...v2.7.0) (2024-10-01)
+
+
+### Features
+
+* update eslint to v9 ([#192](https://github.com/codemask-labs/nestjs-elasticsearch/issues/192)) ([48c2725](https://github.com/codemask-labs/nestjs-elasticsearch/commit/48c27258ae5353584bad2ff669891377843aca3a))
+
+
+### Bug Fixes
+
+* fix search after in search request params ([#198](https://github.com/codemask-labs/nestjs-elasticsearch/issues/198)) ([8ef9101](https://github.com/codemask-labs/nestjs-elasticsearch/commit/8ef91011f6fcfa3fdd32acbec5e69a5e88c4b5aa))
+
 ## [2.6.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.5.0...v2.6.0) (2024-09-02)
 
 
