@@ -6,7 +6,7 @@ export const getSearchRequestParams = <TDocument extends Document, TAggregations
     document: ClassConstructor<TDocument>,
     options?: SearchRequestOptions<TDocument, TAggregationsBody>
 ): SearchRequest<TDocument, TAggregationsBody> => {
-    const { index, size, from, query, aggregations, sort } = getSearchRequest<TDocument, TAggregationsBody>(document, options)
+    const { index, size, from, query, aggregations, sort, search_after } = getSearchRequest<TDocument, TAggregationsBody>(document, options)
 
     return {
         index,
@@ -14,6 +14,7 @@ export const getSearchRequestParams = <TDocument extends Document, TAggregations
         from,
         query,
         aggregations,
-        sort
+        sort,
+        search_after
     }
 }
