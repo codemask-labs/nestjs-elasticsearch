@@ -29,6 +29,27 @@ describe('getTermQuery', () => {
         })
     })
 
+    it('accepts optionally nullable values', () => {
+        const queryWithNull = getTermQuery<HomeDocument>('address', null)
+        const queryWithUndefined = getTermQuery<HomeDocument>('address', undefined)
+
+        expect(queryWithNull).toEqual({
+            term: {
+                address: {
+                    value: null
+                }
+            }
+        })
+
+        expect(queryWithUndefined).toEqual({
+            term: {
+                address: {
+                    value: undefined
+                }
+            }
+        })
+    })
+
     it('accepts only schema fields and case sensitive option', () => {
         const query = getTermQuery<HomeDocument>('address', 'test', {
             case_insensitive: true
