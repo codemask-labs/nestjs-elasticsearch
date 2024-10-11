@@ -1,4 +1,5 @@
-import { Document, Field, FieldType } from 'lib/common'
+import { Document, Field, FieldType, Nullable, NullableFieldType } from 'lib/common'
+import { isNil } from 'ramda'
 
 export type TermsQueryOptions = {
     /**
@@ -16,10 +17,25 @@ export type TermsQuery<TDocument extends Document, TKeyword extends Field<TDocum
     terms: TermsQueryBody<TDocument, TKeyword>
 }
 
-export const getTermsQuery = <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
-    field: TField,
-    values: Array<FieldType<TDocument, TField>>,
-    options?: TermsQueryOptions
-): TermsQuery<TDocument, TField> => ({
-    terms: { [field]: values, ...options } as TermsQueryBody<TDocument, TField>
-})
+export interface TermsQuerySignatures {
+    <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
+        field: TField,
+        value: FieldType<TDocument, TField>,
+        options?: TermsQueryOptions
+    ): TermsQuery<TDocument, TField>
+    <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
+        field: TField,
+        value?: NullableFieldType<TDocument, TField>,
+        options?: TermsQueryOptions
+    ): Nullable<TermsQuery<TDocument, TField>>
+}
+
+export const getTermsQuery: TermsQuerySignatures = (field: any, values: any, options?: TermsQueryOptions): any => {
+    if (isNil(values)) {
+        return null
+    }
+
+    return {
+        terms: { [field]: values, ...options }
+    }
+}

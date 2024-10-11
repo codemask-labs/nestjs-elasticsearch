@@ -1,4 +1,4 @@
-import { Document, Field, FieldType, Nullable } from 'lib/common'
+import { Document, Field, FieldType, Nullable, NullableFieldType } from 'lib/common'
 import { isNil } from 'ramda'
 
 export type TermQueryOptions = {
@@ -32,7 +32,7 @@ export interface TermQueryOverloads {
     ): TermQuery<TDocument, TField>
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,
-        value: Nullable<FieldType<TDocument, TField>>,
+        value?: NullableFieldType<TDocument, TField>,
         options?: TermQueryOptions
     ): Nullable<TermQuery<TDocument, TField>>
 }
@@ -46,14 +46,3 @@ export const getTermQuery: TermQueryOverloads = (field: any, value: any, options
         [field]: { value, ...options }
     }
 }
-
-// export declare const getTermsQuery: () => void
-// export declare const getTermsQuery: (field: any) => number
-
-// export const getTermQuery = <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
-//     field: TField,
-//     value: OptionallyNullable<FieldType<TDocument, TField>>,
-//     options?: TermQueryOptions
-// ): TermQuery<TDocument, TField> => ({
-//     term: { [field]: { value, ...options } } as TermQueryBody<TDocument, TField>
-// })
