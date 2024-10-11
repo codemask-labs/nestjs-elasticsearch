@@ -27,12 +27,14 @@ describe('getTermsQuery', () => {
         })
     })
 
-    it('returns null when null or undefined value is being passed', () => {
+    it('returns null when empty array, null or undefined value is being passed', () => {
         const queryWithNull = getTermsQuery<HomeDocument>('address', null)
         const queryWithUndefined = getTermsQuery<HomeDocument>('address', undefined)
+        const queryWithEmptyArray = getTermsQuery<HomeDocument>('address', [])
 
         expect(queryWithNull).toEqual(null)
         expect(queryWithUndefined).toEqual(null)
+        expect(queryWithEmptyArray).toEqual(null)
     })
 
     it(`should query elasticsearch for terms query for a field which is 'keyword' type`, async () => {
