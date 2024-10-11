@@ -1,5 +1,19 @@
 
 
+## [2.8.0-beta.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.7.0...v2.8.0-beta.0) (2024-10-11)
+
+
+### Features
+
+* **optionally-nullable-queries:** proof of concept ([6b8b3a7](https://github.com/codemask-labs/nestjs-elasticsearch/commit/6b8b3a731d223bc72b76b079f68fc8058ad015fd))
+
+
+### Bug Fixes
+
+* eslint errors ([b933e3e](https://github.com/codemask-labs/nestjs-elasticsearch/commit/b933e3e4904dd506c4cdca2e3bab54a0847a67b6))
+* test cases for term query ([05d22d2](https://github.com/codemask-labs/nestjs-elasticsearch/commit/05d22d2ca08079a534d7d34d66c83bd7413cd241))
+* typescript errors ([91a5357](https://github.com/codemask-labs/nestjs-elasticsearch/commit/91a535738a33ee1f13c938d1592aa71a858daf5d))
+
 ## [2.7.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.6.0...v2.7.0) (2024-10-01)
 
 
