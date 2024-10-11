@@ -5,6 +5,7 @@ import { ElasticsearchModule } from 'module/elasticsearch.module'
 import { ElasticsearchService } from 'module/elasticsearch.service'
 import { HomeDocument, PropertyType } from 'test/module'
 import { getBoolQuery, getTermQuery } from 'lib/queries'
+import { getQueries } from 'lib/utils'
 
 describe('Making a search', () => {
     const { app } = setupNestApplication({
@@ -26,7 +27,11 @@ describe('Making a search', () => {
         const result = await service.search(HomeDocument, {
             size: 10,
             query: getBoolQuery({
-                must: [getTermQuery('propertyType.keyword', PropertyType.Flat)]
+                must: getQueries([
+                    getTermQuery('propertyType.keyword', PropertyType.Apartment),
+                    getTermQuery('propertyType.keyword', null),
+                    getTermQuery('propertyType.keyword', undefined)
+                ])
             })
         })
 

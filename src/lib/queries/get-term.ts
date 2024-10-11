@@ -1,4 +1,5 @@
-import { Document, Field, FieldType } from 'lib/common'
+import { Document, Field, FieldType, Nullable, NullableFieldType } from 'lib/common'
+import { isNil } from 'ramda'
 
 export type TermQueryOptions = {
     /**
@@ -23,10 +24,26 @@ export type TermQuery<TDocument extends Document, TKeyword extends Field<TDocume
     term: TermQueryBody<TDocument, TKeyword>
 }
 
-export const getTermQuery = <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
-    field: TField,
-    value: FieldType<TDocument, TField>,
-    options?: TermQueryOptions
-): TermQuery<TDocument, TField> => ({
-    term: { [field]: { value, ...options } } as TermQueryBody<TDocument, TField>
-})
+export interface TermQueryOverloads {
+    <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
+        field: TField,
+        value: FieldType<TDocument, TField>,
+        options?: TermQueryOptions
+    ): TermQuery<TDocument, TField>
+    <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
+        field: TField,
+        value?: NullableFieldType<TDocument, TField>,
+        options?: TermQueryOptions
+    ): Nullable<TermQuery<TDocument, TField>>
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getTermQuery: TermQueryOverloads = (field: any, value: any, options?: TermQueryOptions): any => {
+    if (isNil(value)) {
+        return null
+    }
+
+    return {
+        term: { [field]: { value, ...options } }
+    }
+}

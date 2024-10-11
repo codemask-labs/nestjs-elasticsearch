@@ -1,3 +1,4 @@
+export type * from './nullable'
 export type * from './class-constructor'
 export type * from './document'
 export type * from './field'

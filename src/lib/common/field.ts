@@ -39,6 +39,11 @@ export type FieldType<TDocument extends Document, TField extends Key<TDocument> 
     : // eslint-disable-next-line @typescript-eslint/no-explicit-any
       any
 
+export type NullableFieldType<TDocument extends Document, TField extends Key<TDocument> | Keyword<TDocument>> = TField extends keyof Fields<TDocument>
+    ? Fields<TDocument>[TField] | null | undefined
+    : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      any
+
 export type NumericField<TDocument extends Document> = NumericKey<TDocument> | NestedNumericKey<TDocument>
 
 export type ArrayOfObjectsField<TDocument extends Document> = {
