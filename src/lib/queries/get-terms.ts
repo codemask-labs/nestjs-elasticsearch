@@ -1,4 +1,4 @@
-import { Document, Field, FieldType, Nullable, NullableFieldType } from 'lib/common'
+import { Document, Field, FieldType, Nullable } from 'lib/common'
 import { isNil } from 'ramda'
 
 export type TermsQueryOptions = {
@@ -20,12 +20,12 @@ export type TermsQuery<TDocument extends Document, TKeyword extends Field<TDocum
 export interface TermsQuerySignatures {
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,
-        value: FieldType<TDocument, TField>,
+        value: Array<FieldType<TDocument, TField>>,
         options?: TermsQueryOptions
     ): TermsQuery<TDocument, TField>
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,
-        value?: NullableFieldType<TDocument, TField>,
+        value: Nullable<Array<FieldType<TDocument, TField>>>,
         options?: TermsQueryOptions
     ): Nullable<TermsQuery<TDocument, TField>>
 }
