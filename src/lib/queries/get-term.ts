@@ -37,6 +37,7 @@ export interface TermQueryOverloads {
     ): Nullable<TermQuery<TDocument, TField>>
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getTermQuery: TermQueryOverloads = (field: any, value: any, options?: TermQueryOptions): any => {
     if (isNil(value)) {
         return null
