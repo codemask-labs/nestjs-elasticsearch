@@ -1,5 +1,5 @@
 import { Document, Field, FieldType, Nullable } from 'lib/common'
-import { isNil } from 'ramda'
+import { isEmpty, isNil } from 'ramda'
 
 export type TermsQueryOptions = {
     /**
@@ -32,7 +32,7 @@ export interface TermsQuerySignatures {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getTermsQuery: TermsQuerySignatures = (field: any, values: any, options?: TermsQueryOptions): any => {
-    if (isNil(values)) {
+    if (isNil(values) || isEmpty(values)) {
         return null
     }
 
