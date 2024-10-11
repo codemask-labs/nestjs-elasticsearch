@@ -14,8 +14,10 @@ describe('getQueries', () => {
 
         expect(queries).toStrictEqual([
             {
-                'address.keyword': {
-                    value: 'test'
+                term: {
+                    'address.keyword': {
+                        value: 'test'
+                    }
                 }
             }
         ])

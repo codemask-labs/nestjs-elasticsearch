@@ -27,6 +27,14 @@ describe('getTermsQuery', () => {
         })
     })
 
+    it('returns null when null or undefined value is being passed', () => {
+        const queryWithNull = getTermsQuery<HomeDocument>('address', null)
+        const queryWithUndefined = getTermsQuery<HomeDocument>('address', undefined)
+
+        expect(queryWithNull).toEqual(null)
+        expect(queryWithUndefined).toEqual(null)
+    })
+
     it(`should query elasticsearch for terms query for a field which is 'keyword' type`, async () => {
         const service = app.get(ElasticsearchService)
 

@@ -44,6 +44,6 @@ export const getTermQuery: TermQueryOverloads = (field: any, value: any, options
     }
 
     return {
-        [field]: { value, ...options }
+        term: { [field]: { value, ...options } }
     }
 }
