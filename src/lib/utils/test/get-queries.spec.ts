@@ -3,7 +3,7 @@ import { getQueries } from '../get-queries'
 import { HomeDocument } from 'test/module'
 
 describe('getQueries', () => {
-    it('accepts only non optional queries', () => {
+    it('accepts optional tern and terms queries', () => {
         const queries = getQueries<HomeDocument>([
             getTermQuery('address.keyword', 'test'),
             getTermQuery('builtInYear.keyword', undefined),
@@ -12,6 +12,12 @@ describe('getQueries', () => {
             getTermsQuery('city.keyword', undefined)
         ])
 
-        expect(queries).toBe([])
+        expect(queries).toStrictEqual([
+            {
+                'address.keyword': {
+                    value: 'test'
+                }
+            }
+        ])
     })
 })
