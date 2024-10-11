@@ -1,5 +1,12 @@
 
 
+## [2.8.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.7.0...v2.8.0) (2024-10-11)
+
+
+### Features
+
+* optionally nullable queries ([#204](https://github.com/codemask-labs/nestjs-elasticsearch/issues/204)) ([d722906](https://github.com/codemask-labs/nestjs-elasticsearch/commit/d7229068cf7ff97f65fed8c996ee4fbc5aced7f7))
+
 ## [2.8.0-beta.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.7.0...v2.8.0-beta.0) (2024-10-11)
 
 
