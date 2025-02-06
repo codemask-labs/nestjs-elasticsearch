@@ -11,8 +11,8 @@ updates:
       interval: 'weekly'
       day: 'monday'
     commit-message:
-      prefix: 'chore(dependencies)'
-      prefix-development: 'chore(dev-dependencies)'
+      prefix: 'build(dependencies)'
+      prefix-development: 'build(dev-dependencies)'
     ignore:
       - dependency-name: '@elastic/elasticsearch'
     groups:
@@ -41,4 +41,4 @@ updates:
       interval: 'weekly'
       day: 'monday'
     commit-message:
-      prefix: 'chore(github-actions)'
+      prefix: 'build(github-actions)'
