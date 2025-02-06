@@ -1,4 +1,3 @@
-
 ```typescript
 import { Module } from '@nestjs/common'
 import { ElasticsearchModule } from '../src/nestjs'
@@ -16,9 +15,7 @@ import { ExampleDocument } from './document'
                 'Content-Type': 'application/json'
             }
         }),
-        ElasticsearchModule.forFeature([
-            ExampleDocument
-        ])
+        ElasticsearchModule.forFeature([ExampleDocument])
     ]
 })
 export class AppModule {}

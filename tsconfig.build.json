@@ -1,13 +1,13 @@
 {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "outDir": "./dist",
-        "paths": {
-            "lib/*": ["./src/lib/*"],
-            "module/*": ["./src/module/*"]
-        }
-    },
-    "include": ["src"],
-    "exclude": ["node_modules", "examples", "**/test", "**/*.spec.ts"]
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "paths": {
+      "lib/*": ["./src/lib/*"],
+      "module/*": ["./src/module/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "examples", "**/test", "**/*.spec.ts"]
 }

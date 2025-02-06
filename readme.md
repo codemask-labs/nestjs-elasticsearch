@@ -17,15 +17,15 @@ The main issues we encountered and which our package fixes are:
 
 ### Features
 
--   :rocket: Quick Setup - Get up and running in minutes using our easy-to-understand API.
+- :rocket: Quick Setup - Get up and running in minutes using our easy-to-understand API.
 
--   :nerd_face: :computer: Developer Experience - Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
+- :nerd_face: :computer: Developer Experience - Designed with developers in mind, package prioritizes ease of use and efficiency throughout the development process.
 
--   :white_check_mark: Full TypeScript Support - Enjoy the benefits of code autocompletion and types for both request and response objects. ⁤⁤Unlike the original Elasticsearch library, this package provides full type definitions in order to provide better development experience and minimize runtime errors. ⁤
+- :white_check_mark: Full TypeScript Support - Enjoy the benefits of code autocompletion and types for both request and response objects. ⁤⁤Unlike the original Elasticsearch library, this package provides full type definitions in order to provide better development experience and minimize runtime errors. ⁤
 
--   :hammer_and_wrench: Utility Methods - Say goodbye to repetitive boilerplate code. The package offers set of utility methods for most common Elasticsearch filtering, sorting, pagination and aggregations use cases.
+- :hammer_and_wrench: Utility Methods - Say goodbye to repetitive boilerplate code. The package offers set of utility methods for most common Elasticsearch filtering, sorting, pagination and aggregations use cases.
 
--   :bookmark_tabs: Schema definitions - Schema definitions are integrated into the package, with each schema mapping to an Elasticsearch index to provide a clear data model. These definitions are used to register indexes in the module scope and inject them into a service, similar to the approach in the TypeORM NestJS module, ensuring that only fields available for a given index are used when building request objects.
+- :bookmark_tabs: Schema definitions - Schema definitions are integrated into the package, with each schema mapping to an Elasticsearch index to provide a clear data model. These definitions are used to register indexes in the module scope and inject them into a service, similar to the approach in the TypeORM NestJS module, ensuring that only fields available for a given index are used when building request objects.
 
 ### Installation
 

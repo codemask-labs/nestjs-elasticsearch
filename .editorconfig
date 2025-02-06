@@ -9,7 +9,7 @@ insert_final_newline = true
 max_line_length = 150
 trim_trailing_whitespace = true
 
-[*.{sh,podspec,yml,yaml}]
+[*.{sh,podspec,yml,yaml,json}]
 indent_style = space
 indent_size = 2
 
