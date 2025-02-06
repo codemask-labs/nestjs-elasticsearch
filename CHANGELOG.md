@@ -1,4 +1,10 @@
+# Changelog
 
+## [2.9.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.8.0...v2.9.0) (2025-02-06)
+
+### Features
+
+* update dependencies and node version ([#230](https://github.com/codemask-labs/nestjs-elasticsearch/issues/230)) ([c8b6663](https://github.com/codemask-labs/nestjs-elasticsearch/commit/c8b6663660e34123f4237edb6cef5e738a5daa43))
 
 ## [2.8.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.7.0...v2.8.0) (2024-10-11)
 
