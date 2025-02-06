@@ -1,34 +1,34 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "target": "ESNext",
-        "module": "Node16",
-        "lib": ["esnext"],
-        "types": ["expect-more-jest"],
-        "removeComments": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "strictPropertyInitialization": false,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "moduleResolution": "Node16",
-        "sourceMap": true,
-        "outDir": "./dist",
-        "baseUrl": ".",
-        "paths": {
-            "lib/*": ["./src/lib/*"],
-            "module/*": ["./src/module/*"],
-            "test/*": ["./src/test/*"]
-        }
-    },
-    "watchOptions": {
-        "watchFile": "fixedpollinginterval"
-    },
-    "ts-node": {
-        "transpileOnly": true,
-        "require": ["reflect-metadata", "tsconfig-paths/register"]
-    },
-    "include": ["src"],
-    "exclude": ["dist", "node_modules"]
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "Node16",
+    "lib": ["esnext"],
+    "types": ["expect-more-jest"],
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "Node16",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "lib/*": ["./src/lib/*"],
+      "module/*": ["./src/module/*"],
+      "test/*": ["./src/test/*"]
+    }
+  },
+  "watchOptions": {
+    "watchFile": "fixedpollinginterval"
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "require": ["reflect-metadata", "tsconfig-paths/register"]
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
 }
