@@ -20,18 +20,14 @@ describe('getBucketSortAggregation', () => {
 
     it('accepts all parameters', () => {
         const query = getBucketSortAggregation({
-            sort: [
-                { somePath: { order: Order.ASC } }
-            ],
+            sort: [{ somePath: { order: Order.ASC } }],
             from: 0,
             size: 3
         })
 
         expect(query).toEqual({
             bucket_sort: {
-                sort: [
-                    { somePath: { order: Order.ASC } }
-                ],
+                sort: [{ somePath: { order: Order.ASC } }],
                 from: 0,
                 size: 3
             }
@@ -69,9 +65,7 @@ describe('getBucketSortAggregation', () => {
                     aggregations: {
                         sum: getSumAggregation('builtInYear'),
                         bucketSort: getBucketSortAggregation({
-                            sort: [
-                                { sum: { order: Order.ASC } }
-                            ],
+                            sort: [{ sum: { order: Order.ASC } }],
                             from: 0,
                             size
                         })
@@ -105,9 +99,7 @@ describe('getBucketSortAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     bucketSort: getBucketSortAggregation({
-                        sort: [
-                            { sum: { order: Order.ASC } }
-                        ]
+                        sort: [{ sum: { order: Order.ASC } }]
                     })
                 }
             })
@@ -127,9 +119,7 @@ describe('getBucketSortAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     bucketSort: getBucketSortAggregation({
-                        sort: [
-                            { sumAggregation: { order: Order.ASC } }
-                        ]
+                        sort: [{ sumAggregation: { order: Order.ASC } }]
                     })
                 }
             })
@@ -159,7 +149,9 @@ describe('getBucketSortAggregation', () => {
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('action_request_validation_exception')
-                expect(error.message).toContain('[bucketSort] is configured to perform nothing. Please set either of [sort, size, from] to use bucket_sort')
+                expect(error.message).toContain(
+                    '[bucketSort] is configured to perform nothing. Please set either of [sort, size, from] to use bucket_sort'
+                )
             })
     })
 })

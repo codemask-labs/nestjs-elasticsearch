@@ -1,24 +1,24 @@
 {
-  "git": {
-    "commitMessage": "chore: release v${version}"
-  },
-  "github": {
-    "release": true,
-    "releaseName": "v${version}"
-  },
-  "npm": {
-    "publish": true,
-    "skipChecks": true
-  },
-  "hooks": {
-    "after:release": "echo \"version=${version}\" >> $GITHUB_OUTPUT"
-  },
-  "plugins": {
-    "@release-it/conventional-changelog": {
-      "infile": "CHANGELOG.md",
-      "preset": {
-        "name": "conventionalcommits"
-      }
+    "git": {
+        "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+        "release": true,
+        "releaseName": "v${version}"
+    },
+    "npm": {
+        "publish": true,
+        "skipChecks": true
+    },
+    "hooks": {
+        "after:release": "echo \"version=${version}\" >> $GITHUB_OUTPUT"
+    },
+    "plugins": {
+        "@release-it/conventional-changelog": {
+            "infile": "CHANGELOG.md",
+            "preset": {
+                "name": "conventionalcommits"
+            }
+        }
     }
-  }
 }
