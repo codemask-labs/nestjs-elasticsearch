@@ -31,7 +31,7 @@ export type CompositeAggregation<TDocument extends Document> = {
 
 export const getCompositeAggregation = <TDocument extends Document>(
     sources: Array<CompositeAggregationSource<TDocument>>,
-    options?: CompositeAggregationOptions<TDocument>
+    options?: CompositeAggregationOptions<TDocument>,
 ): CompositeAggregation<TDocument> => ({
-    composite: { sources, ...options }
+    composite: { sources, ...options },
 })

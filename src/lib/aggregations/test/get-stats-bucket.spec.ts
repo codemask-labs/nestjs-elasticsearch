@@ -14,9 +14,9 @@ describe('getStatsBucketAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema field', () => {
@@ -24,8 +24,8 @@ describe('getStatsBucketAggregation', () => {
 
         expect(query).toEqual({
             stats_bucket: {
-                buckets_path: 'address'
-            }
+                buckets_path: 'address',
+            },
         })
     })
 
@@ -36,8 +36,8 @@ describe('getStatsBucketAggregation', () => {
             size: 0,
             aggregations: {
                 result: getTermsAggregation('address.keyword', 100),
-                statsResult: getStatsBucketAggregation('result._count')
-            }
+                statsResult: getStatsBucketAggregation('result._count'),
+            },
         })
 
         expect(result.aggregations.statsResult).toEqual(
@@ -46,8 +46,8 @@ describe('getStatsBucketAggregation', () => {
                 min: expect.any(Number),
                 max: expect.any(Number),
                 avg: expect.any(Number),
-                sum: expect.any(Number)
-            })
+                sum: expect.any(Number),
+            }),
         )
     })
 
@@ -60,11 +60,11 @@ describe('getStatsBucketAggregation', () => {
                 result: {
                     ...getDateHistogramAggregation('contractDate', CalendarIntervalName.MONTH),
                     aggregations: {
-                        innerResult: getSumAggregation('propertyAreaSquared')
-                    }
+                        innerResult: getSumAggregation('propertyAreaSquared'),
+                    },
                 },
-                statsResult: getStatsBucketAggregation('result>innerResult')
-            }
+                statsResult: getStatsBucketAggregation('result>innerResult'),
+            },
         })
 
         expect(result.aggregations.statsResult).toEqual(
@@ -73,8 +73,8 @@ describe('getStatsBucketAggregation', () => {
                 min: expect.any(Number),
                 max: expect.any(Number),
                 avg: expect.any(Number),
-                sum: expect.any(Number)
-            })
+                sum: expect.any(Number),
+            }),
         )
     })
 
@@ -85,8 +85,8 @@ describe('getStatsBucketAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    result: getStatsBucketAggregation('address')
-                }
+                    result: getStatsBucketAggregation('address'),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
@@ -102,8 +102,8 @@ describe('getStatsBucketAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    result: getStatsBucketAggregation('address.keyword')
-                }
+                    result: getStatsBucketAggregation('address.keyword'),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

@@ -8,6 +8,6 @@ export type StatsBucketAggregationBody = {
 
 export const getStatsBucketAggregation = (path: string): StatsBucketAggregation => ({
     stats_bucket: {
-        buckets_path: path
-    }
+        buckets_path: path,
+    },
 })

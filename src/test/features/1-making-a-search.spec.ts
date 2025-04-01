@@ -11,9 +11,9 @@ describe('Making a search', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('has service available', () => {
@@ -30,9 +30,9 @@ describe('Making a search', () => {
                 must: getQueries([
                     getTermQuery('propertyType.keyword', PropertyType.Apartment),
                     getTermQuery('propertyType.keyword', null),
-                    getTermQuery('propertyType.keyword', undefined)
-                ])
-            })
+                    getTermQuery('propertyType.keyword', undefined),
+                ]),
+            }),
         })
 
         const allDocumentsAreValid = result.documents.every(document => {

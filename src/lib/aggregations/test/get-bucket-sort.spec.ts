@@ -13,24 +13,24 @@ describe('getBucketSortAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts all parameters', () => {
         const query = getBucketSortAggregation({
             sort: [{ somePath: { order: Order.ASC } }],
             from: 0,
-            size: 3
+            size: 3,
         })
 
         expect(query).toEqual({
             bucket_sort: {
                 sort: [{ somePath: { order: Order.ASC } }],
                 from: 0,
-                size: 3
-            }
+                size: 3,
+            },
         })
     })
 
@@ -39,7 +39,7 @@ describe('getBucketSortAggregation', () => {
         const query = getBucketSortAggregation({})
 
         expect(query).toEqual({
-            bucket_sort: {}
+            bucket_sort: {},
         })
     })
 
@@ -48,7 +48,7 @@ describe('getBucketSortAggregation', () => {
         const query = getBucketSortAggregation()
 
         expect(query).toEqual({
-            bucket_sort: {}
+            bucket_sort: {},
         })
     })
 
@@ -67,11 +67,11 @@ describe('getBucketSortAggregation', () => {
                         bucketSort: getBucketSortAggregation({
                             sort: [{ sum: { order: Order.ASC } }],
                             from: 0,
-                            size
-                        })
-                    }
-                }
-            }
+                            size,
+                        }),
+                    },
+                },
+            },
         })
 
         expect(result.aggregations.date.buckets.length).toEqual(size)
@@ -79,8 +79,8 @@ describe('getBucketSortAggregation', () => {
         result.aggregations.date.buckets.forEach(bucket => {
             expect(bucket.sum).toEqual(
                 expect.objectContaining({
-                    value: expect.any(Number)
-                })
+                    value: expect.any(Number),
+                }),
             )
         })
 
@@ -99,9 +99,9 @@ describe('getBucketSortAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     bucketSort: getBucketSortAggregation({
-                        sort: [{ sum: { order: Order.ASC } }]
-                    })
-                }
+                        sort: [{ sum: { order: Order.ASC } }],
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
@@ -119,9 +119,9 @@ describe('getBucketSortAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     bucketSort: getBucketSortAggregation({
-                        sort: [{ sumAggregation: { order: Order.ASC } }]
-                    })
-                }
+                        sort: [{ sumAggregation: { order: Order.ASC } }],
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
@@ -141,16 +141,16 @@ describe('getBucketSortAggregation', () => {
                         ...getTermsAggregation('contractDate'),
                         aggregations: {
                             sum: getSumAggregation('builtInYear'),
-                            bucketSort: getBucketSortAggregation({})
-                        }
-                    }
-                }
+                            bucketSort: getBucketSortAggregation({}),
+                        },
+                    },
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('action_request_validation_exception')
                 expect(error.message).toContain(
-                    '[bucketSort] is configured to perform nothing. Please set either of [sort, size, from] to use bucket_sort'
+                    '[bucketSort] is configured to perform nothing. Please set either of [sort, size, from] to use bucket_sort',
                 )
             })
     })

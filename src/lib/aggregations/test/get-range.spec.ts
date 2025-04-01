@@ -11,22 +11,22 @@ describe('getRangeAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     const ranges: Array<Range> = [
         {
-            from: 10
+            from: 10,
         },
         {
             from: 15,
-            to: 20
+            to: 20,
         },
         {
-            to: 25
-        }
+            to: 25,
+        },
     ]
 
     it('accepts only schema numeric field', () => {
@@ -35,8 +35,8 @@ describe('getRangeAggregation', () => {
         expect(query).toEqual({
             range: {
                 field: 'propertyAreaSquared',
-                ranges: [{ from: 10 }, { from: 15, to: 20 }, { to: 25 }]
-            }
+                ranges: [{ from: 10 }, { from: 15, to: 20 }, { to: 25 }],
+            },
         })
     })
 
@@ -46,27 +46,27 @@ describe('getRangeAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getRangeAggregation('propertyAreaSquared', ranges)
-            }
+                result: getRangeAggregation('propertyAreaSquared', ranges),
+            },
         })
 
         const expectedResponseShape = [
             {
                 key: '*-25.0',
                 to: 25,
-                doc_count: expect.any(Number)
+                doc_count: expect.any(Number),
             },
             {
                 key: '10.0-*',
                 from: 10,
-                doc_count: expect.any(Number)
+                doc_count: expect.any(Number),
             },
             {
                 key: '15.0-20.0',
                 from: 15,
                 to: 20,
-                doc_count: expect.any(Number)
-            }
+                doc_count: expect.any(Number),
+            },
         ]
 
         expect(result.aggregations.result.buckets).toEqual(expectedResponseShape)
@@ -80,10 +80,10 @@ describe('getRangeAggregation', () => {
                 result: {
                     ...getRangeAggregation('propertyAreaSquared', ranges),
                     aggregations: {
-                        innerResult: getTermsAggregation('address.keyword', 1)
-                    }
-                }
-            }
+                        innerResult: getTermsAggregation('address.keyword', 1),
+                    },
+                },
+            },
         })
 
         const expectedResponseShape = [
@@ -94,8 +94,8 @@ describe('getRangeAggregation', () => {
                 innerResult: {
                     buckets: expect.any(Array),
                     doc_count_error_upper_bound: expect.any(Number),
-                    sum_other_doc_count: expect.any(Number)
-                }
+                    sum_other_doc_count: expect.any(Number),
+                },
             },
             {
                 doc_count: expect.any(Number),
@@ -104,8 +104,8 @@ describe('getRangeAggregation', () => {
                 innerResult: {
                     buckets: expect.any(Array),
                     doc_count_error_upper_bound: expect.any(Number),
-                    sum_other_doc_count: expect.any(Number)
-                }
+                    sum_other_doc_count: expect.any(Number),
+                },
             },
             {
                 doc_count: expect.any(Number),
@@ -115,9 +115,9 @@ describe('getRangeAggregation', () => {
                 innerResult: {
                     buckets: expect.any(Array),
                     doc_count_error_upper_bound: expect.any(Number),
-                    sum_other_doc_count: expect.any(Number)
-                }
-            }
+                    sum_other_doc_count: expect.any(Number),
+                },
+            },
         ]
 
         expect(result.aggregations.result.buckets).toEqual(expectedResponseShape)
@@ -131,15 +131,15 @@ describe('getRangeAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getRangeAggregation('address' as any, ranges)
-                }
+                    result: getRangeAggregation('address' as any, ranges),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
             })
     })
@@ -152,8 +152,8 @@ describe('getRangeAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getRangeAggregation('address.keyword' as any, ranges)
-                }
+                    result: getRangeAggregation('address.keyword' as any, ranges),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

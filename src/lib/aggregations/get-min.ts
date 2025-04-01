@@ -14,13 +14,13 @@ export type MinAggregation<TDocument extends Document> = {
 }
 
 export const getMinAggregation = <TDocument extends Document>(
-    fieldOrScript: NumericField<TDocument> | MinAggregationScript
+    fieldOrScript: NumericField<TDocument> | MinAggregationScript,
 ): MinAggregation<TDocument> => {
     if (is(String, fieldOrScript) || is(Symbol, fieldOrScript) || is(Number, fieldOrScript)) {
         return { min: { field: fieldOrScript } }
     }
 
     return {
-        min: fieldOrScript
+        min: fieldOrScript,
     }
 }

@@ -46,7 +46,7 @@ export class HomeDocument {
 
     @IsArray()
     @ValidateNested({
-        each: true
+        each: true,
     })
     @Type(() => AnimalDocument)
     readonly animals: Array<AnimalDocument>

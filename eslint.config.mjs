@@ -4,14 +4,6 @@ export default [
     ...codemaskConfig,
     {
         rules: {
-            '@typescript-eslint/indent': 'off',
-            '@typescript-eslint/naming-convention': [
-                'error',
-                {
-                    selector: ['typeParameter'],
-                    format: ['PascalCase']
-                }
-            ],
             camelcase: [
                 'warn',
                 {
@@ -38,17 +30,18 @@ export default [
                         'match_phrase_prefix',
                         'case_insensitive',
                         'geo_centroid',
-                        'key_as_string'
-                    ]
-                }
+                        'key_as_string',
+                    ],
+                },
             ],
-            'import/order': 'off'
-        }
+            'import/order': 'off',
+            '@typescript-eslint/strict-boolean-expressions': 'off',
+        },
     },
     {
         files: ['*/test/scripts/*.ts'],
         rules: {
-            'no-console': 'off'
-        }
-    }
+            'no-console': 'off',
+        },
+    },
 ]

@@ -14,22 +14,22 @@ describe('getCompositeAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema fields', () => {
         const sources = getCompositeSources<HomeDocument>([
             { first: getTermsAggregation('address.keyword') },
-            { second: getTermsAggregation('city.keyword') }
+            { second: getTermsAggregation('city.keyword') },
         ])
 
         const query = getCompositeAggregation<HomeDocument>(sources, {
             after: {
                 address: 'test address',
-                city: 'test city'
-            }
+                city: 'test city',
+            },
         })
 
         expect(query).toEqual({
@@ -37,9 +37,9 @@ describe('getCompositeAggregation', () => {
                 sources,
                 after: {
                     address: 'test address',
-                    city: 'test city'
-                }
-            }
+                    city: 'test city',
+                },
+            },
         })
     })
 
@@ -47,14 +47,14 @@ describe('getCompositeAggregation', () => {
         const service = app.get(ElasticsearchService)
         const sources = getCompositeSources<HomeDocument>([
             { address: getTermsAggregation('address.keyword') },
-            { city: getTermsAggregation('city.keyword') }
+            { city: getTermsAggregation('city.keyword') },
         ])
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getCompositeAggregation(sources)
-            }
+                result: getCompositeAggregation(sources),
+            },
         })
 
         result.aggregations.result.buckets.forEach(bucket => {
@@ -62,8 +62,8 @@ describe('getCompositeAggregation', () => {
                 doc_count: expect.any(Number),
                 key: {
                     address: expect.any(String),
-                    city: expect.any(String)
-                }
+                    city: expect.any(String),
+                },
             })
         })
     })
@@ -72,7 +72,7 @@ describe('getCompositeAggregation', () => {
         const service = app.get(ElasticsearchService)
         const sources = getCompositeSources<HomeDocument>([
             { address: getTermsAggregation('address.keyword') },
-            { city: getTermsAggregation('city.keyword') }
+            { city: getTermsAggregation('city.keyword') },
         ])
 
         const result = await service.search(HomeDocument, {
@@ -81,10 +81,10 @@ describe('getCompositeAggregation', () => {
                 result: {
                     ...getCompositeAggregation(sources),
                     aggregations: {
-                        innerResult: getTopHitsAggregation(1)
-                    }
-                }
-            }
+                        innerResult: getTopHitsAggregation(1),
+                    },
+                },
+            },
         })
 
         result.aggregations.result.buckets.forEach(bucket => {
@@ -92,7 +92,7 @@ describe('getCompositeAggregation', () => {
                 doc_count: expect.any(Number),
                 key: {
                     address: expect.any(String),
-                    city: expect.any(String)
+                    city: expect.any(String),
                 },
                 innerResult: {
                     hits: {
@@ -101,16 +101,16 @@ describe('getCompositeAggregation', () => {
                                 _index: 'homes',
                                 _id: expect.any(String),
                                 _score: 1,
-                                _source: expect.any(Object)
-                            }
+                                _source: expect.any(Object),
+                            },
                         ]),
                         max_score: 1,
                         total: {
                             relation: 'eq',
-                            value: 1
-                        }
-                    }
-                }
+                            value: 1,
+                        },
+                    },
+                },
             })
         })
     })
@@ -120,17 +120,17 @@ describe('getCompositeAggregation', () => {
         const sources = getCompositeSources<HomeDocument>([
             {
                 address: getTermsAggregation('address.keyword', undefined, {
-                    order: Order.ASC
-                })
+                    order: Order.ASC,
+                }),
             },
-            { city: getTermsAggregation('city.keyword') }
+            { city: getTermsAggregation('city.keyword') },
         ])
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getCompositeAggregation(sources)
-            }
+                result: getCompositeAggregation(sources),
+            },
         })
 
         result.aggregations.result.buckets.forEach(bucket => {
@@ -138,8 +138,8 @@ describe('getCompositeAggregation', () => {
                 doc_count: expect.any(Number),
                 key: {
                     address: expect.any(String),
-                    city: expect.any(String)
-                }
+                    city: expect.any(String),
+                },
             })
         })
     })
@@ -148,16 +148,16 @@ describe('getCompositeAggregation', () => {
         const service = app.get(ElasticsearchService)
         const sources = getCompositeSources<HomeDocument>([
             {
-                address: getTermsAggregation('address.keyword', 10)
-            }
+                address: getTermsAggregation('address.keyword', 10),
+            },
         ])
 
         await service
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    result: getCompositeAggregation(sources)
-                }
+                    result: getCompositeAggregation(sources),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
@@ -169,20 +169,20 @@ describe('getCompositeAggregation', () => {
     it('queries for composite aggregation that returns enum keys', async () => {
         enum SourceKey {
             Address = 'address',
-            City = 'city'
+            City = 'city',
         }
 
         const service = app.get(ElasticsearchService)
         const sources = getCompositeSources<HomeDocument>([
             { [SourceKey.Address]: getTermsAggregation('address.keyword') },
-            { [SourceKey.City]: getTermsAggregation('city.keyword') }
+            { [SourceKey.City]: getTermsAggregation('city.keyword') },
         ])
 
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getCompositeAggregation(sources)
-            }
+                result: getCompositeAggregation(sources),
+            },
         })
 
         result.aggregations.result.buckets.forEach(bucket => {
@@ -190,8 +190,8 @@ describe('getCompositeAggregation', () => {
                 doc_count: expect.any(Number),
                 key: {
                     [SourceKey.Address]: expect.any(String),
-                    [SourceKey.City]: expect.any(String)
-                }
+                    [SourceKey.City]: expect.any(String),
+                },
             })
         })
     })

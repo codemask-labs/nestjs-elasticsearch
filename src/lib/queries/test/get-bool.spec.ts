@@ -18,9 +18,9 @@ describe('getBoolQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts optional must query', () => {
@@ -32,15 +32,15 @@ describe('getBoolQuery', () => {
                 getTermQuery('id', id),
                 getTermsQuery('propertyType', [PropertyType.Apartment]),
                 getBoolQuery({
-                    must: getTermQuery('address', 'test')
+                    must: getTermQuery('address', 'test'),
                 }),
                 getRangeQuery('propertyAreaSquared', {
                     gte: 500,
-                    lte: 1000
+                    lte: 1000,
                 }),
                 getExistsQuery('address'),
-                getExistsQuery('id.keyword')
-            ])
+                getExistsQuery('id.keyword'),
+            ]),
         })
 
         expect(query).toEqual({
@@ -52,22 +52,22 @@ describe('getBoolQuery', () => {
                     { terms: { propertyType: [PropertyType.Apartment] } },
                     {
                         bool: {
-                            must: { term: { address: { value: 'test' } } }
-                        }
+                            must: { term: { address: { value: 'test' } } },
+                        },
                     },
                     {
                         range: {
-                            propertyAreaSquared: { gte: 500, lte: 1000 }
-                        }
+                            propertyAreaSquared: { gte: 500, lte: 1000 },
+                        },
                     },
                     {
-                        exists: { field: 'address' }
+                        exists: { field: 'address' },
                     },
                     {
-                        exists: { field: 'id.keyword' }
-                    }
-                ]
-            }
+                        exists: { field: 'id.keyword' },
+                    },
+                ],
+            },
         })
     })
 
@@ -77,7 +77,7 @@ describe('getBoolQuery', () => {
         const fullName = 'Stephanie Becker'
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getTermQuery('fullName.keyword', fullName)))
+            query: getBoolQuery(getMustQuery(getTermQuery('fullName.keyword', fullName))),
         })
 
         result.documents.forEach(document => expect(document.source.fullName).toBe(fullName))
@@ -89,7 +89,7 @@ describe('getBoolQuery', () => {
         const city = 'Port Marcia'
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustNotQuery(getTermQuery('city.keyword', city)))
+            query: getBoolQuery(getMustNotQuery(getTermQuery('city.keyword', city))),
         })
 
         result.documents.forEach(document => expect(document.source.fullName).not.toBe(city))
@@ -102,7 +102,7 @@ describe('getBoolQuery', () => {
         const city = 'Johnson City'
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getShouldQuery([getTermQuery('city.keyword', city), getTermQuery('fullName.keyword', fullName)]))
+            query: getBoolQuery(getShouldQuery([getTermQuery('city.keyword', city), getTermQuery('fullName.keyword', fullName)])),
         })
 
         result.documents.forEach(document => {
@@ -122,8 +122,8 @@ describe('getBoolQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getMinimumShouldMatchParameter(2),
-                ...getShouldQuery([getTermQuery('city.keyword', city), getTermQuery('fullName.keyword', fullName)])
-            })
+                ...getShouldQuery([getTermQuery('city.keyword', city), getTermQuery('fullName.keyword', fullName)]),
+            }),
         })
 
         result.documents.forEach(document => {

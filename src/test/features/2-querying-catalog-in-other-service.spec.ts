@@ -9,10 +9,10 @@ describe('Making a search', () => {
         providers: [TestService],
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
+                node: TEST_ELASTICSEARCH_NODE,
             }),
-            ElasticsearchModule.forFeature([HomeDocument])
-        ]
+            ElasticsearchModule.forFeature([HomeDocument]),
+        ],
     })
 
     it('has index available', () => {

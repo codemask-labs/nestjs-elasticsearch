@@ -23,5 +23,5 @@ export type MustQuery<TDocument extends Document> = {
 }
 
 export const getMustQuery = <TDocument extends Document>(must: MustQueryBody<TDocument> | Array<MustQueryBody<TDocument>>): MustQuery<TDocument> => ({
-    must
+    must,
 })

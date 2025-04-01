@@ -8,5 +8,5 @@ export type FilterAggregation<TDocument extends Document> = {
 }
 
 export const getFilterAggregation = <TDocument extends Document>(filter: QueryType<TDocument>): FilterAggregation<TDocument> => ({
-    filter
+    filter,
 })

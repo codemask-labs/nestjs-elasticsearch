@@ -14,13 +14,13 @@ export type MaxAggregation<TDocument extends Document> = {
 }
 
 export const getMaxAggregation = <TDocument extends Document>(
-    fieldOrScript: NumericField<TDocument> | MaxAggregationScript
+    fieldOrScript: NumericField<TDocument> | MaxAggregationScript,
 ): MaxAggregation<TDocument> => {
     if (is(String, fieldOrScript) || is(Symbol, fieldOrScript) || is(Number, fieldOrScript)) {
         return { max: { field: fieldOrScript } }
     }
 
     return {
-        max: fieldOrScript
+        max: fieldOrScript,
     }
 }

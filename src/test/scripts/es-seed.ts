@@ -5,7 +5,7 @@ import { readFile } from 'fs/promises'
 
 const index = 'homes'
 const client = new Client({
-    node: TEST_ELASTICSEARCH_NODE
+    node: TEST_ELASTICSEARCH_NODE,
 })
 
 const path = join(__dirname, './seeds/homes.seed.json')
@@ -31,13 +31,13 @@ readFile(path)
             body: {
                 properties: {
                     animals: {
-                        type: 'nested'
+                        type: 'nested',
                     },
                     location: {
-                        type: 'geo_point'
-                    }
-                }
-            }
+                        type: 'geo_point',
+                    },
+                },
+            },
         })
 
         await client.bulk({ body: records })

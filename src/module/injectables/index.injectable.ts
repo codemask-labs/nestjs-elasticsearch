@@ -8,7 +8,7 @@ import { ElasticsearchService } from '../elasticsearch.service'
 export class Index<TDocument extends Document> {
     constructor(
         private readonly service: ElasticsearchService,
-        private readonly document: ClassConstructor<TDocument>
+        private readonly document: ClassConstructor<TDocument>,
     ) {}
 
     search<TAggregationsBody extends AggregationsContainer<TDocument>>(options?: SearchRequestOptions<TDocument, TAggregationsBody>) {

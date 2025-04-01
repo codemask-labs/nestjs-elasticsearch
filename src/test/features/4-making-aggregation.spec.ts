@@ -8,10 +8,10 @@ describe('Making a search', () => {
         providers: [TestService],
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
+                node: TEST_ELASTICSEARCH_NODE,
             }),
-            ElasticsearchModule.forFeature([HomeDocument])
-        ]
+            ElasticsearchModule.forFeature([HomeDocument]),
+        ],
     })
 
     it('has index available', () => {
@@ -30,9 +30,9 @@ describe('Making a search', () => {
                 buckets: expect.arrayContaining([
                     {
                         doc_count: expect.any(Number),
-                        key: expect.any(String)
-                    }
-                ])
+                        key: expect.any(String),
+                    },
+                ]),
             },
             citiesWithAverageAreaSquared: {
                 doc_count_error_upper_bound: expect.any(Number),
@@ -42,10 +42,10 @@ describe('Making a search', () => {
                         doc_count: expect.any(Number),
                         key: expect.any(String),
                         averageSquareMeters: {
-                            value: expect.toBeNullableOf(expect.any(Number))
-                        }
-                    }
-                ])
+                            value: expect.toBeNullableOf(expect.any(Number)),
+                        },
+                    },
+                ]),
             },
             homes: {
                 doc_count_error_upper_bound: expect.any(Number),
@@ -55,11 +55,11 @@ describe('Making a search', () => {
                         doc_count: expect.any(Number),
                         key: expect.any(String),
                         averageSquareMeters: {
-                            value: expect.toBeNullableOf(expect.any(Number))
-                        }
-                    }
-                ])
-            }
+                            value: expect.toBeNullableOf(expect.any(Number)),
+                        },
+                    },
+                ]),
+            },
         })
     })
 })

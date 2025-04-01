@@ -19,11 +19,11 @@ export type HistogramAggregation<TDocument extends Document> = {
 export const getHistogramAggregation = <TDocument extends Document>(
     field: NumericField<TDocument>,
     interval: number,
-    options?: HistogramAggregationOptions
+    options?: HistogramAggregationOptions,
 ): HistogramAggregation<TDocument> => ({
     histogram: {
         field,
         interval,
-        ...options
-    }
+        ...options,
+    },
 })

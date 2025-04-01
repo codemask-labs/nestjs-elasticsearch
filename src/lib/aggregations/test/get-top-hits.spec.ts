@@ -12,16 +12,16 @@ describe('getTopHitsAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema field', () => {
         const query = getTopHitsAggregation<HomeDocument>(1, {
             from: 0,
             includes: ['address', 'city', 'fullName'],
-            sort: [{ address: { order: Order.ASC } }]
+            sort: [{ address: { order: Order.ASC } }],
         })
 
         expect(query).toEqual({
@@ -30,9 +30,9 @@ describe('getTopHitsAggregation', () => {
                 from: 0,
                 sort: [{ address: { order: Order.ASC } }],
                 _source: {
-                    includes: ['address', 'city', 'fullName']
-                }
-            }
+                    includes: ['address', 'city', 'fullName'],
+                },
+            },
         })
     })
 
@@ -40,7 +40,7 @@ describe('getTopHitsAggregation', () => {
         const query = getTopHitsAggregation<HomeDocument>(1, {
             from: 0,
             includes: ['address', 'city', 'fullName'],
-            sort: [{ 'address.keyword': { order: Order.ASC } }]
+            sort: [{ 'address.keyword': { order: Order.ASC } }],
         })
 
         expect(query).toEqual({
@@ -49,9 +49,9 @@ describe('getTopHitsAggregation', () => {
                 from: 0,
                 sort: [{ 'address.keyword': { order: Order.ASC } }],
                 _source: {
-                    includes: ['address', 'city', 'fullName']
-                }
-            }
+                    includes: ['address', 'city', 'fullName'],
+                },
+            },
         })
     })
 
@@ -61,19 +61,19 @@ describe('getTopHitsAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getTopHitsAggregation()
-            }
+                result: getTopHitsAggregation(),
+            },
         })
 
         expect(result.aggregations.result.hits).toEqual(
             expect.objectContaining({
                 total: expect.objectContaining({
                     value: expect.any(Number),
-                    relation: expect.any(String)
+                    relation: expect.any(String),
                 }),
                 max_score: expect.any(Number),
-                hits: expect.any(Array)
-            })
+                hits: expect.any(Array),
+            }),
         )
     })
 
@@ -86,10 +86,10 @@ describe('getTopHitsAggregation', () => {
                 result: {
                     ...getTermsAggregation('address.keyword'),
                     aggregations: {
-                        innerResult: getTopHitsAggregation()
-                    }
-                }
-            }
+                        innerResult: getTopHitsAggregation(),
+                    },
+                },
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -99,12 +99,12 @@ describe('getTopHitsAggregation', () => {
                 expect.objectContaining({
                     total: expect.objectContaining({
                         value: expect.any(Number),
-                        relation: expect.any(String)
+                        relation: expect.any(String),
                     }),
                     max_score: expect.any(Number),
-                    hits: expect.any(Array)
-                })
-            )
+                    hits: expect.any(Array),
+                }),
+            ),
         )
     })
 
@@ -118,10 +118,10 @@ describe('getTopHitsAggregation', () => {
                 result: {
                     ...getTermsAggregation('propertyType.keyword'),
                     aggregations: {
-                        innerResult: getTopHitsAggregation(size)
-                    }
-                }
-            }
+                        innerResult: getTopHitsAggregation(size),
+                    },
+                },
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -140,11 +140,11 @@ describe('getTopHitsAggregation', () => {
                     ...getTermsAggregation('propertyType.keyword'),
                     aggregations: {
                         innerResult: getTopHitsAggregation(size, {
-                            includes: ['city']
-                        })
-                    }
-                }
-            }
+                            includes: ['city'],
+                        }),
+                    },
+                },
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -167,15 +167,15 @@ describe('getTopHitsAggregation', () => {
                             sort: [
                                 {
                                     contractDate: {
-                                        order: Order.ASC
-                                    }
-                                }
+                                        order: Order.ASC,
+                                    },
+                                },
                             ],
-                            includes: ['contractDate']
-                        })
-                    }
-                }
-            }
+                            includes: ['contractDate'],
+                        }),
+                    },
+                },
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -183,7 +183,7 @@ describe('getTopHitsAggregation', () => {
         responseBuckets.forEach(bucket => {
             const responseHits = bucket.innerResult.hits.hits
             const contractDates = responseHits.map(({ _source }) => ({
-                contractDate: _source?.contractDate ? new Date(_source?.contractDate) : null
+                contractDate: _source?.contractDate ? new Date(_source.contractDate) : null,
             }))
 
             const firstContractDate = contractDates.at(0)?.contractDate?.getTime()
@@ -207,15 +207,15 @@ describe('getTopHitsAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    result: getTopHitsAggregation(1000)
-                }
+                    result: getTopHitsAggregation(1000),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    `Top hits result window is too large, the top hits aggregator [result]'s from + size must be less than or equal to: [100] but was [1000].`
+                    `Top hits result window is too large, the top hits aggregator [result]'s from + size must be less than or equal to: [100] but was [1000].`,
                 )
             })
     })
@@ -228,16 +228,16 @@ describe('getTopHitsAggregation', () => {
                 size: 0,
                 aggregations: {
                     result: getTopHitsAggregation(97, {
-                        from: 10
-                    })
-                }
+                        from: 10,
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    `Top hits result window is too large, the top hits aggregator [result]'s from + size must be less than or equal to: [100] but was [107].`
+                    `Top hits result window is too large, the top hits aggregator [result]'s from + size must be less than or equal to: [100] but was [107].`,
                 )
             })
     })

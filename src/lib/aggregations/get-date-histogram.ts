@@ -21,11 +21,11 @@ export type DateHistogramAggregation<TDocument extends Document> = {
 export const getDateHistogramAggregation = <TDocument extends Document>(
     field: Key<TDocument>,
     interval: ExtractEnumValues<CalendarIntervalName | CalendarIntervalQuantity>,
-    options?: DateHistogramAggregationOptions
+    options?: DateHistogramAggregationOptions,
 ): DateHistogramAggregation<TDocument> => ({
     date_histogram: {
         field,
         calendar_interval: interval,
-        ...options
-    }
+        ...options,
+    },
 })

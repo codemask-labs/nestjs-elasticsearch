@@ -11,9 +11,9 @@ describe('getFilterAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('should accept term query', () => {
@@ -23,27 +23,27 @@ describe('getFilterAggregation', () => {
             filter: {
                 term: {
                     'address.keyword': {
-                        value: 'test'
-                    }
-                }
-            }
+                        value: 'test',
+                    },
+                },
+            },
         })
     })
 
     it('should accept range query', () => {
         const query = getFilterAggregation<HomeDocument>(
             getRangeQuery('builtInYear', {
-                gt: 1000
-            })
+                gt: 1000,
+            }),
         )
         expect(query).toEqual({
             filter: {
                 range: {
                     builtInYear: {
-                        gt: 1000
-                    }
-                }
-            }
+                        gt: 1000,
+                    },
+                },
+            },
         })
     })
 
@@ -56,12 +56,12 @@ describe('getFilterAggregation', () => {
                     must: {
                         term: {
                             'propertyType.keyword': {
-                                value: 'Flat'
-                            }
-                        }
-                    }
-                }
-            }
+                                value: 'Flat',
+                            },
+                        },
+                    },
+                },
+            },
         })
     })
 
@@ -71,8 +71,8 @@ describe('getFilterAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                filterAggregation: getFilterAggregation(getTermQuery('propertyType.keyword', PropertyType.Flat))
-            }
+                filterAggregation: getFilterAggregation(getTermQuery('propertyType.keyword', PropertyType.Flat)),
+            },
         })
 
         expect(result.aggregations.filterAggregation.doc_count).not.toEqual(0)
@@ -86,10 +86,10 @@ describe('getFilterAggregation', () => {
             aggregations: {
                 filterAggregation: getFilterAggregation(
                     getRangeQuery('propertyAreaSquared', {
-                        gt: 20000
-                    })
-                )
-            }
+                        gt: 20000,
+                    }),
+                ),
+            },
         })
 
         expect(result.aggregations.filterAggregation.doc_count).not.toEqual(0)
@@ -102,9 +102,9 @@ describe('getFilterAggregation', () => {
             size: 0,
             aggregations: {
                 filterAggregation: getFilterAggregation(
-                    getBoolQuery(getMustQuery([getTermQuery('hasProperty', true), getTermQuery('propertyType.keyword', PropertyType.Flat)]))
-                )
-            }
+                    getBoolQuery(getMustQuery([getTermQuery('hasProperty', true), getTermQuery('propertyType.keyword', PropertyType.Flat)])),
+                ),
+            },
         })
 
         expect(result.aggregations.filterAggregation.doc_count).not.toEqual(0)
@@ -119,10 +119,10 @@ describe('getFilterAggregation', () => {
                 filterAggregation: {
                     ...getFilterAggregation(getTermQuery('propertyType.keyword', PropertyType.Flat)),
                     aggregations: {
-                        sumAggregation: getSumAggregation('propertyAreaSquared')
-                    }
-                }
-            }
+                        sumAggregation: getSumAggregation('propertyAreaSquared'),
+                    },
+                },
+            },
         })
 
         expect(result.aggregations.filterAggregation.doc_count).not.toEqual(0)

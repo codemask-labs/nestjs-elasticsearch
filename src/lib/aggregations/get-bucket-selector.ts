@@ -10,6 +10,6 @@ export type BucketSelectorAggregationBody = {
 export const getBucketSelectorAggregation = (script: string, bucketsPath: Record<string, string>): BucketSelectorAggregation => ({
     bucket_selector: {
         buckets_path: bucketsPath,
-        script
-    }
+        script,
+    },
 })

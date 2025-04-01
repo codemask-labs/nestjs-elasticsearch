@@ -9,9 +9,9 @@ describe('getNestedAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only an array of objects schema field', () => {
@@ -19,8 +19,8 @@ describe('getNestedAggregation', () => {
 
         expect(query).toEqual({
             nested: {
-                path: 'animals'
-            }
+                path: 'animals',
+            },
         })
     })
 
@@ -30,8 +30,8 @@ describe('getNestedAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                nestedAggregation: getNestedAggregation('animals')
-            }
+                nestedAggregation: getNestedAggregation('animals'),
+            },
         })
 
         expect(result.aggregations.nestedAggregation.doc_count).toBeDefined()
@@ -45,8 +45,8 @@ describe('getNestedAggregation', () => {
             size: 0,
             aggregations: {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                nestedAggregation: getNestedAggregation('address' as any)
-            }
+                nestedAggregation: getNestedAggregation('address' as any),
+            },
         })
 
         expect(result.aggregations.nestedAggregation.doc_count).toBeDefined()

@@ -16,20 +16,20 @@ describe('getMustQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts optional term queries', () => {
         const query = getMustQuery<HomeDocument>({
-            ...getTermQuery('hasProperty', true)
+            ...getTermQuery('hasProperty', true),
         })
 
         expect(query).toEqual({
             must: {
-                term: { hasProperty: { value: true } }
-            }
+                term: { hasProperty: { value: true } },
+            },
         })
     })
 
@@ -40,9 +40,9 @@ describe('getMustQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getMustQuery({
-                    ...getTermQuery('hasProperty', true)
-                })
-            })
+                    ...getTermQuery('hasProperty', true),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -55,8 +55,8 @@ describe('getMustQuery', () => {
         const result = await service.search(HomeDocument, {
             size: 10,
             query: getBoolQuery({
-                ...getMustQuery([getTermQuery('hasProperty', true), getTermQuery('propertyType.keyword', PropertyType.Flat)])
-            })
+                ...getMustQuery([getTermQuery('hasProperty', true), getTermQuery('propertyType.keyword', PropertyType.Flat)]),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -73,9 +73,9 @@ describe('getMustQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getMustQuery({
-                    ...getTermsQuery('propertyType.keyword', [PropertyType.Flat, PropertyType.Apartment])
-                })
-            })
+                    ...getTermsQuery('propertyType.keyword', [PropertyType.Flat, PropertyType.Apartment]),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -91,11 +91,11 @@ describe('getMustQuery', () => {
                 ...getMustQuery({
                     ...getBoolQuery({
                         ...getMustQuery({
-                            ...getTermQuery('hasProperty', false)
-                        })
-                    })
-                })
-            })
+                            ...getTermQuery('hasProperty', false),
+                        }),
+                    }),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -109,9 +109,9 @@ describe('getMustQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getMustQuery({
-                    ...getExistsQuery('propertyAreaSquared')
-                })
-            })
+                    ...getExistsQuery('propertyAreaSquared'),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -128,10 +128,10 @@ describe('getMustQuery', () => {
                 ...getMustQuery(
                     getRangeQuery('propertyAreaSquared', {
                         gte: 500000,
-                        lte: 900000
-                    })
-                )
-            })
+                        lte: 900000,
+                    }),
+                ),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -149,11 +149,11 @@ describe('getMustQuery', () => {
                     getTermQuery('hasProperty', true),
                     getBoolQuery({
                         ...getMustQuery({
-                            ...getTermQuery('propertyType.keyword', PropertyType.Flat)
-                        })
-                    })
-                ])
-            )
+                            ...getTermQuery('propertyType.keyword', PropertyType.Flat),
+                        }),
+                    }),
+                ]),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -173,10 +173,10 @@ describe('getMustQuery', () => {
                     getExistsQuery('propertyAreaSquared'),
                     getTermQuery('propertyType.keyword', PropertyType.Flat),
                     getRangeQuery('propertyAreaSquared', {
-                        lte: 900000
-                    })
-                ])
-            )
+                        lte: 900000,
+                    }),
+                ]),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -195,9 +195,9 @@ describe('getMustQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getMustQuery({
-                    ...getMatchQuery('address', query)
-                })
-            })
+                    ...getMatchQuery('address', query),
+                }),
+            }),
         })
 
         expect(result.total).toEqual(expect.any(Number))
@@ -211,9 +211,9 @@ describe('getMustQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getMustQuery({
-                    ...getMatchPhrasePrefixQuery('address', query)
-                })
-            })
+                    ...getMatchPhrasePrefixQuery('address', query),
+                }),
+            }),
         })
 
         expect(result.total).toEqual(expect.any(Number))

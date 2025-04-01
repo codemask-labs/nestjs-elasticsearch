@@ -10,10 +10,10 @@ describe('getSearchRequest', () => {
                 test: {
                     ...getTermsAggregation('address.keyword'),
                     aggregations: {
-                        value: getSumAggregation('builtInYear')
-                    }
-                }
-            }
+                        value: getSumAggregation('builtInYear'),
+                    },
+                },
+            },
         })
 
         expect(request).toEqual({
@@ -23,11 +23,11 @@ describe('getSearchRequest', () => {
                     terms: { field: 'address.keyword' },
                     aggregations: {
                         value: {
-                            sum: { field: 'builtInYear' }
-                        }
-                    }
-                }
-            }
+                            sum: { field: 'builtInYear' },
+                        },
+                    },
+                },
+            },
         })
     })
 
@@ -35,18 +35,18 @@ describe('getSearchRequest', () => {
         const request = getSearchRequest(HomeDocument, {
             sort: {
                 'address.keyword': {
-                    order: Order.DESC
-                }
-            }
+                    order: Order.DESC,
+                },
+            },
         })
 
         expect(request).toEqual({
             index: 'homes',
             sort: {
                 'address.keyword': {
-                    order: 'desc'
-                }
-            }
+                    order: 'desc',
+                },
+            },
         })
     })
 
@@ -54,20 +54,20 @@ describe('getSearchRequest', () => {
         const request = getSearchRequest(HomeDocument, {
             sort: {
                 'address.keyword': {
-                    order: Order.DESC
-                }
+                    order: Order.DESC,
+                },
             },
-            search_after: ['1']
+            search_after: ['1'],
         })
 
         expect(request).toEqual({
             index: 'homes',
             sort: {
                 'address.keyword': {
-                    order: 'desc'
-                }
+                    order: 'desc',
+                },
             },
-            search_after: ['1']
+            search_after: ['1'],
         })
     })
 })

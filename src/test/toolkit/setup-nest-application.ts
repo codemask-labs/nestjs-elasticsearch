@@ -32,9 +32,7 @@ export const setupNestApplication = (setup: TestToolkitSetup) => {
     }
 
     const destroyNestApplication = async () => {
-        if (app) {
-            await app.close()
-        }
+        await app.close()
     }
 
     if (!teardown || teardown === 'all') {
@@ -50,12 +48,12 @@ export const setupNestApplication = (setup: TestToolkitSetup) => {
     return {
         app: {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            get: <T = any>(token: NestModuleTokens<T>) => app.get<T>(token)
+            get: <T = any>(token: NestModuleTokens<T>) => app.get<T>(token),
         },
         withHttpRequest: () => {
             const httpServer: App = app.getHttpServer()
 
             return request(httpServer)
-        }
+        },
     }
 }

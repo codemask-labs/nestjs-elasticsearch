@@ -13,9 +13,9 @@ describe('getExistsQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema fields', () => {
@@ -23,8 +23,8 @@ describe('getExistsQuery', () => {
 
         expect(query).toEqual({
             exists: {
-                field: 'address'
-            }
+                field: 'address',
+            },
         })
     })
 
@@ -33,8 +33,8 @@ describe('getExistsQuery', () => {
 
         expect(query).toEqual({
             exists: {
-                field: 'address.keyword'
-            }
+                field: 'address.keyword',
+            },
         })
     })
 
@@ -42,7 +42,7 @@ describe('getExistsQuery', () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getExistsQuery('address')))
+            query: getBoolQuery(getMustQuery(getExistsQuery('address'))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -53,7 +53,7 @@ describe('getExistsQuery', () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getExistsQuery('address.keyword')))
+            query: getBoolQuery(getMustQuery(getExistsQuery('address.keyword'))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -64,7 +64,7 @@ describe('getExistsQuery', () => {
         const service = app.get(ElasticsearchService)
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustNotQuery(getExistsQuery('propertyAreaSquared')))
+            query: getBoolQuery(getMustNotQuery(getExistsQuery('propertyAreaSquared'))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -77,7 +77,7 @@ describe('getExistsQuery', () => {
             .search(HomeDocument, {
                 size: 10,
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                query: getBoolQuery(getMustQuery(getExistsQuery('' as any)))
+                query: getBoolQuery(getMustQuery(getExistsQuery('' as any))),
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

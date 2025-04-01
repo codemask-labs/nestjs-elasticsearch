@@ -10,9 +10,9 @@ describe('getMinAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema numeric field', () => {
@@ -20,8 +20,8 @@ describe('getMinAggregation', () => {
 
         expect(query).toEqual({
             min: {
-                field: 'propertyAreaSquared'
-            }
+                field: 'propertyAreaSquared',
+            },
         })
     })
 
@@ -31,8 +31,8 @@ describe('getMinAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getMinAggregation('propertyAreaSquared')
-            }
+                result: getMinAggregation('propertyAreaSquared'),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()
@@ -52,9 +52,9 @@ describe('getMinAggregation', () => {
             size: 0,
             aggregations: {
                 result: getMinAggregation({
-                    script
-                })
-            }
+                    script,
+                }),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()
@@ -68,15 +68,15 @@ describe('getMinAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getMinAggregation('propertyAreaSquaredAsString' as any)
-                }
+                    result: getMinAggregation('propertyAreaSquaredAsString' as any),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
             })
     })
@@ -89,8 +89,8 @@ describe('getMinAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getMinAggregation('address.keyword' as any)
-                }
+                    result: getMinAggregation('address.keyword' as any),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

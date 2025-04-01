@@ -4,5 +4,5 @@ import { getBoolQuery, getMustNotQuery, getShouldQuery, MustNotQueryBody, Should
 export type ShouldNotQuery<TDocument extends Document> = ShouldQuery<TDocument>
 
 export const getShouldNotQuery = <TDocument extends Document>(
-    body: MustNotQueryBody<TDocument> | Array<MustNotQueryBody<TDocument>>
+    body: MustNotQueryBody<TDocument> | Array<MustNotQueryBody<TDocument>>,
 ): ShouldNotQuery<TDocument> => getShouldQuery(getBoolQuery(getMustNotQuery(body)))

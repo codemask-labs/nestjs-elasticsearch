@@ -25,13 +25,13 @@ export type CardinalityAggregation<TDocument extends Document> = {
 
 export const getCardinalityAggregation = <TDocument extends Document>(
     fieldOrScript: Field<TDocument> | CardinalityScript,
-    options?: CardinalityAggregationOptions
+    options?: CardinalityAggregationOptions,
 ): CardinalityAggregation<TDocument> => {
     if (!is(String, fieldOrScript)) {
         return { cardinality: fieldOrScript }
     }
 
     return {
-        cardinality: { field: fieldOrScript, ...options }
+        cardinality: { field: fieldOrScript, ...options },
     }
 }

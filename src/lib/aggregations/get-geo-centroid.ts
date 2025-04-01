@@ -10,6 +10,6 @@ export type GeoCentroidAggregation<TDocument extends Document> = {
 
 export const getGeoCentroidAggregation = <TDocument extends Document>(field: Field<TDocument>): GeoCentroidAggregation<TDocument> => ({
     geo_centroid: {
-        field
-    }
+        field,
+    },
 })

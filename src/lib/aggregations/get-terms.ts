@@ -41,7 +41,7 @@ export type TermsAggregation<TDocument extends Document> = {
 export const getTermsAggregation = <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
     field: TField,
     size?: number,
-    options?: TermsAggregationOptions
+    options?: TermsAggregationOptions,
 ): TermsAggregation<TDocument> => ({
-    terms: { field, size, ...options }
+    terms: { field, size, ...options },
 })

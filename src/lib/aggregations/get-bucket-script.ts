@@ -10,6 +10,6 @@ export type BucketScriptAggregationBody = {
 export const getBucketScriptAggregation = (script: string, bucketsPath: Record<string, string>): BucketScriptAggregation => ({
     bucket_script: {
         buckets_path: bucketsPath,
-        script
-    }
+        script,
+    },
 })
