@@ -9,14 +9,14 @@ import { ExampleDocument } from './document'
             node: 'http://localhost:9200',
             auth: {
                 username: 'admin',
-                password: 'password'
+                password: 'password',
             },
             headers: {
-                'Content-Type': 'application/json'
-            }
+                'Content-Type': 'application/json',
+            },
         }),
-        ElasticsearchModule.forFeature([ExampleDocument])
-    ]
+        ElasticsearchModule.forFeature([ExampleDocument]),
+    ],
 })
 export class AppModule {}
 ```
