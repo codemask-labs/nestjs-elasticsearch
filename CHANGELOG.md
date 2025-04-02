@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.10.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.9.0...v2.10.0) (2025-04-02)
+
+### Features
+
+* add release-it ([#242](https://github.com/codemask-labs/nestjs-elasticsearch/issues/242)) ([63a93ef](https://github.com/codemask-labs/nestjs-elasticsearch/commit/63a93ef504c56a98a7540d9c309077c37d9c0034))
+* enable async module registration ([#241](https://github.com/codemask-labs/nestjs-elasticsearch/issues/241)) ([67b900d](https://github.com/codemask-labs/nestjs-elasticsearch/commit/67b900dc93e7cf005903e97c8addeea540c476e3))
+
+### Build items
+
+* **github-actions:** bump aquasecurity/trivy-action from 0.29.0 to 0.30.0 ([#237](https://github.com/codemask-labs/nestjs-elasticsearch/issues/237)) ([3017fd2](https://github.com/codemask-labs/nestjs-elasticsearch/commit/3017fd257f28914a30055cba4d3bde54efe2eb80))
+
 ## [2.9.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.8.0...v2.9.0) (2025-02-06)
 
 ### Features
