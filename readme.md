@@ -64,9 +64,15 @@ import { ElasticsearchModule } from '@codemask-labs/nestjs-elasticsearch'
 @Module({
     imports: [
         ElasticsearchModule.registerAsync({
-            useFactory: () => ({
-                node: 'http://localhost:9200',
-            })
+            imports: [ConfigModule],
+            useFactory: (configService: ConfigService) => ({
+                node: configService.get('ELASTICSEARCH_NODE'),
+                auth: {
+                    username: configService.get('ELASTICSEARCH_USERNAME'),
+                    password: configService.get('ELASTICSEARCH_PASSWORD'),
+                },
+            }),
+            inject: [ConfigService],
         })
     ]
 })

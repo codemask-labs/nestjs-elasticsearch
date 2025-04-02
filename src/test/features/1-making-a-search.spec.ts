@@ -14,7 +14,6 @@ describe('Making a search', () => {
                 useFactory: () => ({
                     node: TEST_ELASTICSEARCH_NODE,
                 }),
-                global: false,
             }),
         ],
     })
