@@ -17,24 +17,24 @@ describe('getShouldQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts optional term queries', () => {
         const query = getShouldQuery<HomeDocument>({
-            ...getTermQuery('hasProperty', true)
+            ...getTermQuery('hasProperty', true),
         })
 
         expect(query).toEqual({
             should: {
                 term: {
                     hasProperty: {
-                        value: true
-                    }
-                }
-            }
+                        value: true,
+                    },
+                },
+            },
         })
     })
 
@@ -45,9 +45,9 @@ describe('getShouldQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getShouldQuery({
-                    ...getTermQuery('hasProperty', true)
-                })
-            })
+                    ...getTermQuery('hasProperty', true),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -61,8 +61,8 @@ describe('getShouldQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getShouldQuery([getTermQuery('hasProperty', true), getTermQuery('propertyType.keyword', PropertyType.Flat)]),
-                ...getMinimumShouldMatchParameter(2)
-            })
+                ...getMinimumShouldMatchParameter(2),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -79,9 +79,9 @@ describe('getShouldQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getShouldQuery({
-                    ...getTermsQuery('propertyType.keyword', [PropertyType.Flat, PropertyType.Apartment])
-                })
-            })
+                    ...getTermsQuery('propertyType.keyword', [PropertyType.Flat, PropertyType.Apartment]),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -97,11 +97,11 @@ describe('getShouldQuery', () => {
                 ...getShouldQuery({
                     ...getBoolQuery({
                         ...getShouldQuery({
-                            ...getTermQuery('hasProperty', false)
-                        })
-                    })
-                })
-            })
+                            ...getTermQuery('hasProperty', false),
+                        }),
+                    }),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -115,9 +115,9 @@ describe('getShouldQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getShouldQuery({
-                    ...getExistsQuery('propertyAreaSquared')
-                })
-            })
+                    ...getExistsQuery('propertyAreaSquared'),
+                }),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -134,11 +134,11 @@ describe('getShouldQuery', () => {
                     getExistsQuery('propertyAreaSquared'),
                     getRangeQuery('propertyAreaSquared', {
                         gte: 500000,
-                        lte: 900000
-                    })
+                        lte: 900000,
+                    }),
                 ]),
-                ...getMinimumShouldMatchParameter(2)
-            })
+                ...getMinimumShouldMatchParameter(2),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -156,11 +156,11 @@ describe('getShouldQuery', () => {
                     getTermQuery('hasProperty', true),
                     getBoolQuery({
                         ...getShouldQuery({
-                            ...getTermQuery('propertyType.keyword', PropertyType.Flat)
-                        })
-                    })
-                ])
-            )
+                            ...getTermQuery('propertyType.keyword', PropertyType.Flat),
+                        }),
+                    }),
+                ]),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -179,10 +179,10 @@ describe('getShouldQuery', () => {
                 ...getShouldQuery([
                     getExistsQuery('propertyAreaSquared'),
                     getTermQuery('propertyType.keyword', PropertyType.Flat),
-                    getRangeQuery('propertyAreaSquared', { lte: 900000 })
+                    getRangeQuery('propertyAreaSquared', { lte: 900000 }),
                 ]),
-                ...getMinimumShouldMatchParameter(3)
-            })
+                ...getMinimumShouldMatchParameter(3),
+            }),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -201,9 +201,9 @@ describe('getShouldQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getShouldQuery({
-                    ...getMatchQuery('address', query)
-                })
-            })
+                    ...getMatchQuery('address', query),
+                }),
+            }),
         })
 
         expect(result.total).toEqual(expect.any(Number))
@@ -217,9 +217,9 @@ describe('getShouldQuery', () => {
             size: 10,
             query: getBoolQuery({
                 ...getShouldQuery({
-                    ...getMatchPhrasePrefixQuery('address', query)
-                })
-            })
+                    ...getMatchPhrasePrefixQuery('address', query),
+                }),
+            }),
         })
 
         expect(result.total).toEqual(expect.any(Number))

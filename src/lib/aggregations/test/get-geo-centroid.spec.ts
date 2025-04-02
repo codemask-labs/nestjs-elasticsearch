@@ -10,9 +10,9 @@ describe('getGeoCentroidAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema field', () => {
@@ -20,8 +20,8 @@ describe('getGeoCentroidAggregation', () => {
 
         expect(query).toEqual({
             geo_centroid: {
-                field: 'location'
-            }
+                field: 'location',
+            },
         })
     })
 
@@ -31,16 +31,16 @@ describe('getGeoCentroidAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                geoCentroidAggregation: getGeoCentroidAggregation('location')
-            }
+                geoCentroidAggregation: getGeoCentroidAggregation('location'),
+            },
         })
 
         expect(result.aggregations.geoCentroidAggregation.count).not.toEqual(0)
         expect(result.aggregations.geoCentroidAggregation.location).toEqual(
             expect.objectContaining({
                 lat: expect.any(Number),
-                lon: expect.any(Number)
-            })
+                lon: expect.any(Number),
+            }),
         )
     })
 
@@ -51,15 +51,15 @@ describe('getGeoCentroidAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    result: getGeoCentroidAggregation('propertyType')
-                }
+                    result: getGeoCentroidAggregation('propertyType'),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
                 expect(error.message).toContain('Please use a keyword field instead.')
             })
@@ -68,8 +68,8 @@ describe('getGeoCentroidAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    result: getGeoCentroidAggregation('builtInYear')
-                }
+                    result: getGeoCentroidAggregation('builtInYear'),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

@@ -9,17 +9,17 @@ describe('getQueries', () => {
             getTermQuery('builtInYear.keyword', undefined),
             getTermQuery('builtInYear.keyword', null),
             getTermsQuery('city.keyword', null),
-            getTermsQuery('city.keyword', undefined)
+            getTermsQuery('city.keyword', undefined),
         ])
 
         expect(queries).toStrictEqual([
             {
                 term: {
                     'address.keyword': {
-                        value: 'test'
-                    }
-                }
-            }
+                        value: 'test',
+                    },
+                },
+            },
         ])
     })
 })

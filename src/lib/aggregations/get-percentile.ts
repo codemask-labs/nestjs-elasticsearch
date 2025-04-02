@@ -11,10 +11,10 @@ export type PercentileAggregation<TDocument extends Document> = {
 
 export const getPercentileAggregation = <TDocument extends Document>(
     field: NumericField<TDocument>,
-    percents: Array<number>
+    percents: Array<number>,
 ): PercentileAggregation<TDocument> => ({
     percentiles: {
         field,
-        percents
-    }
+        percents,
+    },
 })

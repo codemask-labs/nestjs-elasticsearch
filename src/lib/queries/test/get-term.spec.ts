@@ -12,9 +12,9 @@ describe('getTermQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema fields', () => {
@@ -23,9 +23,9 @@ describe('getTermQuery', () => {
         expect(query).toEqual({
             term: {
                 address: {
-                    value: 'test'
-                }
-            }
+                    value: 'test',
+                },
+            },
         })
     })
 
@@ -39,16 +39,16 @@ describe('getTermQuery', () => {
 
     it('accepts only schema fields and case sensitive option', () => {
         const query = getTermQuery<HomeDocument>('address', 'test', {
-            case_insensitive: true
+            case_insensitive: true,
         })
 
         expect(query).toEqual({
             term: {
                 address: {
                     value: 'test',
-                    case_insensitive: true
-                }
-            }
+                    case_insensitive: true,
+                },
+            },
         })
     })
 
@@ -57,7 +57,7 @@ describe('getTermQuery', () => {
 
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getTermQuery('propertyType.keyword', PropertyType.Flat)))
+            query: getBoolQuery(getMustQuery(getTermQuery('propertyType.keyword', PropertyType.Flat))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -69,7 +69,7 @@ describe('getTermQuery', () => {
 
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getTermQuery('hasProperty', true)))
+            query: getBoolQuery(getMustQuery(getTermQuery('hasProperty', true))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -81,7 +81,7 @@ describe('getTermQuery', () => {
 
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getTermQuery('builtInYear', 2015)))
+            query: getBoolQuery(getMustQuery(getTermQuery('builtInYear', 2015))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -96,10 +96,10 @@ describe('getTermQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getTermQuery('address.keyword', '36025 ChuRcH WAlK', {
-                        case_insensitive: true
-                    })
-                )
-            )
+                        case_insensitive: true,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -114,10 +114,10 @@ describe('getTermQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getTermQuery('propertyType.keyword', PropertyType.Flat, {
-                        boost: 0.5
-                    })
-                )
-            )
+                        boost: 0.5,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -131,7 +131,7 @@ describe('getTermQuery', () => {
             .search(HomeDocument, {
                 size: 10,
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                query: getBoolQuery(getMustQuery(getTermQuery('hasProperty', 'test' as any)))
+                query: getBoolQuery(getMustQuery(getTermQuery('hasProperty', 'test' as any))),
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

@@ -19,9 +19,9 @@ export type MatchPhrasePrefixQuery<TDocument extends Document, TField extends Ke
 export const getMatchPhrasePrefixQuery = <TDocument extends Document, TField extends Key<TDocument> = Key<TDocument>>(
     field: TField,
     query: FieldType<TDocument, TField>,
-    options?: MatchPhrasePrefixQueryOptions
+    options?: MatchPhrasePrefixQueryOptions,
 ): MatchPhrasePrefixQuery<TDocument, TField> => ({
     match_phrase_prefix: {
-        [field]: { query, ...options }
-    } as MatchPhrasePrefixQueryBody<TDocument, TField>
+        [field]: { query, ...options },
+    } as MatchPhrasePrefixQueryBody<TDocument, TField>,
 })

@@ -9,5 +9,5 @@ export type MissingValueAggregation<TDocument extends Document> = {
 }
 
 export const getMissingValueAggregation = <TDocument extends Document>(field: Field<TDocument>): MissingValueAggregation<TDocument> => ({
-    missing: { field }
+    missing: { field },
 })

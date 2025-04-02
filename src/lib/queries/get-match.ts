@@ -29,7 +29,7 @@ export type MatchQuery<TDocument extends Document, TKeyword extends Field<TDocum
 export const getMatchQuery = <TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>>(
     field: TKeyword,
     query: FieldType<TDocument, TKeyword>,
-    options?: MatchQueryOptions
+    options?: MatchQueryOptions,
 ): MatchQuery<TDocument, TKeyword> => ({
-    match: { [field]: { query, ...options } } as MatchQueryBody<TDocument, TKeyword>
+    match: { [field]: { query, ...options } } as MatchQueryBody<TDocument, TKeyword>,
 })

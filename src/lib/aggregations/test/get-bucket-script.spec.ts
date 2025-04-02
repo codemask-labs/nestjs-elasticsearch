@@ -13,25 +13,25 @@ describe('getBucketScriptAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts object with string values for each field', () => {
         const query = getBucketScriptAggregation('params.myVar1 / params.myVar2', {
             myVar1: 'theSum',
-            myVar2: 'theValueCount'
+            myVar2: 'theValueCount',
         })
 
         expect(query).toEqual({
             bucket_script: {
                 buckets_path: {
                     myVar1: 'theSum',
-                    myVar2: 'theValueCount'
+                    myVar2: 'theValueCount',
                 },
-                script: 'params.myVar1 / params.myVar2'
-            }
+                script: 'params.myVar1 / params.myVar2',
+            },
         })
     })
 
@@ -48,11 +48,11 @@ describe('getBucketScriptAggregation', () => {
                         count: getValueCountAggregation('id.keyword'),
                         script: getBucketScriptAggregation('params.myVar1 / params.myVar2', {
                             myVar1: 'sum',
-                            myVar2: 'count'
-                        })
-                    }
-                }
-            }
+                            myVar2: 'count',
+                        }),
+                    },
+                },
+            },
         })
 
         expect(result.aggregations.date.buckets.length).toBeGreaterThan(0)
@@ -60,8 +60,8 @@ describe('getBucketScriptAggregation', () => {
         result.aggregations.date.buckets.forEach(bucket => {
             expect(bucket.script).toEqual(
                 expect.objectContaining({
-                    value: expect.any(Number)
-                })
+                    value: expect.any(Number),
+                }),
             )
 
             expect(bucket.script.value).toEqual(bucket.sum.value / bucket.count.value)
@@ -79,9 +79,9 @@ describe('getBucketScriptAggregation', () => {
                     count: getValueCountAggregation('id.keyword'),
                     script: getBucketScriptAggregation('params.myVar1 / params.myVar2', {
                         myVar1: 'sum',
-                        myVar2: 'count'
-                    })
-                }
+                        myVar2: 'count',
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
@@ -101,9 +101,9 @@ describe('getBucketScriptAggregation', () => {
                     count: getValueCountAggregation('id.keyword'),
                     script: getBucketScriptAggregation('params.myVar1 / params.myVar2', {
                         myVar1: 'sumAggregation',
-                        myVar2: 'count'
-                    })
-                }
+                        myVar2: 'count',
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

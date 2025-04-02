@@ -24,10 +24,10 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
 
 export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
-    options?: SearchRequestOptions<TDocument, TAggregationsBody>
+    options?: SearchRequestOptions<TDocument, TAggregationsBody>,
 ): SearchRequest<TDocument, TAggregationsBody> => {
     const index = getIndexName(document)
-    const { size, from, query, aggregations, sort, search_after } = options || {}
+    const { size, from, query, aggregations, sort, search_after } = options ?? {}
 
     return {
         index,
@@ -36,6 +36,6 @@ export const getSearchRequest = <TDocument extends Document, TAggregationsBody e
         query,
         aggregations,
         sort,
-        search_after
+        search_after,
     }
 }

@@ -14,7 +14,7 @@ export class ElasticsearchModule {
             module: ElasticsearchModule,
             imports: [BaseElasticsearchModule.register(options)],
             providers: [ElasticsearchService],
-            exports: [ElasticsearchService]
+            exports: [ElasticsearchService],
         }
     }
 
@@ -23,13 +23,13 @@ export class ElasticsearchModule {
         const providers: Array<Provider> = documents.map(document => ({
             inject: [ElasticsearchService],
             provide: getIndexInjectionToken(document),
-            useFactory: (service: ElasticsearchService) => new Index(service, document)
+            useFactory: (service: ElasticsearchService) => new Index(service, document),
         }))
 
         return {
             module: ElasticsearchModule,
             providers,
-            exports: providers
+            exports: providers,
         }
     }
 }

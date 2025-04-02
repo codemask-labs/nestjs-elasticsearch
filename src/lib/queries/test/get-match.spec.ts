@@ -11,9 +11,9 @@ describe('getMatchQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts field and value of a document', () => {
@@ -22,9 +22,9 @@ describe('getMatchQuery', () => {
         expect(query).toEqual({
             match: {
                 address: {
-                    query: 'avenue'
-                }
-            }
+                    query: 'avenue',
+                },
+            },
         })
     })
 
@@ -34,7 +34,7 @@ describe('getMatchQuery', () => {
         const query = 'church'
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getMatchQuery('address', query)))
+            query: getBoolQuery(getMustQuery(getMatchQuery('address', query))),
         })
 
         result.documents.forEach(document => expect(document.source.address.toLowerCase()).toContain(query.toLowerCase()))
@@ -46,7 +46,7 @@ describe('getMatchQuery', () => {
         const query = 'church'
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getMatchQuery('city.keyword', query)))
+            query: getBoolQuery(getMustQuery(getMatchQuery('city.keyword', query))),
         })
 
         expect(result.total).toEqual(expect.any(Number))
@@ -61,10 +61,10 @@ describe('getMatchQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getMatchQuery('address', queryWithTypo, {
-                        fuzziness: '1'
-                    })
-                )
-            )
+                        fuzziness: '1',
+                    }),
+                ),
+            ),
         })
 
         result.documents.forEach(document => expect(document.source.address).toBeDefined())
@@ -78,10 +78,10 @@ describe('getMatchQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getMatchQuery('address', 'church', {
-                        boost: 2.5
-                    })
-                )
-            )
+                        boost: 2.5,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)

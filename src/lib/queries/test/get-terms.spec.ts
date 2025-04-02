@@ -12,9 +12,9 @@ describe('getTermsQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema fields', () => {
@@ -22,8 +22,8 @@ describe('getTermsQuery', () => {
 
         expect(query).toEqual({
             terms: {
-                address: ['one', 'two', 'three']
-            }
+                address: ['one', 'two', 'three'],
+            },
         })
     })
 
@@ -43,7 +43,7 @@ describe('getTermsQuery', () => {
         const values = [PropertyType.Flat, PropertyType.Apartment]
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getTermsQuery('propertyType.keyword', values)))
+            query: getBoolQuery(getMustQuery(getTermsQuery('propertyType.keyword', values))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -56,7 +56,7 @@ describe('getTermsQuery', () => {
         const values = [true, false]
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getTermsQuery('hasProperty', values)))
+            query: getBoolQuery(getMustQuery(getTermsQuery('hasProperty', values))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -69,7 +69,7 @@ describe('getTermsQuery', () => {
         const values = [2005, 2010, 2012, 2015]
         const result = await service.search(HomeDocument, {
             size: 10,
-            query: getBoolQuery(getMustQuery(getTermsQuery('builtInYear', values)))
+            query: getBoolQuery(getMustQuery(getTermsQuery('builtInYear', values))),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -85,10 +85,10 @@ describe('getTermsQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getTermsQuery('propertyType.keyword', values, {
-                        boost: 0.5
-                    })
-                )
-            )
+                        boost: 0.5,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -102,7 +102,7 @@ describe('getTermsQuery', () => {
             .search(HomeDocument, {
                 size: 10,
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                query: getBoolQuery(getMustQuery(getTermsQuery('hasProperty', true as any)))
+                query: getBoolQuery(getMustQuery(getTermsQuery('hasProperty', true as any))),
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

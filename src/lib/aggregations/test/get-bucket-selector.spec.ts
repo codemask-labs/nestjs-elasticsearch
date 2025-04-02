@@ -12,23 +12,23 @@ describe('getBucketSelectorAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts object with string values for each field', () => {
         const query = getBucketSelectorAggregation('params.myVar1 > 5', {
-            myVar1: 'theSum'
+            myVar1: 'theSum',
         })
 
         expect(query).toEqual({
             bucket_selector: {
                 buckets_path: {
-                    myVar1: 'theSum'
+                    myVar1: 'theSum',
                 },
-                script: 'params.myVar1 > 5'
-            }
+                script: 'params.myVar1 > 5',
+            },
         })
     })
 
@@ -45,11 +45,11 @@ describe('getBucketSelectorAggregation', () => {
                     aggregations: {
                         sum: getSumAggregation('builtInYear'),
                         selector: getBucketSelectorAggregation(`params.myVar1 > ${selectorFilterValue}`, {
-                            myVar1: 'sum'
-                        })
-                    }
-                }
-            }
+                            myVar1: 'sum',
+                        }),
+                    },
+                },
+            },
         })
 
         expect(result.aggregations.date.buckets.length).toBeGreaterThan(0)
@@ -57,8 +57,8 @@ describe('getBucketSelectorAggregation', () => {
         result.aggregations.date.buckets.forEach(bucket => {
             expect(bucket.sum).toEqual(
                 expect.objectContaining({
-                    value: expect.any(Number)
-                })
+                    value: expect.any(Number),
+                }),
             )
 
             expect(bucket.sum.value).toBeGreaterThan(selectorFilterValue)
@@ -74,9 +74,9 @@ describe('getBucketSelectorAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     selector: getBucketSelectorAggregation('params.myVar1 > 5', {
-                        myVar1: 'sum'
-                    })
-                }
+                        myVar1: 'sum',
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
@@ -94,9 +94,9 @@ describe('getBucketSelectorAggregation', () => {
                 aggregations: {
                     sum: getSumAggregation('builtInYear'),
                     selector: getBucketSelectorAggregation('params.myVar1 > 5', {
-                        myVar1: 'sumAggregation'
-                    })
-                }
+                        myVar1: 'sumAggregation',
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

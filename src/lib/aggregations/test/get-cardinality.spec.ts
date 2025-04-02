@@ -9,21 +9,21 @@ describe('getCardinalityAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema field', () => {
         const query = getCardinalityAggregation<HomeDocument>('address', {
-            precision_threshold: 1000
+            precision_threshold: 1000,
         })
 
         expect(query).toEqual({
             cardinality: {
                 field: 'address',
-                precision_threshold: 1000
-            }
+                precision_threshold: 1000,
+            },
         })
     })
 
@@ -33,8 +33,8 @@ describe('getCardinalityAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getCardinalityAggregation('address.keyword')
-            }
+                result: getCardinalityAggregation('address.keyword'),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()
@@ -47,9 +47,9 @@ describe('getCardinalityAggregation', () => {
             size: 0,
             aggregations: {
                 result: getCardinalityAggregation('address.keyword', {
-                    precision_threshold: 1
-                })
-            }
+                    precision_threshold: 1,
+                }),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()
@@ -62,9 +62,9 @@ describe('getCardinalityAggregation', () => {
             size: 0,
             aggregations: {
                 result: getCardinalityAggregation({
-                    script: `doc['address.keyword'].value`
-                })
-            }
+                    script: `doc['address.keyword'].value`,
+                }),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()
@@ -78,13 +78,13 @@ describe('getCardinalityAggregation', () => {
             aggregations: {
                 result: getCardinalityAggregation(
                     {
-                        script: `doc['address.keyword'].value`
+                        script: `doc['address.keyword'].value`,
                     },
                     {
-                        precision_threshold: 1
-                    }
-                )
-            }
+                        precision_threshold: 1,
+                    },
+                ),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()

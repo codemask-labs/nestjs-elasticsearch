@@ -17,7 +17,7 @@ export type MustNotQuery<TDocument extends Document> = {
 }
 
 export const getMustNotQuery = <TDocument extends Document>(
-    mustNot: MustNotQueryBody<TDocument> | Array<MustNotQueryBody<TDocument>>
+    mustNot: MustNotQueryBody<TDocument> | Array<MustNotQueryBody<TDocument>>,
 ): MustNotQuery<TDocument> => ({
-    must_not: mustNot
+    must_not: mustNot,
 })

@@ -11,9 +11,9 @@ describe('getPercentileAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema numeric field and passed percentiles', () => {
@@ -22,8 +22,8 @@ describe('getPercentileAggregation', () => {
         expect(query).toEqual({
             percentiles: {
                 field: 'propertyAreaSquared',
-                percents: [5, 10, 15]
-            }
+                percents: [5, 10, 15],
+            },
         })
     })
 
@@ -32,8 +32,8 @@ describe('getPercentileAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 10,
             aggregations: {
-                result: getPercentileAggregation('propertyAreaSquared', [25, 50, 75])
-            }
+                result: getPercentileAggregation('propertyAreaSquared', [25, 50, 75]),
+            },
         })
 
         expect(isKeyedPercentiles(result.aggregations.result.values)).toBe(true)
@@ -41,8 +41,8 @@ describe('getPercentileAggregation', () => {
             values: {
                 '25.0': expect.any(Number),
                 '50.0': expect.any(Number),
-                '75.0': expect.any(Number)
-            }
+                '75.0': expect.any(Number),
+            },
         })
     })
 
@@ -54,15 +54,15 @@ describe('getPercentileAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getPercentileAggregation('address' as any, [25, 50, 75])
-                }
+                    result: getPercentileAggregation('address' as any, [25, 50, 75]),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
             })
     })
@@ -75,8 +75,8 @@ describe('getPercentileAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getPercentileAggregation('address.keyword' as any, [25, 50, 75])
-                }
+                    result: getPercentileAggregation('address.keyword' as any, [25, 50, 75]),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

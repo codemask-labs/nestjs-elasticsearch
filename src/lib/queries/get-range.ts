@@ -24,7 +24,7 @@ export type RangeQuery<TDocument extends Document, TKeyword extends Field<TDocum
 
 export const getRangeQuery = <TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>>(
     field: TKeyword,
-    options: RangeQueryOptions<TDocument, TKeyword>
+    options: RangeQueryOptions<TDocument, TKeyword>,
 ): RangeQuery<TDocument, TKeyword> => ({
-    range: { [field]: options } as RangeQueryBody<TDocument, TKeyword>
+    range: { [field]: options } as RangeQueryBody<TDocument, TKeyword>,
 })

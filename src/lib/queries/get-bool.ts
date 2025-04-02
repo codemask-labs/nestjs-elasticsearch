@@ -15,5 +15,5 @@ export type BoolQuery<TDocument extends Document> = {
 }
 
 export const getBoolQuery = <TDocument extends Document>(bool: BoolQueryBody<TDocument> | Array<BoolQueryBody<TDocument>>): BoolQuery<TDocument> => ({
-    bool
+    bool,
 })

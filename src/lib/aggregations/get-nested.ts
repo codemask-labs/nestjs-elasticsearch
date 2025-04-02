@@ -10,6 +10,6 @@ export type NestedAggregation<TDocument extends Document> = {
 
 export const getNestedAggregation = <TDocument extends Document>(path: ArrayOfObjectsField<TDocument>): NestedAggregation<TDocument> => ({
     nested: {
-        path
-    }
+        path,
+    },
 })

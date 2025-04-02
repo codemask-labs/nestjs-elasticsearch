@@ -4,4 +4,4 @@ import { Document } from 'lib/common'
 import { isTotalHits } from 'lib/utils'
 
 export const getTransformedTotal = <TDocument extends Document>({ total }: SearchHitsMetadata<TDocument>): number =>
-    is(Number, total) ? total : isTotalHits(total) ? total.value : total || 0
+    is(Number, total) ? total : isTotalHits(total) ? total.value : 0

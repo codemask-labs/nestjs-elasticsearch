@@ -11,9 +11,9 @@ export type SearchResponse<TDocument extends Document, TAggregationsBody extends
 
 export const getSearchResponse = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
-    { hits, aggregations }: BaseSearchResponse<TDocument, TAggregationsBody>
+    { hits, aggregations }: BaseSearchResponse<TDocument, TAggregationsBody>,
 ): SearchResponse<TDocument, TAggregationsBody> => ({
     total: getTransformedTotal(hits),
     documents: getTransformedDocuments(document, hits),
-    aggregations: getTransformedAggregations(aggregations)
+    aggregations: getTransformedAggregations(aggregations),
 })

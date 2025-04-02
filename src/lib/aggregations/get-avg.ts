@@ -9,5 +9,5 @@ export type AvgAggregation<TDocument extends Document> = {
 }
 
 export const getAvgAggregation = <TDocument extends Document>(field: NumericField<TDocument>): AvgAggregation<TDocument> => ({
-    avg: { field }
+    avg: { field },
 })

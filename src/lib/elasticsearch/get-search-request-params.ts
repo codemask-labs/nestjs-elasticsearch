@@ -4,7 +4,7 @@ import { SearchRequest, SearchRequestOptions, getSearchRequest } from 'lib/reque
 
 export const getSearchRequestParams = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
-    options?: SearchRequestOptions<TDocument, TAggregationsBody>
+    options?: SearchRequestOptions<TDocument, TAggregationsBody>,
 ): SearchRequest<TDocument, TAggregationsBody> => {
     const { index, size, from, query, aggregations, sort, search_after } = getSearchRequest<TDocument, TAggregationsBody>(document, options)
 
@@ -15,6 +15,6 @@ export const getSearchRequestParams = <TDocument extends Document, TAggregations
         query,
         aggregations,
         sort,
-        search_after
+        search_after,
     }
 }

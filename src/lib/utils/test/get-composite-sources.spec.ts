@@ -8,11 +8,11 @@ describe('getCompositeSources', () => {
 
         expect(sources).toEqual([
             {
-                city: { terms: { field: 'city' } }
+                city: { terms: { field: 'city' } },
             },
             {
-                address: { terms: { field: 'address' } }
-            }
+                address: { terms: { field: 'address' } },
+            },
         ])
     })
 })

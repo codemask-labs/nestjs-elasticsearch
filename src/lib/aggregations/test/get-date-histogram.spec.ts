@@ -11,9 +11,9 @@ describe('getDateHistogramAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema field with calendar interval name', () => {
@@ -22,8 +22,8 @@ describe('getDateHistogramAggregation', () => {
         expect(query).toEqual({
             date_histogram: {
                 field: 'contractDate',
-                calendar_interval: 'day'
-            }
+                calendar_interval: 'day',
+            },
         })
     })
 
@@ -33,14 +33,14 @@ describe('getDateHistogramAggregation', () => {
         expect(query).toEqual({
             date_histogram: {
                 field: 'contractDate',
-                calendar_interval: '1d'
-            }
+                calendar_interval: '1d',
+            },
         })
     })
 
     it('accepts custom enum that extends same keys', () => {
         enum SelectedTimePeriod {
-            DAY = 'day'
+            DAY = 'day',
         }
 
         const query = getDateHistogramAggregation<HomeDocument>('contractDate', SelectedTimePeriod.DAY)
@@ -48,8 +48,8 @@ describe('getDateHistogramAggregation', () => {
         expect(query).toEqual({
             date_histogram: {
                 field: 'contractDate',
-                calendar_interval: 'day'
-            }
+                calendar_interval: 'day',
+            },
         })
     })
 
@@ -59,8 +59,8 @@ describe('getDateHistogramAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getDateHistogramAggregation('contractDate', CalendarIntervalName.DAY)
-            }
+                result: getDateHistogramAggregation('contractDate', CalendarIntervalName.DAY),
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -70,9 +70,9 @@ describe('getDateHistogramAggregation', () => {
                 expect.objectContaining({
                     key_as_string: expect.any(String),
                     key: expect.any(Number),
-                    doc_count: expect.any(Number)
-                })
-            )
+                    doc_count: expect.any(Number),
+                }),
+            ),
         )
     })
 
@@ -84,9 +84,9 @@ describe('getDateHistogramAggregation', () => {
             size: 0,
             aggregations: {
                 result: getDateHistogramAggregation('contractDate', CalendarIntervalName.DAY, {
-                    min_doc_count: minDocCount
-                })
-            }
+                    min_doc_count: minDocCount,
+                }),
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -100,15 +100,15 @@ describe('getDateHistogramAggregation', () => {
             .search(HomeDocument, {
                 size: 0,
                 aggregations: {
-                    histogram: getDateHistogramAggregation('propertyAreaSquaredAsString', CalendarIntervalName.DAY)
-                }
+                    histogram: getDateHistogramAggregation('propertyAreaSquaredAsString', CalendarIntervalName.DAY),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
             })
     })
@@ -121,8 +121,8 @@ describe('getDateHistogramAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getDateHistogramAggregation('address.keyword' as any, CalendarIntervalName.DAY)
-                }
+                    result: getDateHistogramAggregation('address.keyword' as any, CalendarIntervalName.DAY),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

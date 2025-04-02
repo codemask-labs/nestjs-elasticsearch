@@ -18,9 +18,9 @@ export class TestService {
             query: getBoolQuery({
                 must: [
                     getTermQuery('propertyType.keyword', PropertyType.Flat),
-                    getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat])
-                ]
-            })
+                    getTermsQuery('propertyType.keyword', [PropertyType.Apartment, PropertyType.Flat]),
+                ],
+            }),
         })
 
         return this.homes.search(request)
@@ -34,16 +34,16 @@ export class TestService {
                 citiesWithAverageAreaSquared: {
                     ...getTermsAggregation('city.keyword'),
                     aggs: {
-                        averageSquareMeters: getAvgAggregation('propertyAreaSquared')
-                    }
+                        averageSquareMeters: getAvgAggregation('propertyAreaSquared'),
+                    },
                 },
                 homes: {
                     ...getTermsAggregation('address.keyword', size),
                     aggregations: {
-                        averageSquareMeters: getAvgAggregation('propertyAreaSquared')
-                    }
-                }
-            }
+                        averageSquareMeters: getAvgAggregation('propertyAreaSquared'),
+                    },
+                },
+            },
         })
 
         return this.homes.search(request)

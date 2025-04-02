@@ -9,7 +9,7 @@ export type ExistsQuery<TDocument extends Document, TKeyword extends Field<TDocu
 }
 
 export const getExistsQuery = <TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>>(
-    field: TKeyword
+    field: TKeyword,
 ): ExistsQuery<TDocument, TKeyword> => ({
-    exists: { field } as ExistsQueryBody<TDocument, TKeyword>
+    exists: { field } as ExistsQueryBody<TDocument, TKeyword>,
 })

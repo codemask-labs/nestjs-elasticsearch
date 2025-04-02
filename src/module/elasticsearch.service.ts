@@ -14,7 +14,7 @@ export class ElasticsearchService {
 
     search<TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
         document: ClassConstructor<TDocument>,
-        options?: SearchRequestOptions<TDocument, TAggregationsBody>
+        options?: SearchRequestOptions<TDocument, TAggregationsBody>,
     ) {
         const params = getSearchRequestParams(document, options)
 

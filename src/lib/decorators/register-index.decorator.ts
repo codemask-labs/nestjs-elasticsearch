@@ -7,7 +7,7 @@ export const RegisterIndex =
     <T>(constructor: new () => T): new () => T => {
         if (!is(String, name) || isNil(name) || isEmpty(name)) {
             throw new Error(
-                `[${constructor.name}] Failed to register due to index name being null, undefined or empty. Please provide name to @RegisterIndex(name: string).`
+                `[${constructor.name}] Failed to register due to index name being null, undefined or empty. Please provide name to @RegisterIndex(name: string).`,
             )
         }
 

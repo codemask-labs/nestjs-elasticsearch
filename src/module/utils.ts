@@ -12,7 +12,7 @@ export const getIndexName = <T>(nameOrDocument: string | ClassConstructor<T>) =>
 
     if (!indexName) {
         throw new Error(
-            `[${nameOrDocument.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`
+            `[${nameOrDocument.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`,
         )
     }
 

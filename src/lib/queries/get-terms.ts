@@ -37,6 +37,6 @@ export const getTermsQuery: TermsQuerySignatures = (field: any, values: any, opt
     }
 
     return {
-        terms: { [field]: values, ...options }
+        terms: { [field]: values, ...options },
     }
 }

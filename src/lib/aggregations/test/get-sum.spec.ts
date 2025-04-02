@@ -11,9 +11,9 @@ describe('getSumAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema numeric field', () => {
@@ -21,8 +21,8 @@ describe('getSumAggregation', () => {
 
         expect(query).toEqual({
             sum: {
-                field: 'propertyAreaSquared'
-            }
+                field: 'propertyAreaSquared',
+            },
         })
     })
 
@@ -31,8 +31,8 @@ describe('getSumAggregation', () => {
 
         expect(query).toEqual({
             sum: {
-                field: 'animals.year'
-            }
+                field: 'animals.year',
+            },
         })
     })
 
@@ -45,10 +45,10 @@ describe('getSumAggregation', () => {
                 nestedAggregation: {
                     ...getNestedAggregation('animals'),
                     aggregations: {
-                        result: getSumAggregation('animals.year')
-                    }
-                }
-            }
+                        result: getSumAggregation('animals.year'),
+                    },
+                },
+            },
         })
 
         expect(result.aggregations.nestedAggregation.doc_count).not.toEqual(0)
@@ -61,8 +61,8 @@ describe('getSumAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getSumAggregation('propertyAreaSquared')
-            }
+                result: getSumAggregation('propertyAreaSquared'),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()
@@ -82,9 +82,9 @@ describe('getSumAggregation', () => {
             size: 0,
             aggregations: {
                 result: getSumAggregation({
-                    script
-                })
-            }
+                    script,
+                }),
+            },
         })
 
         expect(result.aggregations.result.value).toBeDefined()
@@ -98,15 +98,15 @@ describe('getSumAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getSumAggregation('propertyAreaSquaredAsString' as any)
-                }
+                    result: getSumAggregation('propertyAreaSquaredAsString' as any),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
             })
     })
@@ -119,8 +119,8 @@ describe('getSumAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getSumAggregation('address.keyword' as any)
-                }
+                    result: getSumAggregation('address.keyword' as any),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

@@ -22,7 +22,7 @@ import {
     SumAggregation,
     TermsAggregation,
     TopHitsAggregation,
-    ValueCountAggregation
+    ValueCountAggregation,
 } from 'lib/aggregations'
 import { AggregationBucketBaseResponse, GeoCentroidAggregationResponse } from 'lib/responses'
 
@@ -30,7 +30,7 @@ export type TransformAggregation<
     TDocument extends Document,
     TName extends string | number | symbol,
     TAggregation extends Aggregations<TDocument>,
-    TAggregationsBody extends AggregationsBody<TDocument, AggregationsContainer<TDocument>>
+    TAggregationsBody extends AggregationsBody<TDocument, AggregationsContainer<TDocument>>,
 > = TAggregation extends TermsAggregation<TDocument> | DateHistogramAggregation<TDocument> | HistogramAggregation<TDocument>
     ? Buckets<string, Bucket & TransformedAggregations<TDocument, TAggregationsBody>>
     : TAggregation extends TopHitsAggregation<TDocument>
@@ -66,7 +66,7 @@ export type TransformAggregation<
 export type TransformedAggregation<
     TDocument extends Document,
     TName extends string | number | symbol,
-    TAggregations extends Aggregations<TDocument>
+    TAggregations extends Aggregations<TDocument>,
 > =
     TAggregations['aggregations'] extends AggregationsContainer<TDocument>
         ? TransformAggregation<TDocument, TName, TAggregations, TAggregations['aggregations']>

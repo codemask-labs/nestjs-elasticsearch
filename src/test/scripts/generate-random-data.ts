@@ -12,7 +12,7 @@ const getAnimals = () => {
     return animals.map(() => ({
         id: faker.string.uuid(),
         type: faker.animal.type(),
-        year: faker.number.int({ min: 1, max: 15 })
+        year: faker.number.int({ min: 1, max: 15 }),
     }))
 }
 
@@ -42,15 +42,15 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument 
         address,
         city,
         hasProperty: Boolean(hasProperty),
-        /* eslint-disable @typescript-eslint/no-restricted-types */
+         
         propertyType: hasProperty ? faker.helpers.arrayElement(Object.values(PropertyType)) : (null as unknown as undefined),
         builtInYear: hasProperty ? builtInYear : (null as unknown as undefined),
         propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : (null as unknown as undefined),
         propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : (null as unknown as undefined),
         contractDate: hasProperty ? contractDate : (null as unknown as undefined),
-        /* eslint-enable @typescript-eslint/no-restricted-types */
+         
         location,
-        animals
+        animals,
     }
 })
 

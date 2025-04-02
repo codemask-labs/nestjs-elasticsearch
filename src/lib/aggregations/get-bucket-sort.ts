@@ -20,5 +20,5 @@ export type BucketSortAggregationBody = {
 }
 
 export const getBucketSortAggregation = (parameters: BucketSortAggregationBody = {}): BucketSortAggregation => ({
-    bucket_sort: parameters
+    bucket_sort: parameters,
 })

@@ -10,6 +10,6 @@ export type ValueCountAggregation<TDocument extends Document> = {
 
 export const getValueCountAggregation = <TDocument extends Document>(field: Field<TDocument>): ValueCountAggregation<TDocument> => ({
     value_count: {
-        field
-    }
+        field,
+    },
 })

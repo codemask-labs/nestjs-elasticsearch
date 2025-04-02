@@ -14,13 +14,13 @@ export type SumAggregation<TDocument extends Document> = {
 }
 
 export const getSumAggregation = <TDocument extends Document>(
-    fieldOrScript: NumericField<TDocument> | SumAggregationScript
+    fieldOrScript: NumericField<TDocument> | SumAggregationScript,
 ): SumAggregation<TDocument> => {
     if (is(String, fieldOrScript) || is(Symbol, fieldOrScript) || is(Number, fieldOrScript)) {
         return { sum: { field: fieldOrScript } }
     }
 
     return {
-        sum: fieldOrScript
+        sum: fieldOrScript,
     }
 }

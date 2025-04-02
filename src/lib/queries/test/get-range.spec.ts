@@ -12,21 +12,21 @@ describe('getRangeQuery', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema fields', () => {
         const query = getRangeQuery<HomeDocument>('propertyAreaSquared', {
             gte: 150,
-            lte: 250
+            lte: 250,
         })
 
         expect(query).toEqual({
             range: {
-                propertyAreaSquared: { gte: 150, lte: 250 }
-            }
+                propertyAreaSquared: { gte: 150, lte: 250 },
+            },
         })
     })
 
@@ -38,10 +38,10 @@ describe('getRangeQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getRangeQuery('propertyAreaSquared', {
-                        gt: 10000
-                    })
-                )
-            )
+                        gt: 10000,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -56,10 +56,10 @@ describe('getRangeQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getRangeQuery('propertyAreaSquared', {
-                        gt: 20000
-                    })
-                )
-            )
+                        gt: 20000,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -74,10 +74,10 @@ describe('getRangeQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getRangeQuery('propertyAreaSquared', {
-                        lt: 70000
-                    })
-                )
-            )
+                        lt: 70000,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -92,10 +92,10 @@ describe('getRangeQuery', () => {
             query: getBoolQuery(
                 getMustQuery(
                     getRangeQuery('propertyAreaSquared', {
-                        lte: 70000
-                    })
-                )
-            )
+                        lte: 70000,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -111,10 +111,10 @@ describe('getRangeQuery', () => {
                 getMustQuery(
                     getRangeQuery('propertyAreaSquared', {
                         gte: 10000,
-                        lte: 80000
-                    })
-                )
-            )
+                        lte: 80000,
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -135,10 +135,10 @@ describe('getRangeQuery', () => {
                     getRangeQuery('contractDate', {
                         gte: gteContractDate,
                         lte: lteContractDate,
-                        format: 'yyyy-MM-dd'
-                    })
-                )
-            )
+                        format: 'yyyy-MM-dd',
+                    }),
+                ),
+            ),
         })
 
         expect(result.total).toBeGreaterThan(0)
@@ -168,17 +168,17 @@ describe('getRangeQuery', () => {
                         getRangeQuery('contractDate', {
                             gte: '2023-05-01',
                             lte: '2023-10-01',
-                            format: `yyyy-MM-dd'T'HH:mm:ss.SSSZ`
-                        })
-                    )
-                )
+                            format: `yyyy-MM-dd'T'HH:mm:ss.SSSZ`,
+                        }),
+                    ),
+                ),
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('parse_exception')
                 expect(error.message).toContain(
-                    `failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]: [failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]]`
+                    `failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]: [failed to parse date field [2023-05-01] with format [yyyy-MM-dd'T'HH:mm:ss.SSSZ]]`,
                 )
             })
     })

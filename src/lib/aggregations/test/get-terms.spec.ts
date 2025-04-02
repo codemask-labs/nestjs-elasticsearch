@@ -12,9 +12,9 @@ describe('getTermsAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema field with default size', () => {
@@ -22,8 +22,8 @@ describe('getTermsAggregation', () => {
 
         expect(query).toEqual({
             terms: {
-                field: 'address.keyword'
-            }
+                field: 'address.keyword',
+            },
         })
     })
 
@@ -32,8 +32,8 @@ describe('getTermsAggregation', () => {
 
         expect(query).toEqual({
             terms: {
-                field: 'animals.type.keyword'
-            }
+                field: 'animals.type.keyword',
+            },
         })
     })
 
@@ -43,16 +43,16 @@ describe('getTermsAggregation', () => {
         expect(query).toEqual({
             terms: {
                 field: 'address.keyword',
-                size: 15
-            }
+                size: 15,
+            },
         })
     })
 
     it('accepts only schema field with passed size and order', () => {
         const query = getTermsAggregation<HomeDocument>('address.keyword', 15, {
             order: {
-                path: Order.ASC
-            }
+                path: Order.ASC,
+            },
         })
 
         expect(query).toEqual({
@@ -60,16 +60,16 @@ describe('getTermsAggregation', () => {
                 field: 'address.keyword',
                 size: 15,
                 order: {
-                    path: Order.ASC
-                }
-            }
+                    path: Order.ASC,
+                },
+            },
         })
     })
 
     it('accepts only schema field with passed size, missing_bucket and missing_order', () => {
         const query = getTermsAggregation<HomeDocument>('address.keyword', 15, {
             missing_order: MissingOrder.First,
-            missing_bucket: true
+            missing_bucket: true,
         })
 
         expect(query).toEqual({
@@ -77,8 +77,8 @@ describe('getTermsAggregation', () => {
                 field: 'address.keyword',
                 size: 15,
                 missing_order: MissingOrder.First,
-                missing_bucket: true
-            }
+                missing_bucket: true,
+            },
         })
     })
 
@@ -87,14 +87,14 @@ describe('getTermsAggregation', () => {
 
         const result = await service.search(HomeDocument, {
             aggregations: {
-                result: getTermsAggregation('city.keyword', 10)
-            }
+                result: getTermsAggregation('city.keyword', 10),
+            },
         })
 
         result.aggregations.result.buckets.forEach(bucket => {
             expect(bucket).toStrictEqual({
                 doc_count: expect.any(Number),
-                key: expect.any(String)
+                key: expect.any(String),
             })
         })
     })
@@ -108,10 +108,10 @@ describe('getTermsAggregation', () => {
                 nestedAggregation: {
                     ...getNestedAggregation('animals'),
                     aggregations: {
-                        result: getTermsAggregation('animals.type.keyword')
-                    }
-                }
-            }
+                        result: getTermsAggregation('animals.type.keyword'),
+                    },
+                },
+            },
         })
 
         expect(result.aggregations.nestedAggregation.doc_count).not.toEqual(0)
@@ -119,7 +119,7 @@ describe('getTermsAggregation', () => {
         result.aggregations.nestedAggregation.result.buckets.forEach(bucket => {
             expect(bucket).toStrictEqual({
                 doc_count: expect.any(Number),
-                key: expect.any(String)
+                key: expect.any(String),
             })
         })
     })
@@ -130,15 +130,15 @@ describe('getTermsAggregation', () => {
         await service
             .search(HomeDocument, {
                 aggregations: {
-                    result: getTermsAggregation('city', 10)
-                }
+                    result: getTermsAggregation('city', 10),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
             })
     })
@@ -150,9 +150,9 @@ describe('getTermsAggregation', () => {
             .search(HomeDocument, {
                 aggregations: {
                     result: getTermsAggregation('city', undefined, {
-                        missing_bucket: true
-                    })
-                }
+                        missing_bucket: true,
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
@@ -168,9 +168,9 @@ describe('getTermsAggregation', () => {
             .search(HomeDocument, {
                 aggregations: {
                     result: getTermsAggregation('city', undefined, {
-                        missing_order: MissingOrder.First
-                    })
-                }
+                        missing_order: MissingOrder.First,
+                    }),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)

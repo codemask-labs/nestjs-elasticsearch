@@ -5,5 +5,5 @@ export enum CalendarIntervalQuantity {
     WEEK = '1w',
     MONTH = '1M',
     QUARTER = '1q',
-    YEAR = '1y'
+    YEAR = '1y',
 }

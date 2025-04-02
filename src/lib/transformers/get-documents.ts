@@ -4,7 +4,7 @@ import { TDocumentWrapper } from './types'
 
 export const getTransformedDocuments = <TDocument extends Document>(
     document: ClassConstructor<TDocument>,
-    { hits }: SearchHitsMetadata<TDocument>
+    { hits }: SearchHitsMetadata<TDocument>,
 ): Array<TDocumentWrapper<TDocument>> =>
     hits.reduce<Array<TDocumentWrapper<TDocument>>>((result, currentItem) => {
         const { _source: source, sort } = currentItem
@@ -17,7 +17,7 @@ export const getTransformedDocuments = <TDocument extends Document>(
             ...result,
             {
                 source: Object.assign(new document(), source),
-                sort
-            }
+                sort,
+            },
         ]
     }, [])

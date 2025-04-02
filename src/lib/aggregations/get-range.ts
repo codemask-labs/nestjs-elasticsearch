@@ -11,10 +11,10 @@ export type RangeAggregation<TDocument extends Document> = {
 
 export const getRangeAggregation = <TDocument extends Document>(
     field: NumericField<TDocument>,
-    ranges: Array<Range>
+    ranges: Array<Range>,
 ): RangeAggregation<TDocument> => ({
     range: {
         field,
-        ranges
-    }
+        ranges,
+    },
 })

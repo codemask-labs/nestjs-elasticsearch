@@ -10,9 +10,9 @@ describe('getHistogramAggregation', () => {
     const { app } = setupNestApplication({
         imports: [
             ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE
-            })
-        ]
+                node: TEST_ELASTICSEARCH_NODE,
+            }),
+        ],
     })
 
     it('accepts only schema numeric field', () => {
@@ -21,8 +21,8 @@ describe('getHistogramAggregation', () => {
         expect(query).toEqual({
             histogram: {
                 field: 'propertyAreaSquared',
-                interval: 5
-            }
+                interval: 5,
+            },
         })
     })
 
@@ -32,8 +32,8 @@ describe('getHistogramAggregation', () => {
         const result = await service.search(HomeDocument, {
             size: 0,
             aggregations: {
-                result: getHistogramAggregation('builtInYear', 5)
-            }
+                result: getHistogramAggregation('builtInYear', 5),
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -42,9 +42,9 @@ describe('getHistogramAggregation', () => {
             expect(bucket).toEqual(
                 expect.objectContaining({
                     key: expect.any(Number),
-                    doc_count: expect.any(Number)
-                })
-            )
+                    doc_count: expect.any(Number),
+                }),
+            ),
         )
     })
 
@@ -56,9 +56,9 @@ describe('getHistogramAggregation', () => {
             size: 0,
             aggregations: {
                 result: getHistogramAggregation('builtInYear', 5, {
-                    min_doc_count: minDocCount
-                })
-            }
+                    min_doc_count: minDocCount,
+                }),
+            },
         })
 
         const responseBuckets = result.aggregations.result.buckets
@@ -73,15 +73,15 @@ describe('getHistogramAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    histogram: getHistogramAggregation('propertyAreaSquaredAsString' as any, 5)
-                }
+                    histogram: getHistogramAggregation('propertyAreaSquaredAsString' as any, 5),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
                 expect(error.message).toContain('search_phase_execution_exception')
                 expect(error.message).toContain('illegal_argument_exception')
                 expect(error.message).toContain(
-                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.'
+                    'Text fields are not optimised for operations that require per-document field data like aggregations and sorting, so these operations are disabled by default.',
                 )
             })
     })
@@ -94,8 +94,8 @@ describe('getHistogramAggregation', () => {
                 size: 0,
                 aggregations: {
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-                    result: getHistogramAggregation('address.keyword' as any, 5)
-                }
+                    result: getHistogramAggregation('address.keyword' as any, 5),
+                },
             })
             .catch(error => {
                 expect(error).toBeInstanceOf(ResponseError)
