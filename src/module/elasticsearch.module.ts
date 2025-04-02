@@ -5,6 +5,7 @@ import { ClassConstructor } from 'lib/common'
 import { Index } from './injectables'
 import { ElasticsearchService } from './elasticsearch.service'
 import { getIndexInjectionToken } from './utils'
+import { AsyncModuleOptions } from './types'
 
 @Module({})
 export class ElasticsearchModule {
@@ -13,6 +14,16 @@ export class ElasticsearchModule {
             global: true, // todo: make it optional
             module: ElasticsearchModule,
             imports: [BaseElasticsearchModule.register(options)],
+            providers: [ElasticsearchService],
+            exports: [ElasticsearchService],
+        }
+    }
+
+    static registerAsync(options: AsyncModuleOptions): DynamicModule {
+        return {
+            global: options.global ?? true,
+            module: ElasticsearchModule,
+            imports: [BaseElasticsearchModule.registerAsync(options)],
             providers: [ElasticsearchService],
             exports: [ElasticsearchService],
         }

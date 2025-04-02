@@ -56,7 +56,30 @@ import { ElasticsearchModule } from '@codemask-labs/nestjs-elasticsearch'
 class AppModule {}
 ```
 
-The `register()` method supports all the configuration properties available in `ClientOptions` from the [@elastic/elasticsearch](https://www.npmjs.com/package/@elastic/elasticsearch) package.
+or
+
+```typescript
+import { ElasticsearchModule } from '@codemask-labs/nestjs-elasticsearch'
+
+@Module({
+    imports: [
+        ElasticsearchModule.registerAsync({
+            imports: [ConfigModule],
+            useFactory: (configService: ConfigService) => ({
+                node: configService.get('ELASTICSEARCH_NODE'),
+                auth: {
+                    username: configService.get('ELASTICSEARCH_USERNAME'),
+                    password: configService.get('ELASTICSEARCH_PASSWORD'),
+                },
+            }),
+            inject: [ConfigService],
+        })
+    ]
+})
+class AppModule {}
+```
+
+The `register()` and `registerAsync()` methods support all the configuration properties available in `ClientOptions` from the [@elastic/elasticsearch](https://www.npmjs.com/package/@elastic/elasticsearch) package.
 
 ### Registering the index
 

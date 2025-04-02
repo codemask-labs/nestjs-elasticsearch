@@ -10,8 +10,10 @@ import { getQueries } from 'lib/utils'
 describe('Making a search', () => {
     const { app } = setupNestApplication({
         imports: [
-            ElasticsearchModule.register({
-                node: TEST_ELASTICSEARCH_NODE,
+            ElasticsearchModule.registerAsync({
+                useFactory: () => ({
+                    node: TEST_ELASTICSEARCH_NODE,
+                }),
             }),
         ],
     })
