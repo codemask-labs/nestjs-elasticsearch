@@ -49,9 +49,9 @@ import { ElasticsearchModule } from '@codemask-labs/nestjs-elasticsearch'
 @Module({
     imports: [
         ElasticsearchModule.register({
-            node: 'http://localhost:9200'
-        })
-    ]
+            node: 'http://localhost:9200',
+        }),
+    ],
 })
 class AppModule {}
 ```
@@ -100,7 +100,7 @@ import { ExampleDocument } from './example.document'
 
 @Module({
     imports: [ElasticsearchModule.forFeature([ExampleDocument])],
-    providers: [ExampleService]
+    providers: [ExampleService],
 })
 export class ExampleModule {}
 ```
@@ -170,15 +170,15 @@ const searchRequestBody = getSearchRequest(ExampleDocument, {
             getTermQuery('exampleField.keyword', 'Some value'),
             getRangeQuery('exampleNumericField', {
                 gte: 1,
-                lte: 10
-            })
-        ]
+                lte: 10,
+            }),
+        ],
     }),
     sort: {
         'exampleField.keyword': {
-            order: Order.ASC
-        }
-    }
+            order: Order.ASC,
+        },
+    },
 })
 ```
 

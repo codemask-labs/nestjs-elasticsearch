@@ -1,3 +1,4 @@
+import { isNil } from 'ramda'
 import { faker } from '@faker-js/faker'
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -42,13 +43,13 @@ const data = new Array(DOCUMENTS_COUNT).fill(null).map((_, index): HomeDocument 
         address,
         city,
         hasProperty: Boolean(hasProperty),
-         
-        propertyType: hasProperty ? faker.helpers.arrayElement(Object.values(PropertyType)) : (null as unknown as undefined),
-        builtInYear: hasProperty ? builtInYear : (null as unknown as undefined),
-        propertyAreaSquared: hasProperty && hasPropertyAreaSquared ? areaSquared : (null as unknown as undefined),
-        propertyAreaSquaredAsString: hasProperty && hasPropertyAreaSquared ? areaSquared.toString() : (null as unknown as undefined),
-        contractDate: hasProperty ? contractDate : (null as unknown as undefined),
-         
+
+        propertyType: !isNil(hasProperty) ? faker.helpers.arrayElement(Object.values(PropertyType)) : (null as unknown as undefined),
+        builtInYear: !isNil(hasProperty) ? builtInYear : (null as unknown as undefined),
+        propertyAreaSquared: !isNil(hasProperty) && !isNil(hasPropertyAreaSquared) ? areaSquared : (null as unknown as undefined),
+        propertyAreaSquaredAsString: !isNil(hasProperty) && !isNil(hasPropertyAreaSquared) ? areaSquared.toString() : (null as unknown as undefined),
+        contractDate: !isNil(hasProperty) ? contractDate : (null as unknown as undefined),
+
         location,
         animals,
     }

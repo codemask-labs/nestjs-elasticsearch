@@ -1,3 +1,4 @@
+import { isNil } from 'ramda'
 import { ResponseError } from 'lib/common'
 import { HomeDocument } from 'test/module'
 import { setupNestApplication } from 'test/toolkit'
@@ -146,7 +147,7 @@ describe('getRangeQuery', () => {
         result.documents.forEach(result => {
             const contractDate = result.source.contractDate
 
-            if (!contractDate) {
+            if (isNil(contractDate)) {
                 expect(contractDate).toBeDefined()
 
                 return

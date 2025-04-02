@@ -1,42 +1,42 @@
 {
-  "git": {
-    "commitMessage": "chore: release v${version}"
-  },
-  "github": {
-    "release": true,
-    "releaseName": "v${version}"
-  },
-  "npm": {
-    "publish": true,
-    "skipChecks": true
-  },
-  "hooks": {
-    "after:release": "echo \"version=${version}\" >> $GITHUB_OUTPUT"
-  },
-  "plugins": {
-    "@release-it/conventional-changelog": {
-      "infile": "CHANGELOG.md",
-      "preset": {
-        "name": "conventionalcommits",
-        "types": [
-          {
-            "type": "feat",
-            "section": "Features"
-          },
-          {
-            "type": "fix",
-            "section": "Bug Fixes"
-          },
-          {
-            "type": "build",
-            "section": "Build System"
-          },
-          {
-            "type": "revert",
-            "section": "Reverts"
-          }
-        ]
-      }
+    "git": {
+        "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+        "release": true,
+        "releaseName": "v${version}"
+    },
+    "npm": {
+        "publish": true,
+        "skipChecks": true
+    },
+    "hooks": {
+        "after:release": "echo \"version=${version}\" >> $GITHUB_OUTPUT"
+    },
+    "plugins": {
+        "@release-it/conventional-changelog": {
+            "infile": "CHANGELOG.md",
+            "preset": {
+                "name": "conventionalcommits",
+                "types": [
+                    {
+                        "type": "feat",
+                        "section": "Features"
+                    },
+                    {
+                        "type": "fix",
+                        "section": "Bug Fixes"
+                    },
+                    {
+                        "type": "build",
+                        "section": "Build System"
+                    },
+                    {
+                        "type": "revert",
+                        "section": "Reverts"
+                    }
+                ]
+            }
+        }
     }
-  }
 }

@@ -41,7 +41,7 @@ describe('Making a search', () => {
         const allDocumentsAreValid = result.documents.every(document => {
             const errors = validateSync(document)
 
-            return !errors.length
+            return Array.isArray(errors) && errors.length === 0
         })
 
         expect(allDocumentsAreValid).toBe(true)
