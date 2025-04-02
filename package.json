@@ -13,9 +13,9 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "type": "commonjs",
-    "packageManager": "yarn@3.6.4",
+    "packageManager": "yarn@4.8.1",
     "engines": {
-        "node": ">= 18.0.0"
+        "node": ">= 22.0.0"
     },
     "files": [
         "dist",
@@ -42,7 +42,9 @@
         "es:seed": "yarn ts-node --project tsconfig.json ./src/test/scripts/es-seed.ts",
         "prepare": "husky",
         "test:cov": "jest --coverage",
-        "precommit": "yarn lint"
+        "precommit": "yarn lint",
+        "update": "yarn upgrade-interactive",
+        "update:yarn": "yarn set version berry"
     },
     "keywords": [
         "nestjs",
@@ -53,29 +55,29 @@
         "codemask"
     ],
     "dependencies": {
-        "@nestjs/elasticsearch": "10.0.1",
+        "@nestjs/elasticsearch": "11.0.0",
         "ramda": "0.30.1"
     },
     "peerDependencies": {
         "@elastic/elasticsearch": ">= 8.x",
-        "@nestjs/common": ">= 10.x",
+        "@nestjs/common": ">= 11.x",
         "reflect-metadata": ">= 0.2.x"
     },
     "devDependencies": {
         "@commitlint/cli": "19.8.0",
         "@commitlint/config-conventional": "19.8.0",
-        "@elastic/elasticsearch": "8.13.1",
-        "@faker-js/faker": "9.4.0",
-        "@nestjs/common": "10.4.15",
-        "@nestjs/core": "10.4.15",
-        "@nestjs/platform-express": "10.4.15",
-        "@nestjs/testing": "10.4.15",
-        "@swc/core": "1.10.14",
+        "@elastic/elasticsearch": "8.15.0",
+        "@faker-js/faker": "9.6.0",
+        "@nestjs/common": "11.0.12",
+        "@nestjs/core": "11.0.12",
+        "@nestjs/platform-express": "11.0.12",
+        "@nestjs/testing": "11.0.12",
+        "@swc/core": "1.11.16",
         "@swc/jest": "0.2.37",
         "@types/jest": "29.5.14",
-        "@types/node": "22.13.1",
+        "@types/node": "22.13.17",
         "@types/ramda": "0.30.2",
-        "@types/supertest": "6.0.2",
+        "@types/supertest": "6.0.3",
         "class-transformer": "0.5.1",
         "class-validator": "0.14.1",
         "eslint": "9.23.0",
@@ -83,17 +85,17 @@
         "expect-more-jest": "5.5.0",
         "husky": "9.1.7",
         "jest": "29.7.0",
-        "prettier": "3.4.2",
+        "prettier": "3.5.3",
         "reflect-metadata": "0.2.2",
         "rimraf": "6.0.1",
-        "rxjs": "7.8.1",
-        "supertest": "7.0.0",
+        "rxjs": "7.8.2",
+        "supertest": "7.1.0",
         "ts-node": "10.9.2",
         "tsconfig-paths": "4.2.0",
         "tscpaths": "0.0.9",
         "tslint": "6.1.3",
         "typescript": "5.8.2",
-        "wait-on": "8.0.2"
+        "wait-on": "8.0.3"
     },
     "publishConfig": {
         "access": "public"
