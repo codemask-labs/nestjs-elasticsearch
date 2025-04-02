@@ -1,14 +1,16 @@
 {
-    "git": {
-        "commitMessage": "chore: release v${version}"
-    },
     "github": {
         "release": true,
         "releaseName": "v${version}"
     },
     "npm": {
-        "publish": true,
-        "skipChecks": true
+        "publish": true
+    },
+    "git": {
+        "requireCleanWorkingDir": true,
+        "tagName": "v${version}",
+        "commitMessage": "chore(release): ${version}",
+        "tagAnnotation": "v${version}"
     },
     "hooks": {
         "after:release": "echo \"version=${version}\" >> $GITHUB_OUTPUT"
@@ -29,11 +31,15 @@
                     },
                     {
                         "type": "build",
-                        "section": "Build System"
+                        "section": "Build items"
+                    },
+                    {
+                        "type": "ci",
+                        "section": "CI/CD"
                     },
                     {
                         "type": "revert",
-                        "section": "Reverts"
+                        "section": "Reverted"
                     }
                 ]
             }
