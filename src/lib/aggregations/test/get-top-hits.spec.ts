@@ -1,3 +1,4 @@
+import { is, isNil } from 'ramda'
 import { ResponseError } from 'lib/common'
 import { Order } from 'lib/enums'
 import { HomeDocument } from 'test/module'
@@ -183,13 +184,13 @@ describe('getTopHitsAggregation', () => {
         responseBuckets.forEach(bucket => {
             const responseHits = bucket.innerResult.hits.hits
             const contractDates = responseHits.map(({ _source }) => ({
-                contractDate: _source?.contractDate ? new Date(_source.contractDate) : null,
+                contractDate: is(String, _source?.contractDate) ? new Date(_source.contractDate) : null,
             }))
 
             const firstContractDate = contractDates.at(0)?.contractDate?.getTime()
             const lastContractDate = contractDates.at(-1)?.contractDate?.getTime()
 
-            if (!firstContractDate || !lastContractDate) {
+            if (isNil(firstContractDate) || isNil(lastContractDate)) {
                 expect(firstContractDate).toBeDefined()
                 expect(lastContractDate).toBeDefined()
 

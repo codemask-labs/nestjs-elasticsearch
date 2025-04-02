@@ -40,7 +40,14 @@ export const getTopHitsAggregation = <TDocument extends Document>(
     }
 
     const { includes, ...params } = options
-    const source = includes?.length ? { _source: { includes } } : {}
+    const source =
+        includes && includes.length > 0
+            ? {
+                  _source: {
+                      includes,
+                  },
+              }
+            : {}
 
     return {
         top_hits: { size, ...params, ...source },

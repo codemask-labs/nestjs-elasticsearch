@@ -35,7 +35,6 @@ export default [
                 },
             ],
             'import/order': 'off',
-            '@typescript-eslint/strict-boolean-expressions': 'off', // TODO: uncomment this rule
         },
     },
     {

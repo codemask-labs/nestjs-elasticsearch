@@ -1,5 +1,6 @@
 import request from 'supertest'
 import { App } from 'supertest/types'
+import { isNil } from 'ramda'
 import { INestApplication } from '@nestjs/common'
 import { Test } from '@nestjs/testing'
 import { NestModuleTokens, TestToolkitSetup } from './types'
@@ -35,7 +36,7 @@ export const setupNestApplication = (setup: TestToolkitSetup) => {
         await app.close()
     }
 
-    if (!teardown || teardown === 'all') {
+    if (isNil(teardown) || teardown === 'all') {
         beforeAll(createNestApplication)
         afterAll(destroyNestApplication)
     }
