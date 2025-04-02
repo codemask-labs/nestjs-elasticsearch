@@ -13,7 +13,7 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "type": "commonjs",
-    "packageManager": "yarn@3.6.4",
+    "packageManager": "yarn@4.8.1",
     "engines": {
         "node": ">= 22.0.0"
     },
@@ -42,7 +42,9 @@
         "es:seed": "yarn ts-node --project tsconfig.json ./src/test/scripts/es-seed.ts",
         "prepare": "husky",
         "test:cov": "jest --coverage",
-        "precommit": "yarn lint"
+        "precommit": "yarn lint",
+        "update": "yarn upgrade-interactive",
+        "update:yarn": "yarn set version berry"
     },
     "keywords": [
         "nestjs",
