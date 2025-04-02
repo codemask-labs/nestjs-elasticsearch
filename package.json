@@ -87,7 +87,6 @@
         "reflect-metadata": "0.2.2",
         "rimraf": "6.0.1",
         "rxjs": "7.8.1",
-        "semantic-release": "24.2.1",
         "supertest": "7.0.0",
         "ts-node": "10.9.2",
         "tsconfig-paths": "4.2.0",
@@ -97,7 +96,6 @@
         "wait-on": "8.0.2"
     },
     "publishConfig": {
-        "@codemask-labs:registry": "https://registry.npmjs.org/",
         "access": "public"
     }
 }

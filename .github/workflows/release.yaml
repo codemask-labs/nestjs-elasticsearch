@@ -44,25 +44,15 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
 
-      - name: Init Git user
-        run: |
-          git config --global user.email "contact@codemask.com"
-          git config --global user.name "Codemask Labs"
-
       - name: Init NPM configuration
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Release
-        id: release-it
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          dry_run=""
-          pre_release=""
-
-          if [ "${{ inputs.dry-run }}" == "true" ]; then dry_run="--dry-run"; fi
-          if [ "${{ inputs.release-branch }}" != "main" ]; then pre_release="--preRelease=${{ inputs.release-branch }}"; fi
-
-          yarn dlx -p release-it -p @release-it/conventional-changelog release-it --ci $pre_release $dry_run
+      - uses: codemask-labs/release-it@v1.2.1
+        with:
+          git-user: 'Codemask Labs'
+          git-email: 'contact@codemask.com'
+          git-token: ${{ secrets.GITHUB_TOKEN }}
+          release-branch: ${{ inputs.release-branch }}
+          dry-run: ${{ inputs.dry-run }}
