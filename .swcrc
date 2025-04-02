@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json.schemastore.org/swcrc",
+    "$schema": "https://swc.rs/schema.json",
     "sourceMaps": true,
     "jsc": {
         "parser": {
@@ -7,11 +7,7 @@
             "decorators": true,
             "dynamicImport": true
         },
-        "transform": {
-            "legacyDecorator": true,
-            "decoratorMetadata": true
-        },
-        "baseUrl": "./"
+        "baseUrl": "src"
     },
     "minify": false
 }
