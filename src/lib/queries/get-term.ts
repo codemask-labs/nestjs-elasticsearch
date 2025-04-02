@@ -28,12 +28,12 @@ export interface TermQueryOverloads {
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,
         value: FieldType<TDocument, TField>,
-        options?: TermQueryOptions
+        options?: TermQueryOptions,
     ): TermQuery<TDocument, TField>
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,
         value?: NullableFieldType<TDocument, TField>,
-        options?: TermQueryOptions
+        options?: TermQueryOptions,
     ): Nullable<TermQuery<TDocument, TField>>
 }
 

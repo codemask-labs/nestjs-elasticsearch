@@ -21,12 +21,12 @@ export interface TermsQuerySignatures {
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,
         value: Array<FieldType<TDocument, TField>>,
-        options?: TermsQueryOptions
+        options?: TermsQueryOptions,
     ): TermsQuery<TDocument, TField>
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,
         value: Nullable<Array<FieldType<TDocument, TField>>>,
-        options?: TermsQueryOptions
+        options?: TermsQueryOptions,
     ): Nullable<TermsQuery<TDocument, TField>>
 }
 
