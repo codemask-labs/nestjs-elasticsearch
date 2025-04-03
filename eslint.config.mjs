@@ -1,7 +1,8 @@
-import codemaskConfig from 'eslint-config-codemask'
+import { codemaskConfig, codemaskStylisticConfig } from 'eslint-config-codemask'
 
 export default [
     ...codemaskConfig,
+    ...codemaskStylisticConfig,
     {
         rules: {
             camelcase: [
@@ -34,7 +35,6 @@ export default [
                     ],
                 },
             ],
-            'import/order': 'off',
         },
     },
     {
