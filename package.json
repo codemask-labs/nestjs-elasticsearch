@@ -55,7 +55,7 @@
         "codemask"
     ],
     "dependencies": {
-        "@nestjs/elasticsearch": "11.0.0",
+        "@nestjs/elasticsearch": "11.1.0",
         "ramda": "0.30.1"
     },
     "peerDependencies": {
