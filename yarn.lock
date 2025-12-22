@@ -600,7 +600,7 @@ __metadata:
     husky: "npm:9.1.7"
     jest: "npm:30.2.0"
     prettier: "npm:3.7.4"
-    ramda: "npm:0.30.1"
+    ramda: "npm:0.32.0"
     reflect-metadata: "npm:0.2.2"
     rimraf: "npm:6.1.2"
     rxjs: "npm:7.8.2"
@@ -7826,10 +7826,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ramda@npm:0.30.1":
-  version: 0.30.1
-  resolution: "ramda@npm:0.30.1"
-  checksum: 10/f3e1a7bc11f3a113edb3bb4764c2c22088c5896594934c01cf1980184d00f1d5a7af82761a3389419e2d51542ad2121ff44e718f40792d167e2846bba79a4c6d
+"ramda@npm:0.32.0":
+  version: 0.32.0
+  resolution: "ramda@npm:0.32.0"
+  checksum: 10/ee03949247ce0cdbb86642c7087adb015552a91e29e21ffe63f1d3e492328144dc3028f7f804f53c028ce753e46e50d0f4ba09c24b394efb98c1e412a5dd046c
   languageName: node
   linkType: hard
 
