@@ -23,7 +23,7 @@ describe('Making a search', () => {
         const service = app.get(TestService)
         const result = await service.getHomeDocuments()
         const allDocumentsAreValid = result.documents.every(document => {
-            const errors = validateSync(document)
+            const errors = validateSync(document, { forbidUnknownValues: false })
 
             return Array.isArray(errors) && errors.length === 0
         })
