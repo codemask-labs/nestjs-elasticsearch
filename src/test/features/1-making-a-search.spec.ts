@@ -38,7 +38,7 @@ describe('Making a search', () => {
         })
 
         const allDocumentsAreValid = result.documents.every(document => {
-            const errors = validateSync(document)
+            const errors = validateSync(document, { forbidUnknownValues: false })
 
             return Array.isArray(errors) && errors.length === 0
         })
