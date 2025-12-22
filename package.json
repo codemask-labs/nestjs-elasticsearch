@@ -67,7 +67,7 @@
         "@commitlint/cli": "20.2.0",
         "@commitlint/config-conventional": "20.2.0",
         "@elastic/elasticsearch": "8.15.0",
-        "@faker-js/faker": "9.6.0",
+        "@faker-js/faker": "10.1.0",
         "@nestjs/common": "11.1.10",
         "@nestjs/core": "11.1.10",
         "@nestjs/platform-express": "11.1.10",
