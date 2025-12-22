@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.10.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.10.0...v2.10.1) (2025-12-22)
+
+### Build items
+
+* **dependencies:** add braces to resolutions ([#244](https://github.com/codemask-labs/nestjs-elasticsearch/issues/244)) ([90b0f1a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/90b0f1afdf9fe8884faac4f3d386d38b9f012cd2))
+* **dependencies:** bump @nestjs/elasticsearch from 11.0.0 to 11.1.0 in the prod-dependencies-minor-and-patch group ([#248](https://github.com/codemask-labs/nestjs-elasticsearch/issues/248)) ([2af4a3a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/2af4a3a4c7288df06a7ea92923ea510a73ac28dd))
+* **dependencies:** update dependency ([#243](https://github.com/codemask-labs/nestjs-elasticsearch/issues/243)) ([cade2ac](https://github.com/codemask-labs/nestjs-elasticsearch/commit/cade2acf0d9b8bd3b4c6f234b0ccf42aa03a709e))
+* **dependencies:** update ramda ([#277](https://github.com/codemask-labs/nestjs-elasticsearch/issues/277)) ([ce8c1fe](https://github.com/codemask-labs/nestjs-elasticsearch/commit/ce8c1fe9cc5fd1c5d3e913369a37afdc330d51cf))
+* **dev-dependencies:** update packages ([#276](https://github.com/codemask-labs/nestjs-elasticsearch/issues/276)) ([7d80954](https://github.com/codemask-labs/nestjs-elasticsearch/commit/7d80954558cee0cb4a8252d9a2c045b70d2f47c6))
+* **github-actions:** bump actions/checkout from 4.2.2 to 6.0.1 ([#274](https://github.com/codemask-labs/nestjs-elasticsearch/issues/274)) ([3572c7a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/3572c7aa27bf71a58fbd578e20f8a452c1d74ade))
+* **github-actions:** bump amannn/action-semantic-pull-request from 5.5.3 to 6.1.1 ([#264](https://github.com/codemask-labs/nestjs-elasticsearch/issues/264)) ([8d7c170](https://github.com/codemask-labs/nestjs-elasticsearch/commit/8d7c170e1af388f0860c4379745e825f89416a3f))
+* **github-actions:** bump aquasecurity/trivy-action from 0.30.0 to 0.33.1 ([#266](https://github.com/codemask-labs/nestjs-elasticsearch/issues/266)) ([ba3bc5d](https://github.com/codemask-labs/nestjs-elasticsearch/commit/ba3bc5d3430dd9d53781332be4a55c3aebf096cd))
+* **github-actions:** bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 ([#251](https://github.com/codemask-labs/nestjs-elasticsearch/issues/251)) ([95ef0c9](https://github.com/codemask-labs/nestjs-elasticsearch/commit/95ef0c9e1e2d082e6277a86ba24274caa2d97f92))
+* resolve dependabot alerts ([#278](https://github.com/codemask-labs/nestjs-elasticsearch/issues/278)) ([575ef0d](https://github.com/codemask-labs/nestjs-elasticsearch/commit/575ef0d4ff65d34ed0b4dcbdc5dc4b12acd251dd))
+* resolve dependabot alerts ([#279](https://github.com/codemask-labs/nestjs-elasticsearch/issues/279)) ([441650c](https://github.com/codemask-labs/nestjs-elasticsearch/commit/441650ca62f027b059690a46ca7e859cf08a8b63))
+* update node ([#275](https://github.com/codemask-labs/nestjs-elasticsearch/issues/275)) ([413b2fe](https://github.com/codemask-labs/nestjs-elasticsearch/commit/413b2fee948a0b8d85ffde43daf76f02509b4cc1))
+
 ## [2.10.0](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.9.0...v2.10.0) (2025-04-02)
 
 ### Features
