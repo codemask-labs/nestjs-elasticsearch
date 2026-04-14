@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.10.2](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.10.1...v2.10.2) (2026-04-14)
+
+### Build items
+
+* **dev-dependencies:** update packages ([#289](https://github.com/codemask-labs/nestjs-elasticsearch/issues/289)) ([ec72cc5](https://github.com/codemask-labs/nestjs-elasticsearch/commit/ec72cc53c468598b51a24d04ebefcb5479b26e53))
+* **github-actions:** bump actions/checkout from 6.0.1 to 6.0.2 ([#282](https://github.com/codemask-labs/nestjs-elasticsearch/issues/282)) ([d1fbd2a](https://github.com/codemask-labs/nestjs-elasticsearch/commit/d1fbd2ad867b50aed2b8e72a08048148500d2bd8))
+* **github-actions:** bump aquasecurity/trivy-action from 0.33.1 to 0.35.0 ([#286](https://github.com/codemask-labs/nestjs-elasticsearch/issues/286)) ([2041a31](https://github.com/codemask-labs/nestjs-elasticsearch/commit/2041a310aeae69d04428330ff856edfd9b9364f7))
+* **github-actions:** bump dependabot/fetch-metadata from 2.4.0 to 3.0.0 ([#288](https://github.com/codemask-labs/nestjs-elasticsearch/issues/288)) ([2a01059](https://github.com/codemask-labs/nestjs-elasticsearch/commit/2a01059b8b674030f41eba970e1518ca6ab2a050))
+* resolve dependabot alerts ([#290](https://github.com/codemask-labs/nestjs-elasticsearch/issues/290)) ([68452bd](https://github.com/codemask-labs/nestjs-elasticsearch/commit/68452bdf70053425c8764c82f140f1c67762b7c6))
+
 ## [2.10.1](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.10.0...v2.10.1) (2025-12-22)
 
 ### Build items
