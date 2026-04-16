@@ -27,7 +27,7 @@ describe('forFeature validation', () => {
         const service = app.get(ElasticsearchService)
 
         expect(() => service.getIndex(UnregisteredDocument)).toThrow(
-            `[${UnregisteredDocument.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`,
+            `[${UnregisteredDocument.name}] Failed to construct Index. Make sure the index document class is properly decorated with @RegisterIndex(name: string).`,
         )
     })
 })
@@ -50,7 +50,7 @@ describe('forFeature validation - startup failure', () => {
         })
 
         await expect(testingModule.compile()).rejects.toThrow(
-            `[${UnregisteredDocument.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`,
+            `[${UnregisteredDocument.name}] Failed to construct Index. Make sure the index document class is properly decorated with @RegisterIndex(name: string).`,
         )
     })
 })
