@@ -8,8 +8,7 @@ import { ElasticsearchService } from 'module/elasticsearch.service'
  * Bug (fixed): ElasticsearchService.getIndex() failed silently when passed a class
  * without @RegisterIndex. The error only surfaced lazily at call-time inside .search().
  *
- * Fix: getIndex() now calls validateIndexName(document) eagerly, throwing immediately when
- * the document is not decorated with @RegisterIndex.
+ * Fix: getIndex() is now throwing immediately when the document is not decorated with @RegisterIndex.
  */
 
 // Intentionally NOT decorated with @RegisterIndex

@@ -1,14 +1,12 @@
 import 'reflect-metadata'
-import { is, isNil } from 'ramda'
+import { is } from 'ramda'
 import { ClassConstructor } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA, ELASTICSEARCH_INDEX_PREFIX } from 'lib/constants'
 
-export const validateIndexName = <T>(document: ClassConstructor<T>) => {
+export const isIndexNameValid = <T>(document: ClassConstructor<T>) => {
     const indexName = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, document) as string | undefined
 
-    if (isNil(indexName)) {
-        throw new Error(`[${document.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`)
-    }
+    return is(String, indexName)
 }
 
 export const getIndexName = <T>(nameOrDocument: string | ClassConstructor<T>) => {
@@ -16,7 +14,9 @@ export const getIndexName = <T>(nameOrDocument: string | ClassConstructor<T>) =>
         return nameOrDocument
     }
 
-    validateIndexName(nameOrDocument)
+    if (!isIndexNameValid(nameOrDocument)) {
+        throw new Error(`[${nameOrDocument.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`)
+    }
 
     return Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, nameOrDocument) as string
 }

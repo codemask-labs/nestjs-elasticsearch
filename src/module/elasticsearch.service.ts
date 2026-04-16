@@ -7,7 +7,7 @@ import { SearchRequestOptions } from 'lib/requests'
 import { getSearchResponse } from 'lib/responses'
 import { getSearchRequestParams } from 'lib/elasticsearch'
 import { Index } from './injectables'
-import { validateIndexName } from './utils'
+import { isIndexNameValid } from './utils'
 
 @Injectable()
 export class ElasticsearchService {
@@ -23,7 +23,9 @@ export class ElasticsearchService {
     }
 
     getIndex<TDocument extends Document>(document: ClassConstructor<TDocument>) {
-        validateIndexName(document)
+        if (!isIndexNameValid(document)) {
+            throw new Error(`[${document.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`)
+        }
 
         return new Index(this, document)
     }
