@@ -7,6 +7,7 @@ import { SearchRequestOptions } from 'lib/requests'
 import { getSearchResponse } from 'lib/responses'
 import { getSearchRequestParams } from 'lib/elasticsearch'
 import { Index } from './injectables'
+import { validateIndexName } from './utils'
 
 @Injectable()
 export class ElasticsearchService {
@@ -22,6 +23,8 @@ export class ElasticsearchService {
     }
 
     getIndex<TDocument extends Document>(document: ClassConstructor<TDocument>) {
+        validateIndexName(document)
+
         return new Index(this, document)
     }
 

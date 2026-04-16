@@ -3,20 +3,22 @@ import { is, isNil } from 'ramda'
 import { ClassConstructor } from 'lib/common'
 import { ELASTICSEARCH_INDEX_NAME_METADATA, ELASTICSEARCH_INDEX_PREFIX } from 'lib/constants'
 
+export const validateIndexName = <T>(document: ClassConstructor<T>) => {
+    const indexName = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, document) as string | undefined
+
+    if (isNil(indexName)) {
+        throw new Error(`[${document.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`)
+    }
+}
+
 export const getIndexName = <T>(nameOrDocument: string | ClassConstructor<T>) => {
     if (is(String, nameOrDocument)) {
         return nameOrDocument
     }
 
-    const indexName = Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, nameOrDocument) as string | undefined
+    validateIndexName(nameOrDocument)
 
-    if (isNil(indexName)) {
-        throw new Error(
-            `[${nameOrDocument.name}] Failed to inject index. Make sure the index is properly decorated with @RegisterIndex(name: string).`,
-        )
-    }
-
-    return indexName
+    return Reflect.getMetadata(ELASTICSEARCH_INDEX_NAME_METADATA, nameOrDocument) as string
 }
 
 export const getIndexInjectionToken = <T>(nameOrDocument: string | ClassConstructor<T>) =>
