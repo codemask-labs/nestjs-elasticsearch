@@ -22,6 +22,15 @@ export type RangeQuery<TDocument extends Document, TKeyword extends Field<TDocum
     range: RangeQueryBody<TDocument, TKeyword>
 }
 
+/**
+ * Builds an Elasticsearch `range` query that matches documents where the given field value
+ * falls within the specified bounds. Supports numeric, date, and string field types.
+ * Use `gt`, `gte`, `lt`, `lte` in `options` to define the range boundaries.
+ *
+ * @param field - The document field to apply the range filter on.
+ * @param options - Range bounds (`gt`, `gte`, `lt`, `lte`) and optional `format` for date fields.
+ * @returns A `RangeQuery` object ready to be passed to a search request.
+ */
 export const getRangeQuery = <TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>>(
     field: TKeyword,
     options: RangeQueryOptions<TDocument, TKeyword>,
