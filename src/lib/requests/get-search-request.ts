@@ -22,6 +22,15 @@ export type SearchRequest<TDocument extends Document, TAggregationsBody extends 
     search_after?: Array<any> // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
+/**
+ * Builds a fully typed Elasticsearch search request body by combining the index name
+ * (resolved from the document class via `@RegisterIndex` metadata) with the provided
+ * search options.
+ *
+ * @param document - The document class decorated with `@RegisterIndex` that identifies the target index.
+ * @param options - Optional search options including `query`, `aggregations`, `size`, `from`, `sort`, and `search_after`.
+ * @returns A `SearchRequest` object containing the resolved `index` name and all provided search parameters.
+ */
 export const getSearchRequest = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
     options?: SearchRequestOptions<TDocument, TAggregationsBody>,

@@ -13,6 +13,13 @@ export type SumAggregation<TDocument extends Document> = {
     sum: SumAggregationField<TDocument> | SumAggregationScript
 }
 
+/**
+ * Builds an Elasticsearch `sum` aggregation that computes the total sum of numeric values
+ * from the specified field or a Painless script across all matching documents.
+ *
+ * @param fieldOrScript - A numeric document field name, or a `SumAggregationScript` object with a Painless `script` string.
+ * @returns A `SumAggregation` object ready to be included in a search request's `aggregations`.
+ */
 export const getSumAggregation = <TDocument extends Document>(
     fieldOrScript: NumericField<TDocument> | SumAggregationScript,
 ): SumAggregation<TDocument> => {

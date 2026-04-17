@@ -29,6 +29,15 @@ export type CompositeAggregation<TDocument extends Document> = {
     composite: CompositeAggregationBody<TDocument>
 }
 
+/**
+ * Builds an Elasticsearch `composite` aggregation that paginates through all buckets
+ * from multiple aggregation sources (terms, histogram, date_histogram). Use `after`
+ * in `options` with the previous response's `after_key` to fetch the next page.
+ *
+ * @param sources - An array of composite source objects, each mapping a name to a `terms`, `histogram`, or `date_histogram` aggregation.
+ * @param options - Optional settings including `size` (buckets per page) and `after` (pagination cursor).
+ * @returns A `CompositeAggregation` object ready to be included in a search request's `aggregations`.
+ */
 export const getCompositeAggregation = <TDocument extends Document>(
     sources: Array<CompositeAggregationSource<TDocument>>,
     options?: CompositeAggregationOptions<TDocument>,
