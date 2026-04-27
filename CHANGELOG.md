@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.10.3](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.10.2...v2.10.3) (2026-04-27)
+
+### Bug Fixes
+
+* validate @RegisterIndex in ElasticsearchService.getIndex() ([#291](https://github.com/codemask-labs/nestjs-elasticsearch/issues/291)) ([77b8abf](https://github.com/codemask-labs/nestjs-elasticsearch/commit/77b8abf789510117a538cc677e6d95c44468d8e6))
+
 ## [2.10.2](https://github.com/codemask-labs/nestjs-elasticsearch/compare/v2.10.1...v2.10.2) (2026-04-14)
 
 ### Build items
