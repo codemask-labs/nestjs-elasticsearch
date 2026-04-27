@@ -26,6 +26,16 @@ export type MatchQuery<TDocument extends Document, TKeyword extends Field<TDocum
     match: MatchQueryBody<TDocument, TKeyword>
 }
 
+/**
+ * Builds an Elasticsearch `match` query for full-text search on a given field.
+ * The query analyzes the input text and matches documents containing any of the resulting tokens.
+ * Supports fuzziness and boost via `options`.
+ *
+ * @param field - The document field to run the match query against.
+ * @param query - The text value to search for.
+ * @param options - Optional settings such as `boost`, `prefix_length`, and `fuzziness`.
+ * @returns A `MatchQuery` object ready to be passed to a search request.
+ */
 export const getMatchQuery = <TDocument extends Document, TKeyword extends Field<TDocument> = Field<TDocument>>(
     field: TKeyword,
     query: FieldType<TDocument, TKeyword>,

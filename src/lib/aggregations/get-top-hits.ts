@@ -29,6 +29,15 @@ export type TopHitsAggregation<TDocument extends Document> = {
     top_hits: TopHitsAggregationBody<TDocument>
 }
 
+/**
+ * Builds an Elasticsearch `top_hits` aggregation that returns the top matching documents
+ * within each bucket of a parent aggregation. Useful for fetching representative documents
+ * per group (e.g. the newest document per category).
+ *
+ * @param size - The maximum number of top hits to return per bucket. Defaults to `3`.
+ * @param options - Optional settings including `from` (offset), `sort` (sort order), and `includes` (field projection).
+ * @returns A `TopHitsAggregation` object ready to be included in a search request's `aggregations`.
+ */
 export const getTopHitsAggregation = <TDocument extends Document>(
     size: number = 3,
     options?: TopHitsAggregationOptions<TDocument>,

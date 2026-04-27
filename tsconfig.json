@@ -5,7 +5,7 @@
         "module": "Node16",
         "lib": ["esnext"],
         "types": ["expect-more-jest"],
-        "removeComments": true,
+        "removeComments": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,

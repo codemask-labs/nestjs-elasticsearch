@@ -14,6 +14,14 @@ export type BoolQuery<TDocument extends Document> = {
     bool: BoolQueryBody<TDocument> | Array<BoolQueryBody<TDocument>>
 }
 
+/**
+ * Builds an Elasticsearch `bool` query wrapping one or more `must`, `should`, `must_not`,
+ * or `minimum_should_match` clauses. Combine with `getMustQuery`, `getShouldQuery`, and
+ * `getMustNotQuery` to compose compound queries.
+ *
+ * @param bool - A single bool clause or an array of bool clauses to include in the query.
+ * @returns A `BoolQuery` object ready to be passed to a search request.
+ */
 export const getBoolQuery = <TDocument extends Document>(bool: BoolQueryBody<TDocument> | Array<BoolQueryBody<TDocument>>): BoolQuery<TDocument> => ({
     bool,
 })

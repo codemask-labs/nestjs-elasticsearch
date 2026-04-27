@@ -24,6 +24,17 @@ export type TermQuery<TDocument extends Document, TKeyword extends Field<TDocume
     term: TermQueryBody<TDocument, TKeyword>
 }
 
+/**
+ * Builds an Elasticsearch `term` query that matches documents where the given field contains
+ * the exact specified value. When `value` is a concrete non-nil value, the return type is
+ * non-nullable. When `value` is `null` or `undefined`, returns `null` — making it safe to use
+ * with optional filter values. Pass results through `getQueries` to filter out nulls.
+ *
+ * @param field - The document field to filter on.
+ * @param value - The exact value to match, or `null`/`undefined` to skip the query.
+ * @param options - Optional settings such as `boost` and `case_insensitive`.
+ * @returns A `TermQuery` if value is present, or `null`/`undefined` if value is nil.
+ */
 export interface TermQueryOverloads {
     <TDocument extends Document, TField extends Field<TDocument> = Field<TDocument>>(
         field: TField,

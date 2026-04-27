@@ -16,6 +16,16 @@ export type MatchPhrasePrefixQuery<TDocument extends Document, TField extends Ke
     match_phrase_prefix: MatchPhrasePrefixQueryBody<TDocument, TField>
 }
 
+/**
+ * Builds an Elasticsearch `match_phrase_prefix` query that matches documents where the given
+ * field contains the specified phrase, allowing the last term to be a prefix. Useful for
+ * implementing search-as-you-type functionality.
+ *
+ * @param field - The document field to search against.
+ * @param query - The phrase (with optional trailing prefix) to match.
+ * @param options - Optional settings such as `boost`.
+ * @returns A `MatchPhrasePrefixQuery` object ready to be passed to a search request.
+ */
 export const getMatchPhrasePrefixQuery = <TDocument extends Document, TField extends Key<TDocument> = Key<TDocument>>(
     field: TField,
     query: FieldType<TDocument, TField>,

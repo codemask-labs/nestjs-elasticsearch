@@ -9,6 +9,16 @@ export type SearchResponse<TDocument extends Document, TAggregationsBody extends
     aggregations: TransformedAggregations<TDocument, TAggregationsBody>
 }
 
+/**
+ * Transforms a raw Elasticsearch search response into the typed `SearchResponse` shape.
+ * Extracts the total hit count, instantiates each hit's `_source` as the document class,
+ * and casts aggregations to the typed `TransformedAggregations` shape inferred from
+ * the search request's `aggregations` parameter.
+ *
+ * @param document - The document class constructor used to instantiate each returned hit.
+ * @param response - The raw search response from the Elasticsearch client.
+ * @returns A `SearchResponse<TDocument, TAggregationsBody>` containing `total`, `documents`, and `aggregations`.
+ */
 export const getSearchResponse = <TDocument extends Document, TAggregationsBody extends AggregationsContainer<TDocument>>(
     document: ClassConstructor<TDocument>,
     { hits, aggregations }: BaseSearchResponse<TDocument, TAggregationsBody>,
